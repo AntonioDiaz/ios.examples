@@ -14,9 +14,13 @@
 
 @implementation ViewController
 
+@synthesize urlFlower;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    NSURL *url = [NSURL URLWithString: urlFlower];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    [self.webViewFlower loadRequest:request];
 }
 
 

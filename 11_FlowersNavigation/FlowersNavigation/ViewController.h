@@ -9,7 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
-
+{
+    NSString *urlFlower;
+}
+@property (strong, nonatomic) IBOutlet NSString *urlFlower;
+@property (weak, nonatomic) IBOutlet UIWebView *webViewFlower;
 
 @end
 
