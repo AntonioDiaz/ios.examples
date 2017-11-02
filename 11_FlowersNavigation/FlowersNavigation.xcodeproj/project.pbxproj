@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		093E81B01FAB27CC0011D3AF /* CellBlueTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 093E81AF1FAB27CC0011D3AF /* CellBlueTableViewCell.m */; };
+		093E81B31FAB27DE0011D3AF /* CellRedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 093E81B21FAB27DE0011D3AF /* CellRedTableViewCell.m */; };
 		0979DFB51FAB108E000D66DD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0979DFB41FAB108E000D66DD /* AppDelegate.m */; };
 		0979DFB81FAB108E000D66DD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0979DFB71FAB108E000D66DD /* ViewController.m */; };
 		0979DFBB1FAB108E000D66DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0979DFB91FAB108E000D66DD /* Main.storyboard */; };
@@ -27,6 +29,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		093E81AE1FAB27CC0011D3AF /* CellBlueTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CellBlueTableViewCell.h; sourceTree = "<group>"; };
+		093E81AF1FAB27CC0011D3AF /* CellBlueTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CellBlueTableViewCell.m; sourceTree = "<group>"; };
+		093E81B11FAB27DE0011D3AF /* CellRedTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CellRedTableViewCell.h; sourceTree = "<group>"; };
+		093E81B21FAB27DE0011D3AF /* CellRedTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CellRedTableViewCell.m; sourceTree = "<group>"; };
 		0979DFB01FAB108E000D66DD /* FlowersNavigation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlowersNavigation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0979DFB31FAB108E000D66DD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0979DFB41FAB108E000D66DD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -93,6 +99,10 @@
 				0979DFC21FAB108E000D66DD /* main.m */,
 				0979DFC91FAB11F1000D66DD /* FlowersTableViewController.h */,
 				0979DFCA1FAB11F1000D66DD /* FlowersTableViewController.m */,
+				093E81AE1FAB27CC0011D3AF /* CellBlueTableViewCell.h */,
+				093E81AF1FAB27CC0011D3AF /* CellBlueTableViewCell.m */,
+				093E81B11FAB27DE0011D3AF /* CellRedTableViewCell.h */,
+				093E81B21FAB27DE0011D3AF /* CellRedTableViewCell.m */,
 			);
 			path = FlowersNavigation;
 			sourceTree = "<group>";
@@ -197,6 +207,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0979DFCB1FAB11F1000D66DD /* FlowersTableViewController.m in Sources */,
+				093E81B31FAB27DE0011D3AF /* CellRedTableViewCell.m in Sources */,
+				093E81B01FAB27CC0011D3AF /* CellBlueTableViewCell.m in Sources */,
 				0979DFB81FAB108E000D66DD /* ViewController.m in Sources */,
 				0979DFC31FAB108E000D66DD /* main.m in Sources */,
 				0979DFB51FAB108E000D66DD /* AppDelegate.m in Sources */,

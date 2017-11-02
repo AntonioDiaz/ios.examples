@@ -7,6 +7,9 @@
 //
 
 #import "FlowersTableViewController.h"
+#import "CellRedTableViewCell.h"
+#import "CellBlueTableViewCell.h"
+
 #define FLOWERS_RED @"flowers_red"
 #define FLOWERS_BLUE @"flowers_blue"
 #define KEY_TITLE @"key_title"
@@ -58,15 +61,29 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    /*
+     UITableViewCell *cell;
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
+     cell.textLabel.text = [flowerDictionary objectForKey:KEY_TITLE];
+     cell.detailTextLabel.text = [flowerDictionary objectForKey:KEY_IMAGE];
+     cell.imageView.image = [UIImage imageNamed:[flowerDictionary objectForKey:KEY_IMAGE]];
+     */
     NSDictionary *flowerDictionary = [self flowerName:indexPath.section withIndex:indexPath.row];
-    cell.textLabel.text = [flowerDictionary objectForKey:KEY_TITLE];
-    cell.detailTextLabel.text = [flowerDictionary objectForKey:KEY_IMAGE];
-    cell.imageView.image = [UIImage imageNamed:[flowerDictionary objectForKey:KEY_IMAGE]];
-    return cell;
+    if(indexPath.section == 0) {
+        CellRedTableViewCell *cellRed = (CellRedTableViewCell*) [tableView dequeueReusableCellWithIdentifier:@"redFlowerCell" forIndexPath:indexPath];
+        cellRed.flowerName.text = [flowerDictionary objectForKey:KEY_TITLE];
+        cellRed.flowerImage.image = [UIImage imageNamed:[flowerDictionary objectForKey:KEY_IMAGE]];
+        return cellRed;
+    } else {
+        CellBlueTableViewCell *cellBlue = [tableView dequeueReusableCellWithIdentifier:@"blueFlowerCell" forIndexPath:indexPath];
+        cellBlue.flowerName.text = [flowerDictionary objectForKey:KEY_TITLE];
+        cellBlue.flowerImage.image = [UIImage imageNamed:[flowerDictionary objectForKey:KEY_IMAGE]];
+        return cellBlue;
+    }
 }
 
 -(NSDictionary *) flowerName:(NSInteger) section withIndex:(NSInteger)index {
