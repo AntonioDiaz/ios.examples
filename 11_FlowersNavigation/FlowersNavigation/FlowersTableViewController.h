@@ -11,5 +11,7 @@
 @interface FlowersTableViewController : UITableViewController
 {
     NSDictionary *flowersDataSource;
+    NSMutableArray *indexArray;
 }
+
 @end

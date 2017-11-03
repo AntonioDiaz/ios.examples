@@ -26,6 +26,7 @@
 		0979DFDE1FAB158A000D66DD /* roja-0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0979DFD41FAB158A000D66DD /* roja-0.jpg */; };
 		0979DFDF1FAB158A000D66DD /* roja-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0979DFD51FAB158A000D66DD /* roja-2.jpg */; };
 		0979DFE01FAB158A000D66DD /* roja-4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0979DFD61FAB158A000D66DD /* roja-4.jpg */; };
+		099B75FD1FAC6917007085DE /* FlowersCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 099B75FC1FAC6917007085DE /* FlowersCollectionViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,8 @@
 		0979DFD41FAB158A000D66DD /* roja-0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "roja-0.jpg"; path = "FlowersNavigation/images/roja-0.jpg"; sourceTree = SOURCE_ROOT; };
 		0979DFD51FAB158A000D66DD /* roja-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "roja-2.jpg"; path = "FlowersNavigation/images/roja-2.jpg"; sourceTree = SOURCE_ROOT; };
 		0979DFD61FAB158A000D66DD /* roja-4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "roja-4.jpg"; path = "FlowersNavigation/images/roja-4.jpg"; sourceTree = SOURCE_ROOT; };
+		099B75FB1FAC6917007085DE /* FlowersCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlowersCollectionViewController.h; sourceTree = "<group>"; };
+		099B75FC1FAC6917007085DE /* FlowersCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlowersCollectionViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +106,8 @@
 				093E81AF1FAB27CC0011D3AF /* CellBlueTableViewCell.m */,
 				093E81B11FAB27DE0011D3AF /* CellRedTableViewCell.h */,
 				093E81B21FAB27DE0011D3AF /* CellRedTableViewCell.m */,
+				099B75FB1FAC6917007085DE /* FlowersCollectionViewController.h */,
+				099B75FC1FAC6917007085DE /* FlowersCollectionViewController.m */,
 			);
 			path = FlowersNavigation;
 			sourceTree = "<group>";
@@ -210,6 +215,7 @@
 				093E81B31FAB27DE0011D3AF /* CellRedTableViewCell.m in Sources */,
 				093E81B01FAB27CC0011D3AF /* CellBlueTableViewCell.m in Sources */,
 				0979DFB81FAB108E000D66DD /* ViewController.m in Sources */,
+				099B75FD1FAC6917007085DE /* FlowersCollectionViewController.m in Sources */,
 				0979DFC31FAB108E000D66DD /* main.m in Sources */,
 				0979DFB51FAB108E000D66DD /* AppDelegate.m in Sources */,
 			);

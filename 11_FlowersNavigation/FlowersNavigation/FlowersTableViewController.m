@@ -29,18 +29,27 @@
     
     NSDictionary *flowerRose = [[NSDictionary alloc] initWithObjectsAndKeys:@"Rose", KEY_TITLE, @"https://en.wikipedia.org/wiki/Rose", KEY_URL, @"roja-0.jpg", KEY_IMAGE, nil];
     NSDictionary *flowerPoppy = [[NSDictionary alloc] initWithObjectsAndKeys:@"Poppy", KEY_TITLE, @"https://en.wikipedia.org/wiki/Poppy", KEY_URL, @"roja-1.jpg", KEY_IMAGE, nil];
+    
+    NSDictionary *flowerPoppy2 = [[NSDictionary alloc] initWithObjectsAndKeys:@"Poppy", KEY_TITLE, @"https://en.wikipedia.org/wiki/Poppy", KEY_URL, @"roja-2.jpg", KEY_IMAGE, nil];
+
     NSDictionary *flowerBlue = [[NSDictionary alloc] initWithObjectsAndKeys:@"Iris", KEY_TITLE, @"https://en.wikipedia.org/wiki/Iris", KEY_URL,
         @"azul-0.jpg", KEY_IMAGE, nil];
     NSDictionary *flowerIris = [[NSDictionary alloc] initWithObjectsAndKeys:@"Hyacinth flower", KEY_TITLE, @"https://en.wikipedia.org/wiki/Hyacinth_(plant)", KEY_URL, @"azul-1.jpg", KEY_IMAGE, nil];
     
     // Do any additional setup after loading the view, typically from a nib.
-    NSMutableArray *redFlowers = [[NSMutableArray alloc] initWithObjects: flowerRose, flowerPoppy, nil];
+    NSMutableArray *redFlowers = [[NSMutableArray alloc] initWithObjects: flowerRose, flowerPoppy, flowerPoppy2, nil];
     NSMutableArray *blueFlowers = [[NSMutableArray alloc] initWithObjects: flowerBlue, flowerIris, nil];
     
     flowersDataSource = [[NSDictionary alloc] initWithObjectsAndKeys:redFlowers, FLOWERS_RED, blueFlowers, FLOWERS_BLUE, nil];
+    
+    indexArray = [[flowersDataSource allKeys] mutableCopy];
+    //sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)
+    //
     //add new button to navigation bar.
     UIBarButtonItem *initAdd = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(tableInsertion:)];
+    UIBarButtonItem *itemAlert = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(showAlert:)];
     self.navigationItem.rightBarButtonItem = initAdd;
+    self.navigationItem.leftBarButtonItem = itemAlert;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -49,6 +58,11 @@
 }
 
 #pragma mark - Table view data source
+
+-(NSArray *) sectionIndexTitlesForTableView:(UITableView *) tableView {
+    return indexArray;
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 2;
 }
@@ -77,7 +91,6 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
     /*
      UITableViewCell *cell;
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
@@ -153,7 +166,7 @@
     }   
 }
 
-#pragma mark segue methods
+#pragma mark -segue methods
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     NSString *idSection;
     if([segue.identifier isEqualToString:@"showRedFlowers"]) {
@@ -169,13 +182,48 @@
 }
 
 #pragma mark - Navigation
--(void)tableInsertion:(id)sender {
-    NSDictionary *flowerRose = [[NSDictionary alloc] initWithObjectsAndKeys:@"Rose", KEY_TITLE, @"https://en.wikipedia.org/wiki/Rose", KEY_URL, @"roja-0.jpg", KEY_IMAGE, nil];
+-(void)showAlert:(id)sender {
+    //estructura base
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"alert controller..." message:@"set flower details" preferredStyle:UIAlertControllerStyleAlert];
+    //Creamos las acciones de la alerta.
+    
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"cerrar" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        [alertController dismissViewControllerAnimated:YES completion:nil];
+    }];
+    [alertController addAction:cancelAction];
+    
+    UIAlertAction *saveAction = [UIAlertAction actionWithTitle:@"guardar" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
+        NSLog(@"%@", alertController.textFields[0].text);
+        NSString *name = alertController.textFields[0].text;
+        NSString *image = alertController.textFields[1].text;
+        NSString *url = alertController.textFields[2].text;
+        [self insertFlower: name withUrl:url withImage:image];
+        [alertController dismissViewControllerAnimated:YES completion:nil];
+    }];
+    [alertController addAction:saveAction];
+    [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+        textField.placeholder = @"Flower name:";
+    }];
+    [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+        textField.placeholder = @"Flower image:";
+    }];
+    [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+        textField.placeholder = @"Flower URL:";
+    }];
+    [self presentViewController:alertController animated:YES completion:nil];
+}
+
+-(void) insertFlower:(NSString*)name withUrl:(NSString*)url withImage:(NSString*)image {
+    NSDictionary *flowerRose = [[NSDictionary alloc] initWithObjectsAndKeys:name, KEY_TITLE, url, KEY_URL, image, KEY_IMAGE, nil];
     [[flowersDataSource objectForKey:FLOWERS_RED] insertObject:flowerRose atIndex:0];
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    
     [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationBottom];
 }
+
+-(void)tableInsertion:(id)sender {
+    [self insertFlower:@"Rose" withUrl:@"https://en.wikipedia.org/wiki/Rose" withImage:@"roja-1.jpg"];
+ }
+
 
 
 @end
