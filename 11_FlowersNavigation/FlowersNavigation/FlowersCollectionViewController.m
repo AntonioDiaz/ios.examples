@@ -7,6 +7,8 @@
 //
 
 #import "FlowersCollectionViewController.h"
+#import "HeaderCollectionReusableView.h"
+#import "FooterCollectionReusableView.h"
 
 #define FLOWERS_RED @"flowers_red"
 #define FLOWERS_BLUE @"flowers_blue"
@@ -50,6 +52,12 @@ static NSString * const reuseIdentifier = @"Cell";
     //[self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
     
     // Do any additional setup after loading the view.
+    
+    
+    //section margin
+    UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout;
+    
+    layout.sectionInset = UIEdgeInsetsMake(5.0, 0, 0, 5.0);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -97,6 +105,24 @@ static NSString * const reuseIdentifier = @"Cell";
     NSLog(@" cell position: %f, %f", cell.frame.origin.x, cell.frame.origin.y);
     NSLog(@" cell size: %f, %f", cell.frame.size.height, cell.frame.size.width);
     return cell;
+}
+
+-(UICollectionReusableView *) collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+   
+    if (kind == UICollectionElementKindSectionHeader) {
+        HeaderCollectionReusableView *headerReusableView;
+        headerReusableView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"headerId" forIndexPath:indexPath];
+        headerReusableView.label.text = (indexPath.section == 0)?@"Red flowers":@"Blue flowers";
+        headerReusableView.headerImage.image = [UIImage imageNamed:@"tab_bar_background.png"];
+        return headerReusableView;
+    }
+    if (kind == UICollectionElementKindSectionFooter) {
+        FooterCollectionReusableView *footerReusableView;
+        footerReusableView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"footerId" forIndexPath:indexPath];
+        footerReusableView.label.text = (indexPath.section == 0)?@"Foot: Red flowers":@"Foot: Blue flowers";
+        return footerReusableView;
+    }
+    return nil;
 }
 
 -(NSDictionary *) flowerName:(NSInteger) section withIndex:(NSInteger)index {

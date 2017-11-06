@@ -26,6 +26,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //Title with text.
+    self.title = @"Flower details";
+    //Title with images.
+    UIImage *image = [UIImage imageNamed:@"list"];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+    self.navigationItem.titleView = imageView;
+    //add buttons on the top.
+    UIBarButtonItem *playBarButtonItem = [[UIBarButtonItem alloc]
+        initWithBarButtonSystemItem:UIBarButtonSystemItemPlay target:self action:nil];
+    UIBarButtonItem *stopBarButtonItem = [[UIBarButtonItem alloc]
+                                           initWithBarButtonSystemItem:UIBarButtonSystemItemStop target:self action:nil];
+
+    NSArray *actions = [[NSArray alloc] initWithObjects:playBarButtonItem, stopBarButtonItem ,nil];
+    self.navigationItem.rightBarButtonItems = actions;
     
     NSDictionary *flowerRose = [[NSDictionary alloc] initWithObjectsAndKeys:@"Rose", KEY_TITLE, @"https://en.wikipedia.org/wiki/Rose", KEY_URL, @"roja-0.jpg", KEY_IMAGE, nil];
     NSDictionary *flowerPoppy = [[NSDictionary alloc] initWithObjectsAndKeys:@"Poppy", KEY_TITLE, @"https://en.wikipedia.org/wiki/Poppy", KEY_URL, @"roja-1.jpg", KEY_IMAGE, nil];
@@ -48,7 +62,7 @@
     //add new button to navigation bar.
     UIBarButtonItem *initAdd = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(tableInsertion:)];
     UIBarButtonItem *itemAlert = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(showAlert:)];
-    self.navigationItem.rightBarButtonItem = initAdd;
+   // self.navigationItem.rightBarButtonItem = initAdd;
     self.navigationItem.leftBarButtonItem = itemAlert;
 }
 

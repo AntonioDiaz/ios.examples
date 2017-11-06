@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0925B1621FB0522B0009223B /* grid_selected.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0925B1601FB0522B0009223B /* grid_selected.jpg */; };
+		0925B1631FB0522B0009223B /* grid.png in Resources */ = {isa = PBXBuildFile; fileRef = 0925B1611FB0522B0009223B /* grid.png */; };
+		0925B1661FB052350009223B /* list_selected.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0925B1641FB052350009223B /* list_selected.jpg */; };
+		0925B1671FB052350009223B /* list.png in Resources */ = {isa = PBXBuildFile; fileRef = 0925B1651FB052350009223B /* list.png */; };
+		0925B1691FB0566B0009223B /* tab_bar_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 0925B1681FB0566B0009223B /* tab_bar_background.png */; };
+		0925B16C1FB0643D0009223B /* HeaderCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0925B16B1FB0643D0009223B /* HeaderCollectionReusableView.m */; };
+		0925B1721FB0662C0009223B /* FooterCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0925B1711FB0662C0009223B /* FooterCollectionReusableView.m */; };
 		093E81B01FAB27CC0011D3AF /* CellBlueTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 093E81AF1FAB27CC0011D3AF /* CellBlueTableViewCell.m */; };
 		093E81B31FAB27DE0011D3AF /* CellRedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 093E81B21FAB27DE0011D3AF /* CellRedTableViewCell.m */; };
 		0979DFB51FAB108E000D66DD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0979DFB41FAB108E000D66DD /* AppDelegate.m */; };
@@ -30,6 +37,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0925B1601FB0522B0009223B /* grid_selected.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = grid_selected.jpg; path = ../../../../grid_selected.jpg; sourceTree = "<group>"; };
+		0925B1611FB0522B0009223B /* grid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = grid.png; path = ../../../../grid.png; sourceTree = "<group>"; };
+		0925B1641FB052350009223B /* list_selected.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = list_selected.jpg; path = ../../../../list_selected.jpg; sourceTree = "<group>"; };
+		0925B1651FB052350009223B /* list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = list.png; path = ../../../../list.png; sourceTree = "<group>"; };
+		0925B1681FB0566B0009223B /* tab_bar_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tab_bar_background.png; path = ../../../../tab_bar_background.png; sourceTree = "<group>"; };
+		0925B16A1FB0643D0009223B /* HeaderCollectionReusableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeaderCollectionReusableView.h; sourceTree = "<group>"; };
+		0925B16B1FB0643D0009223B /* HeaderCollectionReusableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HeaderCollectionReusableView.m; sourceTree = "<group>"; };
+		0925B1701FB0662C0009223B /* FooterCollectionReusableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FooterCollectionReusableView.h; sourceTree = "<group>"; };
+		0925B1711FB0662C0009223B /* FooterCollectionReusableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FooterCollectionReusableView.m; sourceTree = "<group>"; };
 		093E81AE1FAB27CC0011D3AF /* CellBlueTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CellBlueTableViewCell.h; sourceTree = "<group>"; };
 		093E81AF1FAB27CC0011D3AF /* CellBlueTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CellBlueTableViewCell.m; sourceTree = "<group>"; };
 		093E81B11FAB27DE0011D3AF /* CellRedTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CellRedTableViewCell.h; sourceTree = "<group>"; };
@@ -90,6 +106,8 @@
 		0979DFB21FAB108E000D66DD /* FlowersNavigation */ = {
 			isa = PBXGroup;
 			children = (
+				0925B16A1FB0643D0009223B /* HeaderCollectionReusableView.h */,
+				0925B16B1FB0643D0009223B /* HeaderCollectionReusableView.m */,
 				0979DFCC1FAB1540000D66DD /* images */,
 				0979DFB31FAB108E000D66DD /* AppDelegate.h */,
 				0979DFB41FAB108E000D66DD /* AppDelegate.m */,
@@ -108,6 +126,8 @@
 				093E81B21FAB27DE0011D3AF /* CellRedTableViewCell.m */,
 				099B75FB1FAC6917007085DE /* FlowersCollectionViewController.h */,
 				099B75FC1FAC6917007085DE /* FlowersCollectionViewController.m */,
+				0925B1701FB0662C0009223B /* FooterCollectionReusableView.h */,
+				0925B1711FB0662C0009223B /* FooterCollectionReusableView.m */,
 			);
 			path = FlowersNavigation;
 			sourceTree = "<group>";
@@ -115,6 +135,11 @@
 		0979DFCC1FAB1540000D66DD /* images */ = {
 			isa = PBXGroup;
 			children = (
+				0925B1681FB0566B0009223B /* tab_bar_background.png */,
+				0925B1641FB052350009223B /* list_selected.jpg */,
+				0925B1651FB052350009223B /* list.png */,
+				0925B1601FB0522B0009223B /* grid_selected.jpg */,
+				0925B1611FB0522B0009223B /* grid.png */,
 				0979DFCE1FAB1589000D66DD /* azul-0.jpg */,
 				0979DFD31FAB1589000D66DD /* azul-1.jpg */,
 				0979DFCD1FAB1589000D66DD /* azul-2.jpg */,
@@ -190,7 +215,10 @@
 			files = (
 				0979DFDF1FAB158A000D66DD /* roja-2.jpg in Resources */,
 				0979DFE01FAB158A000D66DD /* roja-4.jpg in Resources */,
+				0925B1671FB052350009223B /* list.png in Resources */,
+				0925B1621FB0522B0009223B /* grid_selected.jpg in Resources */,
 				0979DFD71FAB158A000D66DD /* azul-2.jpg in Resources */,
+				0925B1661FB052350009223B /* list_selected.jpg in Resources */,
 				0979DFC01FAB108E000D66DD /* LaunchScreen.storyboard in Resources */,
 				0979DFDC1FAB158A000D66DD /* roja-3.jpg in Resources */,
 				0979DFBD1FAB108E000D66DD /* Assets.xcassets in Resources */,
@@ -198,9 +226,11 @@
 				0979DFD91FAB158A000D66DD /* azul-3.jpg in Resources */,
 				0979DFDE1FAB158A000D66DD /* roja-0.jpg in Resources */,
 				0979DFBB1FAB108E000D66DD /* Main.storyboard in Resources */,
+				0925B1631FB0522B0009223B /* grid.png in Resources */,
 				0979DFDA1FAB158A000D66DD /* azul-4.jpg in Resources */,
 				0979DFD81FAB158A000D66DD /* azul-0.jpg in Resources */,
 				0979DFDD1FAB158A000D66DD /* azul-1.jpg in Resources */,
+				0925B1691FB0566B0009223B /* tab_bar_background.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,9 +245,11 @@
 				093E81B31FAB27DE0011D3AF /* CellRedTableViewCell.m in Sources */,
 				093E81B01FAB27CC0011D3AF /* CellBlueTableViewCell.m in Sources */,
 				0979DFB81FAB108E000D66DD /* ViewController.m in Sources */,
+				0925B16C1FB0643D0009223B /* HeaderCollectionReusableView.m in Sources */,
 				099B75FD1FAC6917007085DE /* FlowersCollectionViewController.m in Sources */,
 				0979DFC31FAB108E000D66DD /* main.m in Sources */,
 				0979DFB51FAB108E000D66DD /* AppDelegate.m in Sources */,
+				0925B1721FB0662C0009223B /* FooterCollectionReusableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

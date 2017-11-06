@@ -1,8 +1,8 @@
 //
 //  AppDelegate.m
-//  FlowersNavigation
+//  PlayingWithAnimals
 //
-//  Created by cice on 2/11/17.
+//  Created by cice on 6/11/17.
 //  Copyright © 2017 cice. All rights reserved.
 //
 
@@ -17,50 +17,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
-    
-    UITabBarController *tabBarController = (UITabBarController *) self.window.rootViewController;
-    UITabBar *tabBar = tabBarController.tabBar;
-    
-    UITabBarItem *tabBarItemList = [tabBar.items objectAtIndex:0];
-    UITabBarItem *tabBarItemGrid = [tabBar.items objectAtIndex:1];
-    
-    //change title
-    tabBarItemList.title = @"List";
-    tabBarItemGrid.title = @"Grid";
-    
-    //change image
-    UIImage *imageList = [UIImage imageNamed:@"list.png"];
-    UIImage *imageListSelected = [UIImage imageNamed:@"list_selected.jpg"];
-    UIImage *imageGrid = [UIImage imageNamed:@"grid.png"];
-    UIImage *imageGridSelected = [UIImage imageNamed:@"grid_selected.jpg"];
-
-    //[tabBarItemList setFinishedSelectedImage:imageListSelected withFinishedUnselectedImage:imageList];
-    //[tabBarItemGrid setFinishedSelectedImage:imageGridSelected withFinishedUnselectedImage:imageGrid];
-
-    UIImage *imageBackground = [UIImage imageNamed:@"tab_bar_background.png"];
-    [[UITabBar appearance] setBackgroundImage:imageBackground];
-    //[[UITabBar appearance] secCol:imageBackground];
-    
-    //[[UINavigationBar appearance] setBarTintColor:[UIColor yellowColor]];
-    [[UINavigationBar appearance] setBackgroundImage:imageBackground forBarMetrics:UIBarMetricsDefault];
-    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
-    
-    //[[UINavigationBar appearance] setBackIndicatorImage:<#(UIImage * _Nullable)#>]
-    
-    NSShadow *sadow = [[NSShadow alloc] init];
-    sadow.shadowColor = [UIColor redColor];
-    sadow.shadowOffset = CGSizeMake(8, 4);
-    
-    NSDictionary *titleAttributes = [[NSDictionary alloc] initWithObjectsAndKeys:
-     [UIColor whiteColor], NSForegroundColorAttributeName,
-        sadow, NSShadowAttributeName, nil];
-    [[UINavigationBar appearance] setTitleTextAttributes:titleAttributes];
-    
-    
-    
-    
-     return YES;
+    return YES;
 }
 
 
@@ -89,5 +46,6 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
 
 @end

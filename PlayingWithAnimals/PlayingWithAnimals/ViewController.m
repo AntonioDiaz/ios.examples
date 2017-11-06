@@ -1,8 +1,8 @@
 //
 //  ViewController.m
-//  FlowersNavigation
+//  PlayingWithAnimals
 //
-//  Created by cice on 2/11/17.
+//  Created by cice on 6/11/17.
 //  Copyright © 2017 cice. All rights reserved.
 //
 
@@ -14,14 +14,9 @@
 
 @implementation ViewController
 
-@synthesize urlFlower;
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"Flower details view controller";
-    NSURL *url = [NSURL URLWithString: urlFlower];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    [self.webViewFlower loadRequest:request];
+    // Do any additional setup after loading the view, typically from a nib.
 }
 
 
