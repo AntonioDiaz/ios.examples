@@ -224,6 +224,4 @@
     [self insertFlower:@"Rose" withUrl:@"https://en.wikipedia.org/wiki/Rose" withImage:@"roja-1.jpg"];
  }
 
-
-
 @end
