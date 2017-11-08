@@ -130,7 +130,6 @@
     [self filterFlowers:searchController.searchBar.text];
 }
 
-#pragma mark - Navigation
 -(void)filterFlowers:(NSString *) filterFlowerText {
     if ([filterFlowerText isEqualToString:@""]) {
         flowersShown = allFlowersArray;
