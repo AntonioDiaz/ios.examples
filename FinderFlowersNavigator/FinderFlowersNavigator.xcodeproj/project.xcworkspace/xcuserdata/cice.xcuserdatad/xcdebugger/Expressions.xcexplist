@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[FinderTableViewController tableView:cellForRowAtIndexPath:]:FinderTableViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "indexPath.row">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[FinderTableViewController filterFlowers:]:FinderTableViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "predicateSearch">
+            </PersistentString>
+            <PersistentString
+               value = "@&quot;%@ contains[c] %@&quot;">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
