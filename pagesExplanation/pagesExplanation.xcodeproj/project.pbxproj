@@ -13,7 +13,6 @@
 		094073581FB4655000C46890 /* ModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 094073571FB4655000C46890 /* ModelController.m */; };
 		0940735B1FB4655000C46890 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 094073591FB4655000C46890 /* Main.storyboard */; };
 		0940735D1FB4655000C46890 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0940735C1FB4655000C46890 /* Assets.xcassets */; };
-		094073601FB4655000C46890 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0940735E1FB4655000C46890 /* LaunchScreen.storyboard */; };
 		094073631FB4655000C46890 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 094073621FB4655000C46890 /* main.m */; };
 		0940738C1FB46EDB00C46890 /* london.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 094073861FB46EDA00C46890 /* london.jpeg */; };
 		0940738D1FB46EDB00C46890 /* madrid.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 094073871FB46EDB00C46890 /* madrid.jpeg */; };
@@ -52,7 +51,6 @@
 		094073571FB4655000C46890 /* ModelController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModelController.m; sourceTree = "<group>"; };
 		0940735A1FB4655000C46890 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0940735C1FB4655000C46890 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		0940735F1FB4655000C46890 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		094073611FB4655000C46890 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		094073621FB4655000C46890 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		094073681FB4655000C46890 /* pagesExplanationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pagesExplanationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,7 +120,6 @@
 				094073571FB4655000C46890 /* ModelController.m */,
 				094073591FB4655000C46890 /* Main.storyboard */,
 				0940735C1FB4655000C46890 /* Assets.xcassets */,
-				0940735E1FB4655000C46890 /* LaunchScreen.storyboard */,
 				094073611FB4655000C46890 /* Info.plist */,
 				094073621FB4655000C46890 /* main.m */,
 			);
@@ -248,7 +245,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				094073601FB4655000C46890 /* LaunchScreen.storyboard in Resources */,
 				0940738F1FB46EDB00C46890 /* rome.jpeg in Resources */,
 				0940738C1FB46EDB00C46890 /* london.jpeg in Resources */,
 				094073911FB46EDB00C46890 /* berlin.jpeg in Resources */,
@@ -325,14 +321,6 @@
 				0940735A1FB4655000C46890 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		0940735E1FB4655000C46890 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0940735F1FB4655000C46890 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
