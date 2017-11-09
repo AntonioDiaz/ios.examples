@@ -1,25 +1,23 @@
 //
-//  ViewController.m
-//  Resizeing03
+//  IndependentViewsViewController.m
+//  navigation
 //
-//  Created by cice on 7/11/17.
-//  Copyright © 2017 cice. All rights reserved.
+//  Created by Antonio Díaz Arroyo on 9/11/17.
+//  Copyright © 2017 Antonio Díaz Arroyo. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "IndependentViewsViewController.h"
 
-@interface ViewController ()
+@interface IndependentViewsViewController ()
 
 @end
 
-@implementation ViewController
+@implementation IndependentViewsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    self.title = @"Independent views";
     self.view = self.viewVertical;
-    NSLog(@"%d", self.interfaceOrientation);
-//    UIDeviceOrientation *orientation = [[UIDevice currentDevice] orientation];
     if (UIDeviceOrientationIsLandscape(self.interfaceOrientation)) {
         self.view = self.viewHorizontal;
     } else {
@@ -30,11 +28,9 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 -(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
-    NSLog(@"rotate %d", toInterfaceOrientation);
     if (toInterfaceOrientation==UIInterfaceOrientationPortrait || toInterfaceOrientation==UIInterfaceOrientationPortraitUpsideDown) {
         self.view = self.viewVertical;
     } else {
@@ -46,4 +42,5 @@
 -(UIInterfaceOrientationMask)supportedInterfaceOrientations {
     return UIInterfaceOrientationMaskAll;
 }
+
 @end

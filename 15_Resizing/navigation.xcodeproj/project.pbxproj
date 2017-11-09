@@ -15,6 +15,7 @@
 		D129DFEF1FB3644600E72DC1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D129DFEE1FB3644600E72DC1 /* main.m */; };
 		D129DFF71FB3707F00E72DC1 /* AutoresizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D129DFF61FB3707F00E72DC1 /* AutoresizeViewController.m */; };
 		D129DFFA1FB3721B00E72DC1 /* DetectOrientationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D129DFF91FB3721B00E72DC1 /* DetectOrientationViewController.m */; };
+		D1D6BE561FB4B18900935ACF /* IndependentViewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1D6BE551FB4B18900935ACF /* IndependentViewsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		D129DFF61FB3707F00E72DC1 /* AutoresizeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AutoresizeViewController.m; sourceTree = "<group>"; };
 		D129DFF81FB3721B00E72DC1 /* DetectOrientationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetectOrientationViewController.h; sourceTree = "<group>"; };
 		D129DFF91FB3721B00E72DC1 /* DetectOrientationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetectOrientationViewController.m; sourceTree = "<group>"; };
+		D1D6BE541FB4B18900935ACF /* IndependentViewsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IndependentViewsViewController.h; sourceTree = "<group>"; };
+		D1D6BE551FB4B18900935ACF /* IndependentViewsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IndependentViewsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +80,8 @@
 				D129DFF61FB3707F00E72DC1 /* AutoresizeViewController.m */,
 				D129DFF81FB3721B00E72DC1 /* DetectOrientationViewController.h */,
 				D129DFF91FB3721B00E72DC1 /* DetectOrientationViewController.m */,
+				D1D6BE541FB4B18900935ACF /* IndependentViewsViewController.h */,
+				D1D6BE551FB4B18900935ACF /* IndependentViewsViewController.m */,
 			);
 			path = navigation;
 			sourceTree = "<group>";
@@ -154,6 +159,7 @@
 			files = (
 				D129DFE41FB3644600E72DC1 /* ViewController.m in Sources */,
 				D129DFEF1FB3644600E72DC1 /* main.m in Sources */,
+				D1D6BE561FB4B18900935ACF /* IndependentViewsViewController.m in Sources */,
 				D129DFE11FB3644600E72DC1 /* AppDelegate.m in Sources */,
 				D129DFF71FB3707F00E72DC1 /* AutoresizeViewController.m in Sources */,
 				D129DFFA1FB3721B00E72DC1 /* DetectOrientationViewController.m in Sources */,

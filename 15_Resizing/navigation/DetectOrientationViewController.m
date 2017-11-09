@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"Detect Orientation.";
+    self.title = @"Detect Orientation";
 }
 
 - (void)didReceiveMemoryWarning {
