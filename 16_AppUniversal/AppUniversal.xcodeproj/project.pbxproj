@@ -11,7 +11,6 @@
 		0997E2041FB2F4090006F3DD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0997E2031FB2F4090006F3DD /* ViewController.m */; };
 		0997E2071FB2F4090006F3DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0997E2051FB2F4090006F3DD /* Main.storyboard */; };
 		0997E2091FB2F4090006F3DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0997E2081FB2F4090006F3DD /* Assets.xcassets */; };
-		0997E20C1FB2F4090006F3DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0997E20A1FB2F4090006F3DD /* LaunchScreen.storyboard */; };
 		0997E20F1FB2F4090006F3DD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0997E20E1FB2F4090006F3DD /* main.m */; };
 		0997E2161FB2F7600006F3DD /* MainIpad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0997E2151FB2F7600006F3DD /* MainIpad.storyboard */; };
 /* End PBXBuildFile section */
@@ -24,7 +23,6 @@
 		0997E2031FB2F4090006F3DD /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		0997E2061FB2F4090006F3DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0997E2081FB2F4090006F3DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		0997E20B1FB2F4090006F3DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0997E20D1FB2F4090006F3DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0997E20E1FB2F4090006F3DD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0997E2151FB2F7600006F3DD /* MainIpad.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainIpad.storyboard; sourceTree = "<group>"; };
@@ -46,7 +44,6 @@
 			children = (
 				0997E2051FB2F4090006F3DD /* Main.storyboard */,
 				0997E2151FB2F7600006F3DD /* MainIpad.storyboard */,
-				0997E20A1FB2F4090006F3DD /* LaunchScreen.storyboard */,
 			);
 			path = StoryBoards;
 			sourceTree = "<group>";
@@ -140,7 +137,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0997E20C1FB2F4090006F3DD /* LaunchScreen.storyboard in Resources */,
 				0997E2161FB2F7600006F3DD /* MainIpad.storyboard in Resources */,
 				0997E2091FB2F4090006F3DD /* Assets.xcassets in Resources */,
 				0997E2071FB2F4090006F3DD /* Main.storyboard in Resources */,
@@ -169,14 +165,6 @@
 				0997E2061FB2F4090006F3DD /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		0997E20A1FB2F4090006F3DD /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0997E20B1FB2F4090006F3DD /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

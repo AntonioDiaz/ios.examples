@@ -26,6 +26,8 @@
 	<string>Main</string>
 	<key>UIMainStoryboardFile~ipad</key>
 	<string>MainIpad</string>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
