@@ -126,7 +126,6 @@
 }
 
 - (void)updateSearchResultsForSearchController:(nonnull UISearchController *)searchController {
-    NSLog(@"searchController --> %@", searchController.searchBar.text);
     [self filterFlowers:searchController.searchBar.text];
 }
 
@@ -155,8 +154,6 @@
         animationControllerForOperation:(UINavigationControllerOperation)operation
         fromViewController:(UIViewController *)fromVC
         toViewController:(UIViewController *)toVC {
-    NSLog(@"UINavigationControllerDelegate");
-    
     ViewAnimation *viewAnimation = [ViewAnimation new];
     return viewAnimation;
 }

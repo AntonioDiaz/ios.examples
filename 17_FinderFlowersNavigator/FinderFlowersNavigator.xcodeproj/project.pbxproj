@@ -11,7 +11,6 @@
 		093BE4891FB2FD7B002C6582 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 093BE4881FB2FD7B002C6582 /* ViewController.m */; };
 		093BE48C1FB2FD7B002C6582 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 093BE48A1FB2FD7B002C6582 /* Main.storyboard */; };
 		093BE48E1FB2FD7B002C6582 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 093BE48D1FB2FD7B002C6582 /* Assets.xcassets */; };
-		093BE4911FB2FD7B002C6582 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 093BE48F1FB2FD7B002C6582 /* LaunchScreen.storyboard */; };
 		093BE4941FB2FD7B002C6582 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 093BE4931FB2FD7B002C6582 /* main.m */; };
 		093BE49D1FB2FF51002C6582 /* FinderTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 093BE49C1FB2FF51002C6582 /* FinderTableViewController.m */; };
 		093BE4A01FB320B5002C6582 /* ViewAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 093BE49F1FB320B5002C6582 /* ViewAnimation.m */; };
@@ -25,7 +24,6 @@
 		093BE4881FB2FD7B002C6582 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		093BE48B1FB2FD7B002C6582 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		093BE48D1FB2FD7B002C6582 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		093BE4901FB2FD7B002C6582 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		093BE4921FB2FD7B002C6582 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		093BE4931FB2FD7B002C6582 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		093BE49B1FB2FF51002C6582 /* FinderTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FinderTableViewController.h; sourceTree = "<group>"; };
@@ -70,7 +68,6 @@
 				093BE4881FB2FD7B002C6582 /* ViewController.m */,
 				093BE48A1FB2FD7B002C6582 /* Main.storyboard */,
 				093BE48D1FB2FD7B002C6582 /* Assets.xcassets */,
-				093BE48F1FB2FD7B002C6582 /* LaunchScreen.storyboard */,
 				093BE4921FB2FD7B002C6582 /* Info.plist */,
 				093BE4931FB2FD7B002C6582 /* main.m */,
 				093BE49B1FB2FF51002C6582 /* FinderTableViewController.h */,
@@ -139,7 +136,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				093BE4911FB2FD7B002C6582 /* LaunchScreen.storyboard in Resources */,
 				093BE48E1FB2FD7B002C6582 /* Assets.xcassets in Resources */,
 				093BE48C1FB2FD7B002C6582 /* Main.storyboard in Resources */,
 			);
@@ -169,14 +165,6 @@
 				093BE48B1FB2FD7B002C6582 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		093BE48F1FB2FD7B002C6582 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				093BE4901FB2FD7B002C6582 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
