@@ -8,8 +8,8 @@
 
 #import "FlashLightViewController.h"
 
-#define ON_OFF @"ON_OFF";
-#define ALPHA @"ALPHA";
+#define KEY_ONOFF @"ON_OFF"
+#define KEY_ALPHA @"ALPHA"
 
 @interface FlashLightViewController ()
 
@@ -19,42 +19,32 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    self.sliderLight.value = [userDefaults floatForKey:@"ALPHA"];
-    self.switchLight.on = [userDefaults boolForKey:@"ON_OFF"];
+    self.sliderLight.value = [userDefaults floatForKey:KEY_ALPHA];
+    self.switchLight.on = [userDefaults boolForKey:KEY_ONOFF];
     [self actionChangeLight:nil];
 }
 
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 
 - (IBAction)savePreferences:(id)sender {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    [userDefaults setBool:[_switchLight isOn] forKey: @"onoff"];
-    [userDefaults setBool:[_sliderLight value] forKey: @"alpha"];
+    [userDefaults setBool:[self.switchLight isOn] forKey: KEY_ONOFF];
+    [userDefaults setFloat:self.sliderLight.value forKey: KEY_ALPHA];
     [userDefaults synchronize];
     
 }
 
 - (IBAction)actionChangeLight:(id)sender {
-    
     if ([_switchLight isOn]) {
-        _viewLight.alpha = _sliderLight.value;
+        self.viewLight.alpha = self.sliderLight.value;
     } else {
-        _viewLight.alpha = 0.0;
+        self.viewLight.alpha = 0.0;
     }
-    /*
-     if ([self.switchLight isOn]) {
-     self.sliderLight.alpha = self.sliderLight.value;
-     } else {
-     self.sliderLight.alpha = 0.0;
-     }
-     */
 }
 @end
 
