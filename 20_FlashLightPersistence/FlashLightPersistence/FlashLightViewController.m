@@ -6,21 +6,21 @@
 //  Copyright © 2017 cice. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "FlashLightViewController.h"
 
 #define ON_OFF @"ON_OFF";
 #define ALPHA @"ALPHA";
 
-@interface ViewController ()
+@interface FlashLightViewController ()
 
 @end
 
-@implementation ViewController
+@implementation FlashLightViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     self.sliderLight.value = [userDefaults floatForKey:@"ALPHA"];
     self.switchLight.on = [userDefaults boolForKey:@"ON_OFF"];
     [self actionChangeLight:nil];
@@ -57,3 +57,4 @@
      */
 }
 @end
+

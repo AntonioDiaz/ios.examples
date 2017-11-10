@@ -7,8 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		093471001FB59D2500E858B8 /* FlashLightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 093470FF1FB59D2500E858B8 /* FlashLightViewController.m */; };
+		093471021FB5A43400E858B8 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 093471011FB5A43400E858B8 /* Settings.bundle */; };
+		0934710D1FB5A70000E858B8 /* mouse.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0934710A1FB5A70000E858B8 /* mouse.jpg */; };
+		0934710E1FB5A70000E858B8 /* dog.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0934710B1FB5A70000E858B8 /* dog.jpg */; };
+		0934710F1FB5A70000E858B8 /* cat.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0934710C1FB5A70000E858B8 /* cat.jpg */; };
+		096AF2DA1FB59A0600A5D319 /* MyIphoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 096AF2D91FB59A0600A5D319 /* MyIphoneViewController.m */; };
 		09D5BA1E1FB480F9001B2E33 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5BA1D1FB480F9001B2E33 /* AppDelegate.m */; };
-		09D5BA211FB480F9001B2E33 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5BA201FB480F9001B2E33 /* ViewController.m */; };
 		09D5BA241FB480F9001B2E33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09D5BA221FB480F9001B2E33 /* Main.storyboard */; };
 		09D5BA261FB480F9001B2E33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09D5BA251FB480F9001B2E33 /* Assets.xcassets */; };
 		09D5BA2C1FB480F9001B2E33 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5BA2B1FB480F9001B2E33 /* main.m */; };
@@ -32,11 +37,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		093470FE1FB59D2500E858B8 /* FlashLightViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlashLightViewController.h; sourceTree = "<group>"; };
+		093470FF1FB59D2500E858B8 /* FlashLightViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlashLightViewController.m; sourceTree = "<group>"; };
+		093471011FB5A43400E858B8 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		0934710A1FB5A70000E858B8 /* mouse.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mouse.jpg; sourceTree = "<group>"; };
+		0934710B1FB5A70000E858B8 /* dog.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dog.jpg; sourceTree = "<group>"; };
+		0934710C1FB5A70000E858B8 /* cat.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cat.jpg; sourceTree = "<group>"; };
+		096AF2D81FB59A0600A5D319 /* MyIphoneViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyIphoneViewController.h; sourceTree = "<group>"; };
+		096AF2D91FB59A0600A5D319 /* MyIphoneViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyIphoneViewController.m; sourceTree = "<group>"; };
 		09D5BA191FB480F9001B2E33 /* FlashLightPersistence.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlashLightPersistence.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09D5BA1C1FB480F9001B2E33 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		09D5BA1D1FB480F9001B2E33 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		09D5BA1F1FB480F9001B2E33 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		09D5BA201FB480F9001B2E33 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		09D5BA231FB480F9001B2E33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		09D5BA251FB480F9001B2E33 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		09D5BA2A1FB480F9001B2E33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -70,9 +81,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		093471031FB5A4F100E858B8 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				0934710C1FB5A70000E858B8 /* cat.jpg */,
+				0934710B1FB5A70000E858B8 /* dog.jpg */,
+				0934710A1FB5A70000E858B8 /* mouse.jpg */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
 		09D5BA101FB480F9001B2E33 = {
 			isa = PBXGroup;
 			children = (
+				093471031FB5A4F100E858B8 /* images */,
 				09D5BA1B1FB480F9001B2E33 /* FlashLightPersistence */,
 				09D5BA1A1FB480F9001B2E33 /* Products */,
 			);
@@ -93,12 +115,15 @@
 			children = (
 				09D5BA1C1FB480F9001B2E33 /* AppDelegate.h */,
 				09D5BA1D1FB480F9001B2E33 /* AppDelegate.m */,
-				09D5BA1F1FB480F9001B2E33 /* ViewController.h */,
-				09D5BA201FB480F9001B2E33 /* ViewController.m */,
+				093470FE1FB59D2500E858B8 /* FlashLightViewController.h */,
+				093470FF1FB59D2500E858B8 /* FlashLightViewController.m */,
+				096AF2D81FB59A0600A5D319 /* MyIphoneViewController.h */,
+				096AF2D91FB59A0600A5D319 /* MyIphoneViewController.m */,
 				09D5BA221FB480F9001B2E33 /* Main.storyboard */,
 				09D5BA251FB480F9001B2E33 /* Assets.xcassets */,
 				09D5BA2A1FB480F9001B2E33 /* Info.plist */,
 				09D5BA2B1FB480F9001B2E33 /* main.m */,
+				093471011FB5A43400E858B8 /* Settings.bundle */,
 			);
 			path = FlashLightPersistence;
 			sourceTree = "<group>";
@@ -209,7 +234,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0934710F1FB5A70000E858B8 /* cat.jpg in Resources */,
 				09D5BA261FB480F9001B2E33 /* Assets.xcassets in Resources */,
+				0934710E1FB5A70000E858B8 /* dog.jpg in Resources */,
+				0934710D1FB5A70000E858B8 /* mouse.jpg in Resources */,
+				093471021FB5A43400E858B8 /* Settings.bundle in Resources */,
 				09D5BA241FB480F9001B2E33 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -235,9 +264,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09D5BA211FB480F9001B2E33 /* ViewController.m in Sources */,
 				09D5BA2C1FB480F9001B2E33 /* main.m in Sources */,
 				09D5BA1E1FB480F9001B2E33 /* AppDelegate.m in Sources */,
+				093471001FB59D2500E858B8 /* FlashLightViewController.m in Sources */,
+				096AF2DA1FB59A0600A5D319 /* MyIphoneViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

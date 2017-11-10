@@ -1,0 +1,356 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0934711E1FB5AA7C00E858B8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0934711D1FB5AA7C00E858B8 /* AppDelegate.m */; };
+		093471211FB5AA7C00E858B8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 093471201FB5AA7C00E858B8 /* ViewController.m */; };
+		093471241FB5AA7C00E858B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 093471221FB5AA7C00E858B8 /* Main.storyboard */; };
+		093471271FB5AA7C00E858B8 /* FlowersCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 093471251FB5AA7C00E858B8 /* FlowersCoreData.xcdatamodeld */; };
+		093471291FB5AA7C00E858B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 093471281FB5AA7C00E858B8 /* Assets.xcassets */; };
+		0934712C1FB5AA7C00E858B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0934712A1FB5AA7C00E858B8 /* LaunchScreen.storyboard */; };
+		0934712F1FB5AA7C00E858B8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0934712E1FB5AA7C00E858B8 /* main.m */; };
+		093471391FB5ACA600E858B8 /* FlowerEntity+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 093471361FB5ACA600E858B8 /* FlowerEntity+CoreDataClass.m */; };
+		0934713A1FB5ACA600E858B8 /* FlowerEntity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 093471381FB5ACA600E858B8 /* FlowerEntity+CoreDataProperties.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		093471191FB5AA7C00E858B8 /* FlowersCoreData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlowersCoreData.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0934711C1FB5AA7C00E858B8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		0934711D1FB5AA7C00E858B8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		0934711F1FB5AA7C00E858B8 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		093471201FB5AA7C00E858B8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		093471231FB5AA7C00E858B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		093471261FB5AA7C00E858B8 /* FlowersCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FlowersCoreData.xcdatamodel; sourceTree = "<group>"; };
+		093471281FB5AA7C00E858B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0934712B1FB5AA7C00E858B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0934712D1FB5AA7C00E858B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0934712E1FB5AA7C00E858B8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		093471351FB5ACA600E858B8 /* FlowerEntity+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FlowerEntity+CoreDataClass.h"; sourceTree = "<group>"; };
+		093471361FB5ACA600E858B8 /* FlowerEntity+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FlowerEntity+CoreDataClass.m"; sourceTree = "<group>"; };
+		093471371FB5ACA600E858B8 /* FlowerEntity+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FlowerEntity+CoreDataProperties.h"; sourceTree = "<group>"; };
+		093471381FB5ACA600E858B8 /* FlowerEntity+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FlowerEntity+CoreDataProperties.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		093471161FB5AA7C00E858B8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		093471101FB5AA7C00E858B8 = {
+			isa = PBXGroup;
+			children = (
+				093471351FB5ACA600E858B8 /* FlowerEntity+CoreDataClass.h */,
+				093471361FB5ACA600E858B8 /* FlowerEntity+CoreDataClass.m */,
+				093471371FB5ACA600E858B8 /* FlowerEntity+CoreDataProperties.h */,
+				093471381FB5ACA600E858B8 /* FlowerEntity+CoreDataProperties.m */,
+				0934711B1FB5AA7C00E858B8 /* FlowersCoreData */,
+				0934711A1FB5AA7C00E858B8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0934711A1FB5AA7C00E858B8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				093471191FB5AA7C00E858B8 /* FlowersCoreData.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0934711B1FB5AA7C00E858B8 /* FlowersCoreData */ = {
+			isa = PBXGroup;
+			children = (
+				0934711C1FB5AA7C00E858B8 /* AppDelegate.h */,
+				0934711D1FB5AA7C00E858B8 /* AppDelegate.m */,
+				0934711F1FB5AA7C00E858B8 /* ViewController.h */,
+				093471201FB5AA7C00E858B8 /* ViewController.m */,
+				093471221FB5AA7C00E858B8 /* Main.storyboard */,
+				093471281FB5AA7C00E858B8 /* Assets.xcassets */,
+				0934712A1FB5AA7C00E858B8 /* LaunchScreen.storyboard */,
+				0934712D1FB5AA7C00E858B8 /* Info.plist */,
+				0934712E1FB5AA7C00E858B8 /* main.m */,
+				093471251FB5AA7C00E858B8 /* FlowersCoreData.xcdatamodeld */,
+			);
+			path = FlowersCoreData;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		093471181FB5AA7C00E858B8 /* FlowersCoreData */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 093471321FB5AA7C00E858B8 /* Build configuration list for PBXNativeTarget "FlowersCoreData" */;
+			buildPhases = (
+				093471151FB5AA7C00E858B8 /* Sources */,
+				093471161FB5AA7C00E858B8 /* Frameworks */,
+				093471171FB5AA7C00E858B8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FlowersCoreData;
+			productName = FlowersCoreData;
+			productReference = 093471191FB5AA7C00E858B8 /* FlowersCoreData.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		093471111FB5AA7C00E858B8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = cice;
+				TargetAttributes = {
+					093471181FB5AA7C00E858B8 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 093471141FB5AA7C00E858B8 /* Build configuration list for PBXProject "FlowersCoreData" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 093471101FB5AA7C00E858B8;
+			productRefGroup = 0934711A1FB5AA7C00E858B8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				093471181FB5AA7C00E858B8 /* FlowersCoreData */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		093471171FB5AA7C00E858B8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0934712C1FB5AA7C00E858B8 /* LaunchScreen.storyboard in Resources */,
+				093471291FB5AA7C00E858B8 /* Assets.xcassets in Resources */,
+				093471241FB5AA7C00E858B8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		093471151FB5AA7C00E858B8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				093471271FB5AA7C00E858B8 /* FlowersCoreData.xcdatamodeld in Sources */,
+				093471211FB5AA7C00E858B8 /* ViewController.m in Sources */,
+				093471391FB5ACA600E858B8 /* FlowerEntity+CoreDataClass.m in Sources */,
+				0934712F1FB5AA7C00E858B8 /* main.m in Sources */,
+				0934711E1FB5AA7C00E858B8 /* AppDelegate.m in Sources */,
+				0934713A1FB5ACA600E858B8 /* FlowerEntity+CoreDataProperties.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		093471221FB5AA7C00E858B8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				093471231FB5AA7C00E858B8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0934712A1FB5AA7C00E858B8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0934712B1FB5AA7C00E858B8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		093471301FB5AA7C00E858B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		093471311FB5AA7C00E858B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		093471331FB5AA7C00E858B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = FlowersCoreData/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.adiaz.FlowersCoreData;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		093471341FB5AA7C00E858B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = FlowersCoreData/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.adiaz.FlowersCoreData;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		093471141FB5AA7C00E858B8 /* Build configuration list for PBXProject "FlowersCoreData" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				093471301FB5AA7C00E858B8 /* Debug */,
+				093471311FB5AA7C00E858B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		093471321FB5AA7C00E858B8 /* Build configuration list for PBXNativeTarget "FlowersCoreData" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				093471331FB5AA7C00E858B8 /* Debug */,
+				093471341FB5AA7C00E858B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		093471251FB5AA7C00E858B8 /* FlowersCoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				093471261FB5AA7C00E858B8 /* FlowersCoreData.xcdatamodel */,
+			);
+			currentVersion = 093471261FB5AA7C00E858B8 /* FlowersCoreData.xcdatamodel */;
+			path = FlowersCoreData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 093471111FB5AA7C00E858B8 /* Project object */;
+}

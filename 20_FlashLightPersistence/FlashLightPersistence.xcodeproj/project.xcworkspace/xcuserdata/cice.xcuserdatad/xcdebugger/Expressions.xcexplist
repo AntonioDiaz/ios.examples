@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[MyIphoneViewController viewDidLoad]:MyIphoneViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[userDefaults stringForKey:@&quot;email_preference&quot;]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
