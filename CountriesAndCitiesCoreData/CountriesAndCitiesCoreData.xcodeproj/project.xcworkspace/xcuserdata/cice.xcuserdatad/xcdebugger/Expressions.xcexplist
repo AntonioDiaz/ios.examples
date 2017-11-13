@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[CountriesViewController tableView:commitEditingStyle:forRowAtIndexPath:]:CountriesViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "indexPath.row">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ViewController actionSave:]:ViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "queryResults!=nil &amp;&amp; [queryResults count]==0">
+            </PersistentString>
+            <PersistentString
+               value = "queryResults.count">
+            </PersistentString>
+            <PersistentString
+               value = "[queryResults count]==0">
+            </PersistentString>
+            <PersistentString
+               value = "self.textFieldName">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

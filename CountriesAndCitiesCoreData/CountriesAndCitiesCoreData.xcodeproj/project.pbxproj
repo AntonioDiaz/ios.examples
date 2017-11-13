@@ -1,0 +1,406 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		095F2D311FB9CD45009D668F /* CitiesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 095F2D301FB9CD45009D668F /* CitiesListViewController.m */; };
+		095F2D341FB9CDE9009D668F /* CitiesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 095F2D331FB9CDE9009D668F /* CitiesTableViewController.m */; };
+		0994F99B1FB9950B00578549 /* MonumentLocation+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 0994F98C1FB9950B00578549 /* MonumentLocation+CoreDataClass.m */; };
+		0994F99C1FB9950B00578549 /* MonumentLocation+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 0994F98E1FB9950B00578549 /* MonumentLocation+CoreDataProperties.m */; };
+		0994F99D1FB9950B00578549 /* Country+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 0994F9901FB9950B00578549 /* Country+CoreDataClass.m */; };
+		0994F99E1FB9950B00578549 /* Country+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 0994F9921FB9950B00578549 /* Country+CoreDataProperties.m */; };
+		0994F99F1FB9950B00578549 /* City+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 0994F9941FB9950B00578549 /* City+CoreDataClass.m */; };
+		0994F9A01FB9950B00578549 /* City+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 0994F9961FB9950B00578549 /* City+CoreDataProperties.m */; };
+		0994F9A11FB9950B00578549 /* Monument+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 0994F9981FB9950B00578549 /* Monument+CoreDataClass.m */; };
+		0994F9A21FB9950B00578549 /* Monument+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 0994F99A1FB9950B00578549 /* Monument+CoreDataProperties.m */; };
+		099C7E8D1FB98E97007E49AC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 099C7E8C1FB98E97007E49AC /* AppDelegate.m */; };
+		099C7E901FB98E97007E49AC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 099C7E8F1FB98E97007E49AC /* ViewController.m */; };
+		099C7E931FB98E97007E49AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 099C7E911FB98E97007E49AC /* Main.storyboard */; };
+		099C7E961FB98E97007E49AC /* CountriesAndCitiesCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 099C7E941FB98E97007E49AC /* CountriesAndCitiesCoreData.xcdatamodeld */; };
+		099C7E981FB98E97007E49AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 099C7E971FB98E97007E49AC /* Assets.xcassets */; };
+		099C7E9E1FB98E97007E49AC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 099C7E9D1FB98E97007E49AC /* main.m */; };
+		09C72F461FB9A48E00903A23 /* CountriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C72F451FB9A48E00903A23 /* CountriesViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		095F2D2F1FB9CD45009D668F /* CitiesListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CitiesListViewController.h; sourceTree = "<group>"; };
+		095F2D301FB9CD45009D668F /* CitiesListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CitiesListViewController.m; sourceTree = "<group>"; };
+		095F2D321FB9CDE9009D668F /* CitiesTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CitiesTableViewController.h; sourceTree = "<group>"; };
+		095F2D331FB9CDE9009D668F /* CitiesTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CitiesTableViewController.m; sourceTree = "<group>"; };
+		0994F98B1FB9950B00578549 /* MonumentLocation+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MonumentLocation+CoreDataClass.h"; sourceTree = "<group>"; };
+		0994F98C1FB9950B00578549 /* MonumentLocation+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MonumentLocation+CoreDataClass.m"; sourceTree = "<group>"; };
+		0994F98D1FB9950B00578549 /* MonumentLocation+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MonumentLocation+CoreDataProperties.h"; sourceTree = "<group>"; };
+		0994F98E1FB9950B00578549 /* MonumentLocation+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MonumentLocation+CoreDataProperties.m"; sourceTree = "<group>"; };
+		0994F98F1FB9950B00578549 /* Country+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Country+CoreDataClass.h"; sourceTree = "<group>"; };
+		0994F9901FB9950B00578549 /* Country+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Country+CoreDataClass.m"; sourceTree = "<group>"; };
+		0994F9911FB9950B00578549 /* Country+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Country+CoreDataProperties.h"; sourceTree = "<group>"; };
+		0994F9921FB9950B00578549 /* Country+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Country+CoreDataProperties.m"; sourceTree = "<group>"; };
+		0994F9931FB9950B00578549 /* City+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "City+CoreDataClass.h"; sourceTree = "<group>"; };
+		0994F9941FB9950B00578549 /* City+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "City+CoreDataClass.m"; sourceTree = "<group>"; };
+		0994F9951FB9950B00578549 /* City+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "City+CoreDataProperties.h"; sourceTree = "<group>"; };
+		0994F9961FB9950B00578549 /* City+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "City+CoreDataProperties.m"; sourceTree = "<group>"; };
+		0994F9971FB9950B00578549 /* Monument+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Monument+CoreDataClass.h"; sourceTree = "<group>"; };
+		0994F9981FB9950B00578549 /* Monument+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Monument+CoreDataClass.m"; sourceTree = "<group>"; };
+		0994F9991FB9950B00578549 /* Monument+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Monument+CoreDataProperties.h"; sourceTree = "<group>"; };
+		0994F99A1FB9950B00578549 /* Monument+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Monument+CoreDataProperties.m"; sourceTree = "<group>"; };
+		099C7E881FB98E97007E49AC /* CountriesAndCitiesCoreData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CountriesAndCitiesCoreData.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		099C7E8B1FB98E97007E49AC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		099C7E8C1FB98E97007E49AC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		099C7E8E1FB98E97007E49AC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		099C7E8F1FB98E97007E49AC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		099C7E921FB98E97007E49AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		099C7E951FB98E97007E49AC /* CountriesAndCitiesCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CountriesAndCitiesCoreData.xcdatamodel; sourceTree = "<group>"; };
+		099C7E971FB98E97007E49AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		099C7E9C1FB98E97007E49AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		099C7E9D1FB98E97007E49AC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		09C72F441FB9A48E00903A23 /* CountriesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CountriesViewController.h; sourceTree = "<group>"; };
+		09C72F451FB9A48E00903A23 /* CountriesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CountriesViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		099C7E851FB98E97007E49AC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		099C7E7F1FB98E97007E49AC = {
+			isa = PBXGroup;
+			children = (
+				09C72F471FB9A4BA00903A23 /* database */,
+				099C7E8A1FB98E97007E49AC /* CountriesAndCitiesCoreData */,
+				099C7E891FB98E97007E49AC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		099C7E891FB98E97007E49AC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				099C7E881FB98E97007E49AC /* CountriesAndCitiesCoreData.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		099C7E8A1FB98E97007E49AC /* CountriesAndCitiesCoreData */ = {
+			isa = PBXGroup;
+			children = (
+				099C7E8B1FB98E97007E49AC /* AppDelegate.h */,
+				099C7E8C1FB98E97007E49AC /* AppDelegate.m */,
+				099C7E911FB98E97007E49AC /* Main.storyboard */,
+				099C7E971FB98E97007E49AC /* Assets.xcassets */,
+				099C7E9C1FB98E97007E49AC /* Info.plist */,
+				099C7E9D1FB98E97007E49AC /* main.m */,
+				099C7E941FB98E97007E49AC /* CountriesAndCitiesCoreData.xcdatamodeld */,
+				099C7E8E1FB98E97007E49AC /* ViewController.h */,
+				099C7E8F1FB98E97007E49AC /* ViewController.m */,
+				09C72F441FB9A48E00903A23 /* CountriesViewController.h */,
+				09C72F451FB9A48E00903A23 /* CountriesViewController.m */,
+				095F2D2F1FB9CD45009D668F /* CitiesListViewController.h */,
+				095F2D301FB9CD45009D668F /* CitiesListViewController.m */,
+				095F2D321FB9CDE9009D668F /* CitiesTableViewController.h */,
+				095F2D331FB9CDE9009D668F /* CitiesTableViewController.m */,
+			);
+			path = CountriesAndCitiesCoreData;
+			sourceTree = "<group>";
+		};
+		09C72F471FB9A4BA00903A23 /* database */ = {
+			isa = PBXGroup;
+			children = (
+				0994F98B1FB9950B00578549 /* MonumentLocation+CoreDataClass.h */,
+				0994F98C1FB9950B00578549 /* MonumentLocation+CoreDataClass.m */,
+				0994F98D1FB9950B00578549 /* MonumentLocation+CoreDataProperties.h */,
+				0994F98E1FB9950B00578549 /* MonumentLocation+CoreDataProperties.m */,
+				0994F98F1FB9950B00578549 /* Country+CoreDataClass.h */,
+				0994F9901FB9950B00578549 /* Country+CoreDataClass.m */,
+				0994F9911FB9950B00578549 /* Country+CoreDataProperties.h */,
+				0994F9921FB9950B00578549 /* Country+CoreDataProperties.m */,
+				0994F9931FB9950B00578549 /* City+CoreDataClass.h */,
+				0994F9941FB9950B00578549 /* City+CoreDataClass.m */,
+				0994F9951FB9950B00578549 /* City+CoreDataProperties.h */,
+				0994F9961FB9950B00578549 /* City+CoreDataProperties.m */,
+				0994F9971FB9950B00578549 /* Monument+CoreDataClass.h */,
+				0994F9981FB9950B00578549 /* Monument+CoreDataClass.m */,
+				0994F9991FB9950B00578549 /* Monument+CoreDataProperties.h */,
+				0994F99A1FB9950B00578549 /* Monument+CoreDataProperties.m */,
+			);
+			path = database;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		099C7E871FB98E97007E49AC /* CountriesAndCitiesCoreData */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 099C7EA11FB98E97007E49AC /* Build configuration list for PBXNativeTarget "CountriesAndCitiesCoreData" */;
+			buildPhases = (
+				099C7E841FB98E97007E49AC /* Sources */,
+				099C7E851FB98E97007E49AC /* Frameworks */,
+				099C7E861FB98E97007E49AC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CountriesAndCitiesCoreData;
+			productName = CountriesAndCitiesCoreData;
+			productReference = 099C7E881FB98E97007E49AC /* CountriesAndCitiesCoreData.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		099C7E801FB98E97007E49AC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = cice;
+				TargetAttributes = {
+					099C7E871FB98E97007E49AC = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 099C7E831FB98E97007E49AC /* Build configuration list for PBXProject "CountriesAndCitiesCoreData" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 099C7E7F1FB98E97007E49AC;
+			productRefGroup = 099C7E891FB98E97007E49AC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				099C7E871FB98E97007E49AC /* CountriesAndCitiesCoreData */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		099C7E861FB98E97007E49AC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				099C7E981FB98E97007E49AC /* Assets.xcassets in Resources */,
+				099C7E931FB98E97007E49AC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		099C7E841FB98E97007E49AC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0994F9A01FB9950B00578549 /* City+CoreDataProperties.m in Sources */,
+				099C7E901FB98E97007E49AC /* ViewController.m in Sources */,
+				099C7E961FB98E97007E49AC /* CountriesAndCitiesCoreData.xcdatamodeld in Sources */,
+				0994F99D1FB9950B00578549 /* Country+CoreDataClass.m in Sources */,
+				0994F99F1FB9950B00578549 /* City+CoreDataClass.m in Sources */,
+				099C7E9E1FB98E97007E49AC /* main.m in Sources */,
+				0994F99C1FB9950B00578549 /* MonumentLocation+CoreDataProperties.m in Sources */,
+				099C7E8D1FB98E97007E49AC /* AppDelegate.m in Sources */,
+				0994F9A11FB9950B00578549 /* Monument+CoreDataClass.m in Sources */,
+				0994F99E1FB9950B00578549 /* Country+CoreDataProperties.m in Sources */,
+				0994F9A21FB9950B00578549 /* Monument+CoreDataProperties.m in Sources */,
+				095F2D311FB9CD45009D668F /* CitiesListViewController.m in Sources */,
+				0994F99B1FB9950B00578549 /* MonumentLocation+CoreDataClass.m in Sources */,
+				09C72F461FB9A48E00903A23 /* CountriesViewController.m in Sources */,
+				095F2D341FB9CDE9009D668F /* CitiesTableViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		099C7E911FB98E97007E49AC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				099C7E921FB98E97007E49AC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		099C7E9F1FB98E97007E49AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		099C7EA01FB98E97007E49AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		099C7EA21FB98E97007E49AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CountriesAndCitiesCoreData/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.adiaz.CountriesAndCitiesCoreData;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		099C7EA31FB98E97007E49AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CountriesAndCitiesCoreData/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.adiaz.CountriesAndCitiesCoreData;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		099C7E831FB98E97007E49AC /* Build configuration list for PBXProject "CountriesAndCitiesCoreData" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				099C7E9F1FB98E97007E49AC /* Debug */,
+				099C7EA01FB98E97007E49AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		099C7EA11FB98E97007E49AC /* Build configuration list for PBXNativeTarget "CountriesAndCitiesCoreData" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				099C7EA21FB98E97007E49AC /* Debug */,
+				099C7EA31FB98E97007E49AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		099C7E941FB98E97007E49AC /* CountriesAndCitiesCoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				099C7E951FB98E97007E49AC /* CountriesAndCitiesCoreData.xcdatamodel */,
+			);
+			currentVersion = 099C7E951FB98E97007E49AC /* CountriesAndCitiesCoreData.xcdatamodel */;
+			path = CountriesAndCitiesCoreData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 099C7E801FB98E97007E49AC /* Project object */;
+}
