@@ -14,9 +14,10 @@
 
 @implementation CitiesTableViewController
 
+@synthesize countrySelectedName;
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    NSLog(@"Country selected %@", self.countrySelectedName);
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     

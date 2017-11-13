@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		095F2D311FB9CD45009D668F /* CitiesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 095F2D301FB9CD45009D668F /* CitiesListViewController.m */; };
 		095F2D341FB9CDE9009D668F /* CitiesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 095F2D331FB9CDE9009D668F /* CitiesTableViewController.m */; };
 		0994F99B1FB9950B00578549 /* MonumentLocation+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 0994F98C1FB9950B00578549 /* MonumentLocation+CoreDataClass.m */; };
 		0994F99C1FB9950B00578549 /* MonumentLocation+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 0994F98E1FB9950B00578549 /* MonumentLocation+CoreDataProperties.m */; };
@@ -27,8 +26,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		095F2D2F1FB9CD45009D668F /* CitiesListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CitiesListViewController.h; sourceTree = "<group>"; };
-		095F2D301FB9CD45009D668F /* CitiesListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CitiesListViewController.m; sourceTree = "<group>"; };
 		095F2D321FB9CDE9009D668F /* CitiesTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CitiesTableViewController.h; sourceTree = "<group>"; };
 		095F2D331FB9CDE9009D668F /* CitiesTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CitiesTableViewController.m; sourceTree = "<group>"; };
 		0994F98B1FB9950B00578549 /* MonumentLocation+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MonumentLocation+CoreDataClass.h"; sourceTree = "<group>"; };
@@ -103,8 +100,6 @@
 				099C7E8F1FB98E97007E49AC /* ViewController.m */,
 				09C72F441FB9A48E00903A23 /* CountriesViewController.h */,
 				09C72F451FB9A48E00903A23 /* CountriesViewController.m */,
-				095F2D2F1FB9CD45009D668F /* CitiesListViewController.h */,
-				095F2D301FB9CD45009D668F /* CitiesListViewController.m */,
 				095F2D321FB9CDE9009D668F /* CitiesTableViewController.h */,
 				095F2D331FB9CDE9009D668F /* CitiesTableViewController.m */,
 			);
@@ -215,7 +210,6 @@
 				0994F9A11FB9950B00578549 /* Monument+CoreDataClass.m in Sources */,
 				0994F99E1FB9950B00578549 /* Country+CoreDataProperties.m in Sources */,
 				0994F9A21FB9950B00578549 /* Monument+CoreDataProperties.m in Sources */,
-				095F2D311FB9CD45009D668F /* CitiesListViewController.m in Sources */,
 				0994F99B1FB9950B00578549 /* MonumentLocation+CoreDataClass.m in Sources */,
 				09C72F461FB9A48E00903A23 /* CountriesViewController.m in Sources */,
 				095F2D341FB9CDE9009D668F /* CitiesTableViewController.m in Sources */,

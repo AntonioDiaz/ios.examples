@@ -18,7 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //recover context from persistence coordinator.
+    //get context from persistence coordinator.
     AppDelegate *app = (AppDelegate*) [[UIApplication sharedApplication] delegate];
     self.context = app.persistentContainer.viewContext;
     //create and init flower.

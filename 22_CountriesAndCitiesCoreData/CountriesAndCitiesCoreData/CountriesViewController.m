@@ -9,6 +9,7 @@
 #import "CountriesViewController.h"
 #import "AppDelegate.h"
 #import "Country+CoreDataClass.h"
+#import "CitiesTableViewController.h"
 
 @interface CountriesViewController ()
 
@@ -38,19 +39,21 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
-/*
+
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    Country *country = [results objectAtIndex:indexPath.row];
+    NSLog(@"%@", country.name);
+    CitiesTableViewController *citiesTableViewController = segue.destinationViewController;
+    citiesTableViewController.countrySelectedName = country.name;
 }
-*/
 
+
+#pragma mark - UITableViewDataSource
 -(NSInteger) numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
@@ -58,9 +61,7 @@
    return [results count];
 }
 
-
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
@@ -78,8 +79,8 @@
 
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView
-commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
-forRowAtIndexPath:(NSIndexPath *)indexPath {
+        commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
+        forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
         Country *countryToDelete = [results objectAtIndex:indexPath.row];
@@ -95,6 +96,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
         // it into the array, and add a new row to the table view
     }
 }
+
 
 
 @end

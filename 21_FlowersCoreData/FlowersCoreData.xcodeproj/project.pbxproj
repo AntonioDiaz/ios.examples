@@ -12,7 +12,6 @@
 		093471241FB5AA7C00E858B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 093471221FB5AA7C00E858B8 /* Main.storyboard */; };
 		093471271FB5AA7C00E858B8 /* FlowersCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 093471251FB5AA7C00E858B8 /* FlowersCoreData.xcdatamodeld */; };
 		093471291FB5AA7C00E858B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 093471281FB5AA7C00E858B8 /* Assets.xcassets */; };
-		0934712C1FB5AA7C00E858B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0934712A1FB5AA7C00E858B8 /* LaunchScreen.storyboard */; };
 		0934712F1FB5AA7C00E858B8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0934712E1FB5AA7C00E858B8 /* main.m */; };
 		093471391FB5ACA600E858B8 /* FlowerEntity+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 093471361FB5ACA600E858B8 /* FlowerEntity+CoreDataClass.m */; };
 		0934713A1FB5ACA600E858B8 /* FlowerEntity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 093471381FB5ACA600E858B8 /* FlowerEntity+CoreDataProperties.m */; };
@@ -27,7 +26,6 @@
 		093471231FB5AA7C00E858B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		093471261FB5AA7C00E858B8 /* FlowersCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FlowersCoreData.xcdatamodel; sourceTree = "<group>"; };
 		093471281FB5AA7C00E858B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		0934712B1FB5AA7C00E858B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0934712D1FB5AA7C00E858B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0934712E1FB5AA7C00E858B8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		093471351FB5ACA600E858B8 /* FlowerEntity+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FlowerEntity+CoreDataClass.h"; sourceTree = "<group>"; };
@@ -76,7 +74,6 @@
 				093471201FB5AA7C00E858B8 /* ViewController.m */,
 				093471221FB5AA7C00E858B8 /* Main.storyboard */,
 				093471281FB5AA7C00E858B8 /* Assets.xcassets */,
-				0934712A1FB5AA7C00E858B8 /* LaunchScreen.storyboard */,
 				0934712D1FB5AA7C00E858B8 /* Info.plist */,
 				0934712E1FB5AA7C00E858B8 /* main.m */,
 				093471251FB5AA7C00E858B8 /* FlowersCoreData.xcdatamodeld */,
@@ -142,7 +139,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0934712C1FB5AA7C00E858B8 /* LaunchScreen.storyboard in Resources */,
 				093471291FB5AA7C00E858B8 /* Assets.xcassets in Resources */,
 				093471241FB5AA7C00E858B8 /* Main.storyboard in Resources */,
 			);
@@ -173,14 +169,6 @@
 				093471231FB5AA7C00E858B8 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		0934712A1FB5AA7C00E858B8 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0934712B1FB5AA7C00E858B8 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

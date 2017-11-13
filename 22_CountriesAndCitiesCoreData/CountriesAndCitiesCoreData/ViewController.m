@@ -57,17 +57,6 @@
             [self saveImage:self.textFieldImage.text finalImage:self.textFieldName.text];
         }
     }
-    /*
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    NSMutableArray *arrayCountries = [context executeFetchRequest:request error:&error];
-    if (arrayCountries != nil) {
-        for (Country *countryLoop in arrayCountries) {
-            NSLog(@"Flower name %@", countryLoop.name );
-        }
-    }
-     */
-    //NSString *documentDirectoryPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"save ok" message:saveMsg delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles: nil];
     [alertView show];
 
