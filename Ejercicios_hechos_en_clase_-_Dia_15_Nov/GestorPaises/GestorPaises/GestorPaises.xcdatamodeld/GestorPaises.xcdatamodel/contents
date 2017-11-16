@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13240" systemVersion="" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+    <entity name="Ciudad" representedClassName="Ciudad" syncable="YES">
+        <attribute name="descripcion" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imagen" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nombre" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="monumentos" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Monumento" inverseName="ciudad" inverseEntity="Monumento" syncable="YES"/>
+        <relationship name="pais" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Pais" inverseName="ciudades" inverseEntity="Pais" syncable="YES"/>
+    </entity>
+    <entity name="Monumento" representedClassName="Monumento" syncable="YES">
+        <attribute name="imagen" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nombre" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="ciudad" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ciudad" inverseName="monumentos" inverseEntity="Ciudad" syncable="YES"/>
+        <relationship name="ubicacion" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UbicacionMonumento" inverseName="monumento" inverseEntity="UbicacionMonumento" syncable="YES"/>
+    </entity>
+    <entity name="Pais" representedClassName="Pais" syncable="YES">
+        <attribute name="imagen" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nombre" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="ciudades" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Ciudad" inverseName="pais" inverseEntity="Ciudad" syncable="YES"/>
+    </entity>
+    <entity name="UbicacionMonumento" representedClassName="UbicacionMonumento" syncable="YES">
+        <attribute name="altura" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="latitud" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="longitud" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="monumento" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Monumento" inverseName="ubicacion" inverseEntity="Monumento" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Pais" positionX="-2" positionY="-171" width="128" height="88"/>
+        <element name="Ciudad" positionX="-0" positionY="-27" width="128" height="118"/>
+        <element name="Monumento" positionX="-2" positionY="149" width="128" height="118"/>
+        <element name="UbicacionMonumento" positionX="252" positionY="162" width="128" height="103"/>
+    </elements>
+</model>
