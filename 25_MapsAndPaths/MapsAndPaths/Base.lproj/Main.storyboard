@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -27,13 +27,13 @@
                                 <items>
                                     <barButtonItem title="Calculate path" id="Hdg-XJ-mFb">
                                         <connections>
-                                            <action selector="calculatePath:" destination="BYZ-38-t0r" id="i29-qY-C96"/>
+                                            <action selector="actionCalculatePath:" destination="BYZ-38-t0r" id="i29-qY-C96"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem width="166" style="plain" systemItem="fixedSpace" id="axY-hT-1fL"/>
                                     <barButtonItem title="Clean" id="kaQ-s7-ZBU">
                                         <connections>
-                                            <action selector="cleanPath:" destination="BYZ-38-t0r" id="ipv-7k-xGM"/>
+                                            <action selector="actionCleanPath:" destination="BYZ-38-t0r" id="ipv-7k-xGM"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -101,7 +101,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="searchDestination:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="COv-hk-uoR"/>
+                                    <action selector="actionSearchDestination:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="COv-hk-uoR"/>
                                 </connections>
                             </textField>
                         </subviews>

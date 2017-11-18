@@ -1,18 +1,8 @@
-//
-//  ViewController.m
-//  MapsAndPaths
-//
-//  Created by cice on 17/11/17.
-//  Copyright © 2017 cice. All rights reserved.
-//
 
 #import "ViewController.h"
+
 #define EMPTY_STR @""
 #define UNDERSCORE_STR @"_"
-
-@interface ViewController ()
-
-@end
 
 @implementation ViewController
 
@@ -21,26 +11,23 @@
     //start location manager.
     locationManager = [[CLLocationManager alloc] init];
     [locationManager requestWhenInUseAuthorization];
-    locationManager.delegate = self;
-    
+    locationManager.delegate = self; //CLLocationManagerDelegate
     //config map
-    self.mapView.delegate = self;
+    self.mapView.delegate = self; //MKMapViewDelegate
     self.mapView.showsUserLocation = true;
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
-
-- (IBAction)searchDestination:(id)sender {
+#pragma mark - actions
+- (IBAction)actionSearchDestination:(id)sender {
     NSString *userInput = ((UITextField*) sender).text;
-    NSLog(@"%@", self.textFieldUserAddress.text);
     CLGeocoder *geocoder = [[CLGeocoder alloc] init];
     [geocoder geocodeAddressString:userInput completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
         if (error) {
-            NSLog(@"Error @%", error);
+            NSLog(@"Error %@", [error localizedDescription]);
         } else {
             if ([placemarks count]>0) {
                 selectedLocation = [placemarks lastObject];
@@ -57,7 +44,7 @@
     }];
 }
 
-- (IBAction)calculatePath:(id)sender {
+- (IBAction)actionCalculatePath:(id)sender {
     MKDirectionsRequest *directionRequest = [[MKDirectionsRequest alloc] init];
     MKPlacemark *placemark = [[MKPlacemark alloc] initWithPlacemark:selectedLocation];
     [directionRequest setDestination:[[MKMapItem alloc] initWithPlacemark:placemark]];
@@ -67,11 +54,9 @@
         if (!error) {
             MKRoute *route = [response.routes lastObject];
             [self.mapView addOverlay:route.polyline];
-            
             self.labelAddress.text = [selectedLocation.addressDictionary objectForKey:@"Street"];
             self.labelDistance.text = [NSString stringWithFormat:@"%.2f Kms", route.distance/1000];
             self.labelTransport.text = [NSString stringWithFormat:@"%i", route.transportType];
-            
             NSString *steps = EMPTY_STR;
             for (MKRouteStep *step in route.steps) {
                 steps = [steps stringByAppendingString:step.instructions];
@@ -80,17 +65,16 @@
             self.textViewRoute.text = steps;
         }
     }];
-    
 }
 
-- (IBAction)cleanPath:(id)sender {
+- (IBAction)actionCleanPath:(id)sender {
     self.textFieldUserAddress.text = EMPTY_STR;
     self.labelAddress.text = UNDERSCORE_STR;
     self.labelDistance.text = UNDERSCORE_STR;
     self.labelTransport.text = UNDERSCORE_STR;
 }
 
-
+#pragma mark - CLLocationManagerDelegate
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(nonnull NSArray<CLLocation *> *)locations {
     CLLocation *location = [locations objectAtIndex:0];
     [self.mapView setCenterCoordinate:location.coordinate animated:true];

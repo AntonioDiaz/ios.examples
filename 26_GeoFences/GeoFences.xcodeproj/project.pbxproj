@@ -42,7 +42,6 @@
 		093F8CD21FBEFB7D001F1687 = {
 			isa = PBXGroup;
 			children = (
-				093F8CF41FBF0657001F1687 /* leganes.gpx */,
 				093F8CDD1FBEFB7D001F1687 /* GeoFences */,
 				093F8CDC1FBEFB7D001F1687 /* Products */,
 			);
@@ -67,6 +66,7 @@
 				093F8CE71FBEFB7D001F1687 /* Assets.xcassets */,
 				093F8CEC1FBEFB7D001F1687 /* Info.plist */,
 				093F8CED1FBEFB7D001F1687 /* main.m */,
+				093F8CF41FBF0657001F1687 /* leganes.gpx */,
 			);
 			path = GeoFences;
 			sourceTree = "<group>";

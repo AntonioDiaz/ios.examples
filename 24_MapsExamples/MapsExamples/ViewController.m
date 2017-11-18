@@ -31,9 +31,7 @@
                                    longitude:locationManager.location.coordinate.longitude];
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(location.coordinate, 1000, 1000);
     [self.mapView setRegion:region];
-    
     self.mapView.delegate = self;
-    
     self.mapView.mapType = MKMapTypeStandard;
     self.mapView.showsScale = true;
     self.mapView.showsCompass = true;
@@ -43,10 +41,7 @@
     self.mapView.showsUserLocation = true;
     self.mapView.userLocation.title = @"Here I am";
     self.mapView.userLocation.subtitle = @"This is Antoine";
-    
-    
     [self addTumbTack];
-
 }
 
 - (void)didReceiveMemoryWarning {
