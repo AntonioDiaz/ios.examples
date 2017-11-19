@@ -66,6 +66,8 @@
         }
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"save ok" message:saveMsg delegate:self cancelButtonTitle:@"Accept" otherButtonTitles: nil];
         [alertView show];
+        self.textFieldName.text = @"";
+        self.textFieldImage.text = @"";
     }
 }
 
