@@ -24,8 +24,9 @@
 		093F8CC31FBED0FE001F1687 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		093F8CC81FBED0FE001F1687 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		093F8CC91FBED0FE001F1687 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		093F8CD01FBEE12B001F1687 /* berlin.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = berlin.gpx; sourceTree = "<group>"; };
+		093F8CD01FBEE12B001F1687 /* Berlin.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Berlin.gpx; sourceTree = "<group>"; };
 		093F8CD11FBEEDF6001F1687 /* Leganes.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Leganes.gpx; sourceTree = "<group>"; };
+		D1B609EB1FC1A0BF00488F84 /* Dublin.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Dublin.gpx; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,8 +43,7 @@
 		093F8CAE1FBED0FE001F1687 = {
 			isa = PBXGroup;
 			children = (
-				093F8CD11FBEEDF6001F1687 /* Leganes.gpx */,
-				093F8CD01FBEE12B001F1687 /* berlin.gpx */,
+				D1B609EC1FC1A26200488F84 /* locations */,
 				093F8CB91FBED0FE001F1687 /* MapsAndPaths */,
 				093F8CB81FBED0FE001F1687 /* Products */,
 			);
@@ -70,6 +70,16 @@
 				093F8CC91FBED0FE001F1687 /* main.m */,
 			);
 			path = MapsAndPaths;
+			sourceTree = "<group>";
+		};
+		D1B609EC1FC1A26200488F84 /* locations */ = {
+			isa = PBXGroup;
+			children = (
+				D1B609EB1FC1A0BF00488F84 /* Dublin.gpx */,
+				093F8CD11FBEEDF6001F1687 /* Leganes.gpx */,
+				093F8CD01FBEE12B001F1687 /* Berlin.gpx */,
+			);
+			path = locations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

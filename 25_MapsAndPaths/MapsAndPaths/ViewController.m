@@ -12,6 +12,7 @@
     locationManager = [[CLLocationManager alloc] init];
     [locationManager requestWhenInUseAuthorization];
     locationManager.delegate = self; //CLLocationManagerDelegate
+    [locationManager startUpdatingLocation];
     //config map
     self.mapView.delegate = self; //MKMapViewDelegate
     self.mapView.showsUserLocation = true;
@@ -52,13 +53,13 @@
     MKDirections *directions = [[MKDirections alloc]initWithRequest:directionRequest];
     [directions calculateDirectionsWithCompletionHandler:^(MKDirectionsResponse * _Nullable response, NSError * _Nullable error) {
         if (!error) {
-            MKRoute *route = [response.routes lastObject];
-            [self.mapView addOverlay:route.polyline];
+            routeToDestination = [response.routes lastObject];
+            [self.mapView addOverlay:routeToDestination.polyline];
             self.labelAddress.text = [selectedLocation.addressDictionary objectForKey:@"Street"];
-            self.labelDistance.text = [NSString stringWithFormat:@"%.2f Kms", route.distance/1000];
-            self.labelTransport.text = [NSString stringWithFormat:@"%i", route.transportType];
+            self.labelDistance.text = [NSString stringWithFormat:@"%.2f Kms", routeToDestination.distance/1000];
+            self.labelTransport.text = [NSString stringWithFormat:@"%i", routeToDestination.transportType];
             NSString *steps = EMPTY_STR;
-            for (MKRouteStep *step in route.steps) {
+            for (MKRouteStep *step in routeToDestination.steps) {
                 steps = [steps stringByAppendingString:step.instructions];
                 steps = [steps stringByAppendingString:@"\n\n"];
             }
@@ -72,6 +73,9 @@
     self.labelAddress.text = UNDERSCORE_STR;
     self.labelDistance.text = UNDERSCORE_STR;
     self.labelTransport.text = UNDERSCORE_STR;
+    self.textViewRoute.text = UNDERSCORE_STR;
+    [self.mapView removeAnnotation:destinationPointAnnotation];
+    [self.mapView removeOverlay:routeToDestination.polyline];
 }
 
 #pragma mark - CLLocationManagerDelegate
@@ -90,10 +94,10 @@
 
 #pragma mark - private methods
 -(void) addDestination:(CLPlacemark *) ubication {
-    MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
-    point.coordinate = CLLocationCoordinate2DMake(ubication.location.coordinate.latitude, ubication.location.coordinate.longitude);
-    point.title = [ubication.addressDictionary objectForKey:@"Street"];
-    point.subtitle = [ubication.addressDictionary objectForKey:@"Street"];
-    [self.mapView addAnnotation:point];
+    destinationPointAnnotation = [[MKPointAnnotation alloc] init];
+    destinationPointAnnotation.coordinate = CLLocationCoordinate2DMake(ubication.location.coordinate.latitude, ubication.location.coordinate.longitude);
+    destinationPointAnnotation.title = [ubication.addressDictionary objectForKey:@"Street"];
+    destinationPointAnnotation.subtitle = [ubication.addressDictionary objectForKey:@"Street"];
+    [self.mapView addAnnotation:destinationPointAnnotation];
 }
 @end

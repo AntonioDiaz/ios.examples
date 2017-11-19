@@ -2,9 +2,11 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 
-@interface ViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>{
+@interface ViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate> {
     CLLocationManager *locationManager;
-    CLPlacemark * selectedLocation;
+    CLPlacemark *selectedLocation;
+    MKPointAnnotation *destinationPointAnnotation;
+    MKRoute *routeToDestination;
 }
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UITextField *textFieldUserAddress;
