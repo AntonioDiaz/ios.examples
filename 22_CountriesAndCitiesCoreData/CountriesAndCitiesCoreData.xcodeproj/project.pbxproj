@@ -22,7 +22,7 @@
 		099C7E961FB98E97007E49AC /* CountriesAndCitiesCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 099C7E941FB98E97007E49AC /* CountriesAndCitiesCoreData.xcdatamodeld */; };
 		099C7E981FB98E97007E49AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 099C7E971FB98E97007E49AC /* Assets.xcassets */; };
 		099C7E9E1FB98E97007E49AC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 099C7E9D1FB98E97007E49AC /* main.m */; };
-		09C72F461FB9A48E00903A23 /* CountriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C72F451FB9A48E00903A23 /* CountriesViewController.m */; };
+		09C72F461FB9A48E00903A23 /* CountriesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C72F451FB9A48E00903A23 /* CountriesTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,8 +54,8 @@
 		099C7E971FB98E97007E49AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		099C7E9C1FB98E97007E49AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		099C7E9D1FB98E97007E49AC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		09C72F441FB9A48E00903A23 /* CountriesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CountriesViewController.h; sourceTree = "<group>"; };
-		09C72F451FB9A48E00903A23 /* CountriesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CountriesViewController.m; sourceTree = "<group>"; };
+		09C72F441FB9A48E00903A23 /* CountriesTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CountriesTableViewController.h; sourceTree = "<group>"; };
+		09C72F451FB9A48E00903A23 /* CountriesTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CountriesTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,8 +98,8 @@
 				099C7E941FB98E97007E49AC /* CountriesAndCitiesCoreData.xcdatamodeld */,
 				099C7E8E1FB98E97007E49AC /* ViewController.h */,
 				099C7E8F1FB98E97007E49AC /* ViewController.m */,
-				09C72F441FB9A48E00903A23 /* CountriesViewController.h */,
-				09C72F451FB9A48E00903A23 /* CountriesViewController.m */,
+				09C72F441FB9A48E00903A23 /* CountriesTableViewController.h */,
+				09C72F451FB9A48E00903A23 /* CountriesTableViewController.m */,
 				095F2D321FB9CDE9009D668F /* CitiesTableViewController.h */,
 				095F2D331FB9CDE9009D668F /* CitiesTableViewController.m */,
 			);
@@ -211,7 +211,7 @@
 				0994F99E1FB9950B00578549 /* Country+CoreDataProperties.m in Sources */,
 				0994F9A21FB9950B00578549 /* Monument+CoreDataProperties.m in Sources */,
 				0994F99B1FB9950B00578549 /* MonumentLocation+CoreDataClass.m in Sources */,
-				09C72F461FB9A48E00903A23 /* CountriesViewController.m in Sources */,
+				09C72F461FB9A48E00903A23 /* CountriesTableViewController.m in Sources */,
 				095F2D341FB9CDE9009D668F /* CitiesTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

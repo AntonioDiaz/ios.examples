@@ -8,10 +8,8 @@
 
 #import "ViewController.h"
 
-@interface CountriesViewController : UITableViewController <UIAlertViewDelegate> {
+@interface CountriesTableViewController : UITableViewController <UIAlertViewDelegate> {
     NSMutableArray *results;
 }
-
 @property(nonatomic, retain) NSManagedObjectContext *context;
-
 @end

@@ -6,16 +6,16 @@
 //  Copyright © 2017 cice. All rights reserved.
 //
 
-#import "CountriesViewController.h"
+#import "CountriesTableViewController.h"
 #import "AppDelegate.h"
 #import "Country+CoreDataClass.h"
 #import "CitiesTableViewController.h"
 
-@interface CountriesViewController ()
+@interface CountriesTableViewController ()
 
 @end
 
-@implementation CountriesViewController
+@implementation CountriesTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -68,6 +68,11 @@
     }
     Country *country = [results objectAtIndex:indexPath.row];
     cell.textLabel.text = country.name;
+    NSString *documentsDirectoryPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSLog(@"path %@ ", documentsDirectoryPath);
+    NSString *fileImgStr = [NSString stringWithFormat:@"%@/%@.jpg", documentsDirectoryPath, country.name];
+    NSLog(@"path %@ ", fileImgStr);
+    cell.imageView.image = [UIImage imageWithContentsOfFile:fileImgStr];
     return cell;
 }
 
