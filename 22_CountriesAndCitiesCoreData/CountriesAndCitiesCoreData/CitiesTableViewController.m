@@ -1,16 +1,5 @@
-//
-//  CitiesTableViewController.m
-//  CountriesAndCitiesCoreData
-//
-//  Created by cice on 13/11/17.
-//  Copyright © 2017 cice. All rights reserved.
-//
-
 #import "CitiesTableViewController.h"
-
-@interface CitiesTableViewController ()
-
-@end
+#import "NewCityFormViewController.h"
 
 @implementation CitiesTableViewController
 
@@ -18,11 +7,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSLog(@"Country selected %@", self.countrySelectedName);
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    //add new button to navigation bar.
+    UIBarButtonItem *itemAlert = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(showPopoverAddCity:)];
+    self.navigationItem.rightBarButtonItem = itemAlert;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -31,14 +18,11 @@
 }
 
 #pragma mark - Table view data source
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
     return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
     return 0;
 }
 
@@ -95,5 +79,27 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark - private methods
+-(void) showPopoverAddCity:(id)sender {
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    NewCityFormViewController *newCityFormViewController = [storyBoard instantiateViewControllerWithIdentifier:@"IdFormViewController"];
+    newCityFormViewController.modalPresentationStyle = UIModalPresentationPopover;
+    
+    //Config PopOverPresentationController
+    UIPopoverPresentationController *popoverController = [newCityFormViewController popoverPresentationController];
+    popoverController.delegate = self;
+    popoverController.permittedArrowDirections = UIPopoverArrowDirectionAny;
+    popoverController.barButtonItem = sender;
+    //throw the popover
+    [self presentViewController:newCityFormViewController animated:true completion:nil];
+}
+
+#pragma mark - PopoverPresentationController
+-(void)popoverPresentationControllerDidDismissPopover:(UIPopoverPresentationController *)popoverPresentationController {
+    NewCityFormViewController *form = (NewCityFormViewController*)popoverPresentationController.presentedViewController;
+    NSLog(@"%@", form.self.textFieldName.text);
+}
+
 
 @end

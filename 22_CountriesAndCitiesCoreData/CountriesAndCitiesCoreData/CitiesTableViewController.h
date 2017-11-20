@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CitiesTableViewController : UITableViewController
+@interface CitiesTableViewController : UITableViewController<UIPopoverPresentationControllerDelegate>
 @property (strong, nonatomic) IBOutlet NSString *countrySelectedName;
 @end

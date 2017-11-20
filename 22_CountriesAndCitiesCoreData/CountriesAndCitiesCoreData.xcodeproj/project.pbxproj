@@ -23,6 +23,7 @@
 		099C7E981FB98E97007E49AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 099C7E971FB98E97007E49AC /* Assets.xcassets */; };
 		099C7E9E1FB98E97007E49AC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 099C7E9D1FB98E97007E49AC /* main.m */; };
 		09C72F461FB9A48E00903A23 /* CountriesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C72F451FB9A48E00903A23 /* CountriesTableViewController.m */; };
+		D1B4E1FC1FC3709B0048EADE /* NewCityFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B4E1FB1FC3709B0048EADE /* NewCityFormViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,8 @@
 		099C7E9D1FB98E97007E49AC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		09C72F441FB9A48E00903A23 /* CountriesTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CountriesTableViewController.h; sourceTree = "<group>"; };
 		09C72F451FB9A48E00903A23 /* CountriesTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CountriesTableViewController.m; sourceTree = "<group>"; };
+		D1B4E1FA1FC3709B0048EADE /* NewCityFormViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewCityFormViewController.h; sourceTree = "<group>"; };
+		D1B4E1FB1FC3709B0048EADE /* NewCityFormViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewCityFormViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +105,8 @@
 				09C72F451FB9A48E00903A23 /* CountriesTableViewController.m */,
 				095F2D321FB9CDE9009D668F /* CitiesTableViewController.h */,
 				095F2D331FB9CDE9009D668F /* CitiesTableViewController.m */,
+				D1B4E1FA1FC3709B0048EADE /* NewCityFormViewController.h */,
+				D1B4E1FB1FC3709B0048EADE /* NewCityFormViewController.m */,
 			);
 			path = CountriesAndCitiesCoreData;
 			sourceTree = "<group>";
@@ -207,6 +212,7 @@
 				099C7E9E1FB98E97007E49AC /* main.m in Sources */,
 				0994F99C1FB9950B00578549 /* MonumentLocation+CoreDataProperties.m in Sources */,
 				099C7E8D1FB98E97007E49AC /* AppDelegate.m in Sources */,
+				D1B4E1FC1FC3709B0048EADE /* NewCityFormViewController.m in Sources */,
 				0994F9A11FB9950B00578549 /* Monument+CoreDataClass.m in Sources */,
 				0994F99E1FB9950B00578549 /* Country+CoreDataProperties.m in Sources */,
 				0994F9A21FB9950B00578549 /* Monument+CoreDataProperties.m in Sources */,
