@@ -1,11 +1,3 @@
-//
-//  FlowersTableViewController.m
-//  FlowersNavigation
-//
-//  Created by cice on 2/11/17.
-//  Copyright © 2017 cice. All rights reserved.
-//
-
 #import "FlowersTableViewController.h"
 #import "CellRedTableViewCell.h"
 #import "CellBlueTableViewCell.h"
@@ -17,11 +9,6 @@
 #define KEY_URL @"key_url"
 #define KEY_IMAGE @"key_image"
 
-
-@interface FlowersTableViewController ()
-
-@end
-
 @implementation FlowersTableViewController
 
 - (void)viewDidLoad {
@@ -29,50 +16,32 @@
     //Title with text.
     self.title = @"Flower details";
     //Title with images.
-    UIImage *image = [UIImage imageNamed:@"list"];
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
-    self.navigationItem.titleView = imageView;
+    /*
+     UIImage *image = [UIImage imageNamed:@"list"];
+     UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+     self.navigationItem.titleView = imageView;
+    */
+    self.navigationItem.title = @"Flowers List";
     //add buttons on the top.
-    UIBarButtonItem *playBarButtonItem = [[UIBarButtonItem alloc]
-        initWithBarButtonSystemItem:UIBarButtonSystemItemPlay target:self action:nil];
-    UIBarButtonItem *stopBarButtonItem = [[UIBarButtonItem alloc]
-                                           initWithBarButtonSystemItem:UIBarButtonSystemItemStop target:self action:nil];
-
+    UIBarButtonItem *playBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPlay target:self action:nil];
+    UIBarButtonItem *stopBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemStop target:self action:nil];
     NSArray *actions = [[NSArray alloc] initWithObjects:playBarButtonItem, stopBarButtonItem ,nil];
     self.navigationItem.rightBarButtonItems = actions;
-    
-    NSDictionary *flowerRose = [[NSDictionary alloc] initWithObjectsAndKeys:@"Rose", KEY_TITLE, @"https://en.wikipedia.org/wiki/Rose", KEY_URL, @"roja-0.jpg", KEY_IMAGE, nil];
-    NSDictionary *flowerPoppy = [[NSDictionary alloc] initWithObjectsAndKeys:@"Poppy", KEY_TITLE, @"https://en.wikipedia.org/wiki/Poppy", KEY_URL, @"roja-1.jpg", KEY_IMAGE, nil];
-    
-    NSDictionary *flowerPoppy2 = [[NSDictionary alloc] initWithObjectsAndKeys:@"Poppy", KEY_TITLE, @"https://en.wikipedia.org/wiki/Poppy", KEY_URL, @"roja-2.jpg", KEY_IMAGE, nil];
-
-    NSDictionary *flowerBlue = [[NSDictionary alloc] initWithObjectsAndKeys:@"Iris", KEY_TITLE, @"https://en.wikipedia.org/wiki/Iris", KEY_URL,
-        @"azul-0.jpg", KEY_IMAGE, nil];
-    NSDictionary *flowerIris = [[NSDictionary alloc] initWithObjectsAndKeys:@"Hyacinth flower", KEY_TITLE, @"https://en.wikipedia.org/wiki/Hyacinth_(plant)", KEY_URL, @"azul-1.jpg", KEY_IMAGE, nil];
-    
-    // Do any additional setup after loading the view, typically from a nib.
-    NSMutableArray *redFlowers = [[NSMutableArray alloc] initWithObjects: flowerRose, flowerPoppy, flowerPoppy2, nil];
-    NSMutableArray *blueFlowers = [[NSMutableArray alloc] initWithObjects: flowerBlue, flowerIris, nil];
-    
-    flowersDataSource = [[NSDictionary alloc] initWithObjectsAndKeys:redFlowers, FLOWERS_RED, blueFlowers, FLOWERS_BLUE, nil];
-    
-    indexArray = [[flowersDataSource allKeys] mutableCopy];
     //sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)
-    //
+
     //add new button to navigation bar.
-    UIBarButtonItem *initAdd = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(tableInsertion:)];
     UIBarButtonItem *itemAlert = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(showAlert:)];
-   // self.navigationItem.rightBarButtonItem = initAdd;
     self.navigationItem.leftBarButtonItem = itemAlert;
+    
+    flowersDataSource = [self initializeDataSource];
+    indexArray = [[flowersDataSource allKeys] mutableCopy];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
-
 -(NSArray *) sectionIndexTitlesForTableView:(UITableView *) tableView {
     return indexArray;
 }
@@ -91,7 +60,6 @@
             return 0;
     }
 }
-
 
 -(NSString *) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     switch (section) {
@@ -153,11 +121,9 @@
     return 100;
 }
 
-
-
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    return YES;
+    return true;
 }
 
 
@@ -207,7 +173,6 @@
     [alertController addAction:cancelAction];
     
     UIAlertAction *saveAction = [UIAlertAction actionWithTitle:@"guardar" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
-        NSLog(@"%@", alertController.textFields[0].text);
         NSString *name = alertController.textFields[0].text;
         NSString *image = alertController.textFields[1].text;
         NSString *url = alertController.textFields[2].text;
@@ -225,6 +190,20 @@
         textField.placeholder = @"Flower URL:";
     }];
     [self presentViewController:alertController animated:YES completion:nil];
+}
+
+#pragma mark - private methods
+-(NSDictionary *) initializeDataSource {
+    NSDictionary *flowerRose = [[NSDictionary alloc] initWithObjectsAndKeys:@"Rose", KEY_TITLE, @"https://en.wikipedia.org/wiki/Rose", KEY_URL, @"roja-0.jpg", KEY_IMAGE, nil];
+    NSDictionary *flowerPoppy = [[NSDictionary alloc] initWithObjectsAndKeys:@"Poppy", KEY_TITLE, @"https://en.wikipedia.org/wiki/Poppy", KEY_URL, @"roja-1.jpg", KEY_IMAGE, nil];
+    NSDictionary *flowerPoppy2 = [[NSDictionary alloc] initWithObjectsAndKeys:@"Poppy", KEY_TITLE, @"https://en.wikipedia.org/wiki/Poppy", KEY_URL, @"roja-2.jpg", KEY_IMAGE, nil];
+    NSDictionary *flowerBlue = [[NSDictionary alloc] initWithObjectsAndKeys:@"Iris", KEY_TITLE, @"https://en.wikipedia.org/wiki/Iris", KEY_URL,
+                                @"azul-0.jpg", KEY_IMAGE, nil];
+    NSDictionary *flowerIris = [[NSDictionary alloc] initWithObjectsAndKeys:@"Hyacinth flower", KEY_TITLE, @"https://en.wikipedia.org/wiki/Hyacinth_(plant)", KEY_URL, @"azul-1.jpg", KEY_IMAGE, nil];
+    // Do any additional setup after loading the view, typically from a nib.
+    NSMutableArray *redFlowers = [[NSMutableArray alloc] initWithObjects: flowerRose, flowerPoppy, flowerPoppy2, nil];
+    NSMutableArray *blueFlowers = [[NSMutableArray alloc] initWithObjects: flowerBlue, flowerIris, nil];
+    return [[NSDictionary alloc] initWithObjectsAndKeys:redFlowers, FLOWERS_RED, blueFlowers, FLOWERS_BLUE, nil];
 }
 
 -(void) insertFlower:(NSString*)name withUrl:(NSString*)url withImage:(NSString*)image {

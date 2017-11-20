@@ -44,23 +44,17 @@
     
     //[[UINavigationBar appearance] setBarTintColor:[UIColor yellowColor]];
     [[UINavigationBar appearance] setBackgroundImage:imageBackground forBarMetrics:UIBarMetricsDefault];
-    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance] setTintColor:[UIColor blackColor]];
     
     //[[UINavigationBar appearance] setBackIndicatorImage:<#(UIImage * _Nullable)#>]
     
     NSShadow *sadow = [[NSShadow alloc] init];
-    sadow.shadowColor = [UIColor redColor];
-    sadow.shadowOffset = CGSizeMake(8, 4);
+    sadow.shadowColor = [UIColor blackColor];
+    sadow.shadowOffset = CGSizeMake(1, 1);
     
-    NSDictionary *titleAttributes = [[NSDictionary alloc] initWithObjectsAndKeys:
-     [UIColor whiteColor], NSForegroundColorAttributeName,
-        sadow, NSShadowAttributeName, nil];
-    [[UINavigationBar appearance] setTitleTextAttributes:titleAttributes];
-    
-    
-    
-    
-     return YES;
+    NSDictionary *titleAttributes = [[NSDictionary alloc] initWithObjectsAndKeys: [UIColor whiteColor], NSForegroundColorAttributeName, sadow, NSShadowAttributeName, nil];
+    //[[UINavigationBar appearance] setTitleTextAttributes:titleAttributes];
+     return true;
 }
 
 
