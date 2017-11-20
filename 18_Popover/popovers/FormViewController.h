@@ -1,11 +1,3 @@
-//
-//  FormViewController.h
-//  popovers
-//
-//  Created by cice on 9/11/17.
-//  Copyright © 2017 cice. All rights reserved.
-//
-
 #import "ViewController.h"
 
 @interface FormViewController : ViewController

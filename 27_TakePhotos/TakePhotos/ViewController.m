@@ -1,9 +1,5 @@
 #import "ViewController.h"
 
-@interface ViewController ()
-
-@end
-
 @implementation ViewController
 
 - (void)viewDidLoad {
@@ -13,7 +9,6 @@
         self.buttonCamera.enabled = false;
     }
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -30,10 +25,10 @@
 
 #pragma mark - private methods
 -(void) takePicture:(UIImagePickerControllerSourceType) sourceType {
-    UIImagePickerController *controller = [[UIImagePickerController alloc] init];
-    controller.delegate = self;
-    controller.sourceType = sourceType;
-    [self presentViewController:controller animated:true completion:nil];
+    UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
+    imagePickerController.delegate = self;
+    imagePickerController.sourceType = sourceType;
+    [self presentViewController:imagePickerController animated:true completion:nil];
 }
 
 #pragma mark - UIImagePickerControllerDelegate

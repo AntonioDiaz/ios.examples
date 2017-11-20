@@ -10,6 +10,12 @@
 
 @interface AddLocationViewController : ViewController
 
+@property (weak, nonatomic) IBOutlet UITextField *textViewTitle;
+@property (weak, nonatomic) IBOutlet UIImageView *imageViewLocation;
+- (IBAction)actionLibrary:(id)sender;
+- (IBAction)actionCamera:(id)sender;
+- (IBAction)actionSaveLocation:(id)sender;
+
 @property(nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 
 @end

@@ -9,10 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UITextField *textFieldTitle;
-@property (weak, nonatomic) IBOutlet UIImageView *imageViewLocation;
-- (IBAction)actionLibrary:(id)sender;
-- (IBAction)actionCamera:(id)sender;
-- (IBAction)actionSave:(id)sender;
+
 @end
 

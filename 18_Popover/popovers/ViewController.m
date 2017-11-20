@@ -24,18 +24,20 @@
 }
 
 - (IBAction)showActionSheet:(id)sender {
-    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Actions" delegate:nil cancelButtonTitle:@"Close" destructiveButtonTitle:@"Delete" otherButtonTitles:@"Another button", nil];
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Actions"
+                                            delegate:nil
+                                            cancelButtonTitle:@"Close"
+                                            destructiveButtonTitle:@"Delete"
+                                            otherButtonTitles:@"Another button", nil];
     [actionSheet showInView:self.view];
     if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         [actionSheet showFromRect:[(UIButton*)sender frame] inView:self.view animated:true];
     } else {
         [actionSheet showInView:self.view];
     }
-
-    
 }
 
-- (IBAction)showDetails:(id)sender {
+- (IBAction)showPopover:(id)sender {
     //Retrieveing the instance of viewController we want to show.
     UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     FormViewController *formViewController = [storyBoard instantiateViewControllerWithIdentifier:@"IdFormViewController"];

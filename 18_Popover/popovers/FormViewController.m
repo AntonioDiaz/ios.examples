@@ -1,16 +1,4 @@
-//
-//  FormViewController.m
-//  popovers
-//
-//  Created by cice on 9/11/17.
-//  Copyright © 2017 cice. All rights reserved.
-//
-
 #import "FormViewController.h"
-
-@interface FormViewController ()
-
-@end
 
 @implementation FormViewController
 

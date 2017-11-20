@@ -27,4 +27,12 @@
 }
 */
 
+- (IBAction)actionLibrary:(id)sender {
+}
+
+- (IBAction)actionCamera:(id)sender {
+}
+
+- (IBAction)actionSaveLocation:(id)sender {
+}
 @end
