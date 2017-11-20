@@ -10,7 +10,7 @@
 
 @interface ViewController : UIViewController <UIPopoverPresentationControllerDelegate>
 
-- (IBAction)showPopover:(id)sender;
+- (IBAction)showActionSheet:(id)sender;
 - (IBAction)showDetails:(id)sender;
 
 

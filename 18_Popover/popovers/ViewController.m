@@ -17,16 +17,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
-
-- (IBAction)showPopover:(id)sender {
+- (IBAction)showActionSheet:(id)sender {
     UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Actions" delegate:nil cancelButtonTitle:@"Close" destructiveButtonTitle:@"Delete" otherButtonTitles:@"Another button", nil];
     [actionSheet showInView:self.view];
     if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
