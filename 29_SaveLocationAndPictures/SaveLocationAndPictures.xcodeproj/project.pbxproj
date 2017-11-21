@@ -16,6 +16,9 @@
 		093FF2BB1FC3009100602D98 /* AddLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 093FF2BA1FC3009100602D98 /* AddLocationViewController.m */; };
 		093FF2C01FC3022900602D98 /* LocationEntity+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 093FF2BD1FC3022900602D98 /* LocationEntity+CoreDataClass.m */; };
 		093FF2C11FC3022900602D98 /* LocationEntity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 093FF2BF1FC3022900602D98 /* LocationEntity+CoreDataProperties.m */; };
+		09759E2E1FC4244000101398 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09759E2D1FC4244000101398 /* MapViewController.m */; };
+		09759E311FC425CB00101398 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09759E301FC425CB00101398 /* MapKit.framework */; };
+		09759E341FC42F5C00101398 /* WrapPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 09759E331FC42F5C00101398 /* WrapPointAnnotation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +57,14 @@
 		093FF2BD1FC3022900602D98 /* LocationEntity+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "LocationEntity+CoreDataClass.m"; sourceTree = "<group>"; };
 		093FF2BE1FC3022900602D98 /* LocationEntity+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LocationEntity+CoreDataProperties.h"; sourceTree = "<group>"; };
 		093FF2BF1FC3022900602D98 /* LocationEntity+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "LocationEntity+CoreDataProperties.m"; sourceTree = "<group>"; };
+		09759E2C1FC4244000101398 /* MapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		09759E2D1FC4244000101398 /* MapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		09759E301FC425CB00101398 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		09759E321FC42F5C00101398 /* WrapPointAnnotation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WrapPointAnnotation.h; sourceTree = "<group>"; };
+		09759E331FC42F5C00101398 /* WrapPointAnnotation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WrapPointAnnotation.m; sourceTree = "<group>"; };
+		09759E351FC436DA00101398 /* severo_ochoa.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = severo_ochoa.gpx; sourceTree = "<group>"; };
+		09759E371FC4375C00101398 /* home.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = home.gpx; sourceTree = "<group>"; };
+		09759E381FC437A800101398 /* uc3m.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = uc3m.gpx; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09759E311FC425CB00101398 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,9 +96,11 @@
 		093FF2781FC2FE7100602D98 = {
 			isa = PBXGroup;
 			children = (
+				09759E361FC4372D00101398 /* locations_gpx */,
 				093FF2C21FC3022F00602D98 /* data_base_entities */,
 				093FF2831FC2FE7100602D98 /* SaveLocationAndPictures */,
 				093FF2821FC2FE7100602D98 /* Products */,
+				09759E2F1FC425CB00101398 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -114,6 +128,10 @@
 				093FF28D1FC2FE7100602D98 /* SaveLocationAndPictures.xcdatamodeld */,
 				093FF2B91FC3009100602D98 /* AddLocationViewController.h */,
 				093FF2BA1FC3009100602D98 /* AddLocationViewController.m */,
+				09759E321FC42F5C00101398 /* WrapPointAnnotation.h */,
+				09759E331FC42F5C00101398 /* WrapPointAnnotation.m */,
+				09759E2C1FC4244000101398 /* MapViewController.h */,
+				09759E2D1FC4244000101398 /* MapViewController.m */,
 			);
 			path = SaveLocationAndPictures;
 			sourceTree = "<group>";
@@ -127,6 +145,24 @@
 				093FF2BE1FC3022900602D98 /* LocationEntity+CoreDataProperties.h */,
 			);
 			path = data_base_entities;
+			sourceTree = "<group>";
+		};
+		09759E2F1FC425CB00101398 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				09759E301FC425CB00101398 /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		09759E361FC4372D00101398 /* locations_gpx */ = {
+			isa = PBXGroup;
+			children = (
+				09759E351FC436DA00101398 /* severo_ochoa.gpx */,
+				09759E371FC4375C00101398 /* home.gpx */,
+				09759E381FC437A800101398 /* uc3m.gpx */,
+			);
+			path = locations_gpx;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,6 +233,11 @@
 					093FF2801FC2FE7100602D98 = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					093FF29B1FC2FE7100602D98 = {
 						CreatedOnToolsVersion = 9.0;
@@ -264,8 +305,10 @@
 				093FF2BB1FC3009100602D98 /* AddLocationViewController.m in Sources */,
 				093FF28F1FC2FE7100602D98 /* SaveLocationAndPictures.xcdatamodeld in Sources */,
 				093FF2891FC2FE7100602D98 /* ViewController.m in Sources */,
+				09759E2E1FC4244000101398 /* MapViewController.m in Sources */,
 				093FF2971FC2FE7100602D98 /* main.m in Sources */,
 				093FF2861FC2FE7100602D98 /* AppDelegate.m in Sources */,
+				09759E341FC42F5C00101398 /* WrapPointAnnotation.m in Sources */,
 				093FF2C11FC3022900602D98 /* LocationEntity+CoreDataProperties.m in Sources */,
 				093FF2C01FC3022900602D98 /* LocationEntity+CoreDataClass.m in Sources */,
 			);
@@ -421,7 +464,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6REAL49NXE;
 				INFOPLIST_FILE = SaveLocationAndPictures/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.adiaz.SaveLocationAndPictures;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -434,7 +479,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6REAL49NXE;
 				INFOPLIST_FILE = SaveLocationAndPictures/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.adiaz.SaveLocationAndPictures;
 				PRODUCT_NAME = "$(TARGET_NAME)";
