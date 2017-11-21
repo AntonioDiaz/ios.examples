@@ -4,8 +4,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.labelFriendName.text = @"";
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -19,27 +19,53 @@
 }
 
 - (IBAction)actionShareContact:(id)sender {
+    NSArray *contents = @[self.labelFriendName.text];
+    UIActivityViewController *controller = [[UIActivityViewController alloc] initWithActivityItems:contents applicationActivities:nil];
     
-    NSArray *contents = [[NSArray alloc] initWithObjects:self.labelFriendName.text, nil];
+    controller.modalPresentationStyle = UIModalPresentationPopover;
+    [self presentViewController:controller animated:YES completion:nil];
+    UIPopoverPresentationController *popController = [controller popoverPresentationController];
+    popController.permittedArrowDirections = UIPopoverArrowDirectionAny;
+    popController.sourceView = sender;
+    popController.sourceRect = ((UIButton *) sender).frame;
     
-    UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:contents applicationActivities:nil];
-    
-    
+    controller.completionWithItemsHandler = ^(NSString *activityType,
+                                              BOOL completed,
+                                              NSArray *returnedItems,
+                                              NSError *error){
+        // react to the completion
+        if (completed) {
+            
+            // user shared an item
+            NSLog(@"We used activity type%@", activityType);
+            
+        } else {
+            
+            // user cancelled
+            NSLog(@"We didn't want to share anything after all.");
+        }
+        
+        if (error) {
+            NSLog(@"An Error occured: %@, %@", error.localizedDescription, error.localizedFailureReason);
+        }
+    };
+    /**
     [activityViewController setModalPresentationStyle:UIModalPresentationPopover];
     UIPopoverPresentationController *popOverPresentionController = [activityViewController popoverPresentationController];
     popOverPresentionController.sourceView = sender;
     popOverPresentionController.sourceRect = ((UIButton *) sender).frame;
+    popOverPresentionController.permittedArrowDirections = UIPopoverArrowDirectionAny;
     [self presentViewController:activityViewController animated:true completion:nil];
     
-    NSArray *excluded = [[NSArray alloc] initWithObjects:UIActivityTypePrint, nil];
-    activityViewController.excludedActivityTypes= excluded;
-    
+    //NSArray *excluded = [[NSArray alloc] initWithObjects:UIActivityTypePrint, nil];
+    //activityViewController.excludedActivityTypes= excluded;
+    */
 }
 
 #pragma mark -CNContactPickerDelegate
 -(void) contactPicker:(CNContactPickerViewController *)picker didSelectContact:(CNContact *)contact {
     [self dismissViewControllerAnimated:true completion:nil];
-    self.labelFriendName.text = contact.givenName;
+    self.labelFriendName.text = [NSString stringWithFormat:@"%@, %@", contact.familyName, contact.givenName ];
     self.imageViewFriend.image =  [UIImage imageWithData:contact.imageData];
 }
 

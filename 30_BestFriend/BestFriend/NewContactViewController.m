@@ -11,8 +11,6 @@
     [super didReceiveMemoryWarning];
 }
 
-
-
 - (IBAction)actionSave:(id)sender {
     CNContactStore *contactStore = [[CNContactStore alloc] init];
     [contactStore requestAccessForEntityType:CNEntityTypeContacts completionHandler:^(BOOL granted, NSError * _Nullable error) {
@@ -30,32 +28,25 @@
                 [self presentViewController:alertController animated:true completion:nil];
             });
         } else {
-            CNMutableContact *newContact = [[CNMutableContact alloc] init];
-            CNLabeledValue *labeledValuePhone = [CNLabeledValue labeledValueWithLabel:CNLabelHome value:[CNPhoneNumber phoneNumberWithStringValue:self.textFieldPhone.text]];
-            newContact.givenName = self.textFieldName.text;
-            newContact.phoneNumbers = [[NSArray alloc] initWithObjects:labeledValuePhone, nil];
-            
-            
-            CNSaveRequest *saveRequest = [[CNSaveRequest alloc] init];
-            [saveRequest addContact:newContact toContainerWithIdentifier:nil];
-            
-            NSError *saveError;
-            [contactStore executeSaveRequest:saveRequest error:&saveError];
-            if (!saveError) {
-                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"save"
-                                                                    message:@"save ok" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
-
-                [alertView show];
-
-            } else {
-                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"save"
-                                                                    message:@"save error" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                CNMutableContact *newContact = [[CNMutableContact alloc] init];
+                CNLabeledValue *labeledValuePhone = [CNLabeledValue labeledValueWithLabel:CNLabelHome value:[CNPhoneNumber phoneNumberWithStringValue:self.textFieldPhone.text]];
+                newContact.givenName = self.textFieldName.text;
+                newContact.phoneNumbers = [[NSArray alloc] initWithObjects:labeledValuePhone, nil];
                 
+                CNSaveRequest *saveRequest = [[CNSaveRequest alloc] init];
+                [saveRequest addContact:newContact toContainerWithIdentifier:nil];
+                NSError *saveError;
+                [contactStore executeSaveRequest:saveRequest error:&saveError];
+                NSString *alertTitle = @"save";
+                NSString *alertMsg = @"save OK";
+                if (saveError) {
+                    alertMsg = @"save ERROR" ;
+                }
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:alertTitle                                                                  message:alertMsg delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
                 [alertView show];
-            }
+            });
         }
     }];
-    
-    
 }
 @end
