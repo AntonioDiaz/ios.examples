@@ -23,12 +23,20 @@
     UIActivityViewController *controller = [[UIActivityViewController alloc] initWithActivityItems:contents applicationActivities:nil];
     
     controller.modalPresentationStyle = UIModalPresentationPopover;
-    [self presentViewController:controller animated:YES completion:nil];
+    
     UIPopoverPresentationController *popController = [controller popoverPresentationController];
     popController.permittedArrowDirections = UIPopoverArrowDirectionAny;
     popController.sourceView = sender;
-    popController.sourceRect = ((UIButton *) sender).frame;
+    //popController.arrowDirection = UIPopoverArrowDirectionUp;
     
+    NSArray *excluded = [[NSArray alloc] initWithObjects:UIActivityTypeAirDrop, nil];
+    //controller.excludedActivityTypes= excluded;
+    
+    //popController.sourceRect = ((UIButton *) sender).bounds;
+    //popController.sourceRect = CGRectMake(0, 0, 305, 82);
+    
+    
+    [self presentViewController:controller animated:YES completion:nil];
     controller.completionWithItemsHandler = ^(NSString *activityType,
                                               BOOL completed,
                                               NSArray *returnedItems,
