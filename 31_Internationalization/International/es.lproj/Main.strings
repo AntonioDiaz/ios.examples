@@ -1,0 +1,9 @@
+
+/* Class = "UILabel"; text = "¿Cómo estás?"; ObjectID = "QNK-wg-3ie"; */
+"QNK-wg-3ie.text" = "¿Cómo estás?";
+
+/* Class = "UIButton"; normalTitle = "Estoy bien!"; ObjectID = "S7f-ow-iZB"; */
+"S7f-ow-iZB.normalTitle" = "Estoy bien!";
+
+/* Class = "UILabel"; text = "Ayer vendi 100000 apps in AppStore"; ObjectID = "yhd-ua-Qqe"; */
+"yhd-ua-Qqe.text" = "Ayer vendi 100000 apps in AppStore";
