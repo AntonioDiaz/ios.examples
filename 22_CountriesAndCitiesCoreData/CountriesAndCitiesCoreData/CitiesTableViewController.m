@@ -100,7 +100,7 @@
     NSEntityDescription *descripcion = [NSEntityDescription entityForName:@"City" inManagedObjectContext:context];
     [request setEntity:descripcion];
     
-    NSPredicate *filtro = [NSPredicate predicateWithFormat:@"pais == %@", self.country];
+    NSPredicate *filtro = [NSPredicate predicateWithFormat:@"relationship_country == %@", self.country];
     [request setPredicate:filtro];
     
     NSSortDescriptor *ordenNombre = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
