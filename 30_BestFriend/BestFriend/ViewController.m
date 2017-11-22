@@ -20,6 +20,17 @@
 
 - (IBAction)actionShareContact:(id)sender {
     NSArray *contents = @[self.labelFriendName.text];
+    UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:contents applicationActivities:nil];
+    [activityViewController setModalPresentationStyle:UIModalPresentationPopover];
+    UIPopoverPresentationController *popOverPresentionController = [activityViewController popoverPresentationController];
+    popOverPresentionController.sourceView = sender;
+    popOverPresentionController.sourceRect = ((UIButton *) sender).bounds;
+    popOverPresentionController.permittedArrowDirections = UIPopoverArrowDirectionAny;
+    [self presentViewController:activityViewController animated:true completion:nil];
+}
+
+- (IBAction)actionShareContactAux:(id)sender {
+    NSArray *contents = @[self.labelFriendName.text];
     UIActivityViewController *controller = [[UIActivityViewController alloc] initWithActivityItems:contents applicationActivities:nil];
     
     controller.modalPresentationStyle = UIModalPresentationPopover;
@@ -27,15 +38,7 @@
     UIPopoverPresentationController *popController = [controller popoverPresentationController];
     popController.permittedArrowDirections = UIPopoverArrowDirectionAny;
     popController.sourceView = sender;
-    //popController.arrowDirection = UIPopoverArrowDirectionUp;
-    
     NSArray *excluded = [[NSArray alloc] initWithObjects:UIActivityTypeAirDrop, nil];
-    //controller.excludedActivityTypes= excluded;
-    
-    //popController.sourceRect = ((UIButton *) sender).bounds;
-    //popController.sourceRect = CGRectMake(0, 0, 305, 82);
-    
-    
     [self presentViewController:controller animated:YES completion:nil];
     controller.completionWithItemsHandler = ^(NSString *activityType,
                                               BOOL completed,
@@ -57,17 +60,6 @@
             NSLog(@"An Error occured: %@, %@", error.localizedDescription, error.localizedFailureReason);
         }
     };
-    /**
-    [activityViewController setModalPresentationStyle:UIModalPresentationPopover];
-    UIPopoverPresentationController *popOverPresentionController = [activityViewController popoverPresentationController];
-    popOverPresentionController.sourceView = sender;
-    popOverPresentionController.sourceRect = ((UIButton *) sender).frame;
-    popOverPresentionController.permittedArrowDirections = UIPopoverArrowDirectionAny;
-    [self presentViewController:activityViewController animated:true completion:nil];
-    
-    //NSArray *excluded = [[NSArray alloc] initWithObjects:UIActivityTypePrint, nil];
-    //activityViewController.excludedActivityTypes= excluded;
-    */
 }
 
 #pragma mark -CNContactPickerDelegate

@@ -1,8 +1,8 @@
 #import "BcnTableViewController.h"
-#import "BcnViewController.h"
+#import "BcnDetailViewController.h"
 
 #define URL_API_BCN @"http://barcelonaapi.marcpous.com/metro/stations.json"
-#define APP_TITLE @"Barcelona Transport"
+#define APP_TITLE @"Barcelona Public Transport"
 
 @implementation BcnTableViewController
 
@@ -110,7 +110,7 @@
         NSIndexPath *indexSelected = [self.tableView indexPathForSelectedRow];
         NSDictionary *selectedCell = [bcnArrayData objectAtIndex:indexSelected.row];
         
-        BcnViewController *bcnViewController = segue.destinationViewController;
+        BcnDetailViewController *bcnViewController = segue.destinationViewController;
         bcnViewController.idMetroStation = [selectedCell objectForKey:@"id"];
     }
     

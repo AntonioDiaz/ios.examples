@@ -8,11 +8,11 @@
     
     [self.buttonLike setTitle:NSLocalizedString(@"Estoy bien!", nil) forState:UIControlStateNormal];
     
+    NSNumber *number = [NSNumber numberWithInteger:10000];
     
-    NSNumberFormatter *numberFormater = [[NSNumberFormatter alloc] init];
-    [numberFormater setNumberStyle:NSNumberFormatterDecimalStyle];
-    NSString *numSoldApps = [numberFormater stringFromNumber:[NSNumber numberWithInteger:10000]];
+    NSString *numSoldApps = [NSNumberFormatter localizedStringFromNumber:number numberStyle:NSNumberFormatterDecimalStyle];
     
+
     
     self.labelAnswer.text = [NSString stringWithFormat:NSLocalizedString(@"Ayer vendi %@ apps in AppStore", nil), numSoldApps];
     

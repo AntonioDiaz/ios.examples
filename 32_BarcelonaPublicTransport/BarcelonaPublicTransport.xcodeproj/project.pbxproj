@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0995A1891FC590E8001347ED /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0995A1881FC590E8001347ED /* AppDelegate.m */; };
-		0995A18C1FC590E8001347ED /* BcnViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0995A18B1FC590E8001347ED /* BcnViewController.m */; };
+		0995A18C1FC590E8001347ED /* BcnDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0995A18B1FC590E8001347ED /* BcnDetailViewController.m */; };
 		0995A18F1FC590E8001347ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0995A18D1FC590E8001347ED /* Main.storyboard */; };
 		0995A1921FC590E8001347ED /* BarcelonaPublicTransport.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0995A1901FC590E8001347ED /* BarcelonaPublicTransport.xcdatamodeld */; };
 		0995A1941FC590E8001347ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0995A1931FC590E8001347ED /* Assets.xcassets */; };
@@ -20,8 +20,8 @@
 		0995A1841FC590E8001347ED /* BarcelonaPublicTransport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BarcelonaPublicTransport.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0995A1871FC590E8001347ED /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0995A1881FC590E8001347ED /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		0995A18A1FC590E8001347ED /* BcnViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BcnViewController.h; sourceTree = "<group>"; };
-		0995A18B1FC590E8001347ED /* BcnViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BcnViewController.m; sourceTree = "<group>"; };
+		0995A18A1FC590E8001347ED /* BcnDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BcnDetailViewController.h; sourceTree = "<group>"; };
+		0995A18B1FC590E8001347ED /* BcnDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BcnDetailViewController.m; sourceTree = "<group>"; };
 		0995A18E1FC590E8001347ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0995A1911FC590E8001347ED /* BarcelonaPublicTransport.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BarcelonaPublicTransport.xcdatamodel; sourceTree = "<group>"; };
 		0995A1931FC590E8001347ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -46,7 +46,7 @@
 		0995A17B1FC590E8001347ED = {
 			isa = PBXGroup;
 			children = (
-				0995A1A31FC5A314001347ED /* barcelona.gpx */,
+				D11F2E941FC5DBFD006E6C5A /* locations_testing */,
 				0995A1861FC590E8001347ED /* BarcelonaPublicTransport */,
 				0995A1851FC590E8001347ED /* Products */,
 			);
@@ -72,10 +72,18 @@
 				0995A1901FC590E8001347ED /* BarcelonaPublicTransport.xcdatamodeld */,
 				0995A1A01FC592EC001347ED /* BcnTableViewController.h */,
 				0995A1A11FC592EC001347ED /* BcnTableViewController.m */,
-				0995A18A1FC590E8001347ED /* BcnViewController.h */,
-				0995A18B1FC590E8001347ED /* BcnViewController.m */,
+				0995A18A1FC590E8001347ED /* BcnDetailViewController.h */,
+				0995A18B1FC590E8001347ED /* BcnDetailViewController.m */,
 			);
 			path = BarcelonaPublicTransport;
+			sourceTree = "<group>";
+		};
+		D11F2E941FC5DBFD006E6C5A /* locations_testing */ = {
+			isa = PBXGroup;
+			children = (
+				0995A1A31FC5A314001347ED /* barcelona.gpx */,
+			);
+			path = locations_testing;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,7 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0995A1921FC590E8001347ED /* BarcelonaPublicTransport.xcdatamodeld in Sources */,
-				0995A18C1FC590E8001347ED /* BcnViewController.m in Sources */,
+				0995A18C1FC590E8001347ED /* BcnDetailViewController.m in Sources */,
 				0995A19A1FC590E8001347ED /* main.m in Sources */,
 				0995A1A21FC592EC001347ED /* BcnTableViewController.m in Sources */,
 				0995A1891FC590E8001347ED /* AppDelegate.m in Sources */,
