@@ -48,9 +48,8 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     Country *country = [results objectAtIndex:indexPath.row];
-    NSLog(@"%@", country.name);
     CitiesTableViewController *citiesTableViewController = segue.destinationViewController;
-    citiesTableViewController.countrySelectedName = country.name;
+    citiesTableViewController.country = country;
 }
 
 

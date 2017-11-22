@@ -1,40 +1,49 @@
 #import "CitiesTableViewController.h"
-#import "NewCityFormViewController.h"
+#import "PopOverNewCityViewController.h"
+#import "AppDelegate.h"
+#import "City+CoreDataProperties.h"
 
 @implementation CitiesTableViewController
 
-@synthesize countrySelectedName;
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self updateArrayResults];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"Country selected %@", self.countrySelectedName);
     //add new button to navigation bar.
     UIBarButtonItem *itemAlert = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(showPopoverAddCity:)];
     self.navigationItem.rightBarButtonItem = itemAlert;
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
+    return [citiesArray count];
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"my_cell" forIndexPath:indexPath];
     
-    // Configure the cell...
+    City *city = [citiesArray objectAtIndex:indexPath.row];
+    cell.textLabel.text = city.name;
     
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%i monumentos", [city.relationship_monument count]];
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -81,10 +90,35 @@
 */
 
 #pragma mark - private methods
+-(void)updateArrayResults {
+    
+    AppDelegate *app = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = app.persistentContainer.viewContext;
+    
+    // Consultamos a bbdd por todos los paises
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSEntityDescription *descripcion = [NSEntityDescription entityForName:@"City" inManagedObjectContext:context];
+    [request setEntity:descripcion];
+    
+    NSPredicate *filtro = [NSPredicate predicateWithFormat:@"pais == %@", self.country];
+    [request setPredicate:filtro];
+    
+    NSSortDescriptor *ordenNombre = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+    [request setSortDescriptors:[[NSArray alloc] initWithObjects:ordenNombre, nil]];
+    
+    NSError *error = nil;
+    citiesArray = [[context executeFetchRequest:request error:&error] mutableCopy];
+    [self.tableView reloadData];
+    
+}
+
+
 -(void) showPopoverAddCity:(id)sender {
     UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    NewCityFormViewController *newCityFormViewController = [storyBoard instantiateViewControllerWithIdentifier:@"IdFormViewController"];
+    PopOverNewCityViewController *newCityFormViewController = [storyBoard instantiateViewControllerWithIdentifier:@"IdFormViewController"];
     newCityFormViewController.modalPresentationStyle = UIModalPresentationPopover;
+    newCityFormViewController.country = self.country;
+    
     
     //Config PopOverPresentationController
     UIPopoverPresentationController *popoverController = [newCityFormViewController popoverPresentationController];
@@ -97,7 +131,7 @@
 
 #pragma mark - PopoverPresentationController
 -(void)popoverPresentationControllerDidDismissPopover:(UIPopoverPresentationController *)popoverPresentationController {
-    NewCityFormViewController *form = (NewCityFormViewController*)popoverPresentationController.presentedViewController;
+    PopOverNewCityViewController *form = (PopOverNewCityViewController*)popoverPresentationController.presentedViewController;
     NSLog(@"%@", form.self.textFieldName.text);
 }
 
