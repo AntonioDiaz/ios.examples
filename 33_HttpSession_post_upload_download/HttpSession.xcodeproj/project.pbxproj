@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		094C1D481FC81832003685DD /* ProductsListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 094C1D471FC81832003685DD /* ProductsListTableViewController.m */; };
 		098604521FC6BBAB00F96810 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 098604511FC6BBAB00F96810 /* AppDelegate.m */; };
 		098604551FC6BBAB00F96810 /* RegisterUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 098604541FC6BBAB00F96810 /* RegisterUserViewController.m */; };
 		098604581FC6BBAB00F96810 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 098604561FC6BBAB00F96810 /* Main.storyboard */; };
@@ -17,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		094C1D461FC81832003685DD /* ProductsListTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductsListTableViewController.h; sourceTree = "<group>"; };
+		094C1D471FC81832003685DD /* ProductsListTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductsListTableViewController.m; sourceTree = "<group>"; };
 		0986044D1FC6BBAA00F96810 /* HttpSession.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HttpSession.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		098604501FC6BBAB00F96810 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		098604511FC6BBAB00F96810 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -72,6 +75,8 @@
 				098604541FC6BBAB00F96810 /* RegisterUserViewController.m */,
 				098604691FC6C94C00F96810 /* AddProductyViewController.h */,
 				0986046A1FC6C94C00F96810 /* AddProductyViewController.m */,
+				094C1D461FC81832003685DD /* ProductsListTableViewController.h */,
+				094C1D471FC81832003685DD /* ProductsListTableViewController.m */,
 			);
 			path = HttpSession;
 			sourceTree = "<group>";
@@ -151,6 +156,7 @@
 				098604631FC6BBAB00F96810 /* main.m in Sources */,
 				0986046B1FC6C94C00F96810 /* AddProductyViewController.m in Sources */,
 				0986045B1FC6BBAB00F96810 /* HttpSession.xcdatamodeld in Sources */,
+				094C1D481FC81832003685DD /* ProductsListTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,6 +1,6 @@
 #import <UIKit/UIKit.h>
 
-@interface AddProductyViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, NSURLSessionDelegate>
+@interface AddProductyViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, NSURLSessionDelegate, NSURLSessionDownloadDelegate>
 {
     NSArray *categoriesArray;
     UIImage *selectedImage;
@@ -17,7 +17,7 @@
 - (IBAction)actionSave:(id)sender;
 - (IBAction)actionCancel:(id)sender;
 - (IBAction)downloadImage:(id)sender;
+@property (weak, nonatomic) IBOutlet UIProgressView *progressViewDownload;
 
-@property (strong, nonatomic) IBOutlet UIView *progressBar;
 
 @end

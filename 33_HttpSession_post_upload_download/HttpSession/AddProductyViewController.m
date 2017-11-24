@@ -104,9 +104,20 @@
     
     //IMAGE
     NSData *imageData = UIImageJPEGRepresentation(self.imageViewProduct.image, 0.9);
+    
+    NSString *documentsDirectoryPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSLog(@"documentDirectory: %@", documentsDirectoryPath);
+    //get image data.
+
+    NSError *error;
+    NSString *imageName = [NSString stringWithFormat:@"%@/%@.jpg", documentsDirectoryPath, self.textViewName.text];
+
+    [imageData writeToFile:imageName options:NSDataWritingAtomic error:&error];
+    
+    
     if (imageData) {
         [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-        [body appendData:[@"Content-Disposition: form-data; name=\"image\"; filename=\"imagen.jpg\"\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+        [body appendData:[@"Content-Disposition: form-data; name=\"image\"; filename=\"imagen.jpeg\"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
         [body appendData:[@"Content-Type: image/jpeg\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
         [body appendData: imageData];
         [body appendData: [[NSString stringWithFormat:@"\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
@@ -115,7 +126,9 @@
     [body appendData:[[NSString stringWithFormat:@"--%@--\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
     
     NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
-    sessionConfiguration.HTTPAdditionalHeaders = [[NSDictionary alloc] initWithObjectsAndKeys:[NSString stringWithFormat:@"multipart/form-data; boundary=%@", boundary], @"Content-Type" ,nil];
+    NSString *configValue = [NSString stringWithFormat:@"multipart/form-data; boundary=%@", boundary];
+    NSString *configKey = @"Content-Type";
+    sessionConfiguration.HTTPAdditionalHeaders = @{configKey: configValue};
     //possible headers:
     //Accept = application/json
     //Api-key = 54654654654654
@@ -156,7 +169,7 @@
 - (IBAction)downloadImage:(id)sender {
     //set loading bar.
     //
-    self.progressBar
+    self.progressViewDownload.progress = 0;
     NSURLSessionConfiguration *sessionConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
     NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfig delegate:self delegateQueue:nil];
     NSURL *url = [NSURL URLWithString:URL_API_DOWNLOAD];
@@ -165,7 +178,24 @@
 }
 
 #pragma mark - NSURLSessionDelegate
+-(void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didFinishDownloadingToURL:(NSURL *)location {
+    NSLog(@"download finished");
+    //show alert in main thread.
+    //save file
+    
+}
 
+- (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask
+          didWriteData:(int64_t)bytesWritten
+         totalBytesWritten:(int64_t)totalBytesWritten
+        totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite {
+    double progress = (double)totalBytesWritten / (double)totalBytesExpectedToWrite;
+    NSLog(@"PROGRESS -->%f" , progress);
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.progressViewDownload.progress = progress;
+    });
+
+}
 
 #pragma mark - private methods
 -(void) takePicture:(UIImagePickerControllerSourceType) sourceType {
