@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -222,7 +223,7 @@
                         <outlet property="buttonCamera" destination="phE-Tn-91o" id="LDq-pp-MG7"/>
                         <outlet property="imageViewProduct" destination="7B1-1B-bze" id="dbP-BC-opF"/>
                         <outlet property="pickerViewCategory" destination="fSS-FI-sqo" id="KFe-7y-CVp"/>
-                        <outlet property="progressBar" destination="oIY-sk-rWl" id="Hsn-sC-5ek"/>
+                        <outlet property="progressBar" destination="oIY-sk-rWl" id="RrX-nd-wNS"/>
                         <outlet property="textViewDescription" destination="neZ-Fh-5Dm" id="oHZ-wE-cwN"/>
                         <outlet property="textViewName" destination="fsx-zI-G9d" id="48Y-4O-IW1"/>
                     </connections>

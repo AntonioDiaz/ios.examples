@@ -155,7 +155,8 @@
 
 - (IBAction)downloadImage:(id)sender {
     //set loading bar.
-    //self.progressBar proress
+    //
+    self.progressBar
     NSURLSessionConfiguration *sessionConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
     NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfig delegate:self delegateQueue:nil];
     NSURL *url = [NSURL URLWithString:URL_API_DOWNLOAD];
