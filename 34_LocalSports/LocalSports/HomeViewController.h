@@ -2,11 +2,9 @@
 #import "TownTableView.h"
 
 @interface HomeViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
-    NSArray *arrayTowns;
-    
+    NSArray *arrayTowns;    
 }
-@property (weak, nonatomic) IBOutlet TownTableView *townsTableView;
-
+@property (weak, nonatomic) IBOutlet UITableView *townsTableView;
 
 @end
 

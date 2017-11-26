@@ -1,25 +1,11 @@
-//
-//  ViewController.m
-//  FlowersTable
-//
-//  Created by cice on 31/10/17.
-//  Copyright © 2017 cice. All rights reserved.
-//
-
 #import "ViewController.h"
 #define FLOWERS_RED @"red_flowers"
 #define FLOWERS_BLUE @"blue_flowers"
-
-@interface ViewController ()
-
-
-@end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
     NSArray *redFlowers = [[NSArray alloc] initWithObjects:@"Rosa", @"Amapola", @"Gerbera", @"Peony", nil];
     NSArray *blueFlowers = [[NSArray alloc] initWithObjects:@"Jacinto", @"Acebo de mar", @"Iris", @"Flox", nil];
     
@@ -29,7 +15,6 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark DataSource methods.
@@ -61,9 +46,9 @@
 
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell_flower"];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell_flower"];
     }
     NSString *name = [self flowerName:indexPath.section withIndex:indexPath.row];
     cell.textLabel.text = name;

@@ -5,6 +5,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.title = @"Available Towns";
     NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
     NSURLSession *urlSession = [NSURLSession sessionWithConfiguration:config];
     NSURL *url = [NSURL URLWithString:URL_TOWNS];
@@ -25,11 +26,8 @@
             }
         }
     }];
-    // 4. throw task
     [task resume];
-    
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -39,5 +37,22 @@
 -(NSInteger) numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [arrayTowns count];
+}
+
+-(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell_town"];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell_town"];
+    }
+    NSString *name = [[arrayTowns objectAtIndex:indexPath.row] objectForKey:@"name"];
+    cell.textLabel.text = name;
+    return cell;
+}
+
+#pragma mark - UITableViewDelegate
+
 
 @end
