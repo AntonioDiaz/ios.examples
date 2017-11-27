@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ETA-qf-dfg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ETA-qf-dfg">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -69,24 +68,50 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Zud-4d-mbF">
-                                <rect key="frame" x="0.0" y="299" width="375" height="133.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Z0z-rb-EK9">
+                                <rect key="frame" x="0.0" y="32" width="375" height="667"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="football.png" translatesAutoresizingMaskIntoConstraints="NO" id="jWh-j8-x0o">
-                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="133.5"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="basketball.png" translatesAutoresizingMaskIntoConstraints="NO" id="xY0-1R-ero">
-                                        <rect key="frame" x="187.5" y="0.0" width="187.5" height="133.5"/>
-                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="7Qv-Wx-txL">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="222.5"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="football.png" translatesAutoresizingMaskIntoConstraints="NO" id="0ND-W4-9VO">
+                                                <rect key="frame" x="0.0" y="0.0" width="187.5" height="222.5"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="basketball.png" translatesAutoresizingMaskIntoConstraints="NO" id="q3p-Gz-irZ">
+                                                <rect key="frame" x="187.5" y="0.0" width="187.5" height="222.5"/>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="9th-Sr-Mph">
+                                        <rect key="frame" x="0.0" y="222.5" width="375" height="222"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="handball.png" translatesAutoresizingMaskIntoConstraints="NO" id="bck-Jc-fqH">
+                                                <rect key="frame" x="0.0" y="0.0" width="187.5" height="222"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="volleyball.png" translatesAutoresizingMaskIntoConstraints="NO" id="AUm-Yo-iTh">
+                                                <rect key="frame" x="187.5" y="0.0" width="187.5" height="222"/>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Zud-4d-mbF">
+                                        <rect key="frame" x="0.0" y="444.5" width="375" height="222.5"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="hockey.png" translatesAutoresizingMaskIntoConstraints="NO" id="jWh-j8-x0o">
+                                                <rect key="frame" x="0.0" y="0.0" width="187.5" height="222.5"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="favorite.png" translatesAutoresizingMaskIntoConstraints="NO" id="xY0-1R-ero">
+                                                <rect key="frame" x="187.5" y="0.0" width="187.5" height="222.5"/>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="jWh-j8-x0o" firstAttribute="centerY" secondItem="k8I-L3-hrQ" secondAttribute="centerY" id="5gF-az-7WH"/>
-                            <constraint firstItem="Zud-4d-mbF" firstAttribute="width" secondItem="fI8-Bz-2NE" secondAttribute="width" id="Fch-J4-E9z"/>
-                            <constraint firstItem="Zud-4d-mbF" firstAttribute="height" secondItem="fI8-Bz-2NE" secondAttribute="height" multiplier="0.2" id="Gm6-it-6up"/>
-                            <constraint firstItem="Zud-4d-mbF" firstAttribute="centerX" secondItem="k8I-L3-hrQ" secondAttribute="centerX" id="N97-pN-mm5"/>
+                            <constraint firstItem="Z0z-rb-EK9" firstAttribute="width" secondItem="fI8-Bz-2NE" secondAttribute="width" id="4db-HU-fnY"/>
+                            <constraint firstItem="Z0z-rb-EK9" firstAttribute="height" secondItem="fI8-Bz-2NE" secondAttribute="height" id="VfH-Wu-QGk"/>
+                            <constraint firstItem="Z0z-rb-EK9" firstAttribute="centerY" secondItem="k8I-L3-hrQ" secondAttribute="centerY" id="Xd2-gw-8e1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="k8I-L3-hrQ"/>
                     </view>
@@ -114,6 +139,10 @@
     </scenes>
     <resources>
         <image name="basketball.png" width="297" height="297"/>
+        <image name="favorite.png" width="512" height="512"/>
         <image name="football.png" width="512" height="512"/>
+        <image name="handball.png" width="298" height="298"/>
+        <image name="hockey.png" width="364" height="364"/>
+        <image name="volleyball.png" width="517" height="517"/>
     </resources>
 </document>
