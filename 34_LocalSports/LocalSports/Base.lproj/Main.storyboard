@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ETA-qf-dfg">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ETA-qf-dfg">
+    <device id="ipad9_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,7 +16,7 @@
             <objects>
                 <viewController id="BYZ-38-t0r" userLabel="Towns View Controller" customClass="HomeViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Available Towns" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QZP-Fu-wu9">
@@ -27,19 +27,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Aln-Bp-pJ5">
-                                <rect key="frame" x="0.0" y="65" width="375" height="602"/>
+                                <rect key="frame" x="0.0" y="65" width="768" height="959"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell_town" id="OYp-Al-R1Z">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="768" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OYp-Al-R1Z" id="VRZ-u5-iOT">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="768" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="6Ed-xZ-v4P" kind="show" id="Xwe-E0-nJA"/>
+                                            <segue destination="6Ed-xZ-v4P" kind="show" identifier="segueSports" id="Xwe-E0-nJA"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -64,50 +64,61 @@
         <!--Sports-->
         <scene sceneID="DeP-AD-meL">
             <objects>
-                <viewController title="Sports" id="6Ed-xZ-v4P" customClass="SportsViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="idSportsViewController" title="Sports" id="6Ed-xZ-v4P" customClass="SportsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fI8-Bz-2NE" customClass="SportsView">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Z0z-rb-EK9">
-                                <rect key="frame" x="19" y="65.5" width="337.5" height="600"/>
+                                <rect key="frame" x="38.5" y="83" width="691" height="922"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="7Qv-Wx-txL">
-                                        <rect key="frame" x="0.0" y="0.0" width="337.5" height="196"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="7Qv-Wx-txL">
+                                        <rect key="frame" x="0.0" y="0.0" width="691" height="303.5"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="football.png" translatesAutoresizingMaskIntoConstraints="NO" id="0ND-W4-9VO">
-                                                <rect key="frame" x="0.0" y="0.0" width="166.5" height="196"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="basketball.png" translatesAutoresizingMaskIntoConstraints="NO" id="q3p-Gz-irZ">
-                                                <rect key="frame" x="171.5" y="0.0" width="166" height="196"/>
-                                            </imageView>
+                                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PSt-Rk-fcD">
+                                                <rect key="frame" x="0.0" y="0.0" width="335.5" height="303.5"/>
+                                                <state key="normal" image="football.png"/>
+                                                <connections>
+                                                    <action selector="actionOpenFootball:" destination="6Ed-xZ-v4P" eventType="touchUpInside" id="Ixy-xt-uOb"/>
+                                                    <segue destination="0px-E8-StW" kind="show" id="hSE-Yo-M35"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b6x-wO-44y">
+                                                <rect key="frame" x="355.5" y="0.0" width="335.5" height="303.5"/>
+                                                <state key="normal" image="basketball.png"/>
+                                                <connections>
+                                                    <action selector="actionOpenBasket:" destination="6Ed-xZ-v4P" eventType="touchUpInside" id="Ejr-5f-6QB"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="9th-Sr-Mph">
-                                        <rect key="frame" x="0.0" y="202" width="337.5" height="196"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="9th-Sr-Mph">
+                                        <rect key="frame" x="0.0" y="309.5" width="691" height="303"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="handball.png" translatesAutoresizingMaskIntoConstraints="NO" id="bck-Jc-fqH">
-                                                <rect key="frame" x="0.0" y="0.0" width="166" height="196"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="volleyball.png" translatesAutoresizingMaskIntoConstraints="NO" id="AUm-Yo-iTh">
-                                                <rect key="frame" x="172" y="0.0" width="165.5" height="196"/>
-                                            </imageView>
+                                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v0J-zs-1DU">
+                                                <rect key="frame" x="0.0" y="0.0" width="335.5" height="303"/>
+                                                <state key="normal" image="volleyball.png"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jak-Ju-Isb">
+                                                <rect key="frame" x="355.5" y="0.0" width="335.5" height="303"/>
+                                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                                <state key="normal" title="Button" image="handball.png"/>
+                                            </button>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Zud-4d-mbF">
-                                        <rect key="frame" x="0.0" y="404" width="337.5" height="196"/>
+                                        <rect key="frame" x="0.0" y="618.5" width="691" height="303.5"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hockey.png" translatesAutoresizingMaskIntoConstraints="NO" id="jWh-j8-x0o">
-                                                <rect key="frame" x="0.0" y="0.0" width="108.5" height="196"/>
-                                            </imageView>
-                                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HtM-LR-eD3">
-                                                <rect key="frame" x="114.5" y="0.0" width="108.5" height="196"/>
-                                                <size key="titleShadowOffset" width="0.0" height="50"/>
-                                                <state key="normal" backgroundImage="favorite.png"/>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n4f-bP-bC3">
+                                                <rect key="frame" x="0.0" y="0.0" width="342.5" height="303.5"/>
+                                                <state key="normal" image="hockey.png"/>
                                             </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="favorite.png" translatesAutoresizingMaskIntoConstraints="NO" id="xY0-1R-ero">
-                                                <rect key="frame" x="229" y="0.0" width="108.5" height="196"/>
-                                            </imageView>
+                                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HtM-LR-eD3">
+                                                <rect key="frame" x="348.5" y="0.0" width="342.5" height="303.5"/>
+                                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                                <size key="titleShadowOffset" width="0.0" height="50"/>
+                                                <state key="normal" image="favorite.png"/>
+                                            </button>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -123,25 +134,42 @@
                         <viewLayoutGuide key="safeArea" id="k8I-L3-hrQ"/>
                     </view>
                     <connections>
+                        <outlet property="actionOpenHandball" destination="jak-Ju-Isb" id="jgQ-Fh-cMt"/>
+                        <outlet property="actionOpenHockey" destination="n4f-bP-bC3" id="CuK-5k-PUq"/>
+                        <outlet property="actionOpenVolleyball" destination="v0J-zs-1DU" id="Z90-io-FfJ"/>
+                        <outlet property="buttonBasketball" destination="b6x-wO-44y" id="J5b-8a-clb"/>
                         <outlet property="buttonFavorites" destination="HtM-LR-eD3" id="tFW-Ek-ucn"/>
-                        <outlet property="imageViewBasket" destination="q3p-Gz-irZ" id="V2l-Vk-486"/>
-                        <outlet property="imageViewFavorites" destination="xY0-1R-ero" id="hcX-b0-bmy"/>
-                        <outlet property="imageViewFootball" destination="0ND-W4-9VO" id="rzE-SD-Q9G"/>
-                        <outlet property="imageViewHandball" destination="bck-Jc-fqH" id="O73-fG-0gl"/>
-                        <outlet property="imageViewHockey" destination="jWh-j8-x0o" id="gRG-FE-hHs"/>
-                        <outlet property="imageViewVolleyball" destination="AUm-Yo-iTh" id="fpF-KR-1UM"/>
+                        <outlet property="buttonFootball" destination="PSt-Rk-fcD" id="ofs-VZ-AEc"/>
+                        <outlet property="buttonHandball" destination="jak-Ju-Isb" id="hPd-KM-E2Y"/>
+                        <outlet property="buttonHockey" destination="n4f-bP-bC3" id="59l-l4-NfI"/>
+                        <outlet property="buttonVolleyball" destination="v0J-zs-1DU" id="4Ih-Z3-WBU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kav-yM-8hX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="632.79999999999995" y="9.4452773613193415"/>
         </scene>
+        <!--Categories View Controller-->
+        <scene sceneID="TTP-X5-AK6">
+            <objects>
+                <viewController id="0px-E8-StW" customClass="CategoriesViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YAN-5n-j5K">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="QRS-nj-tze"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Cr-fp-Tis" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1470" y="9"/>
+        </scene>
         <!--Root-->
         <scene sceneID="eXW-tg-heW">
             <objects>
                 <navigationController id="ETA-qf-dfg" userLabel="Root" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3zO-Al-Ir1">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="768" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>

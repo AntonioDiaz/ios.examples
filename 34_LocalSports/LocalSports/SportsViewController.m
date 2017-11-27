@@ -1,20 +1,27 @@
 #import "SportsViewController.h"
 #import "CategoriesViewController.h"
-
-@interface SportsViewController ()
-
-@end
+#import "Constants.h"
 
 @implementation SportsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [[self navigationController] setNavigationBarHidden:YES animated:YES];
-    
-    UITapGestureRecognizer *singleTapFootball = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapDetectedFootball)];
-    singleTapFootball.numberOfTapsRequired = 1;
-    [self.imageViewFootball setUserInteractionEnabled:YES];
-    [self.imageViewFootball addGestureRecognizer:singleTapFootball];
+    self.navigationItem.hidesBackButton = YES;
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSString *townSelected = [userDefaults objectForKey:PREF_TOWN_SELECTED];
+    self.navigationItem.title = [NSString stringWithFormat:@"%@ - %@", APP_NAME, townSelected];
+    [self.buttonFootball setContentMode:UIViewContentModeCenter];
+    [self.buttonFootball.imageView setContentMode:UIViewContentModeScaleAspectFit];
+    [self.buttonBasketball setContentMode:UIViewContentModeCenter];
+    [self.buttonBasketball.imageView setContentMode:UIViewContentModeScaleAspectFit];
+    [self.buttonHandball setContentMode:UIViewContentModeCenter];
+    [self.buttonHandball.imageView setContentMode:UIViewContentModeScaleAspectFit];
+    [self.buttonVolleyball setContentMode:UIViewContentModeCenter];
+    [self.buttonVolleyball.imageView setContentMode:UIViewContentModeScaleAspectFit];
+    [self.buttonHockey setContentMode:UIViewContentModeCenter];
+    [self.buttonHockey.imageView setContentMode:UIViewContentModeScaleAspectFit];
+    [self.buttonFavorites setContentMode:UIViewContentModeCenter];
+    [self.buttonFavorites.imageView setContentMode:UIViewContentModeScaleAspectFit];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,51 +31,20 @@
 #pragma mark - private methods
 
 
-/*
-#pragma mark - Navigation
 
+#pragma mark - Navigation
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
 
--(void)tapDetectedFootball{
-    NSString * storyboardName = @"Main";
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
-    CategoriesViewController *categoriesViewController = [storyboard instantiateViewControllerWithIdentifier:@"idCategoriesViewController"];
-    categoriesViewController.sportSelected = @"FOOTBALL";
-    [self presentViewController:categoriesViewController animated:YES completion:nil];
-    
-    [self.buttonFavorites.imageView setContentMode:UIViewContentModeScaleAspectFit];
-    
-    //self.buttonFavorites.imageView.contentHorizontalAlignment =  UIControlContentHorizontalAlignmentFill;
-    //self.buttonFavorites.imageView.contentVerticalAlignment =  UIControlContentVerticalAlignmentFill;
-    self.buttonFavorites.imageView.contentMode =  UIViewContentModeScaleAspectFill;
-    
-    
-    
 }
 
--(void)tapDetectedBasketball{
-    NSLog(@"single Tap on imageview");
+- (IBAction)actionOpenFootball:(id)sender {
 }
 
--(void)tapDetectedHandball{
-    NSLog(@"single Tap on imageview");
+- (IBAction)actionOpenBasket:(id)sender {
 }
 
--(void)tapDetectedVolleyball{
-    NSLog(@"single Tap on imageview");
+- (IBAction)openSports:(id)sender {
 }
-
--(void)tapDetectedHockey{
-    NSLog(@"single Tap on imageview");
-}
-
--(void)tapDetectedFavorites{
-    NSLog(@"single Tap on imageview");
-}
-
 @end

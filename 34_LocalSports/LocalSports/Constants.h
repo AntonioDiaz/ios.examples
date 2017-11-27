@@ -11,6 +11,8 @@
 
 
 #define URL_TOWNS @"https://localsports-web.appspot.com/server/towns"
+#define APP_NAME @"LocalSports"
+#define PREF_TOWN_SELECTED @"PREF_TOWN_SELECTED"
 
 #endif /* Constants_h */
 

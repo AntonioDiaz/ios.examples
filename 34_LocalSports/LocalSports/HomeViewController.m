@@ -1,32 +1,38 @@
 #import "HomeViewController.h"
 #import "Constants.h"
+#import "SportsViewController.h"
 
 @implementation HomeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"Available Towns";
-    NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
-    NSURLSession *urlSession = [NSURLSession sessionWithConfiguration:config];
-    NSURL *url = [NSURL URLWithString:URL_TOWNS];
-    NSURLSessionTask *task = [urlSession dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        if (error) {
-            NSLog(@"Error on task: %@", error.description);
-        } else {
-            NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
-            if (httpResponse.statusCode == 200) {
-                NSError *jsonError = nil;
-                arrayTowns = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&jsonError];
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    NSLog(@"array: %@", arrayTowns);
-                    [self.townsTableView reloadData];
-                });
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSString *townSelectedStr = [userDefaults objectForKey:PREF_TOWN_SELECTED];
+    if (townSelectedStr.length > 0) {
+        [self performSegueWithIdentifier:@"segueSports" sender:self];
+    } else {
+        NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+        NSURLSession *urlSession = [NSURLSession sessionWithConfiguration:config];
+        NSURL *url = [NSURL URLWithString:URL_TOWNS];
+        NSURLSessionTask *task = [urlSession dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+            if (error) {
+                NSLog(@"Error on task: %@", error.description);
             } else {
-                NSLog(@"status: %ld", (long)httpResponse.statusCode);
+                NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+                if (httpResponse.statusCode == 200) {
+                    NSError *jsonError = nil;
+                    arrayTowns = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&jsonError];
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [self.townsTableView reloadData];
+                    });
+                } else {
+                    NSLog(@"status: %ld", (long)httpResponse.statusCode);
+                }
             }
-        }
-    }];
-    [task resume];
+        }];
+        [task resume];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -54,5 +60,14 @@
 
 #pragma mark - UITableViewDelegate
 
-
+#pragma mark - segue methods
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    if ([userDefaults objectForKey:PREF_TOWN_SELECTED]==nil) {
+        NSIndexPath *indexPath = [self.townsTableView indexPathForSelectedRow];
+        NSDictionary *dictionary = [arrayTowns objectAtIndex:indexPath.row];
+        NSString *townSelectedString = [dictionary objectForKey:@"name"];
+        [userDefaults setValue:townSelectedString forKey:PREF_TOWN_SELECTED];
+    }
+}
 @end

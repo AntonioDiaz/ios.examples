@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     //self.navigationItem.backBarButtonItem
+
     NSLog(@"sport selected %@", self.sportSelected);
 }
 

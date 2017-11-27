@@ -1,19 +1,7 @@
-//
-//  ViewController.m
-//  FlashLightPersistence
-//
-//  Created by cice on 9/11/17.
-//  Copyright © 2017 cice. All rights reserved.
-//
-
 #import "FlashLightViewController.h"
 
 #define KEY_ONOFF @"ON_OFF"
 #define KEY_ALPHA @"ALPHA"
-
-@interface FlashLightViewController ()
-
-@end
 
 @implementation FlashLightViewController
 
@@ -30,13 +18,11 @@
     [super didReceiveMemoryWarning];
 }
 
-
 - (IBAction)savePreferences:(id)sender {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     [userDefaults setBool:[self.switchLight isOn] forKey: KEY_ONOFF];
     [userDefaults setFloat:self.sliderLight.value forKey: KEY_ALPHA];
     [userDefaults synchronize];
-    
 }
 
 - (IBAction)actionChangeLight:(id)sender {
