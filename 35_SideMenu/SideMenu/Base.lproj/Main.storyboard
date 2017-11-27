@@ -20,7 +20,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <segue destination="o8C-pp-MLw" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="gzN-g5-ttK"/>
+                        <segue destination="o8C-pp-MLw" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSeguePushController" id="gzN-g5-ttK"/>
                         <segue destination="EzG-xb-knz" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegueSetController" id="E64-UA-ZHd"/>
                     </connections>
                 </viewController>
@@ -44,10 +44,10 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Menu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9aT-NU-QhN">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Menu" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9aT-NU-QhN">
                                             <rect key="frame" x="33" y="14" width="240" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -99,7 +99,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="CMx-aW-Xaa" kind="custom" identifier="sw_rear" trigger="accessoryAction" customClass="SWRevealViewControllerSeguePushController" id="ONp-83-bhU"/>
+                                    <segue destination="CMx-aW-Xaa" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="m0m-wF-lVr"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell_image" id="4H1-3e-Jpl">
@@ -291,6 +291,6 @@
         <image name="news.png" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="20s-Hu-LsV"/>
+        <segue reference="gzN-g5-ttK"/>
     </inferredMetricsTieBreakers>
 </document>

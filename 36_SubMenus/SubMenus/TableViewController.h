@@ -5,5 +5,4 @@
     NSMutableIndexSet *sectionsExpanded;
 }
 
-
 @end

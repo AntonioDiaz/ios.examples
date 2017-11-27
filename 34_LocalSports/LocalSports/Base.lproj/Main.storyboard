@@ -6,14 +6,15 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home View Controller-->
+        <!--Towns View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" userLabel="Home View Controller" customClass="HomeViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" userLabel="Towns View Controller" customClass="HomeViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -60,47 +61,52 @@
             </objects>
             <point key="canvasLocation" x="-87.200000000000003" y="10.344827586206897"/>
         </scene>
-        <!--Sports View Controller-->
+        <!--Sports-->
         <scene sceneID="DeP-AD-meL">
             <objects>
-                <viewController id="6Ed-xZ-v4P" customClass="SportsViewController" sceneMemberID="viewController">
+                <viewController title="Sports" id="6Ed-xZ-v4P" customClass="SportsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fI8-Bz-2NE" customClass="SportsView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Z0z-rb-EK9">
-                                <rect key="frame" x="0.0" y="32" width="375" height="667"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Z0z-rb-EK9">
+                                <rect key="frame" x="19" y="65.5" width="337.5" height="600"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="7Qv-Wx-txL">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="222.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="7Qv-Wx-txL">
+                                        <rect key="frame" x="0.0" y="0.0" width="337.5" height="196"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="football.png" translatesAutoresizingMaskIntoConstraints="NO" id="0ND-W4-9VO">
-                                                <rect key="frame" x="0.0" y="0.0" width="187.5" height="222.5"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="football.png" translatesAutoresizingMaskIntoConstraints="NO" id="0ND-W4-9VO">
+                                                <rect key="frame" x="0.0" y="0.0" width="166.5" height="196"/>
                                             </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="basketball.png" translatesAutoresizingMaskIntoConstraints="NO" id="q3p-Gz-irZ">
-                                                <rect key="frame" x="187.5" y="0.0" width="187.5" height="222.5"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="basketball.png" translatesAutoresizingMaskIntoConstraints="NO" id="q3p-Gz-irZ">
+                                                <rect key="frame" x="171.5" y="0.0" width="166" height="196"/>
                                             </imageView>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="9th-Sr-Mph">
-                                        <rect key="frame" x="0.0" y="222.5" width="375" height="222"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="9th-Sr-Mph">
+                                        <rect key="frame" x="0.0" y="202" width="337.5" height="196"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="handball.png" translatesAutoresizingMaskIntoConstraints="NO" id="bck-Jc-fqH">
-                                                <rect key="frame" x="0.0" y="0.0" width="187.5" height="222"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="handball.png" translatesAutoresizingMaskIntoConstraints="NO" id="bck-Jc-fqH">
+                                                <rect key="frame" x="0.0" y="0.0" width="166" height="196"/>
                                             </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="volleyball.png" translatesAutoresizingMaskIntoConstraints="NO" id="AUm-Yo-iTh">
-                                                <rect key="frame" x="187.5" y="0.0" width="187.5" height="222"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="volleyball.png" translatesAutoresizingMaskIntoConstraints="NO" id="AUm-Yo-iTh">
+                                                <rect key="frame" x="172" y="0.0" width="165.5" height="196"/>
                                             </imageView>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Zud-4d-mbF">
-                                        <rect key="frame" x="0.0" y="444.5" width="375" height="222.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Zud-4d-mbF">
+                                        <rect key="frame" x="0.0" y="404" width="337.5" height="196"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="hockey.png" translatesAutoresizingMaskIntoConstraints="NO" id="jWh-j8-x0o">
-                                                <rect key="frame" x="0.0" y="0.0" width="187.5" height="222.5"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hockey.png" translatesAutoresizingMaskIntoConstraints="NO" id="jWh-j8-x0o">
+                                                <rect key="frame" x="0.0" y="0.0" width="108.5" height="196"/>
                                             </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="favorite.png" translatesAutoresizingMaskIntoConstraints="NO" id="xY0-1R-ero">
-                                                <rect key="frame" x="187.5" y="0.0" width="187.5" height="222.5"/>
+                                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HtM-LR-eD3">
+                                                <rect key="frame" x="114.5" y="0.0" width="108.5" height="196"/>
+                                                <size key="titleShadowOffset" width="0.0" height="50"/>
+                                                <state key="normal" backgroundImage="favorite.png"/>
+                                            </button>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="favorite.png" translatesAutoresizingMaskIntoConstraints="NO" id="xY0-1R-ero">
+                                                <rect key="frame" x="229" y="0.0" width="108.5" height="196"/>
                                             </imageView>
                                         </subviews>
                                     </stackView>
@@ -109,21 +115,31 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Z0z-rb-EK9" firstAttribute="width" secondItem="fI8-Bz-2NE" secondAttribute="width" id="4db-HU-fnY"/>
-                            <constraint firstItem="Z0z-rb-EK9" firstAttribute="height" secondItem="fI8-Bz-2NE" secondAttribute="height" id="VfH-Wu-QGk"/>
+                            <constraint firstItem="Z0z-rb-EK9" firstAttribute="width" secondItem="fI8-Bz-2NE" secondAttribute="width" multiplier="0.9" id="4db-HU-fnY"/>
+                            <constraint firstItem="Z0z-rb-EK9" firstAttribute="height" secondItem="fI8-Bz-2NE" secondAttribute="height" multiplier="0.9" id="VfH-Wu-QGk"/>
                             <constraint firstItem="Z0z-rb-EK9" firstAttribute="centerY" secondItem="k8I-L3-hrQ" secondAttribute="centerY" id="Xd2-gw-8e1"/>
+                            <constraint firstItem="Z0z-rb-EK9" firstAttribute="centerX" secondItem="k8I-L3-hrQ" secondAttribute="centerX" id="dSr-oa-lGi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="k8I-L3-hrQ"/>
                     </view>
+                    <connections>
+                        <outlet property="buttonFavorites" destination="HtM-LR-eD3" id="tFW-Ek-ucn"/>
+                        <outlet property="imageViewBasket" destination="q3p-Gz-irZ" id="V2l-Vk-486"/>
+                        <outlet property="imageViewFavorites" destination="xY0-1R-ero" id="hcX-b0-bmy"/>
+                        <outlet property="imageViewFootball" destination="0ND-W4-9VO" id="rzE-SD-Q9G"/>
+                        <outlet property="imageViewHandball" destination="bck-Jc-fqH" id="O73-fG-0gl"/>
+                        <outlet property="imageViewHockey" destination="jWh-j8-x0o" id="gRG-FE-hHs"/>
+                        <outlet property="imageViewVolleyball" destination="AUm-Yo-iTh" id="fpF-KR-1UM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kav-yM-8hX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="632.79999999999995" y="9.4452773613193415"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Root-->
         <scene sceneID="eXW-tg-heW">
             <objects>
-                <navigationController id="ETA-qf-dfg" sceneMemberID="viewController">
+                <navigationController id="ETA-qf-dfg" userLabel="Root" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3zO-Al-Ir1">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
