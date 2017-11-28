@@ -6,6 +6,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    NSString *documentsDirectoryPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSLog(@"device directory: %@", documentsDirectoryPath);
+    
     self.navigationItem.title = @"Available Towns";
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSString *townSelectedStr = [userDefaults objectForKey:PREF_TOWN_NAME];

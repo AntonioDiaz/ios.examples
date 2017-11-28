@@ -1,10 +1,10 @@
 #import <UIKit/UIKit.h>
 #import "Utils.h"
 
-
-@interface CompetitionsViewController : UIViewController
+@interface CompetitionsTableViewController : UITableViewController
 {
     EnumSports sportSelected;
+    NSArray *arrayCompetitions;
 }
 @property EnumSports sportSelected;
 @end

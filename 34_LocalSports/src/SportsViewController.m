@@ -1,10 +1,14 @@
+#import "AppDelegate.h"
 #import "SportsViewController.h"
-#import "CompetitionsViewController.h"
+#import "CompetitionsTableViewController.h"
+#import "CompetitionEntity+CoreDataProperties.h"
 
 @implementation SportsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    AppDelegate *app = (AppDelegate*) [[UIApplication sharedApplication] delegate];
+    managedObjectContext = app.persistentContainer.viewContext;
     self.navigationItem.hidesBackButton = YES;
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSString *townSelected = [userDefaults objectForKey:PREF_TOWN_NAME];
@@ -40,6 +44,7 @@
 }
 
 -(void) loadCompetitions:(NSString *) idTown {
+    //todo: should clean database.
     NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
     NSURLSession *urlSession = [NSURLSession sessionWithConfiguration:config];
     NSString *strUrlCompetitions = [NSString stringWithFormat:URL_COMPETITIONS, idTown];
@@ -52,8 +57,14 @@
             if (httpResponse.statusCode == 200) {
                 NSError *jsonError = nil;
                 NSArray *jsonResults = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&jsonError];
+                NSLog(@"competition size %lu", (unsigned long)jsonResults.count);
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    NSLog(@"results -->%d", jsonResults.count);
+                    //first remove all competitions.
+                    [Utils deleteAllEntities:COMPETITION_ENTITY withContext:managedObjectContext];
+                   for (NSDictionary *competition in jsonResults) {
+                       //NSLog(@"competition --> %@",competition);
+                       [self insertCompetition:competition];
+                    }
                     [self enableSportButtons];
                 });
             } else {
@@ -64,13 +75,32 @@
     [task resume];
 }
 
+-(void) insertCompetition:(NSDictionary *) dictionaryCompetition {
+    CompetitionEntity *competitionEntity =  [NSEntityDescription
+                                             insertNewObjectForEntityForName:COMPETITION_ENTITY
+                                             inManagedObjectContext:managedObjectContext];
+    NSDictionary *dictionaryCategory = [dictionaryCompetition objectForKey:@"categoryEntity"];
+    NSDictionary *dictionarySport = [dictionaryCompetition objectForKey:@"sportEntity"];
+    competitionEntity.category = [dictionaryCategory objectForKey:@"name"];
+    competitionEntity.categoryOrder = [[dictionaryCategory objectForKey:@"order"] integerValue];
+    competitionEntity.idCompetitionServer = [[dictionaryCompetition objectForKey:@"id"] doubleValue];
+    //competitionEntity.lastUpdateApp = [dictionaryCompetition objectForKey:@"lastPublished"];
+    //competitionEntity.lastUpdateServer = [dictionaryCompetition objectForKey:@"lastPublished"];
+    competitionEntity.name = [dictionaryCompetition objectForKey:@"name"];
+    competitionEntity.sport = [dictionarySport objectForKey:@"tag"];
+    NSError *error = nil;
+    if(![managedObjectContext save:&error]){
+        NSLog(@"Error on insert -->%@", error.localizedDescription);
+    }
+    NSLog(@"Insert done %@ - %@", competitionEntity.name, competitionEntity.sport);
+}
 
 #pragma mark - Navigation
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
-    CompetitionsViewController *competitionsViewController = (CompetitionsViewController *) segue.destinationViewController;
-    competitionsViewController.sportSelected = sportSelected;
+    CompetitionsTableViewController *viewController = (CompetitionsTableViewController *) segue.destinationViewController;
+    viewController.sportSelected = sportSelected;
 }
 
 #pragma mark - Actions
@@ -78,5 +108,14 @@
     UIButton *clickedButton = (UIButton *) sender;
     sportSelected = clickedButton.tag;
     [self performSegueWithIdentifier:@"idShowCompetitions" sender:nil];
+}
+
+- (IBAction)actionFavorites:(id)sender {
+    NSString *alertTitle = @"favorites";
+    NSString *alertDesc = @"comming soon";
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:alertTitle
+                message:alertDesc delegate:self cancelButtonTitle:@"Accept"
+                otherButtonTitles: nil];
+    [alertView show];
 }
 @end

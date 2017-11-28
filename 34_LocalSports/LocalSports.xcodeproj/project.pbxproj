@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0926246A1FCD89A2008F2280 /* CompetitionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 092624691FCD89A2008F2280 /* CompetitionsViewController.m */; };
 		0926246D1FCD8FA1008F2280 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0926246C1FCD8FA1008F2280 /* Utils.m */; };
 		094C1D571FC83A3F003685DD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 094C1D561FC83A3F003685DD /* AppDelegate.m */; };
 		094C1D5A1FC83A3F003685DD /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 094C1D591FC83A3F003685DD /* HomeViewController.m */; };
@@ -16,11 +15,22 @@
 		094C1D681FC83A3F003685DD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 094C1D671FC83A3F003685DD /* main.m */; };
 		D11829451FC8992600805590 /* SportsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D11829441FC8992600805590 /* SportsViewController.m */; };
 		D140974E1FC9E93500EAE6DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 094C1D611FC83A3F003685DD /* Assets.xcassets */; };
+		D1C2CB771FCDCEAB00922D86 /* ClassificationEntity+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C2CB651FCDCEAB00922D86 /* ClassificationEntity+CoreDataClass.m */; };
+		D1C2CB781FCDCEAB00922D86 /* ClassificationEntity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C2CB661FCDCEAB00922D86 /* ClassificationEntity+CoreDataProperties.m */; };
+		D1C2CB791FCDCEAB00922D86 /* CompetitionEntity+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C2CB691FCDCEAB00922D86 /* CompetitionEntity+CoreDataClass.m */; };
+		D1C2CB7A1FCDCEAB00922D86 /* CompetitionEntity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C2CB6A1FCDCEAB00922D86 /* CompetitionEntity+CoreDataProperties.m */; };
+		D1C2CB7B1FCDCEAB00922D86 /* FavoriteEntity+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C2CB6D1FCDCEAB00922D86 /* FavoriteEntity+CoreDataClass.m */; };
+		D1C2CB7C1FCDCEAB00922D86 /* FavoriteEntity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C2CB6E1FCDCEAB00922D86 /* FavoriteEntity+CoreDataProperties.m */; };
+		D1C2CB7D1FCDCEAB00922D86 /* MatchEntity+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C2CB711FCDCEAB00922D86 /* MatchEntity+CoreDataClass.m */; };
+		D1C2CB7E1FCDCEAB00922D86 /* MatchEntity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C2CB721FCDCEAB00922D86 /* MatchEntity+CoreDataProperties.m */; };
+		D1C2CB7F1FCDCEAB00922D86 /* SportCourtEntity+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C2CB751FCDCEAB00922D86 /* SportCourtEntity+CoreDataClass.m */; };
+		D1C2CB801FCDCEAB00922D86 /* SportCourtEntity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C2CB761FCDCEAB00922D86 /* SportCourtEntity+CoreDataProperties.m */; };
+		D1C2CB831FCDDEC600922D86 /* CompetitionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C2CB821FCDDEC600922D86 /* CompetitionsTableViewController.m */; };
+		D1C2CB861FCDFDC300922D86 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C2CB851FCDFDC200922D86 /* CalendarViewController.m */; };
+		D1C2CB891FCDFDDA00922D86 /* ClassificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C2CB881FCDFDDA00922D86 /* ClassificationViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		092624681FCD89A2008F2280 /* CompetitionsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CompetitionsViewController.h; sourceTree = "<group>"; };
-		092624691FCD89A2008F2280 /* CompetitionsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CompetitionsViewController.m; sourceTree = "<group>"; };
 		0926246B1FCD8FA1008F2280 /* Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		0926246C1FCD8FA1008F2280 /* Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
 		094C1D521FC83A3F003685DD /* LocalSports.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocalSports.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -35,6 +45,32 @@
 		094C1D671FC83A3F003685DD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D11829431FC8992600805590 /* SportsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SportsViewController.h; sourceTree = "<group>"; };
 		D11829441FC8992600805590 /* SportsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SportsViewController.m; sourceTree = "<group>"; };
+		D1C2CB631FCDCEAB00922D86 /* ClassificationEntity+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ClassificationEntity+CoreDataProperties.h"; sourceTree = "<group>"; };
+		D1C2CB641FCDCEAB00922D86 /* ClassificationEntity+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ClassificationEntity+CoreDataClass.h"; sourceTree = "<group>"; };
+		D1C2CB651FCDCEAB00922D86 /* ClassificationEntity+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ClassificationEntity+CoreDataClass.m"; sourceTree = "<group>"; };
+		D1C2CB661FCDCEAB00922D86 /* ClassificationEntity+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ClassificationEntity+CoreDataProperties.m"; sourceTree = "<group>"; };
+		D1C2CB671FCDCEAB00922D86 /* CompetitionEntity+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CompetitionEntity+CoreDataProperties.h"; sourceTree = "<group>"; };
+		D1C2CB681FCDCEAB00922D86 /* CompetitionEntity+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CompetitionEntity+CoreDataClass.h"; sourceTree = "<group>"; };
+		D1C2CB691FCDCEAB00922D86 /* CompetitionEntity+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CompetitionEntity+CoreDataClass.m"; sourceTree = "<group>"; };
+		D1C2CB6A1FCDCEAB00922D86 /* CompetitionEntity+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CompetitionEntity+CoreDataProperties.m"; sourceTree = "<group>"; };
+		D1C2CB6B1FCDCEAB00922D86 /* FavoriteEntity+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FavoriteEntity+CoreDataProperties.h"; sourceTree = "<group>"; };
+		D1C2CB6C1FCDCEAB00922D86 /* FavoriteEntity+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FavoriteEntity+CoreDataClass.h"; sourceTree = "<group>"; };
+		D1C2CB6D1FCDCEAB00922D86 /* FavoriteEntity+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FavoriteEntity+CoreDataClass.m"; sourceTree = "<group>"; };
+		D1C2CB6E1FCDCEAB00922D86 /* FavoriteEntity+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FavoriteEntity+CoreDataProperties.m"; sourceTree = "<group>"; };
+		D1C2CB6F1FCDCEAB00922D86 /* MatchEntity+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MatchEntity+CoreDataProperties.h"; sourceTree = "<group>"; };
+		D1C2CB701FCDCEAB00922D86 /* MatchEntity+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MatchEntity+CoreDataClass.h"; sourceTree = "<group>"; };
+		D1C2CB711FCDCEAB00922D86 /* MatchEntity+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MatchEntity+CoreDataClass.m"; sourceTree = "<group>"; };
+		D1C2CB721FCDCEAB00922D86 /* MatchEntity+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MatchEntity+CoreDataProperties.m"; sourceTree = "<group>"; };
+		D1C2CB731FCDCEAB00922D86 /* SportCourtEntity+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SportCourtEntity+CoreDataProperties.h"; sourceTree = "<group>"; };
+		D1C2CB741FCDCEAB00922D86 /* SportCourtEntity+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SportCourtEntity+CoreDataClass.h"; sourceTree = "<group>"; };
+		D1C2CB751FCDCEAB00922D86 /* SportCourtEntity+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SportCourtEntity+CoreDataClass.m"; sourceTree = "<group>"; };
+		D1C2CB761FCDCEAB00922D86 /* SportCourtEntity+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SportCourtEntity+CoreDataProperties.m"; sourceTree = "<group>"; };
+		D1C2CB811FCDDEC600922D86 /* CompetitionsTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CompetitionsTableViewController.h; sourceTree = "<group>"; };
+		D1C2CB821FCDDEC600922D86 /* CompetitionsTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CompetitionsTableViewController.m; sourceTree = "<group>"; };
+		D1C2CB841FCDFDC200922D86 /* CalendarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
+		D1C2CB851FCDFDC200922D86 /* CalendarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
+		D1C2CB871FCDFDDA00922D86 /* ClassificationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClassificationViewController.h; sourceTree = "<group>"; };
+		D1C2CB881FCDFDDA00922D86 /* ClassificationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClassificationViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,16 +87,21 @@
 		092624671FCD8645008F2280 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				D1C2CB351FCDC7D900922D86 /* database */,
 				094C1D551FC83A3F003685DD /* AppDelegate.h */,
 				094C1D561FC83A3F003685DD /* AppDelegate.m */,
 				094C1D581FC83A3F003685DD /* HomeViewController.h */,
 				094C1D591FC83A3F003685DD /* HomeViewController.m */,
 				D11829431FC8992600805590 /* SportsViewController.h */,
 				D11829441FC8992600805590 /* SportsViewController.m */,
-				092624681FCD89A2008F2280 /* CompetitionsViewController.h */,
-				092624691FCD89A2008F2280 /* CompetitionsViewController.m */,
+				D1C2CB811FCDDEC600922D86 /* CompetitionsTableViewController.h */,
+				D1C2CB821FCDDEC600922D86 /* CompetitionsTableViewController.m */,
 				0926246B1FCD8FA1008F2280 /* Utils.h */,
 				0926246C1FCD8FA1008F2280 /* Utils.m */,
+				D1C2CB841FCDFDC200922D86 /* CalendarViewController.h */,
+				D1C2CB851FCDFDC200922D86 /* CalendarViewController.m */,
+				D1C2CB871FCDFDDA00922D86 /* ClassificationViewController.h */,
+				D1C2CB881FCDFDDA00922D86 /* ClassificationViewController.m */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -100,6 +141,33 @@
 			children = (
 			);
 			path = images;
+			sourceTree = "<group>";
+		};
+		D1C2CB351FCDC7D900922D86 /* database */ = {
+			isa = PBXGroup;
+			children = (
+				D1C2CB631FCDCEAB00922D86 /* ClassificationEntity+CoreDataProperties.h */,
+				D1C2CB641FCDCEAB00922D86 /* ClassificationEntity+CoreDataClass.h */,
+				D1C2CB651FCDCEAB00922D86 /* ClassificationEntity+CoreDataClass.m */,
+				D1C2CB661FCDCEAB00922D86 /* ClassificationEntity+CoreDataProperties.m */,
+				D1C2CB671FCDCEAB00922D86 /* CompetitionEntity+CoreDataProperties.h */,
+				D1C2CB681FCDCEAB00922D86 /* CompetitionEntity+CoreDataClass.h */,
+				D1C2CB691FCDCEAB00922D86 /* CompetitionEntity+CoreDataClass.m */,
+				D1C2CB6A1FCDCEAB00922D86 /* CompetitionEntity+CoreDataProperties.m */,
+				D1C2CB6B1FCDCEAB00922D86 /* FavoriteEntity+CoreDataProperties.h */,
+				D1C2CB6C1FCDCEAB00922D86 /* FavoriteEntity+CoreDataClass.h */,
+				D1C2CB6D1FCDCEAB00922D86 /* FavoriteEntity+CoreDataClass.m */,
+				D1C2CB6E1FCDCEAB00922D86 /* FavoriteEntity+CoreDataProperties.m */,
+				D1C2CB6F1FCDCEAB00922D86 /* MatchEntity+CoreDataProperties.h */,
+				D1C2CB701FCDCEAB00922D86 /* MatchEntity+CoreDataClass.h */,
+				D1C2CB711FCDCEAB00922D86 /* MatchEntity+CoreDataClass.m */,
+				D1C2CB721FCDCEAB00922D86 /* MatchEntity+CoreDataProperties.m */,
+				D1C2CB731FCDCEAB00922D86 /* SportCourtEntity+CoreDataProperties.h */,
+				D1C2CB741FCDCEAB00922D86 /* SportCourtEntity+CoreDataClass.h */,
+				D1C2CB751FCDCEAB00922D86 /* SportCourtEntity+CoreDataClass.m */,
+				D1C2CB761FCDCEAB00922D86 /* SportCourtEntity+CoreDataProperties.m */,
+			);
+			path = database;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,12 +240,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0926246A1FCD89A2008F2280 /* CompetitionsViewController.m in Sources */,
+				D1C2CB7C1FCDCEAB00922D86 /* FavoriteEntity+CoreDataProperties.m in Sources */,
+				D1C2CB801FCDCEAB00922D86 /* SportCourtEntity+CoreDataProperties.m in Sources */,
+				D1C2CB7F1FCDCEAB00922D86 /* SportCourtEntity+CoreDataClass.m in Sources */,
 				094C1D601FC83A3F003685DD /* LocalSports.xcdatamodeld in Sources */,
+				D1C2CB791FCDCEAB00922D86 /* CompetitionEntity+CoreDataClass.m in Sources */,
+				D1C2CB7D1FCDCEAB00922D86 /* MatchEntity+CoreDataClass.m in Sources */,
+				D1C2CB781FCDCEAB00922D86 /* ClassificationEntity+CoreDataProperties.m in Sources */,
+				D1C2CB7E1FCDCEAB00922D86 /* MatchEntity+CoreDataProperties.m in Sources */,
+				D1C2CB891FCDFDDA00922D86 /* ClassificationViewController.m in Sources */,
+				D1C2CB831FCDDEC600922D86 /* CompetitionsTableViewController.m in Sources */,
 				094C1D5A1FC83A3F003685DD /* HomeViewController.m in Sources */,
+				D1C2CB861FCDFDC300922D86 /* CalendarViewController.m in Sources */,
 				094C1D681FC83A3F003685DD /* main.m in Sources */,
+				D1C2CB7B1FCDCEAB00922D86 /* FavoriteEntity+CoreDataClass.m in Sources */,
+				D1C2CB771FCDCEAB00922D86 /* ClassificationEntity+CoreDataClass.m in Sources */,
 				D11829451FC8992600805590 /* SportsViewController.m in Sources */,
 				0926246D1FCD8FA1008F2280 /* Utils.m in Sources */,
+				D1C2CB7A1FCDCEAB00922D86 /* CompetitionEntity+CoreDataProperties.m in Sources */,
 				094C1D571FC83A3F003685DD /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,11 +1,3 @@
-//
-//  Utils.m
-//  LocalSports
-//
-//  Created by cice on 28/11/17.
-//  Copyright © 2017 cice. All rights reserved.
-//
-
 #import "Utils.h"
 
 @implementation Utils
@@ -27,4 +19,15 @@
     }
 }
 
++ (void)deleteAllEntities:(NSString *)nameEntity withContext:(NSManagedObjectContext*)context {
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:nameEntity];
+    [fetchRequest setIncludesPropertyValues:NO];
+    NSError *error;
+    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+    for (NSManagedObject *object in fetchedObjects) {
+        [context deleteObject:object];
+    }
+    error = nil;
+    [context save:&error];
+}
 @end

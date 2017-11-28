@@ -1,7 +1,54 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13533" systemVersion="17B48" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
-    <entity name="Entity" representedClassName="Entity" syncable="YES" codeGenerationType="class"/>
+    <entity name="ClassificationEntity" representedClassName="ClassificationEntity" syncable="YES">
+        <attribute name="matchesDrawn" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="matchesLost" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="matchesPlayed" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="matchesWon" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="points" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="position" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="team" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="competition" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CompetitionEntity" inverseName="classification" inverseEntity="CompetitionEntity" syncable="YES"/>
+    </entity>
+    <entity name="CompetitionEntity" representedClassName="CompetitionEntity" syncable="YES">
+        <attribute name="category" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="categoryOrder" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="idCompetitionServer" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="lastUpdateApp" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastUpdateServer" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sport" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="classification" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ClassificationEntity" inverseName="competition" inverseEntity="ClassificationEntity" syncable="YES"/>
+        <relationship name="matches" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MatchEntity" inverseName="competition" inverseEntity="MatchEntity" syncable="YES"/>
+    </entity>
+    <entity name="FavoriteEntity" representedClassName="FavoriteEntity" syncable="YES">
+        <attribute name="lastUpdate" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="team" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="competition" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CompetitionEntity" syncable="YES"/>
+    </entity>
+    <entity name="MatchEntity" representedClassName="MatchEntity" syncable="YES">
+        <attribute name="lastUpdate" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="scoreLocal" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="scoreVisitor" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="state" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="teamLocal" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="teamVisitor" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="week" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="competition" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CompetitionEntity" inverseName="matches" inverseEntity="CompetitionEntity" syncable="YES"/>
+        <relationship name="court" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SportCourtEntity" inverseName="matches" inverseEntity="SportCourtEntity" syncable="YES"/>
+    </entity>
+    <entity name="SportCourtEntity" representedClassName="SportCourtEntity" syncable="YES">
+        <attribute name="centerAddress" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="centerName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="courtName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="idServer" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="matches" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MatchEntity" inverseName="court" inverseEntity="MatchEntity" syncable="YES"/>
+    </entity>
     <elements>
-        <element name="Entity" positionX="-63" positionY="-18" width="128" height="45"/>
+        <element name="CompetitionEntity" positionX="-144" positionY="-45" width="144" height="178"/>
+        <element name="MatchEntity" positionX="-119" positionY="-385" width="128" height="178"/>
+        <element name="ClassificationEntity" positionX="144" positionY="-189" width="128" height="163"/>
+        <element name="SportCourtEntity" positionX="133" positionY="-375" width="128" height="118"/>
+        <element name="FavoriteEntity" positionX="144" positionY="2" width="173" height="88"/>
     </elements>
 </model>

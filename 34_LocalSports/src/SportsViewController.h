@@ -4,6 +4,7 @@
 @interface SportsViewController : UIViewController
 {
     EnumSports sportSelected;
+    NSManagedObjectContext *managedObjectContext;
 }
 
 
@@ -21,5 +22,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *actionOpenHockey;
 
 - (IBAction)actionOpenSport:(id)sender;
+- (IBAction)actionFavorites:(id)sender;
 
 @end
