@@ -36,15 +36,15 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
+    CompetitionsViewController *categoriesViewController = (CompetitionsViewController *) segue.destinationViewController;
+    categoriesViewController.sportSelected = sportSelected;
 
 }
 
-- (IBAction)actionOpenFootball:(id)sender {
-}
-
-- (IBAction)actionOpenBasket:(id)sender {
-}
-
-- (IBAction)openSports:(id)sender {
+#pragma mark - Actions
+- (IBAction)actionOpenSport:(id)sender {
+    UIButton *clickedButton = (UIButton *) sender;
+    sportSelected = clickedButton.tag;
+    [self performSegueWithIdentifier:@"idShowCompetitions" sender:nil];
 }
 @end

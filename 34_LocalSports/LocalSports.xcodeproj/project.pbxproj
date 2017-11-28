@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0926246A1FCD89A2008F2280 /* CompetitionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 092624691FCD89A2008F2280 /* CompetitionsViewController.m */; };
+		0926246D1FCD8FA1008F2280 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0926246C1FCD8FA1008F2280 /* Utils.m */; };
 		094C1D571FC83A3F003685DD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 094C1D561FC83A3F003685DD /* AppDelegate.m */; };
 		094C1D5A1FC83A3F003685DD /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 094C1D591FC83A3F003685DD /* HomeViewController.m */; };
 		094C1D5D1FC83A3F003685DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 094C1D5B1FC83A3F003685DD /* Main.storyboard */; };
 		094C1D601FC83A3F003685DD /* LocalSports.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 094C1D5E1FC83A3F003685DD /* LocalSports.xcdatamodeld */; };
 		094C1D681FC83A3F003685DD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 094C1D671FC83A3F003685DD /* main.m */; };
-		099C57531FCC366700734C6C /* CategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 099C57521FCC366700734C6C /* CategoriesViewController.m */; };
 		D11829451FC8992600805590 /* SportsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D11829441FC8992600805590 /* SportsViewController.m */; };
 		D140974E1FC9E93500EAE6DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 094C1D611FC83A3F003685DD /* Assets.xcassets */; };
 		D183EB2B1FCB4E4600E45A8D /* football.png in Resources */ = {isa = PBXBuildFile; fileRef = D183EB251FCB4E4500E45A8D /* football.png */; };
@@ -24,6 +25,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		092624681FCD89A2008F2280 /* CompetitionsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CompetitionsViewController.h; sourceTree = "<group>"; };
+		092624691FCD89A2008F2280 /* CompetitionsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CompetitionsViewController.m; sourceTree = "<group>"; };
+		0926246B1FCD8FA1008F2280 /* Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		0926246C1FCD8FA1008F2280 /* Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
 		094C1D521FC83A3F003685DD /* LocalSports.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocalSports.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		094C1D551FC83A3F003685DD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		094C1D561FC83A3F003685DD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -35,8 +40,6 @@
 		094C1D661FC83A3F003685DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		094C1D671FC83A3F003685DD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		094C1D6E1FC84651003685DD /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
-		099C57511FCC366700734C6C /* CategoriesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CategoriesViewController.h; sourceTree = "<group>"; };
-		099C57521FCC366700734C6C /* CategoriesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CategoriesViewController.m; sourceTree = "<group>"; };
 		D11829431FC8992600805590 /* SportsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SportsViewController.h; sourceTree = "<group>"; };
 		D11829441FC8992600805590 /* SportsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SportsViewController.m; sourceTree = "<group>"; };
 		D183EB251FCB4E4500E45A8D /* football.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = football.png; sourceTree = "<group>"; };
@@ -58,9 +61,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		092624671FCD8645008F2280 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				094C1D551FC83A3F003685DD /* AppDelegate.h */,
+				094C1D561FC83A3F003685DD /* AppDelegate.m */,
+				094C1D6E1FC84651003685DD /* Constants.h */,
+				094C1D581FC83A3F003685DD /* HomeViewController.h */,
+				094C1D591FC83A3F003685DD /* HomeViewController.m */,
+				D11829431FC8992600805590 /* SportsViewController.h */,
+				D11829441FC8992600805590 /* SportsViewController.m */,
+				092624681FCD89A2008F2280 /* CompetitionsViewController.h */,
+				092624691FCD89A2008F2280 /* CompetitionsViewController.m */,
+				0926246B1FCD8FA1008F2280 /* Utils.h */,
+				0926246C1FCD8FA1008F2280 /* Utils.m */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
 		094C1D491FC83A3F003685DD = {
 			isa = PBXGroup;
 			children = (
+				092624671FCD8645008F2280 /* src */,
 				D14097461FC9D42B00EAE6DA /* images */,
 				094C1D541FC83A3F003685DD /* LocalSports */,
 				094C1D531FC83A3F003685DD /* Products */,
@@ -78,20 +100,11 @@
 		094C1D541FC83A3F003685DD /* LocalSports */ = {
 			isa = PBXGroup;
 			children = (
-				094C1D551FC83A3F003685DD /* AppDelegate.h */,
-				094C1D561FC83A3F003685DD /* AppDelegate.m */,
 				094C1D5B1FC83A3F003685DD /* Main.storyboard */,
 				094C1D611FC83A3F003685DD /* Assets.xcassets */,
 				094C1D661FC83A3F003685DD /* Info.plist */,
 				094C1D671FC83A3F003685DD /* main.m */,
 				094C1D5E1FC83A3F003685DD /* LocalSports.xcdatamodeld */,
-				094C1D6E1FC84651003685DD /* Constants.h */,
-				094C1D581FC83A3F003685DD /* HomeViewController.h */,
-				094C1D591FC83A3F003685DD /* HomeViewController.m */,
-				D11829431FC8992600805590 /* SportsViewController.h */,
-				D11829441FC8992600805590 /* SportsViewController.m */,
-				099C57511FCC366700734C6C /* CategoriesViewController.h */,
-				099C57521FCC366700734C6C /* CategoriesViewController.m */,
 			);
 			path = LocalSports;
 			sourceTree = "<group>";
@@ -185,11 +198,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0926246A1FCD89A2008F2280 /* CompetitionsViewController.m in Sources */,
 				094C1D601FC83A3F003685DD /* LocalSports.xcdatamodeld in Sources */,
 				094C1D5A1FC83A3F003685DD /* HomeViewController.m in Sources */,
 				094C1D681FC83A3F003685DD /* main.m in Sources */,
 				D11829451FC8992600805590 /* SportsViewController.m in Sources */,
-				099C57531FCC366700734C6C /* CategoriesViewController.m in Sources */,
+				0926246D1FCD8FA1008F2280 /* Utils.m in Sources */,
 				094C1D571FC83A3F003685DD /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -317,7 +331,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6REAL49NXE;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = LocalSports/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -332,7 +346,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6REAL49NXE;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = LocalSports/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
