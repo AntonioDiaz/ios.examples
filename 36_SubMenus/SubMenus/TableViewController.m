@@ -38,7 +38,7 @@
             } else {
                cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
             }
-            cell.textLabel.text= @"MENU";
+            cell.textLabel.text= @"MENU EXPANDABLE";
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         } else {
             cell.textLabel.text = @"SUB_MENU";
@@ -81,6 +81,4 @@
         return true;
     }
 }
-
-
 @end
