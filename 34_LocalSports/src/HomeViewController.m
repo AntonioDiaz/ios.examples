@@ -1,5 +1,5 @@
 #import "HomeViewController.h"
-#import "Constants.h"
+#import "Utils.h"
 #import "SportsViewController.h"
 
 @implementation HomeViewController
@@ -8,7 +8,7 @@
     [super viewDidLoad];
     self.navigationItem.title = @"Available Towns";
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    NSString *townSelectedStr = [userDefaults objectForKey:PREF_TOWN_SELECTED];
+    NSString *townSelectedStr = [userDefaults objectForKey:PREF_TOWN_NAME];
     if (townSelectedStr.length > 0) {
         [self performSegueWithIdentifier:@"segueSports" sender:self];
     } else {
@@ -63,11 +63,14 @@
 #pragma mark - segue methods
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    if ([userDefaults objectForKey:PREF_TOWN_SELECTED]==nil) {
+    if ([userDefaults objectForKey:PREF_TOWN_NAME]==nil) {
         NSIndexPath *indexPath = [self.townsTableView indexPathForSelectedRow];
         NSDictionary *dictionary = [arrayTowns objectAtIndex:indexPath.row];
         NSString *townSelectedString = [dictionary objectForKey:@"name"];
-        [userDefaults setValue:townSelectedString forKey:PREF_TOWN_SELECTED];
+        NSString *townSelectedId = [dictionary objectForKey:@"id"];
+        [userDefaults setValue:townSelectedString forKey:PREF_TOWN_NAME];
+        [userDefaults setValue:townSelectedId forKey:PREF_TOWN_ID];
+        
     }
 }
 @end

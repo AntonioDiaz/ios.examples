@@ -16,12 +16,6 @@
 		094C1D681FC83A3F003685DD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 094C1D671FC83A3F003685DD /* main.m */; };
 		D11829451FC8992600805590 /* SportsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D11829441FC8992600805590 /* SportsViewController.m */; };
 		D140974E1FC9E93500EAE6DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 094C1D611FC83A3F003685DD /* Assets.xcassets */; };
-		D183EB2B1FCB4E4600E45A8D /* football.png in Resources */ = {isa = PBXBuildFile; fileRef = D183EB251FCB4E4500E45A8D /* football.png */; };
-		D183EB2C1FCB4E4600E45A8D /* hockey.png in Resources */ = {isa = PBXBuildFile; fileRef = D183EB261FCB4E4500E45A8D /* hockey.png */; };
-		D183EB2D1FCB4E4600E45A8D /* volleyball.png in Resources */ = {isa = PBXBuildFile; fileRef = D183EB271FCB4E4500E45A8D /* volleyball.png */; };
-		D183EB2E1FCB4E4600E45A8D /* handball.png in Resources */ = {isa = PBXBuildFile; fileRef = D183EB281FCB4E4600E45A8D /* handball.png */; };
-		D183EB2F1FCB4E4600E45A8D /* favorite.png in Resources */ = {isa = PBXBuildFile; fileRef = D183EB291FCB4E4600E45A8D /* favorite.png */; };
-		D183EB301FCB4E4600E45A8D /* basketball.png in Resources */ = {isa = PBXBuildFile; fileRef = D183EB2A1FCB4E4600E45A8D /* basketball.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,15 +33,8 @@
 		094C1D611FC83A3F003685DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		094C1D661FC83A3F003685DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		094C1D671FC83A3F003685DD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		094C1D6E1FC84651003685DD /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		D11829431FC8992600805590 /* SportsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SportsViewController.h; sourceTree = "<group>"; };
 		D11829441FC8992600805590 /* SportsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SportsViewController.m; sourceTree = "<group>"; };
-		D183EB251FCB4E4500E45A8D /* football.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = football.png; sourceTree = "<group>"; };
-		D183EB261FCB4E4500E45A8D /* hockey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hockey.png; sourceTree = "<group>"; };
-		D183EB271FCB4E4500E45A8D /* volleyball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = volleyball.png; sourceTree = "<group>"; };
-		D183EB281FCB4E4600E45A8D /* handball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = handball.png; sourceTree = "<group>"; };
-		D183EB291FCB4E4600E45A8D /* favorite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = favorite.png; sourceTree = "<group>"; };
-		D183EB2A1FCB4E4600E45A8D /* basketball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = basketball.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +53,6 @@
 			children = (
 				094C1D551FC83A3F003685DD /* AppDelegate.h */,
 				094C1D561FC83A3F003685DD /* AppDelegate.m */,
-				094C1D6E1FC84651003685DD /* Constants.h */,
 				094C1D581FC83A3F003685DD /* HomeViewController.h */,
 				094C1D591FC83A3F003685DD /* HomeViewController.m */,
 				D11829431FC8992600805590 /* SportsViewController.h */,
@@ -112,12 +98,6 @@
 		D14097461FC9D42B00EAE6DA /* images */ = {
 			isa = PBXGroup;
 			children = (
-				D183EB2A1FCB4E4600E45A8D /* basketball.png */,
-				D183EB291FCB4E4600E45A8D /* favorite.png */,
-				D183EB251FCB4E4500E45A8D /* football.png */,
-				D183EB281FCB4E4600E45A8D /* handball.png */,
-				D183EB261FCB4E4500E45A8D /* hockey.png */,
-				D183EB271FCB4E4500E45A8D /* volleyball.png */,
 			);
 			path = images;
 			sourceTree = "<group>";
@@ -180,13 +160,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D183EB2C1FCB4E4600E45A8D /* hockey.png in Resources */,
-				D183EB2B1FCB4E4600E45A8D /* football.png in Resources */,
 				D140974E1FC9E93500EAE6DA /* Assets.xcassets in Resources */,
-				D183EB2F1FCB4E4600E45A8D /* favorite.png in Resources */,
-				D183EB2E1FCB4E4600E45A8D /* handball.png in Resources */,
-				D183EB2D1FCB4E4600E45A8D /* volleyball.png in Resources */,
-				D183EB301FCB4E4600E45A8D /* basketball.png in Resources */,
 				094C1D5D1FC83A3F003685DD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

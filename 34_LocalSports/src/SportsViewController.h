@@ -1,9 +1,9 @@
 #import <UIKit/UIKit.h>
-#import "Constants.h"
+#import "Utils.h"
 
 @interface SportsViewController : UIViewController
 {
-    Sport sportSelected;
+    EnumSports sportSelected;
 }
 
 

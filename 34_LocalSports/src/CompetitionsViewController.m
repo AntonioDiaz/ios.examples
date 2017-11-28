@@ -6,9 +6,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = [NSString stringWithFormat:@"%@ - %d", APP_NAME, sportSelected];
-    //https://localsports-web.appspot.com/server/search_competitions?idTown=6318635089920000
     
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSString *townSelected = [userDefaults objectForKey:PREF_TOWN_NAME];
+
+    NSString *sportStr = [Utils enumSportToString:sportSelected];
+    
+    
+    self.navigationItem.title = [NSString stringWithFormat:@"%@ - %@", townSelected, sportStr];
     
 }
 

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ETA-qf-dfg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ETA-qf-dfg">
     <device id="ipad9_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -77,14 +77,14 @@
                                         <subviews>
                                             <button opaque="NO" tag="1" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PSt-Rk-fcD">
                                                 <rect key="frame" x="0.0" y="0.0" width="335.5" height="303.5"/>
-                                                <state key="normal" image="football.png"/>
+                                                <state key="normal" image="football"/>
                                                 <connections>
                                                     <action selector="actionOpenSport:" destination="6Ed-xZ-v4P" eventType="touchUpInside" id="9Qt-0E-eDi"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="2" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b6x-wO-44y">
                                                 <rect key="frame" x="355.5" y="0.0" width="335.5" height="303.5"/>
-                                                <state key="normal" image="basketball.png"/>
+                                                <state key="normal" image="basketball"/>
                                                 <connections>
                                                     <action selector="actionOpenSport:" destination="6Ed-xZ-v4P" eventType="touchUpInside" id="eJe-Lr-l3Q"/>
                                                 </connections>
@@ -96,7 +96,7 @@
                                         <subviews>
                                             <button opaque="NO" tag="3" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v0J-zs-1DU">
                                                 <rect key="frame" x="0.0" y="0.0" width="335.5" height="303"/>
-                                                <state key="normal" image="volleyball.png"/>
+                                                <state key="normal" image="volleyball"/>
                                                 <connections>
                                                     <action selector="actionOpenSport:" destination="6Ed-xZ-v4P" eventType="touchUpInside" id="L82-Vs-pnQ"/>
                                                 </connections>
@@ -104,7 +104,7 @@
                                             <button opaque="NO" tag="4" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jak-Ju-Isb">
                                                 <rect key="frame" x="355.5" y="0.0" width="335.5" height="303"/>
                                                 <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
-                                                <state key="normal" title="Button" image="handball.png"/>
+                                                <state key="normal" title="Button" image="handball"/>
                                                 <connections>
                                                     <action selector="actionOpenSport:" destination="6Ed-xZ-v4P" eventType="touchUpInside" id="jMI-U4-e9c"/>
                                                 </connections>
@@ -116,7 +116,7 @@
                                         <subviews>
                                             <button opaque="NO" tag="5" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n4f-bP-bC3">
                                                 <rect key="frame" x="0.0" y="0.0" width="342.5" height="303.5"/>
-                                                <state key="normal" image="hockey.png"/>
+                                                <state key="normal" image="hockey"/>
                                                 <connections>
                                                     <action selector="actionOpenSport:" destination="6Ed-xZ-v4P" eventType="touchUpInside" id="zdy-Hf-Vh0"/>
                                                 </connections>
@@ -125,7 +125,7 @@
                                                 <rect key="frame" x="348.5" y="0.0" width="342.5" height="303.5"/>
                                                 <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
                                                 <size key="titleShadowOffset" width="0.0" height="50"/>
-                                                <state key="normal" image="favorito"/>
+                                                <state key="normal" image="favorite"/>
                                                 <connections>
                                                     <action selector="actionOpenSport:" destination="6Ed-xZ-v4P" eventType="touchUpInside" id="jFM-hr-Lve"/>
                                                 </connections>
@@ -165,18 +165,6 @@
                     <view key="view" contentMode="scaleToFill" id="YAN-5n-j5K" customClass="Comp">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" tag="6" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JxJ-8G-pLv">
-                                <rect key="frame" x="47" y="133" width="701" height="871"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
-                                <size key="titleShadowOffset" width="0.0" height="50"/>
-                                <state key="normal" image="favorito"/>
-                                <connections>
-                                    <action selector="actionOpenSport:" destination="6Ed-xZ-v4P" eventType="touchUpInside" id="dzm-1W-XNP"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="QRS-nj-tze"/>
                     </view>
@@ -203,11 +191,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="basketball.png" width="297" height="297"/>
-        <image name="favorito" width="512" height="512"/>
-        <image name="football.png" width="512" height="512"/>
-        <image name="handball.png" width="298" height="298"/>
-        <image name="hockey.png" width="364" height="364"/>
-        <image name="volleyball.png" width="517" height="517"/>
+        <image name="basketball" width="297" height="297"/>
+        <image name="favorite" width="512" height="512"/>
+        <image name="football" width="512" height="512"/>
+        <image name="handball" width="298" height="298"/>
+        <image name="hockey" width="364" height="364"/>
+        <image name="volleyball" width="517" height="517"/>
     </resources>
 </document>

@@ -10,8 +10,14 @@
 
 @interface Utils : NSObject
 
-typedef NS_ENUM(NSInteger, EnumSports)
-{
+#define URL_TOWNS @"https://localsports-web.appspot.com/server/towns"
+#define URL_COMPETITIONS @"https://localsports-web.appspot.com/server/search_competitions/?idTown=%@"
+#define APP_NAME @"LocalSports"
+#define PREF_TOWN_NAME @"PREF_TOWN_NAME"
+#define PREF_TOWN_ID @"PREF_TOWN_ID"
+
+
+typedef NS_ENUM(NSInteger, EnumSports) {
     FOOTBALL = 1,
     BASKETBALL,
     VOLLEYBALL,
@@ -19,6 +25,7 @@ typedef NS_ENUM(NSInteger, EnumSports)
     HOCKEY
 };
 
++(NSString*) enumSportToString:(EnumSports)enumSport;
 
 
 @end
