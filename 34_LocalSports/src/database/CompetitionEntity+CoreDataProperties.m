@@ -2,7 +2,7 @@
 //  CompetitionEntity+CoreDataProperties.m
 //  LocalSports
 //
-//  Created by Antonio Díaz Arroyo on 28/11/17.
+//  Created by Antonio Díaz Arroyo on 29/11/17.
 //  Copyright © 2017 cice. All rights reserved.
 //
 //
@@ -15,14 +15,14 @@
 	return [[NSFetchRequest alloc] initWithEntityName:@"CompetitionEntity"];
 }
 
-@dynamic name;
-@dynamic sport;
 @dynamic category;
 @dynamic categoryOrder;
 @dynamic idCompetitionServer;
-@dynamic lastUpdateServer;
 @dynamic lastUpdateApp;
-@dynamic matches;
+@dynamic lastUpdateServer;
+@dynamic name;
+@dynamic sport;
 @dynamic classification;
+@dynamic matches;
 
 @end

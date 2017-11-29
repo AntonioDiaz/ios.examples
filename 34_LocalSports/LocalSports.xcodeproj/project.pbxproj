@@ -17,6 +17,7 @@
 		098179061FCED01F0011F4FD /* ClassificationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 098179051FCED01F0011F4FD /* ClassificationTableViewController.m */; };
 		098179091FCED5CD0011F4FD /* CompetitionTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 098179081FCED5CD0011F4FD /* CompetitionTabBarController.m */; };
 		D11829451FC8992600805590 /* SportsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D11829441FC8992600805590 /* SportsViewController.m */; };
+		D12E745A1FCF5AA30054BA52 /* MatchDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D12E74591FCF5AA30054BA52 /* MatchDetailTableViewCell.m */; };
 		D140974E1FC9E93500EAE6DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 094C1D611FC83A3F003685DD /* Assets.xcassets */; };
 		D1C2CB771FCDCEAB00922D86 /* ClassificationEntity+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C2CB651FCDCEAB00922D86 /* ClassificationEntity+CoreDataClass.m */; };
 		D1C2CB781FCDCEAB00922D86 /* ClassificationEntity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C2CB661FCDCEAB00922D86 /* ClassificationEntity+CoreDataProperties.m */; };
@@ -52,6 +53,8 @@
 		098179081FCED5CD0011F4FD /* CompetitionTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CompetitionTabBarController.m; sourceTree = "<group>"; };
 		D11829431FC8992600805590 /* SportsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SportsViewController.h; sourceTree = "<group>"; };
 		D11829441FC8992600805590 /* SportsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SportsViewController.m; sourceTree = "<group>"; };
+		D12E74581FCF5AA30054BA52 /* MatchDetailTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MatchDetailTableViewCell.h; sourceTree = "<group>"; };
+		D12E74591FCF5AA30054BA52 /* MatchDetailTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MatchDetailTableViewCell.m; sourceTree = "<group>"; };
 		D1C2CB631FCDCEAB00922D86 /* ClassificationEntity+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ClassificationEntity+CoreDataProperties.h"; sourceTree = "<group>"; };
 		D1C2CB641FCDCEAB00922D86 /* ClassificationEntity+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ClassificationEntity+CoreDataClass.h"; sourceTree = "<group>"; };
 		D1C2CB651FCDCEAB00922D86 /* ClassificationEntity+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ClassificationEntity+CoreDataClass.m"; sourceTree = "<group>"; };
@@ -105,6 +108,8 @@
 				098179021FCECFFB0011F4FD /* CalendarTableViewController.m */,
 				098179041FCED01F0011F4FD /* ClassificationTableViewController.h */,
 				098179051FCED01F0011F4FD /* ClassificationTableViewController.m */,
+				D12E74581FCF5AA30054BA52 /* MatchDetailTableViewCell.h */,
+				D12E74591FCF5AA30054BA52 /* MatchDetailTableViewCell.m */,
 				0926246B1FCD8FA1008F2280 /* Utils.h */,
 				0926246C1FCD8FA1008F2280 /* Utils.m */,
 			);
@@ -259,6 +264,7 @@
 				D1C2CB831FCDDEC600922D86 /* CompetitionsTableViewController.m in Sources */,
 				094C1D5A1FC83A3F003685DD /* HomeViewController.m in Sources */,
 				094C1D681FC83A3F003685DD /* main.m in Sources */,
+				D12E745A1FCF5AA30054BA52 /* MatchDetailTableViewCell.m in Sources */,
 				D1C2CB7B1FCDCEAB00922D86 /* FavoriteEntity+CoreDataClass.m in Sources */,
 				D1C2CB771FCDCEAB00922D86 /* ClassificationEntity+CoreDataClass.m in Sources */,
 				D11829451FC8992600805590 /* SportsViewController.m in Sources */,

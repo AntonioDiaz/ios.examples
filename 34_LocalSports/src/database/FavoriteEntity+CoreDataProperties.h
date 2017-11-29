@@ -2,7 +2,7 @@
 //  FavoriteEntity+CoreDataProperties.h
 //  LocalSports
 //
-//  Created by Antonio Díaz Arroyo on 28/11/17.
+//  Created by Antonio Díaz Arroyo on 29/11/17.
 //  Copyright © 2017 cice. All rights reserved.
 //
 //

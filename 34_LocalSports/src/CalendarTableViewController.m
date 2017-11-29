@@ -1,10 +1,13 @@
 #import "CalendarTableViewController.h"
+#import "MatchEntity+CoreDataProperties.h"
+#import "MatchDetailTableViewCell.h"
 #import "Utils.h"
 
 @implementation CalendarTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    sectionsExpanded = [[NSMutableIndexSet alloc] init];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -13,19 +16,58 @@
 
 #pragma mark - Table view data source
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return [self calculateNumOfWeeks];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return arrayMatches.count;
+     if ([sectionsExpanded containsIndex:section]) {
+         return numMatchesEachWeek + 1;
+     } else {
+         return 1;
+     }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell_calendar" forIndexPath:indexPath];
-    MatchEntity *matchEntity = [arrayMatches objectAtIndex:indexPath.row];
-    cell.textLabel.text = matchEntity.teamLocal;
-    return cell;
- }
+
+    //MatchEntity *matchEntity = [arrayMatches objectAtIndex:indexPath.row];
+    //cell.textLabel.text = [NSString stringWithFormat:@"%d - %@ vs %@", matchEntity.week, matchEntity.teamLocal, matchEntity.teamVisitor];
+    //if ([self tableView:tableView canCollpseSection:indexPath.section]) {
+    if (indexPath.row == 0) {
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell_calendar" forIndexPath:indexPath];
+        cell.textLabel.text = [NSString stringWithFormat:@"Week %d", (int)indexPath.section + 1];
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        return cell;
+    } else {
+        MatchDetailTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell_calendar_detail" forIndexPath:indexPath];
+        int indexInArray = ((int)indexPath.row - 1) + (int)indexPath.section * numMatchesEachWeek;
+        MatchEntity *matchEntity = [arrayMatches objectAtIndex:indexInArray];
+        cell.labelLocal.text = matchEntity.teamLocal;
+        cell.labelVisitor.text = matchEntity.teamVisitor;
+        cell.labelScore.text = [NSString stringWithFormat:@"%d - %d", matchEntity.scoreLocal, matchEntity.scoreVisitor];
+        return cell;
+    }
+}
+
+-(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == 0) {
+        //unselect cell.
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+        NSInteger section = indexPath.section;
+        NSMutableArray *mutableArrayCells = [[NSMutableArray alloc] init];
+        for (int i=1; i<=numMatchesEachWeek; i++) {
+            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:section];
+            [mutableArrayCells addObject:indexPath];
+        }
+        if ([sectionsExpanded containsIndex:section]) {
+            [sectionsExpanded removeIndex:section];
+            [tableView deleteRowsAtIndexPaths:mutableArrayCells withRowAnimation:UITableViewRowAnimationTop];
+        } else {
+            [sectionsExpanded addIndex:section];
+            [tableView insertRowsAtIndexPaths:mutableArrayCells withRowAnimation:UITableViewRowAnimationTop];
+        }
+    }
+
+}
 
 #pragma mark - private methods
 -(void) reloadDataTable {
@@ -36,54 +78,20 @@
     [request setEntity:description];
     NSError *error;
     arrayMatches = [context executeFetchRequest:request error:&error];
-    NSLog(@"reloadDataTable");
+    numOfWeeks = [self calculateNumOfWeeks];
+    numMatchesEachWeek = (int)arrayMatches.count / numOfWeeks;
     [self.tableView reloadData];
 }
 
-
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+-(int) calculateNumOfWeeks {
+    int maxWeek = 0;
+    for (MatchEntity* matchEntity in arrayMatches) {
+        NSLog(@"match --> %d", matchEntity.week);
+        if (matchEntity.week>maxWeek) {
+            maxWeek = matchEntity.week;
+        }
+    }
+    return maxWeek;
 }
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

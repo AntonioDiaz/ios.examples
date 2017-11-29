@@ -59,18 +59,21 @@
                 NSError *jsonError = nil;
                 NSDictionary *jsonResults = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&jsonError];
                 NSArray *arrayMatches = [jsonResults objectForKey:@"matches"];
-                [Utils deleteAllEntities:MATCH_ENTITY withContext:managedObjectContext];
-                for (NSDictionary *matchDictionary in arrayMatches) {
-                    [self insertMatch: matchDictionary];
-                }
-                NSArray *arrayClassification = [jsonResults objectForKey:@"classification"];
-                [Utils deleteAllEntities:CLASSIFICATION_ENTITY withContext:managedObjectContext];
-                for (NSDictionary *classification in arrayClassification) {
-                    [self insertClassification:(NSDictionary *) classification];
-                }
                 dispatch_async(dispatch_get_main_queue(), ^{
+                    [Utils deleteAllEntities:MATCH_ENTITY withContext:managedObjectContext];
+                    for (NSDictionary *matchDictionary in arrayMatches) {
+                        [self insertMatch: matchDictionary];
+                    }
+                    NSArray *arrayClassification = [jsonResults objectForKey:@"classification"];
+                    [Utils deleteAllEntities:CLASSIFICATION_ENTITY withContext:managedObjectContext];
+                    for (NSDictionary *classification in arrayClassification) {
+                        [self insertClassification:(NSDictionary *) classification];
+                    }
+      
                     CalendarTableViewController *calendarTableViewController = self.viewControllers[0];
                     [calendarTableViewController reloadDataTable];
+                    ClassificationTableViewController *classificationTableViewController = self.viewControllers[1];
+                    [classificationTableViewController reloadDataTable];
                 });
             } else {
                 NSLog(@"status: %ld", httpResponse.statusCode);
@@ -86,12 +89,12 @@
                                  inManagedObjectContext:managedObjectContext];
 
     classificationEntry.competition = self.competitionEntity;
-    classificationEntry.matchesDrawn = (int)[dictionaryClassification objectForKey:@"matchesDrawn"];
-    classificationEntry.matchesLost = (int)[dictionaryClassification objectForKey:@"matchesLost"];
-    classificationEntry.matchesPlayed = (int)[dictionaryClassification objectForKey:@"matchesPlayed"];
-    classificationEntry.matchesWon = (int)[dictionaryClassification objectForKey:@"matchesWon"];
-    classificationEntry.points = (int)[dictionaryClassification objectForKey:@"points"];
-    classificationEntry.position = (int)[dictionaryClassification objectForKey:@"position"];
+    //classificationEntry.matchesDrawn = (long)[dictionaryClassification objectForKey:@"matchesDrawn"];
+    //classificationEntry.matchesLost = (long)[dictionaryClassification objectForKey:@"matchesLost"];
+    //classificationEntry.matchesPlayed = (long)[dictionaryClassification objectForKey:@"matchesPlayed"];
+    //classificationEntry.matchesWon = (long)[dictionaryClassification objectForKey:@"matchesWon"];
+    classificationEntry.points = (int)[[dictionaryClassification objectForKey:@"points"] integerValue];
+    classificationEntry.position = (int)[[dictionaryClassification objectForKey:@"position"] integerValue];
     classificationEntry.team = [dictionaryClassification objectForKey:@"team"];
     NSError *error = nil;
     if(![managedObjectContext save:&error]){
@@ -111,7 +114,7 @@
     matchEntity.lastUpdate = (int)[[dictionaryMatch objectForKey:@"date"] integerValue];
     matchEntity.scoreLocal = (int)[[dictionaryMatch objectForKey:@"scoreLocal"] integerValue];
     matchEntity.scoreVisitor = (int)[[dictionaryMatch objectForKey:@"scoreVisitor"] integerValue];
-    matchEntity.state = [[dictionaryMatch objectForKey:@"state"] integerValue];
+    matchEntity.state = (int)[[dictionaryMatch objectForKey:@"state"] integerValue];
     matchEntity.teamLocal = [teamLocal objectForKey:@"name"];
     matchEntity.teamVisitor = [teamVisitor objectForKey:@"name"];
     matchEntity.week = (int)[[dictionaryMatch objectForKey:@"week"] integerValue];

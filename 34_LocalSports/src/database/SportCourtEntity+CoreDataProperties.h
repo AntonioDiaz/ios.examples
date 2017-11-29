@@ -2,7 +2,7 @@
 //  SportCourtEntity+CoreDataProperties.h
 //  LocalSports
 //
-//  Created by Antonio Díaz Arroyo on 28/11/17.
+//  Created by Antonio Díaz Arroyo on 29/11/17.
 //  Copyright © 2017 cice. All rights reserved.
 //
 //
@@ -16,10 +16,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSFetchRequest<SportCourtEntity *> *)fetchRequest;
 
-@property (nonatomic) int16_t idServer;
+@property (nullable, nonatomic, copy) NSString *centerAddress;
 @property (nullable, nonatomic, copy) NSString *centerName;
 @property (nullable, nonatomic, copy) NSString *courtName;
-@property (nullable, nonatomic, copy) NSString *centerAddress;
+@property (nonatomic) int16_t idServer;
 @property (nullable, nonatomic, retain) NSSet<MatchEntity *> *matches;
 
 @end

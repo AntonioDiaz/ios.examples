@@ -2,7 +2,7 @@
 //  MatchEntity+CoreDataProperties.h
 //  LocalSports
 //
-//  Created by Antonio Díaz Arroyo on 28/11/17.
+//  Created by Antonio Díaz Arroyo on 29/11/17.
 //  Copyright © 2017 cice. All rights reserved.
 //
 //
@@ -17,12 +17,12 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSFetchRequest<MatchEntity *> *)fetchRequest;
 
 @property (nonatomic) int32_t lastUpdate;
-@property (nullable, nonatomic, copy) NSString *teamLocal;
-@property (nullable, nonatomic, copy) NSString *teamVisitor;
 @property (nonatomic) int32_t scoreLocal;
 @property (nonatomic) int32_t scoreVisitor;
-@property (nonatomic) int16_t week;
-@property (nonatomic) int16_t state;
+@property (nonatomic) int32_t state;
+@property (nullable, nonatomic, copy) NSString *teamLocal;
+@property (nullable, nonatomic, copy) NSString *teamVisitor;
+@property (nonatomic) int32_t week;
 @property (nullable, nonatomic, retain) CompetitionEntity *competition;
 @property (nullable, nonatomic, retain) SportCourtEntity *court;
 

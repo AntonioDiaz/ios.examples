@@ -4,6 +4,9 @@
 @interface CalendarTableViewController : UITableViewController
 {
     NSArray *arrayMatches;
+    NSMutableIndexSet *sectionsExpanded;
+    int numOfWeeks;
+    int numMatchesEachWeek;
 }
 
 -(void) reloadDataTable;
