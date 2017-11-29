@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="6R1-cz-DoA">
+                                <rect key="frame" x="0.0" y="282.5" width="375" height="122"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7IG-BQ-ZV0">
+                                        <rect key="frame" x="37.5" y="0.0" width="300" height="41"/>
+                                        <color key="backgroundColor" red="0.71486139299999996" green="0.046471867710000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <state key="normal" title="Load Instertitial">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="actionLoadInsterstitial:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HbW-j5-d2M"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dar-aa-wIj">
+                                        <rect key="frame" x="37.5" y="81" width="300" height="41"/>
+                                        <color key="backgroundColor" red="0.71486139299999996" green="0.046471867710000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <state key="normal" title="Load Video">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="actioLoadVideo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0h7-Oc-VeY"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="7IG-BQ-ZV0" firstAttribute="width" secondItem="6R1-cz-DoA" secondAttribute="width" multiplier="0.8" id="6OY-CA-cqy"/>
+                                    <constraint firstItem="dar-aa-wIj" firstAttribute="width" secondItem="7IG-BQ-ZV0" secondAttribute="width" id="KxI-zm-eli"/>
+                                    <constraint firstItem="dar-aa-wIj" firstAttribute="height" secondItem="7IG-BQ-ZV0" secondAttribute="height" id="bKV-HW-G44"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6R1-cz-DoA" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" id="V1I-Hn-9pe"/>
+                            <constraint firstItem="6R1-cz-DoA" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="igS-cp-wzN"/>
+                            <constraint firstItem="6R1-cz-DoA" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="z1j-BZ-XSL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="118.29085457271366"/>
+        </scene>
+    </scenes>
+</document>
