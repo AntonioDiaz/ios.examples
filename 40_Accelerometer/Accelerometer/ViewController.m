@@ -24,7 +24,6 @@
             NSLog(@"Error on accelerometer.");
         }
     }];
-    
 }
 
 - (void)didReceiveMemoryWarning {
