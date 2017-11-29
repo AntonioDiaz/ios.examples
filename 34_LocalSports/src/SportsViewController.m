@@ -91,8 +91,9 @@
     NSError *error = nil;
     if(![managedObjectContext save:&error]){
         NSLog(@"Error on insert -->%@", error.localizedDescription);
+    } else {
+        NSLog(@"Insert done %@ - %@", competitionEntity.name, competitionEntity.sport);
     }
-    NSLog(@"Insert done %@ - %@", competitionEntity.name, competitionEntity.sport);
 }
 
 #pragma mark - Navigation

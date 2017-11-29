@@ -12,26 +12,35 @@
 }
 
 #pragma mark - Table view data source
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return arrayMatches.count;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell_calendar" forIndexPath:indexPath];
+    MatchEntity *matchEntity = [arrayMatches objectAtIndex:indexPath.row];
+    cell.textLabel.text = matchEntity.teamLocal;
     return cell;
+ }
+
+#pragma mark - private methods
+-(void) reloadDataTable {
+    AppDelegate *app = (AppDelegate*) [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = app.persistentContainer.viewContext;
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSEntityDescription *description = [NSEntityDescription entityForName:MATCH_ENTITY inManagedObjectContext:context];
+    [request setEntity:description];
+    NSError *error;
+    arrayMatches = [context executeFetchRequest:request error:&error];
+    NSLog(@"reloadDataTable");
+    [self.tableView reloadData];
 }
-*/
+
+
 
 /*
 // Override to support conditional editing of the table view.
