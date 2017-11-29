@@ -42,7 +42,7 @@
                 NSArray *arrayClassification = [jsonResults objectForKey:@"classification"];
                 [Utils deleteAllEntities:CLASSIFICATION_ENTITY withContext:managedObjectContext];
                 for (NSDictionary *matchClassification in arrayClassification) {
-                    [self insertClassification:(NSDictionary *): matchClassification];
+                    [self insertClassification:(NSDictionary *) matchClassification];
                 }
                 dispatch_async(dispatch_get_main_queue(), ^{
                     //first remove all competitions.
