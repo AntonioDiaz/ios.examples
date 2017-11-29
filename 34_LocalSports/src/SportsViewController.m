@@ -62,7 +62,6 @@
                     //first remove all competitions.
                     [Utils deleteAllEntities:COMPETITION_ENTITY withContext:managedObjectContext];
                    for (NSDictionary *competition in jsonResults) {
-                       //NSLog(@"competition --> %@",competition);
                        [self insertCompetition:competition];
                     }
                     [self enableSportButtons];
@@ -75,6 +74,7 @@
     [task resume];
 }
 
+//todo move this method to database utils class
 -(void) insertCompetition:(NSDictionary *) dictionaryCompetition {
     CompetitionEntity *competitionEntity =  [NSEntityDescription
                                              insertNewObjectForEntityForName:COMPETITION_ENTITY

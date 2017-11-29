@@ -5,10 +5,13 @@
 
 #define URL_TOWNS @"https://localsports-web.appspot.com/server/towns"
 #define URL_COMPETITIONS @"https://localsports-web.appspot.com/server/search_competitions/?idTown=%@"
+#define URL_COMPETITION_DETAILS @"https://localsports-web.appspot.com/server/competitiondetails/%@"
 #define APP_NAME @"LocalSports"
 #define PREF_TOWN_NAME @"PREF_TOWN_NAME"
 #define PREF_TOWN_ID @"PREF_TOWN_ID"
 #define COMPETITION_ENTITY @"CompetitionEntity"
+#define MATCH_ENTITY @"MatchEntity"
+#define CLASSIFICATION_ENTITY @"ClassificationEntity"
 #define UIColorFromRGB(rgbValue) \
     [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
     green:((float)((rgbValue & 0x00FF00) >>  8))/255.0 \

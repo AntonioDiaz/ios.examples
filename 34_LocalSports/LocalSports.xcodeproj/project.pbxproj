@@ -13,6 +13,9 @@
 		094C1D5D1FC83A3F003685DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 094C1D5B1FC83A3F003685DD /* Main.storyboard */; };
 		094C1D601FC83A3F003685DD /* LocalSports.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 094C1D5E1FC83A3F003685DD /* LocalSports.xcdatamodeld */; };
 		094C1D681FC83A3F003685DD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 094C1D671FC83A3F003685DD /* main.m */; };
+		098179031FCECFFB0011F4FD /* CalendarTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 098179021FCECFFB0011F4FD /* CalendarTableViewController.m */; };
+		098179061FCED01F0011F4FD /* ClassificationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 098179051FCED01F0011F4FD /* ClassificationTableViewController.m */; };
+		098179091FCED5CD0011F4FD /* CompetitionTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 098179081FCED5CD0011F4FD /* CompetitionTabBarController.m */; };
 		D11829451FC8992600805590 /* SportsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D11829441FC8992600805590 /* SportsViewController.m */; };
 		D140974E1FC9E93500EAE6DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 094C1D611FC83A3F003685DD /* Assets.xcassets */; };
 		D1C2CB771FCDCEAB00922D86 /* ClassificationEntity+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C2CB651FCDCEAB00922D86 /* ClassificationEntity+CoreDataClass.m */; };
@@ -26,8 +29,6 @@
 		D1C2CB7F1FCDCEAB00922D86 /* SportCourtEntity+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C2CB751FCDCEAB00922D86 /* SportCourtEntity+CoreDataClass.m */; };
 		D1C2CB801FCDCEAB00922D86 /* SportCourtEntity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C2CB761FCDCEAB00922D86 /* SportCourtEntity+CoreDataProperties.m */; };
 		D1C2CB831FCDDEC600922D86 /* CompetitionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C2CB821FCDDEC600922D86 /* CompetitionsTableViewController.m */; };
-		D1C2CB861FCDFDC300922D86 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C2CB851FCDFDC200922D86 /* CalendarViewController.m */; };
-		D1C2CB891FCDFDDA00922D86 /* ClassificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C2CB881FCDFDDA00922D86 /* ClassificationViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,12 @@
 		094C1D611FC83A3F003685DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		094C1D661FC83A3F003685DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		094C1D671FC83A3F003685DD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		098179011FCECFFB0011F4FD /* CalendarTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CalendarTableViewController.h; sourceTree = "<group>"; };
+		098179021FCECFFB0011F4FD /* CalendarTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalendarTableViewController.m; sourceTree = "<group>"; };
+		098179041FCED01F0011F4FD /* ClassificationTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClassificationTableViewController.h; sourceTree = "<group>"; };
+		098179051FCED01F0011F4FD /* ClassificationTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClassificationTableViewController.m; sourceTree = "<group>"; };
+		098179071FCED5CD0011F4FD /* CompetitionTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CompetitionTabBarController.h; sourceTree = "<group>"; };
+		098179081FCED5CD0011F4FD /* CompetitionTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CompetitionTabBarController.m; sourceTree = "<group>"; };
 		D11829431FC8992600805590 /* SportsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SportsViewController.h; sourceTree = "<group>"; };
 		D11829441FC8992600805590 /* SportsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SportsViewController.m; sourceTree = "<group>"; };
 		D1C2CB631FCDCEAB00922D86 /* ClassificationEntity+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ClassificationEntity+CoreDataProperties.h"; sourceTree = "<group>"; };
@@ -67,10 +74,6 @@
 		D1C2CB761FCDCEAB00922D86 /* SportCourtEntity+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SportCourtEntity+CoreDataProperties.m"; sourceTree = "<group>"; };
 		D1C2CB811FCDDEC600922D86 /* CompetitionsTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CompetitionsTableViewController.h; sourceTree = "<group>"; };
 		D1C2CB821FCDDEC600922D86 /* CompetitionsTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CompetitionsTableViewController.m; sourceTree = "<group>"; };
-		D1C2CB841FCDFDC200922D86 /* CalendarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
-		D1C2CB851FCDFDC200922D86 /* CalendarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
-		D1C2CB871FCDFDDA00922D86 /* ClassificationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClassificationViewController.h; sourceTree = "<group>"; };
-		D1C2CB881FCDFDDA00922D86 /* ClassificationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClassificationViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,12 +99,14 @@
 				D11829441FC8992600805590 /* SportsViewController.m */,
 				D1C2CB811FCDDEC600922D86 /* CompetitionsTableViewController.h */,
 				D1C2CB821FCDDEC600922D86 /* CompetitionsTableViewController.m */,
+				098179071FCED5CD0011F4FD /* CompetitionTabBarController.h */,
+				098179081FCED5CD0011F4FD /* CompetitionTabBarController.m */,
+				098179011FCECFFB0011F4FD /* CalendarTableViewController.h */,
+				098179021FCECFFB0011F4FD /* CalendarTableViewController.m */,
+				098179041FCED01F0011F4FD /* ClassificationTableViewController.h */,
+				098179051FCED01F0011F4FD /* ClassificationTableViewController.m */,
 				0926246B1FCD8FA1008F2280 /* Utils.h */,
 				0926246C1FCD8FA1008F2280 /* Utils.m */,
-				D1C2CB841FCDFDC200922D86 /* CalendarViewController.h */,
-				D1C2CB851FCDFDC200922D86 /* CalendarViewController.m */,
-				D1C2CB871FCDFDDA00922D86 /* ClassificationViewController.h */,
-				D1C2CB881FCDFDDA00922D86 /* ClassificationViewController.m */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -243,15 +248,16 @@
 				D1C2CB7C1FCDCEAB00922D86 /* FavoriteEntity+CoreDataProperties.m in Sources */,
 				D1C2CB801FCDCEAB00922D86 /* SportCourtEntity+CoreDataProperties.m in Sources */,
 				D1C2CB7F1FCDCEAB00922D86 /* SportCourtEntity+CoreDataClass.m in Sources */,
+				098179091FCED5CD0011F4FD /* CompetitionTabBarController.m in Sources */,
 				094C1D601FC83A3F003685DD /* LocalSports.xcdatamodeld in Sources */,
 				D1C2CB791FCDCEAB00922D86 /* CompetitionEntity+CoreDataClass.m in Sources */,
+				098179031FCECFFB0011F4FD /* CalendarTableViewController.m in Sources */,
 				D1C2CB7D1FCDCEAB00922D86 /* MatchEntity+CoreDataClass.m in Sources */,
+				098179061FCED01F0011F4FD /* ClassificationTableViewController.m in Sources */,
 				D1C2CB781FCDCEAB00922D86 /* ClassificationEntity+CoreDataProperties.m in Sources */,
 				D1C2CB7E1FCDCEAB00922D86 /* MatchEntity+CoreDataProperties.m in Sources */,
-				D1C2CB891FCDFDDA00922D86 /* ClassificationViewController.m in Sources */,
 				D1C2CB831FCDDEC600922D86 /* CompetitionsTableViewController.m in Sources */,
 				094C1D5A1FC83A3F003685DD /* HomeViewController.m in Sources */,
-				D1C2CB861FCDFDC300922D86 /* CalendarViewController.m in Sources */,
 				094C1D681FC83A3F003685DD /* main.m in Sources */,
 				D1C2CB7B1FCDCEAB00922D86 /* FavoriteEntity+CoreDataClass.m in Sources */,
 				D1C2CB771FCDCEAB00922D86 /* ClassificationEntity+CoreDataClass.m in Sources */,
