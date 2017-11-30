@@ -2,6 +2,8 @@
 #import "MatchEntity+CoreDataProperties.h"
 #import "MatchDetailTableViewCell.h"
 #import "Utils.h"
+#import "MatchAddEventViewController.h"
+
 
 @implementation CalendarTableViewController
 
@@ -28,10 +30,6 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-
-    //MatchEntity *matchEntity = [arrayMatches objectAtIndex:indexPath.row];
-    //cell.textLabel.text = [NSString stringWithFormat:@"%d - %@ vs %@", matchEntity.week, matchEntity.teamLocal, matchEntity.teamVisitor];
-    //if ([self tableView:tableView canCollpseSection:indexPath.section]) {
     if (indexPath.row == 0) {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell_calendar" forIndexPath:indexPath];
         cell.textLabel.text = [NSString stringWithFormat:@"Week %d", (int)indexPath.section + 1];
@@ -41,13 +39,19 @@
         MatchDetailTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell_calendar_detail" forIndexPath:indexPath];
         int indexInArray = ((int)indexPath.row - 1) + (int)indexPath.section * numMatchesEachWeek;
         MatchEntity *matchEntity = [arrayMatches objectAtIndex:indexInArray];
+        double timestampval =  matchEntity.date/1000;
+        NSTimeInterval timestamp = (NSTimeInterval)timestampval;
+        NSDate* date = [NSDate dateWithTimeIntervalSince1970:timestamp];
+        NSString* dateStr = [Utils formatDate:date];
         cell.labelLocal.text = matchEntity.teamLocal;
         cell.labelVisitor.text = matchEntity.teamVisitor;
+        cell.labelDate.text = dateStr;
         cell.labelScore.text = [NSString stringWithFormat:@"%d - %d", matchEntity.scoreLocal, matchEntity.scoreVisitor];
         return cell;
     }
 }
 
+#pragma mark - table delegate
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0) {
         //unselect cell.
@@ -65,9 +69,54 @@
             [sectionsExpanded addIndex:section];
             [tableView insertRowsAtIndexPaths:mutableArrayCells withRowAnimation:UITableViewRowAnimationTop];
         }
+    } else {
+        int indexInArray = ((int)indexPath.row - 1) + (int)indexPath.section * numMatchesEachWeek;
+        MatchEntity *matchEntity = [arrayMatches objectAtIndex:indexInArray];
+        NSString *alertTitle = @"Actions with the match";
+        NSString *strActionShare = @"Share match details";
+        NSString *strActionAddEvent = @"Add calendar event";
+        NSString *strActionSendIssue = @"Send issue";
+        NSString *strActionOpenMap = @"View map";
+        NSString *strActionClose = @"Close";
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:alertTitle message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+        UIAlertAction *actionShare = [UIAlertAction actionWithTitle:strActionShare style:UIAlertActionStyleDefault
+         handler:^(UIAlertAction *action) {
+             [alertController dismissViewControllerAnimated:YES completion:nil];
+         }];
+        [alertController addAction:actionShare];
+        
+        UIAlertAction *actionAddEvent = [UIAlertAction actionWithTitle:strActionAddEvent style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+              [self performSegueWithIdentifier:@"idSegueMatchAddEvent" sender:nil];
+            
+        }];
+        [alertController addAction:actionAddEvent];
+        
+        UIAlertAction *actionSendIssue = [UIAlertAction actionWithTitle:strActionSendIssue style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            [alertController dismissViewControllerAnimated:YES completion:nil];
+        }];
+        [alertController addAction:actionSendIssue];
+        
+        UIAlertAction *actionOpenMap = [UIAlertAction actionWithTitle:strActionOpenMap style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            [alertController dismissViewControllerAnimated:YES completion:nil];
+        }];
+        [alertController addAction:actionOpenMap];
+        
+        UIAlertAction *actionClose = [UIAlertAction actionWithTitle:strActionClose style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+             [alertController dismissViewControllerAnimated:YES completion:nil];
+         }];
+        [alertController addAction:actionClose];
+        [self presentViewController:alertController animated:YES completion:nil];
     }
-
 }
+
+#pragma mark - Navigation
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
+    //MatchAddEventViewController *MatchAddEventViewController = (MatchAddEventViewController *) segue.destinationViewController;
+    //viewController.sportSelected = sportSelected;
+}
+
 
 #pragma mark - private methods
 -(void) reloadDataTable {
@@ -86,7 +135,6 @@
 -(int) calculateNumOfWeeks {
     int maxWeek = 0;
     for (MatchEntity* matchEntity in arrayMatches) {
-        NSLog(@"match --> %d", matchEntity.week);
         if (matchEntity.week>maxWeek) {
             maxWeek = matchEntity.week;
         }

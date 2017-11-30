@@ -2,7 +2,7 @@
 //  MatchEntity+CoreDataProperties.h
 //  LocalSports
 //
-//  Created by Antonio Díaz Arroyo on 29/11/17.
+//  Created by cice on 30/11/17.
 //  Copyright © 2017 cice. All rights reserved.
 //
 //
@@ -23,6 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, copy) NSString *teamLocal;
 @property (nullable, nonatomic, copy) NSString *teamVisitor;
 @property (nonatomic) int32_t week;
+@property (nonatomic) double date;
 @property (nullable, nonatomic, retain) CompetitionEntity *competition;
 @property (nullable, nonatomic, retain) SportCourtEntity *court;
 

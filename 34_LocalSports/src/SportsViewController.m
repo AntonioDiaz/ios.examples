@@ -82,7 +82,7 @@
     NSDictionary *dictionaryCategory = [dictionaryCompetition objectForKey:@"categoryEntity"];
     NSDictionary *dictionarySport = [dictionaryCompetition objectForKey:@"sportEntity"];
     competitionEntity.category = [dictionaryCategory objectForKey:@"name"];
-    competitionEntity.categoryOrder = [[dictionaryCategory objectForKey:@"order"] integerValue];
+    competitionEntity.categoryOrder = (int)[[dictionaryCategory objectForKey:@"order"] integerValue];
     competitionEntity.idCompetitionServer = [[dictionaryCompetition objectForKey:@"id"] doubleValue];
     //competitionEntity.lastUpdateApp = [dictionaryCompetition objectForKey:@"lastPublished"];
     //competitionEntity.lastUpdateServer = [dictionaryCompetition objectForKey:@"lastPublished"];
@@ -91,8 +91,6 @@
     NSError *error = nil;
     if(![managedObjectContext save:&error]){
         NSLog(@"Error on insert -->%@", error.localizedDescription);
-    } else {
-        NSLog(@"Insert done %@ - %@", competitionEntity.name, competitionEntity.sport);
     }
 }
 
@@ -112,11 +110,6 @@
 }
 
 - (IBAction)actionFavorites:(id)sender {
-    NSString *alertTitle = @"favorites";
-    NSString *alertDesc = @"comming soon";
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:alertTitle
-                message:alertDesc delegate:self cancelButtonTitle:@"Accept"
-                otherButtonTitles: nil];
-    [alertView show];
+    [Utils showComingSoon];
 }
 @end

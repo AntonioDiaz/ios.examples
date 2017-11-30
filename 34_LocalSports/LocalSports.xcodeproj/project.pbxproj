@@ -13,6 +13,7 @@
 		094C1D5D1FC83A3F003685DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 094C1D5B1FC83A3F003685DD /* Main.storyboard */; };
 		094C1D601FC83A3F003685DD /* LocalSports.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 094C1D5E1FC83A3F003685DD /* LocalSports.xcdatamodeld */; };
 		094C1D681FC83A3F003685DD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 094C1D671FC83A3F003685DD /* main.m */; };
+		095BA4831FD02486005C7214 /* MatchAddEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 095BA4821FD02486005C7214 /* MatchAddEventViewController.m */; };
 		098179031FCECFFB0011F4FD /* CalendarTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 098179021FCECFFB0011F4FD /* CalendarTableViewController.m */; };
 		098179061FCED01F0011F4FD /* ClassificationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 098179051FCED01F0011F4FD /* ClassificationTableViewController.m */; };
 		098179091FCED5CD0011F4FD /* CompetitionTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 098179081FCED5CD0011F4FD /* CompetitionTabBarController.m */; };
@@ -45,6 +46,8 @@
 		094C1D611FC83A3F003685DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		094C1D661FC83A3F003685DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		094C1D671FC83A3F003685DD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		095BA4811FD02486005C7214 /* MatchAddEventViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MatchAddEventViewController.h; sourceTree = "<group>"; };
+		095BA4821FD02486005C7214 /* MatchAddEventViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MatchAddEventViewController.m; sourceTree = "<group>"; };
 		098179011FCECFFB0011F4FD /* CalendarTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CalendarTableViewController.h; sourceTree = "<group>"; };
 		098179021FCECFFB0011F4FD /* CalendarTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalendarTableViewController.m; sourceTree = "<group>"; };
 		098179041FCED01F0011F4FD /* ClassificationTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClassificationTableViewController.h; sourceTree = "<group>"; };
@@ -112,6 +115,8 @@
 				D12E74591FCF5AA30054BA52 /* MatchDetailTableViewCell.m */,
 				0926246B1FCD8FA1008F2280 /* Utils.h */,
 				0926246C1FCD8FA1008F2280 /* Utils.m */,
+				095BA4811FD02486005C7214 /* MatchAddEventViewController.h */,
+				095BA4821FD02486005C7214 /* MatchAddEventViewController.m */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -265,6 +270,7 @@
 				094C1D5A1FC83A3F003685DD /* HomeViewController.m in Sources */,
 				094C1D681FC83A3F003685DD /* main.m in Sources */,
 				D12E745A1FCF5AA30054BA52 /* MatchDetailTableViewCell.m in Sources */,
+				095BA4831FD02486005C7214 /* MatchAddEventViewController.m in Sources */,
 				D1C2CB7B1FCDCEAB00922D86 /* FavoriteEntity+CoreDataClass.m in Sources */,
 				D1C2CB771FCDCEAB00922D86 /* ClassificationEntity+CoreDataClass.m in Sources */,
 				D11829451FC8992600805590 /* SportsViewController.m in Sources */,
@@ -397,7 +403,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 6REAL49NXE;
 				INFOPLIST_FILE = LocalSports/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -412,7 +418,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 6REAL49NXE;
 				INFOPLIST_FILE = LocalSports/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

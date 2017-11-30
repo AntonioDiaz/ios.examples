@@ -2,7 +2,7 @@
 //  CompetitionEntity+CoreDataProperties.h
 //  LocalSports
 //
-//  Created by Antonio Díaz Arroyo on 29/11/17.
+//  Created by cice on 30/11/17.
 //  Copyright © 2017 cice. All rights reserved.
 //
 //

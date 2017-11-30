@@ -28,6 +28,8 @@ typedef NS_ENUM(NSInteger, EnumSports) {
 };
 
 +(NSString*) enumSportToString:(EnumSports)enumSport;
-+ (void)deleteAllEntities:(NSString *)nameEntity withContext:(NSManagedObjectContext*)context;
++(void)deleteAllEntities:(NSString *)nameEntity withContext:(NSManagedObjectContext*)context;
++(void)showComingSoon;
++(NSString*) formatDate:(NSDate *) date;
 
 @end

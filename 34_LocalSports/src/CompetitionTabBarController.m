@@ -12,7 +12,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = [NSString stringWithFormat:@"%@ - %@", self.competitionEntity.category, self.competitionEntity.name];
+    //self.navigationItem.title = [NSString stringWithFormat:@"%@ - %@", self.competitionEntity.category, self.competitionEntity.name];
+    
+    self.navigationItem.title = [NSString stringWithFormat:@"%@", self.competitionEntity.name];
     
     AppDelegate *app = (AppDelegate*) [[UIApplication sharedApplication] delegate];
     managedObjectContext = app.persistentContainer.viewContext;
@@ -69,7 +71,6 @@
                     for (NSDictionary *classification in arrayClassification) {
                         [self insertClassification:(NSDictionary *) classification];
                     }
-      
                     CalendarTableViewController *calendarTableViewController = self.viewControllers[0];
                     [calendarTableViewController reloadDataTable];
                     ClassificationTableViewController *classificationTableViewController = self.viewControllers[1];
@@ -87,7 +88,6 @@
     ClassificationEntity *classificationEntry =  [NSEntityDescription
                                  insertNewObjectForEntityForName:CLASSIFICATION_ENTITY
                                  inManagedObjectContext:managedObjectContext];
-
     classificationEntry.competition = self.competitionEntity;
     //classificationEntry.matchesDrawn = (long)[dictionaryClassification objectForKey:@"matchesDrawn"];
     //classificationEntry.matchesLost = (long)[dictionaryClassification objectForKey:@"matchesLost"];
@@ -99,8 +99,6 @@
     NSError *error = nil;
     if(![managedObjectContext save:&error]){
         NSLog(@"Error on insert -->%@", error.localizedDescription);
-    } else {
-        NSLog(@"Insert classification done");
     }
 }
 
@@ -111,19 +109,18 @@
                                              inManagedObjectContext:managedObjectContext];
     NSDictionary* teamLocal = [dictionaryMatch objectForKey:@"teamLocalEntity"];
     NSDictionary* teamVisitor = [dictionaryMatch objectForKey:@"teamVisitorEntity"];
-    matchEntity.lastUpdate = (int)[[dictionaryMatch objectForKey:@"date"] integerValue];
+    matchEntity.lastUpdate = (int)[[dictionaryMatch objectForKey:@"lastUpdate"] integerValue];
     matchEntity.scoreLocal = (int)[[dictionaryMatch objectForKey:@"scoreLocal"] integerValue];
     matchEntity.scoreVisitor = (int)[[dictionaryMatch objectForKey:@"scoreVisitor"] integerValue];
     matchEntity.state = (int)[[dictionaryMatch objectForKey:@"state"] integerValue];
     matchEntity.teamLocal = [teamLocal objectForKey:@"name"];
     matchEntity.teamVisitor = [teamVisitor objectForKey:@"name"];
     matchEntity.week = (int)[[dictionaryMatch objectForKey:@"week"] integerValue];
+    matchEntity.date = [[dictionaryMatch objectForKey:@"date"] doubleValue];
     matchEntity.competition = self.competitionEntity;
     NSError *error = nil;
     if(![managedObjectContext save:&error]){
         NSLog(@"Error on insert -->%@", error.localizedDescription);
-    } else {
-        NSLog(@"Insert done %@ - %@", competitionEntity.name, competitionEntity.sport);
     }
 }
 

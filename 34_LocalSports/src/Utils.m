@@ -30,4 +30,17 @@
     error = nil;
     [context save:&error];
 }
+
++(void)showComingSoon {
+    NSString *alertDesc = @"comming soon";
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:APP_NAME message:alertDesc delegate:self cancelButtonTitle:@"Accept" otherButtonTitles: nil];
+    [alertView show];
+}
+
++(NSString*) formatDate:(NSDate *) date {
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"dd/MM/yyyy HH:mm"];
+    return [dateFormatter stringFromDate:date];
+}
+
 @end
