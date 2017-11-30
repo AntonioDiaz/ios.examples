@@ -1,6 +1,7 @@
 #import "CompetitionTabBarController.h"
 #import "MatchEntity+CoreDataProperties.h"
 #import "ClassificationEntity+CoreDataProperties.h"
+#import "SportCourtEntity+CoreDataProperties.h"
 #import "AppDelegate.h"
 #import "Utils.h"
 #import "CalendarTableViewController.h"
@@ -63,6 +64,7 @@
                 NSArray *arrayMatches = [jsonResults objectForKey:@"matches"];
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [Utils deleteAllEntities:MATCH_ENTITY withContext:managedObjectContext];
+                    [Utils deleteAllEntities:COURT_ENTITY withContext:managedObjectContext];
                     for (NSDictionary *matchDictionary in arrayMatches) {
                         [self insertMatch: matchDictionary];
                     }
@@ -107,8 +109,19 @@
     MatchEntity *matchEntity =  [NSEntityDescription
                                              insertNewObjectForEntityForName:MATCH_ENTITY
                                              inManagedObjectContext:managedObjectContext];
+    SportCourtEntity *courtEntity =  [NSEntityDescription
+                                 insertNewObjectForEntityForName:COURT_ENTITY
+                                 inManagedObjectContext:managedObjectContext];
+    
     NSDictionary* teamLocal = [dictionaryMatch objectForKey:@"teamLocalEntity"];
     NSDictionary* teamVisitor = [dictionaryMatch objectForKey:@"teamVisitorEntity"];
+    NSDictionary* sportCenterCourt = [dictionaryMatch objectForKey:@"sportCenterCourt"];
+    NSDictionary* sportCenter = [sportCenterCourt objectForKey:@"sportCenter"];
+    
+    courtEntity.courtName = [sportCenterCourt objectForKey:@"nameWithCenter"];
+    courtEntity.centerName = [sportCenter objectForKey:@"name"];
+    courtEntity.centerAddress = [sportCenter objectForKey:@"address"];
+    
     matchEntity.lastUpdate = (int)[[dictionaryMatch objectForKey:@"lastUpdate"] integerValue];
     matchEntity.scoreLocal = (int)[[dictionaryMatch objectForKey:@"scoreLocal"] integerValue];
     matchEntity.scoreVisitor = (int)[[dictionaryMatch objectForKey:@"scoreVisitor"] integerValue];
@@ -118,6 +131,7 @@
     matchEntity.week = (int)[[dictionaryMatch objectForKey:@"week"] integerValue];
     matchEntity.date = [[dictionaryMatch objectForKey:@"date"] doubleValue];
     matchEntity.competition = self.competitionEntity;
+    matchEntity.court = courtEntity;
     NSError *error = nil;
     if(![managedObjectContext save:&error]){
         NSLog(@"Error on insert -->%@", error.localizedDescription);

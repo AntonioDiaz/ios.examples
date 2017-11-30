@@ -12,6 +12,9 @@
 #define COMPETITION_ENTITY @"CompetitionEntity"
 #define MATCH_ENTITY @"MatchEntity"
 #define CLASSIFICATION_ENTITY @"ClassificationEntity"
+#define COURT_ENTITY @"SportCourtEntity"
+#define SECONDS_IN_TWO_HOURS 2*60*60
+
 #define UIColorFromRGB(rgbValue) \
     [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
     green:((float)((rgbValue & 0x00FF00) >>  8))/255.0 \
@@ -30,6 +33,9 @@ typedef NS_ENUM(NSInteger, EnumSports) {
 +(NSString*) enumSportToString:(EnumSports)enumSport;
 +(void)deleteAllEntities:(NSString *)nameEntity withContext:(NSManagedObjectContext*)context;
 +(void)showComingSoon;
++(void)showAlert:(NSString *) description;
 +(NSString*) formatDate:(NSDate *) date;
++(NSString*) formatDateDoubleToStr:(double) dateDouble;
++(NSDate*) formatDateDoubleToDate:(double) dateDouble;
 
 @end

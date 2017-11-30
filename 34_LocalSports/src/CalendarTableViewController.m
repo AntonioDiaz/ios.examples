@@ -1,5 +1,6 @@
 #import "CalendarTableViewController.h"
 #import "MatchEntity+CoreDataProperties.h"
+#import "SportCourtEntity+CoreDataProperties.h"
 #import "MatchDetailTableViewCell.h"
 #import "Utils.h"
 #import "MatchAddEventViewController.h"
@@ -39,13 +40,11 @@
         MatchDetailTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell_calendar_detail" forIndexPath:indexPath];
         int indexInArray = ((int)indexPath.row - 1) + (int)indexPath.section * numMatchesEachWeek;
         MatchEntity *matchEntity = [arrayMatches objectAtIndex:indexInArray];
-        double timestampval =  matchEntity.date/1000;
-        NSTimeInterval timestamp = (NSTimeInterval)timestampval;
-        NSDate* date = [NSDate dateWithTimeIntervalSince1970:timestamp];
-        NSString* dateStr = [Utils formatDate:date];
+        NSString* dateStr = [Utils formatDateDoubleToStr:matchEntity.date];
         cell.labelLocal.text = matchEntity.teamLocal;
         cell.labelVisitor.text = matchEntity.teamVisitor;
         cell.labelDate.text = dateStr;
+        cell.labelCenter.text = matchEntity.court.centerName;
         cell.labelScore.text = [NSString stringWithFormat:@"%d - %d", matchEntity.scoreLocal, matchEntity.scoreVisitor];
         return cell;
     }
@@ -70,8 +69,6 @@
             [tableView insertRowsAtIndexPaths:mutableArrayCells withRowAnimation:UITableViewRowAnimationTop];
         }
     } else {
-        int indexInArray = ((int)indexPath.row - 1) + (int)indexPath.section * numMatchesEachWeek;
-        MatchEntity *matchEntity = [arrayMatches objectAtIndex:indexInArray];
         NSString *alertTitle = @"Actions with the match";
         NSString *strActionShare = @"Share match details";
         NSString *strActionAddEvent = @"Add calendar event";
@@ -113,8 +110,13 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
-    //MatchAddEventViewController *MatchAddEventViewController = (MatchAddEventViewController *) segue.destinationViewController;
-    //viewController.sportSelected = sportSelected;
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    int indexInArray = ((int)indexPath.row - 1) + (int)indexPath.section * numMatchesEachWeek;
+    MatchEntity *matchEntity = [arrayMatches objectAtIndex:indexInArray];
+    if ([[segue identifier] isEqualToString:@"idSegueMatchAddEvent"]) {
+        MatchAddEventViewController *matchAddEventViewController = (MatchAddEventViewController *) segue.destinationViewController;
+        matchAddEventViewController.matchEntity = matchEntity;
+    }
 }
 
 

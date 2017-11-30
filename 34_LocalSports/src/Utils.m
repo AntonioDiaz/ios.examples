@@ -32,7 +32,10 @@
 }
 
 +(void)showComingSoon {
-    NSString *alertDesc = @"comming soon";
+    [self showAlert:@"comming soon"];
+}
+
++(void)showAlert:(NSString *) alertDesc {
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:APP_NAME message:alertDesc delegate:self cancelButtonTitle:@"Accept" otherButtonTitles: nil];
     [alertView show];
 }
@@ -41,6 +44,17 @@
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"dd/MM/yyyy HH:mm"];
     return [dateFormatter stringFromDate:date];
+}
+
++(NSDate*) formatDateDoubleToDate:(double) dateDouble {
+    double timestampval = dateDouble / 1000;
+    NSTimeInterval timestamp = (NSTimeInterval)timestampval;
+    return [NSDate dateWithTimeIntervalSince1970:timestamp];
+}
+
++(NSString*) formatDateDoubleToStr:(double) dateDouble {
+    NSDate* date = [self formatDateDoubleToDate:dateDouble];
+    return [self formatDate:date];
 }
 
 @end
