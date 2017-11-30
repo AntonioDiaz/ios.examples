@@ -20,6 +20,7 @@
 		D11829451FC8992600805590 /* SportsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D11829441FC8992600805590 /* SportsViewController.m */; };
 		D12E745A1FCF5AA30054BA52 /* MatchDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D12E74591FCF5AA30054BA52 /* MatchDetailTableViewCell.m */; };
 		D140974E1FC9E93500EAE6DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 094C1D611FC83A3F003685DD /* Assets.xcassets */; };
+		D14397071FD0788100AEF92B /* MatchMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D14397061FD0788100AEF92B /* MatchMapViewController.m */; };
 		D1C2CB771FCDCEAB00922D86 /* ClassificationEntity+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C2CB651FCDCEAB00922D86 /* ClassificationEntity+CoreDataClass.m */; };
 		D1C2CB781FCDCEAB00922D86 /* ClassificationEntity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C2CB661FCDCEAB00922D86 /* ClassificationEntity+CoreDataProperties.m */; };
 		D1C2CB791FCDCEAB00922D86 /* CompetitionEntity+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C2CB691FCDCEAB00922D86 /* CompetitionEntity+CoreDataClass.m */; };
@@ -31,6 +32,7 @@
 		D1C2CB7F1FCDCEAB00922D86 /* SportCourtEntity+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C2CB751FCDCEAB00922D86 /* SportCourtEntity+CoreDataClass.m */; };
 		D1C2CB801FCDCEAB00922D86 /* SportCourtEntity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C2CB761FCDCEAB00922D86 /* SportCourtEntity+CoreDataProperties.m */; };
 		D1C2CB831FCDDEC600922D86 /* CompetitionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C2CB821FCDDEC600922D86 /* CompetitionsTableViewController.m */; };
+		D1C4D2141FD08B35009F3A35 /* leganes.gpx in Resources */ = {isa = PBXBuildFile; fileRef = D1C4D2131FD08B35009F3A35 /* leganes.gpx */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +60,8 @@
 		D11829441FC8992600805590 /* SportsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SportsViewController.m; sourceTree = "<group>"; };
 		D12E74581FCF5AA30054BA52 /* MatchDetailTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MatchDetailTableViewCell.h; sourceTree = "<group>"; };
 		D12E74591FCF5AA30054BA52 /* MatchDetailTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MatchDetailTableViewCell.m; sourceTree = "<group>"; };
+		D14397051FD0788100AEF92B /* MatchMapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MatchMapViewController.h; sourceTree = "<group>"; };
+		D14397061FD0788100AEF92B /* MatchMapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MatchMapViewController.m; sourceTree = "<group>"; };
 		D1C2CB631FCDCEAB00922D86 /* ClassificationEntity+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ClassificationEntity+CoreDataProperties.h"; sourceTree = "<group>"; };
 		D1C2CB641FCDCEAB00922D86 /* ClassificationEntity+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ClassificationEntity+CoreDataClass.h"; sourceTree = "<group>"; };
 		D1C2CB651FCDCEAB00922D86 /* ClassificationEntity+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ClassificationEntity+CoreDataClass.m"; sourceTree = "<group>"; };
@@ -80,6 +84,7 @@
 		D1C2CB761FCDCEAB00922D86 /* SportCourtEntity+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SportCourtEntity+CoreDataProperties.m"; sourceTree = "<group>"; };
 		D1C2CB811FCDDEC600922D86 /* CompetitionsTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CompetitionsTableViewController.h; sourceTree = "<group>"; };
 		D1C2CB821FCDDEC600922D86 /* CompetitionsTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CompetitionsTableViewController.m; sourceTree = "<group>"; };
+		D1C4D2131FD08B35009F3A35 /* leganes.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = leganes.gpx; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +122,8 @@
 				0926246C1FCD8FA1008F2280 /* Utils.m */,
 				095BA4811FD02486005C7214 /* MatchAddEventViewController.h */,
 				095BA4821FD02486005C7214 /* MatchAddEventViewController.m */,
+				D14397051FD0788100AEF92B /* MatchMapViewController.h */,
+				D14397061FD0788100AEF92B /* MatchMapViewController.m */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -142,6 +149,7 @@
 		094C1D541FC83A3F003685DD /* LocalSports */ = {
 			isa = PBXGroup;
 			children = (
+				D1C4D2131FD08B35009F3A35 /* leganes.gpx */,
 				094C1D5B1FC83A3F003685DD /* Main.storyboard */,
 				094C1D611FC83A3F003685DD /* Assets.xcassets */,
 				094C1D661FC83A3F003685DD /* Info.plist */,
@@ -243,6 +251,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1C4D2141FD08B35009F3A35 /* leganes.gpx in Resources */,
 				D140974E1FC9E93500EAE6DA /* Assets.xcassets in Resources */,
 				094C1D5D1FC83A3F003685DD /* Main.storyboard in Resources */,
 			);
@@ -266,6 +275,7 @@
 				098179061FCED01F0011F4FD /* ClassificationTableViewController.m in Sources */,
 				D1C2CB781FCDCEAB00922D86 /* ClassificationEntity+CoreDataProperties.m in Sources */,
 				D1C2CB7E1FCDCEAB00922D86 /* MatchEntity+CoreDataProperties.m in Sources */,
+				D14397071FD0788100AEF92B /* MatchMapViewController.m in Sources */,
 				D1C2CB831FCDDEC600922D86 /* CompetitionsTableViewController.m in Sources */,
 				094C1D5A1FC83A3F003685DD /* HomeViewController.m in Sources */,
 				094C1D681FC83A3F003685DD /* main.m in Sources */,

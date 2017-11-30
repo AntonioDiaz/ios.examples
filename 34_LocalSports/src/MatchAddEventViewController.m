@@ -26,8 +26,8 @@
             [Utils showAlert:@"need access to calendar."];
         } else {
             EKEvent *event = [EKEvent eventWithEventStore:eventStore];
+            event.title = [NSString stringWithFormat:@"Week %d: %@ vs %@", matchEntity.week, matchEntity.teamLocal, matchEntity.teamVisitor];
             event.calendar = eventStore.defaultCalendarForNewEvents;
-            event.title = self.textFieldTitle.text;
             NSDate *initDate = [Utils formatDateDoubleToDate:matchEntity.date];
             event.startDate = initDate;
             event.endDate = [initDate dateByAddingTimeInterval: SECONDS_IN_TWO_HOURS];
