@@ -2,7 +2,7 @@
 //  MatchEntity+CoreDataProperties.m
 //  LocalSports
 //
-//  Created by cice on 30/11/17.
+//  Created by cice on 1/12/17.
 //  Copyright © 2017 cice. All rights reserved.
 //
 //
@@ -15,6 +15,7 @@
 	return [[NSFetchRequest alloc] initWithEntityName:@"MatchEntity"];
 }
 
+@dynamic date;
 @dynamic lastUpdate;
 @dynamic scoreLocal;
 @dynamic scoreVisitor;
@@ -22,7 +23,7 @@
 @dynamic teamLocal;
 @dynamic teamVisitor;
 @dynamic week;
-@dynamic date;
+@dynamic idServer;
 @dynamic competition;
 @dynamic court;
 

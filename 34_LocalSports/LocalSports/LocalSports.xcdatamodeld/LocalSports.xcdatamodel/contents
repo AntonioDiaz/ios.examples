@@ -28,6 +28,7 @@
     </entity>
     <entity name="MatchEntity" representedClassName="MatchEntity" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="idServer" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="lastUpdate" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="scoreLocal" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="scoreVisitor" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
@@ -49,7 +50,7 @@
         <element name="ClassificationEntity" positionX="144" positionY="-189" width="128" height="165"/>
         <element name="CompetitionEntity" positionX="-144" positionY="-45" width="144" height="180"/>
         <element name="FavoriteEntity" positionX="144" positionY="2" width="173" height="88"/>
-        <element name="MatchEntity" positionX="-119" positionY="-385" width="128" height="195"/>
+        <element name="MatchEntity" positionX="-119" positionY="-385" width="128" height="210"/>
         <element name="SportCourtEntity" positionX="133" positionY="-375" width="128" height="118"/>
     </elements>
 </model>

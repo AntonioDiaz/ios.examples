@@ -5,6 +5,7 @@
 #import "Utils.h"
 #import "MatchAddEventViewController.h"
 #import "MatchMapViewController.h"
+#import "MatchSendIssueViewController.h"
 
 @implementation CalendarTableViewController
 
@@ -84,18 +85,18 @@
         [alertController addAction:actionShare];
         
         UIAlertAction *actionAddEvent = [UIAlertAction actionWithTitle:strActionAddEvent style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-              [self performSegueWithIdentifier:@"idSegueMatchAddEvent" sender:nil];
+              [self performSegueWithIdentifier:SEGUE_EVENT sender:nil];
         }];
         [alertController addAction:actionAddEvent];
         
         UIAlertAction *actionSendIssue = [UIAlertAction actionWithTitle:strActionSendIssue style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-            [Utils showComingSoon];
+            [self performSegueWithIdentifier:SEGUE_POST sender:nil];
             [alertController dismissViewControllerAnimated:YES completion:nil];
         }];
         [alertController addAction:actionSendIssue];
         
         UIAlertAction *actionOpenMap = [UIAlertAction actionWithTitle:strActionOpenMap style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-            [self performSegueWithIdentifier:@"idSegueMatchShowMap" sender:nil];
+            [self performSegueWithIdentifier:SEGUE_MAP sender:nil];
             [alertController dismissViewControllerAnimated:YES completion:nil];
         }];
         [alertController addAction:actionOpenMap];
@@ -110,14 +111,19 @@
 
 #pragma mark - Navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
-    if ([[segue identifier] isEqualToString:@"idSegueMatchAddEvent"]) {
+    //self.navigationItem.backBarButtonItem =
+    self.tabBarController.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
+    if ([[segue identifier] isEqualToString:SEGUE_EVENT]) {
         MatchAddEventViewController *matchAddEventViewController = (MatchAddEventViewController *) segue.destinationViewController;
         matchAddEventViewController.matchEntity = [self matchSelectedInList];
     }
-    if ([[segue identifier] isEqualToString:@"idSegueMatchShowMap"]) {
+    if ([[segue identifier] isEqualToString:SEGUE_MAP]) {
         MatchMapViewController *matchMapViewController = (MatchMapViewController *) segue.destinationViewController;
         matchMapViewController.sportCenter = [self matchSelectedInList].court;
+    }
+    if ([[segue identifier] isEqualToString:SEGUE_POST]) {
+        MatchSendIssueViewController *matchSendIssueController = (MatchSendIssueViewController *) segue.destinationViewController;
+        matchSendIssueController.matchEntity = [self matchSelectedInList];
     }
 }
 
@@ -134,9 +140,7 @@
     NSString *textToShare = [NSString stringWithFormat:@"Week %d: %@ vs %@, in %@ on %@", matchEntity.week, matchEntity.teamLocal, matchEntity.teamVisitor, matchEntity.court.centerName, dateStr];
     NSArray *contents = @[textToShare];
     UIActivityViewController *controller = [[UIActivityViewController alloc] initWithActivityItems:contents applicationActivities:nil];
-    
     controller.modalPresentationStyle = UIModalPresentationPopover;
-    
     UIPopoverPresentationController *popController = [controller popoverPresentationController];
     popController.permittedArrowDirections = UIPopoverArrowDirectionAny;
     popController.sourceView = self.navigationItem.titleView;

@@ -130,12 +130,17 @@
     matchEntity.teamVisitor = [teamVisitor objectForKey:@"name"];
     matchEntity.week = (int)[[dictionaryMatch objectForKey:@"week"] integerValue];
     matchEntity.date = [[dictionaryMatch objectForKey:@"date"] doubleValue];
+    matchEntity.idServer = [[dictionaryMatch objectForKey:@"id"] doubleValue];
     matchEntity.competition = self.competitionEntity;
     matchEntity.court = courtEntity;
     NSError *error = nil;
     if(![managedObjectContext save:&error]){
         NSLog(@"Error on insert -->%@", error.localizedDescription);
     }
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+      self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -9,7 +9,6 @@
     
     NSString *documentsDirectoryPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     NSLog(@"device directory: %@", documentsDirectoryPath);
-    
     self.navigationItem.title = @"Available Towns";
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSString *townSelectedStr = [userDefaults objectForKey:PREF_TOWN_NAME];
@@ -61,8 +60,6 @@
     cell.textLabel.text = name;
     return cell;
 }
-
-#pragma mark - UITableViewDelegate
 
 #pragma mark - segue methods
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

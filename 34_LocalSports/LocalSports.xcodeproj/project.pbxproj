@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		090123C21FD16E8B00973DD5 /* MatchSendIssueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 090123C11FD16E8B00973DD5 /* MatchSendIssueViewController.m */; };
 		0926246D1FCD8FA1008F2280 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0926246C1FCD8FA1008F2280 /* Utils.m */; };
 		094C1D571FC83A3F003685DD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 094C1D561FC83A3F003685DD /* AppDelegate.m */; };
 		094C1D5A1FC83A3F003685DD /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 094C1D591FC83A3F003685DD /* HomeViewController.m */; };
@@ -36,6 +37,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		090123C01FD16E8B00973DD5 /* MatchSendIssueViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MatchSendIssueViewController.h; sourceTree = "<group>"; };
+		090123C11FD16E8B00973DD5 /* MatchSendIssueViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MatchSendIssueViewController.m; sourceTree = "<group>"; };
 		0926246B1FCD8FA1008F2280 /* Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		0926246C1FCD8FA1008F2280 /* Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
 		094C1D521FC83A3F003685DD /* LocalSports.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocalSports.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,6 +101,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		090123BF1FD167F500973DD5 /* gps_locations */ = {
+			isa = PBXGroup;
+			children = (
+				D1C4D2131FD08B35009F3A35 /* leganes.gpx */,
+			);
+			path = gps_locations;
+			sourceTree = "<group>";
+		};
 		092624671FCD8645008F2280 /* src */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +135,8 @@
 				095BA4821FD02486005C7214 /* MatchAddEventViewController.m */,
 				D14397051FD0788100AEF92B /* MatchMapViewController.h */,
 				D14397061FD0788100AEF92B /* MatchMapViewController.m */,
+				090123C01FD16E8B00973DD5 /* MatchSendIssueViewController.h */,
+				090123C11FD16E8B00973DD5 /* MatchSendIssueViewController.m */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -131,6 +144,7 @@
 		094C1D491FC83A3F003685DD = {
 			isa = PBXGroup;
 			children = (
+				090123BF1FD167F500973DD5 /* gps_locations */,
 				092624671FCD8645008F2280 /* src */,
 				D14097461FC9D42B00EAE6DA /* images */,
 				094C1D541FC83A3F003685DD /* LocalSports */,
@@ -149,7 +163,6 @@
 		094C1D541FC83A3F003685DD /* LocalSports */ = {
 			isa = PBXGroup;
 			children = (
-				D1C4D2131FD08B35009F3A35 /* leganes.gpx */,
 				094C1D5B1FC83A3F003685DD /* Main.storyboard */,
 				094C1D611FC83A3F003685DD /* Assets.xcassets */,
 				094C1D661FC83A3F003685DD /* Info.plist */,
@@ -264,6 +277,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				090123C21FD16E8B00973DD5 /* MatchSendIssueViewController.m in Sources */,
 				D1C2CB7C1FCDCEAB00922D86 /* FavoriteEntity+CoreDataProperties.m in Sources */,
 				D1C2CB801FCDCEAB00922D86 /* SportCourtEntity+CoreDataProperties.m in Sources */,
 				D1C2CB7F1FCDCEAB00922D86 /* SportCourtEntity+CoreDataClass.m in Sources */,

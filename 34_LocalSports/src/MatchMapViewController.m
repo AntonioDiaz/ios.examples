@@ -30,11 +30,29 @@
     //user location
     self.mapView.showsUserLocation = true;
     
-    
-    MKPointAnnotation *pointUc3m = [self generateAnnotation:40.3310872 withLongitude:-3.7685294 withTitle:@"UC3M" withSubtitle:@"Public University"];
-    [self.mapView addAnnotation:pointUc3m];
-    
-    
+    NSString *name = self.sportCenter.centerName;
+    NSString *addresss = self.sportCenter.centerAddress;
+    //to get gps latitude and longitude from the address.
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+    [geocoder geocodeAddressString:addresss completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"Error %@", [error localizedDescription]);
+        } else {
+            if ([placemarks count]>0) {
+                //config map region and add anotation.
+                MKCoordinateRegion region;
+                CLLocationDegrees latitude = [placemarks lastObject].location.coordinate.latitude;
+                CLLocationDegrees longitude = [placemarks lastObject].location.coordinate.longitude;
+                region.center.latitude = latitude;
+                region.center.longitude = longitude;
+                //un grado es 111kms.
+                region.span = MKCoordinateSpanMake(0.05, 0.05);
+                [self.mapView setRegion:region];
+                MKPointAnnotation *pointSportCenter = [self generateAnnotation:latitude withLongitude:longitude withTitle:name withSubtitle:nil];
+                [self.mapView addAnnotation:pointSportCenter];
+            }
+        }
+    }];
 }
 
 
@@ -44,6 +62,7 @@
 }
 
 #pragma mark - MKMapViewDelegate
+/*
 -(MKAnnotationView*) mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
     //to change the location blue point.
     if ([annotation isKindOfClass:[MKUserLocation class]]) {
@@ -60,6 +79,7 @@
     }
     return nil;
 }
+ */
 
 #pragma mark - CLLocationManagerDelegate
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(nonnull NSArray<CLLocation *> *)locations {
