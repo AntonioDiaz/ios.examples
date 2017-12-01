@@ -160,17 +160,20 @@
     };
 }
 
-
--(void) reloadDataTable {
+-(void) reloadDataTable:(CompetitionEntity *) competition {
     AppDelegate *app = (AppDelegate*) [[UIApplication sharedApplication] delegate];
     NSManagedObjectContext *context = app.persistentContainer.viewContext;
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     NSEntityDescription *description = [NSEntityDescription entityForName:MATCH_ENTITY inManagedObjectContext:context];
     [request setEntity:description];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"competition == %@", competition];
+    [request setPredicate:predicate];
     NSError *error;
     arrayMatches = [context executeFetchRequest:request error:&error];
-    numOfWeeks = [self calculateNumOfWeeks];
-    numMatchesEachWeek = (int)arrayMatches.count / numOfWeeks;
+    if (arrayMatches.count > 0) {
+        numOfWeeks = [self calculateNumOfWeeks];
+        numMatchesEachWeek = (int)arrayMatches.count / numOfWeeks;
+    }
     [self.tableView reloadData];
 }
 

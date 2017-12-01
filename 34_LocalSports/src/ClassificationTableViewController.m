@@ -4,10 +4,6 @@
 #import "AppDelegate.h"
 #import "Utils.h"
 
-@interface ClassificationTableViewController ()
-
-@end
-
 @implementation ClassificationTableViewController
 
 - (void)viewDidLoad {
@@ -37,12 +33,14 @@
 }
 
 #pragma mark - private methods
--(void) reloadDataTable {
+-(void) reloadDataTable:(CompetitionEntity *) competition {
     AppDelegate *app = (AppDelegate*) [[UIApplication sharedApplication] delegate];
     NSManagedObjectContext *context = app.persistentContainer.viewContext;
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     NSEntityDescription *description = [NSEntityDescription entityForName:CLASSIFICATION_ENTITY inManagedObjectContext:context];
     [request setEntity:description];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"competition == %@", competition];
+    [request setPredicate:predicate];
     NSError *error;
     arrayClassification = [context executeFetchRequest:request error:&error];
     [self.tableView reloadData];

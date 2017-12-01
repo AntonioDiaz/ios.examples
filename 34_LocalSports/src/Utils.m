@@ -1,4 +1,5 @@
 #import "Utils.h"
+#import "Reachability.h"
 
 @implementation Utils
 
@@ -70,4 +71,17 @@
     }
     return jsonString;
 }
+
++ (BOOL) connectedToInternet{
+    Reachability *networkReachability = [Reachability reachabilityForInternetConnection];
+    NetworkStatus networkStatus = [networkReachability currentReachabilityStatus];
+    if (networkStatus == NotReachable) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+
+
 @end

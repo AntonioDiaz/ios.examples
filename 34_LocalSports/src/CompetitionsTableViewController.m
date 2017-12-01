@@ -42,17 +42,19 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (arrayCompetitions.count == 0) {
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
+        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(20, 100, self.view.bounds.size.width - 40, 200)];
         label.text = @"There is no competitions for this sport.";
-        label.textColor = UIColorFromRGB(0x303F9F);
-        label.numberOfLines = 2;
+        label.numberOfLines = 4;
         label.textAlignment = NSTextAlignmentCenter;
         label.font = [UIFont fontWithName:@"Verdana-Bold" size:22];
-        self.tableView.backgroundView = label;
+        label.textColor = UIColorFromRGB(0x0061a8);
+        [view addSubview:label];
+        self.tableView.backgroundView = view;
         self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     } else {
         self.tableView.backgroundView  = nil;
-        self.tableView.separatorStyle = UITableViewCellStyleDefault;
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     }
     return arrayCompetitions.count;
 }

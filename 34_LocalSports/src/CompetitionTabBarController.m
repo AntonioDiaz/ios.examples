@@ -13,29 +13,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //self.navigationItem.title = [NSString stringWithFormat:@"%@ - %@", self.competitionEntity.category, self.competitionEntity.name];
-    
     self.navigationItem.title = [NSString stringWithFormat:@"%@", self.competitionEntity.name];
-    
     AppDelegate *app = (AppDelegate*) [[UIApplication sharedApplication] delegate];
     managedObjectContext = app.persistentContainer.viewContext;
-    
     //load competitions details on DB.
-    NSString *idCompetitionServer = [NSString stringWithFormat: @"%f", self.competitionEntity.idCompetitionServer];
-
     UITabBarItem *tabBarItemCalendar = [self.tabBar.items objectAtIndex:0];
     UIImage *imageCalendar = [UIImage imageNamed:@"calendar"];
     imageCalendar = [self imageWithImage:imageCalendar scaledToSize:CGSizeMake(30, 30)];
     [tabBarItemCalendar setImage:imageCalendar];
-    
-    
     UITabBarItem *tabBarItemClassification = [self.tabBar.items objectAtIndex:1];
     UIImage *imageClassification = [UIImage imageNamed:@"classification"];
     imageClassification = [self imageWithImage:imageClassification scaledToSize:CGSizeMake(30, 30)];
     [tabBarItemClassification setImage:imageClassification];
-    
+    NSString *idCompetitionServer = [NSString stringWithFormat: @"%f", self.competitionEntity.idCompetitionServer];
     [self loadCompetitionDetails:idCompetitionServer];
-    
 }
 
 #pragma mark - private methods
@@ -48,7 +39,6 @@
 }
 
 -(void) loadCompetitionDetails:(NSString *) idCompetition {
-    //todo: should clean database.
     NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
     NSURLSession *urlSession = [NSURLSession sessionWithConfiguration:config];
     NSString *strUrlCompetitions = [NSString stringWithFormat:URL_COMPETITION_DETAILS, idCompetition];
@@ -74,9 +64,9 @@
                         [self insertClassification:(NSDictionary *) classification];
                     }
                     CalendarTableViewController *calendarTableViewController = self.viewControllers[0];
-                    [calendarTableViewController reloadDataTable];
+                    [calendarTableViewController reloadDataTable:self.competitionEntity];
                     ClassificationTableViewController *classificationTableViewController = self.viewControllers[1];
-                    [classificationTableViewController reloadDataTable];
+                    [classificationTableViewController reloadDataTable:self.competitionEntity];
                 });
             } else {
                 NSLog(@"status: %ld", httpResponse.statusCode);

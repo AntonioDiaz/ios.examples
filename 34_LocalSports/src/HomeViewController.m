@@ -6,35 +6,39 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     NSString *documentsDirectoryPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     NSLog(@"device directory: %@", documentsDirectoryPath);
-    self.navigationItem.title = @"Available Towns";
+    self.navigationItem.title = [NSString stringWithFormat: @"%@ - Available Towns", APP_NAME];
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSString *townSelectedStr = [userDefaults objectForKey:PREF_TOWN_NAME];
     if (townSelectedStr.length > 0) {
         [self performSegueWithIdentifier:@"segueSports" sender:self];
     } else {
-        NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
-        NSURLSession *urlSession = [NSURLSession sessionWithConfiguration:config];
-        NSURL *url = [NSURL URLWithString:URL_TOWNS];
-        NSURLSessionTask *task = [urlSession dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-            if (error) {
-                NSLog(@"Error on task: %@", error.description);
-            } else {
-                NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
-                if (httpResponse.statusCode == 200) {
-                    NSError *jsonError = nil;
-                    arrayTowns = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&jsonError];
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        [self.townsTableView reloadData];
-                    });
+        //check for internet conection.
+        if (![Utils connectedToInternet]) {
+            [Utils showAlert:@"Internet is required to run LocalSports."];
+        } else {
+            NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+            NSURLSession *urlSession = [NSURLSession sessionWithConfiguration:config];
+            NSURL *url = [NSURL URLWithString:URL_TOWNS];
+            NSURLSessionTask *task = [urlSession dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+                if (error) {
+                    NSLog(@"Error on task: %@", error.description);
                 } else {
-                    NSLog(@"status: %ld", (long)httpResponse.statusCode);
+                    NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+                    if (httpResponse.statusCode == 200) {
+                        NSError *jsonError = nil;
+                        arrayTowns = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&jsonError];
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            [self.townsTableView reloadData];
+                        });
+                    } else {
+                        NSLog(@"status: %ld", (long)httpResponse.statusCode);
+                    }
                 }
-            }
-        }];
-        [task resume];
+            }];
+            [task resume];
+        }
     }
 }
 

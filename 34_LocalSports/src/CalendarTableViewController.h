@@ -9,6 +9,6 @@
     int numMatchesEachWeek;
 }
 
--(void) reloadDataTable;
+-(void) reloadDataTable:(CompetitionEntity *) competition;
 
 @end

@@ -44,5 +44,6 @@ typedef NS_ENUM(NSInteger, EnumSports) {
 +(NSString *) formatDateDoubleToStr:(double) dateDouble;
 +(NSDate *) formatDateDoubleToDate:(double) dateDouble;
 +(NSString *) dictionaryToString:(NSDictionary *) dictionary;
++(BOOL) connectedToInternet;
 
 @end
