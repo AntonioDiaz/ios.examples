@@ -9,7 +9,6 @@
     self.navigationItem.title = @"SportCenter location";
     self.labelAddress.text = sportCenter.centerName;
     self.labelAddress.text = sportCenter.centerAddress;
-    
     locationManager = [[CLLocationManager alloc] init];
     [locationManager requestWhenInUseAuthorization];
     locationManager.delegate = self;

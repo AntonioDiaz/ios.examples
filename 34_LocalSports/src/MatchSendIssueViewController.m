@@ -36,56 +36,40 @@
         NSString *competitionId = [[NSNumber numberWithDouble:matchEntity.competition.idCompetitionServer] stringValue];
         NSString *matchId = [[NSNumber numberWithDouble:matchEntity.idServer] stringValue];
         NSString *description = self.textViewDescription.text;
-        
-        NSString *bodyRequest = [NSString stringWithFormat:@"clientId=%@&competitionId=%@&matchId&matchId=%@&description=%@", clientId, competitionId, matchId, description];
-        NSLog(@"%@", bodyRequest);
-        //request config
+        NSDictionary *dictionaryPost = [[NSDictionary alloc]
+                                        initWithObjectsAndKeys: clientId, @"clientId", competitionId, @"competitionId", matchId, @"matchId", description, @"description", nil];
+        NSString *bodyRequest = [Utils dictionaryToString:dictionaryPost];
         NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
-        //sessionConfiguration.HTTPAdditionalHeaders = dictionary.
+        sessionConfiguration.HTTPAdditionalHeaders = [[NSDictionary alloc] initWithObjectsAndKeys:@"application/json", @"Content-Type", nil];
         NSURLSession *urlSession = [NSURLSession sessionWithConfiguration:sessionConfiguration];
         NSURL *url = [NSURL URLWithString:URL_SEND_ISSUE];
         NSMutableURLRequest *mutableUrlRequest = [NSMutableURLRequest requestWithURL:url];
         mutableUrlRequest.HTTPMethod = @"POST";
         mutableUrlRequest.HTTPBody = [bodyRequest dataUsingEncoding:NSUTF8StringEncoding];
-        
         NSURLSessionTask *sessionTask = [urlSession dataTaskWithRequest:mutableUrlRequest completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
             if (!error) {
                 NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
                 if (httpResponse.statusCode == 200) {
-                    NSError *jsonError;
-                    NSDictionary *dictionaryResponse = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&jsonError];
-                    NSLog(@"response %@", dictionaryResponse);
-                    NSString *alertTitle = @"Registration";
-                    NSString *alertDesc = [NSString stringWithFormat:@"Registration done ;-)"];
-                    NSString *serverErrorDesc = [dictionaryResponse objectForKey:@"error"] ;
-                    if (serverErrorDesc!= nil) {
-                        alertTitle = @"server error";
-                        alertDesc = [NSString stringWithFormat:@"Error on server: %@", serverErrorDesc];
-                    }
                     dispatch_async(dispatch_get_main_queue(), ^{
-                        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:alertTitle message:alertDesc delegate:nil cancelButtonTitle:@"Accept" otherButtonTitles: nil];
-                        [alertView show];
+                        [Utils showAlert:@"Your issue has been register. We will review it as soon as possible."];
+                        [self.navigationController popViewControllerAnimated:YES];
                     });
                 } else {
-                    NSLog(@"http error %@", httpResponse.statusCode);
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        NSString *errorMsg = [NSString stringWithFormat: @"It is not possible to send the issue. HTTP error: %d", (int) httpResponse.statusCode];
+                        [Utils showAlert: errorMsg];
+                        [self.navigationController popViewControllerAnimated:YES];
+                    });
                 }
             } else {
-                NSLog(@"error in task %@", error.localizedDescription);
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    NSString *errorMsg = [NSString stringWithFormat: @"It is not possible to send the issue. Error: %@", error.localizedDescription];
+                    [Utils showAlert: errorMsg];
+                    [self.navigationController popViewControllerAnimated:YES];
+                });
             }
         }];
         [sessionTask resume];
-        
-        
-        /*
-         "clientId": "xxxxxx",
-         "competitionId": "6416141048086528",
-         "matchId": "6273556186923008",
-         "description": "esta mal algo ahi..."
-         */
-        
-        
-        
     }
-    
 }
 @end

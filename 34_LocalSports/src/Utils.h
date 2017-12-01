@@ -40,8 +40,9 @@ typedef NS_ENUM(NSInteger, EnumSports) {
 +(void)deleteAllEntities:(NSString *)nameEntity withContext:(NSManagedObjectContext*)context;
 +(void)showComingSoon;
 +(void)showAlert:(NSString *) description;
-+(NSString*) formatDate:(NSDate *) date;
-+(NSString*) formatDateDoubleToStr:(double) dateDouble;
-+(NSDate*) formatDateDoubleToDate:(double) dateDouble;
++(NSString *) formatDate:(NSDate *) date;
++(NSString *) formatDateDoubleToStr:(double) dateDouble;
++(NSDate *) formatDateDoubleToDate:(double) dateDouble;
++(NSString *) dictionaryToString:(NSDictionary *) dictionary;
 
 @end
