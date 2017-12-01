@@ -1,4 +1,9 @@
 #import "RompeBaldosasEscena.h"
+#import "FinJuegoScene.h"
+
+static const uint32_t categoriaPelota = 0x1 << 0; //0000000000.0000000000.0000000000.01
+static const uint32_t categoriaBordeInferior = 0x1 << 1; //0000000000.0000000000.0000000000.10
+static const uint32_t categoriaLadrillo = 0x1 << 2; //0000000000.0000000000.0000000001.00
 
 @implementation RompeBaldosasEscena
 
@@ -32,7 +37,10 @@
         pelota.physicsBody.linearDamping = 0.0;
         pelota.physicsBody.allowsRotation = false;
         //lanzamos la pelota
-        [pelota.physicsBody applyImpulse:CGVectorMake(30.0, -10.0)];
+        [pelota.physicsBody applyImpulse:CGVectorMake(20.0, 10.0)];
+        //creamos las mascaras
+        pelota.physicsBody.categoryBitMask = categoriaPelota;
+        pelota.physicsBody.contactTestBitMask = categoriaLadrillo | categoriaBordeInferior;
         
         //construimos la raqueta
         SKSpriteNode *raqueta = [[SKSpriteNode alloc] initWithImageNamed:@"paddle"];
@@ -61,9 +69,19 @@
             bloque.name = @"bloque";
             bloque.physicsBody.friction = 0;
             [self addChild:bloque];
+            bloque.physicsBody.categoryBitMask = categoriaLadrillo;
         }
+        //añadimos un borde inferior.
+        CGRect rectanguloInferior = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, 1);
+        SKNode *nodoBordeInferior = [SKNode node];
+        nodoBordeInferior.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:rectanguloInferior];
+        nodoBordeInferior.physicsBody.categoryBitMask = categoriaBordeInferior;
+        [self addChild:nodoBordeInferior];
+        //queremos que nos avisen cuando haya colision
+        self.physicsWorld.contactDelegate = self;
         
     }
+    
     return self;
 }
 
@@ -99,7 +117,44 @@
 
 -(void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     estoyTocandoRaqueta = false;
-    
 }
+
+#pragma mark - SKPhysicsContactDelegate
+- (void)didBeginContact:(SKPhysicsContact *)contact {
+    //declaramos 2 cuerpos para ordenarlos
+    SKPhysicsBody *primerBody;
+    SKPhysicsBody *segundoBody;
+    //ordenamos los bodys
+    if (contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask) {
+        primerBody = contact.bodyA;
+        segundoBody = contact.bodyB;
+    } else {
+        primerBody = contact.bodyB;
+        segundoBody = contact.bodyA;
+    }
+    //comprobamos si la pelota chocó contra el borde inferior.
+    if (primerBody.categoryBitMask == categoriaPelota && segundoBody.categoryBitMask == categoriaBordeInferior) {
+        //enviar a un jugador a la escena FinJuegoScene
+        FinJuegoScene *finJuegoScene = [[FinJuegoScene alloc] initWithSize:self.frame.size conResultado:false];
+        [self.view presentScene:finJuegoScene];
+    }
+    //comprobamos si la pelota chocó contra un ladrillo.
+    if (primerBody.categoryBitMask == categoriaPelota && segundoBody.categoryBitMask == categoriaLadrillo) {
+        [segundoBody.node removeFromParent];
+        //comprobamos si quedan ladrillos
+        BOOL quedanLadrillos = false;
+        for (SKNode *nodo in self.children) {
+            if ([nodo.name isEqualToString:@"bloque"]) {
+                quedanLadrillos = true;
+            }
+        }
+        if (!quedanLadrillos) {
+            //termina el juego: has ganado.
+            FinJuegoScene *finJuegoScene = [[FinJuegoScene alloc] initWithSize:self.frame.size conResultado:true];
+            [self.view presentScene:finJuegoScene];
+        }
+    }
+}
+
 
 @end

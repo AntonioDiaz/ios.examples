@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		090588791FD14E8C00FE8CD6 /* FinJuegoScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 090588781FD14E8C00FE8CD6 /* FinJuegoScene.m */; };
+		0905887C1FD15F9600FE8CD6 /* background-music-aac.caf in Resources */ = {isa = PBXBuildFile; fileRef = 0905887B1FD159E000FE8CD6 /* background-music-aac.caf */; };
 		0979B2821FCFFE9E003BEA52 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0979B2811FCFFE9E003BEA52 /* AppDelegate.m */; };
 		0979B2851FCFFE9E003BEA52 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0979B2841FCFFE9E003BEA52 /* ViewController.m */; };
 		0979B2881FCFFE9E003BEA52 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0979B2861FCFFE9E003BEA52 /* Main.storyboard */; };
@@ -21,6 +23,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		090588771FD14E8C00FE8CD6 /* FinJuegoScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FinJuegoScene.h; sourceTree = "<group>"; };
+		090588781FD14E8C00FE8CD6 /* FinJuegoScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FinJuegoScene.m; sourceTree = "<group>"; };
+		0905887B1FD159E000FE8CD6 /* background-music-aac.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "background-music-aac.caf"; sourceTree = "<group>"; };
 		0979B27D1FCFFE9E003BEA52 /* RompeBaldosas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RompeBaldosas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0979B2801FCFFE9E003BEA52 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0979B2811FCFFE9E003BEA52 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -50,9 +55,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0905887A1FD159C800FE8CD6 /* music */ = {
+			isa = PBXGroup;
+			children = (
+				0905887B1FD159E000FE8CD6 /* background-music-aac.caf */,
+			);
+			path = music;
+			sourceTree = "<group>";
+		};
 		0979B2741FCFFE9E003BEA52 = {
 			isa = PBXGroup;
 			children = (
+				0905887A1FD159C800FE8CD6 /* music */,
 				0979B2991FD00341003BEA52 /* images */,
 				0979B27F1FCFFE9E003BEA52 /* RompeBaldosas */,
 				0979B27E1FCFFE9E003BEA52 /* Products */,
@@ -76,6 +90,8 @@
 				0979B2841FCFFE9E003BEA52 /* ViewController.m */,
 				0979B2961FCFFF5C003BEA52 /* RompeBaldosasEscena.h */,
 				0979B2971FCFFF5C003BEA52 /* RompeBaldosasEscena.m */,
+				090588771FD14E8C00FE8CD6 /* FinJuegoScene.h */,
+				090588781FD14E8C00FE8CD6 /* FinJuegoScene.m */,
 				0979B2861FCFFE9E003BEA52 /* Main.storyboard */,
 				0979B2891FCFFE9E003BEA52 /* Assets.xcassets */,
 				0979B28E1FCFFE9E003BEA52 /* Info.plist */,
@@ -154,6 +170,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0905887C1FD15F9600FE8CD6 /* background-music-aac.caf in Resources */,
 				0979B28A1FCFFE9E003BEA52 /* Assets.xcassets in Resources */,
 				0979B2A11FD00382003BEA52 /* paddle.png in Resources */,
 				0979B29B1FD0037A003BEA52 /* football.png in Resources */,
@@ -173,6 +190,7 @@
 			files = (
 				0979B2851FCFFE9E003BEA52 /* ViewController.m in Sources */,
 				0979B2901FCFFE9E003BEA52 /* main.m in Sources */,
+				090588791FD14E8C00FE8CD6 /* FinJuegoScene.m in Sources */,
 				0979B2821FCFFE9E003BEA52 /* AppDelegate.m in Sources */,
 				0979B2981FCFFF5C003BEA52 /* RompeBaldosasEscena.m in Sources */,
 			);

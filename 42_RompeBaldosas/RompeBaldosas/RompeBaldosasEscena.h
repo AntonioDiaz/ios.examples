@@ -1,7 +1,7 @@
 #import <SpriteKit/SpriteKit.h>
 
 
-@interface RompeBaldosasEscena : SKScene
+@interface RompeBaldosasEscena : SKScene <SKPhysicsContactDelegate>
 {
     BOOL estoyTocandoRaqueta;
 }
