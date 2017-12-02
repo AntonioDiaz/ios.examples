@@ -15,6 +15,11 @@
     NSString *townSelected = [userDefaults objectForKey:PREF_TOWN_NAME];
     NSString *idTownSelected = [userDefaults objectForKey:PREF_TOWN_ID];
     self.navigationItem.title = [NSString stringWithFormat:@"%@ - %@", APP_NAME, townSelected];
+    
+    UIImage *image = [[UIImage imageNamed:@"menu"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIBarButtonItem *button = [[UIBarButtonItem alloc]initWithImage:image style:UIBarButtonItemStylePlain target:self action:@selector(showSideMenu:)];
+    self.navigationItem.leftBarButtonItem = button;
+    
     [self initSportButton:self.buttonFootball];
     [self initSportButton:self.buttonBasketball];
     [self initSportButton:self.buttonHandball];
@@ -31,6 +36,10 @@
 }
 
 #pragma mark - private methods
+-(void) showSideMenu:(id)sender {
+    [Utils showComingSoon];
+}
+
 -(void) enableSportButtons {
     self.buttonFootball.enabled = true;
     self.buttonBasketball.enabled = true;

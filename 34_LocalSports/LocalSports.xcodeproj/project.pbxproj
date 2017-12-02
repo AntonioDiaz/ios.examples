@@ -36,6 +36,7 @@
 		D1C2CB831FCDDEC600922D86 /* CompetitionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C2CB821FCDDEC600922D86 /* CompetitionsTableViewController.m */; };
 		D1C4D2141FD08B35009F3A35 /* leganes.gpx in Resources */ = {isa = PBXBuildFile; fileRef = D1C4D2131FD08B35009F3A35 /* leganes.gpx */; };
 		D1D3A62D1FD299AF003CA8E7 /* UtilsDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = D1D3A62C1FD299AF003CA8E7 /* UtilsDataBase.m */; };
+		D1F1629D1FD31F1E00995436 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F1629C1FD31F1E00995436 /* SWRevealViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +95,8 @@
 		D1C4D2131FD08B35009F3A35 /* leganes.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = leganes.gpx; sourceTree = "<group>"; };
 		D1D3A62B1FD299AF003CA8E7 /* UtilsDataBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UtilsDataBase.h; sourceTree = "<group>"; };
 		D1D3A62C1FD299AF003CA8E7 /* UtilsDataBase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UtilsDataBase.m; sourceTree = "<group>"; };
+		D1F1629B1FD31F1E00995436 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		D1F1629C1FD31F1E00995436 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +184,8 @@
 		D13FE33E1FD1DC2B00067C5B /* libraries */ = {
 			isa = PBXGroup;
 			children = (
+				D1F1629B1FD31F1E00995436 /* SWRevealViewController.h */,
+				D1F1629C1FD31F1E00995436 /* SWRevealViewController.m */,
 				D13FE3401FD1DC5800067C5B /* Reachability.h */,
 				D13FE33F1FD1DC5800067C5B /* Reachability.m */,
 			);
@@ -308,6 +313,7 @@
 				D1D3A62D1FD299AF003CA8E7 /* UtilsDataBase.m in Sources */,
 				D1C2CB7C1FCDCEAB00922D86 /* FavoriteEntity+CoreDataProperties.m in Sources */,
 				D1C2CB801FCDCEAB00922D86 /* SportCourtEntity+CoreDataProperties.m in Sources */,
+				D1F1629D1FD31F1E00995436 /* SWRevealViewController.m in Sources */,
 				D1C2CB7F1FCDCEAB00922D86 /* SportCourtEntity+CoreDataClass.m in Sources */,
 				098179091FCED5CD0011F4FD /* CompetitionTabBarController.m in Sources */,
 				094C1D601FC83A3F003685DD /* LocalSports.xcdatamodeld in Sources */,

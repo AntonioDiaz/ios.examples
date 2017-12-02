@@ -13,7 +13,11 @@
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"competition == %@", competitionEntity];
     [request setPredicate:predicate];
     NSError *error;
-    return [context executeFetchRequest:request error:&error];
+    NSArray *matchesArray = [context executeFetchRequest:request error:&error];
+    if(error){
+        NSLog(@"queryMatches error -->%@", error.localizedDescription);
+    }
+    return matchesArray;
 }
 
 +(NSArray *) queryClassification:(CompetitionEntity *)competitionEntity {
@@ -25,7 +29,44 @@
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"competition == %@", competitionEntity];
     [request setPredicate:predicate];
     NSError *error;
-    return [context executeFetchRequest:request error:&error];
+    NSArray *matchesClassification = [context executeFetchRequest:request error:&error];
+    if(error){
+        NSLog(@"queryClassification error -->%@", error.localizedDescription);
+    }
+    return matchesClassification;
+
+}
+
++(NSArray *) queryCompetitionsBySport:(NSString *) sportStr {
+    AppDelegate *app = (AppDelegate*) [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = app.persistentContainer.viewContext;
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSEntityDescription *description = [NSEntityDescription entityForName:COMPETITION_ENTITY inManagedObjectContext:context];
+    [request setEntity:description];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"sport == %@", sportStr];
+    [request setPredicate:predicate];
+    NSError *error;
+    NSArray *arrayCompetitions = [context executeFetchRequest:request error:&error];
+    if(error){
+        NSLog(@"queryCompetitionsBySport error -->%@", error.localizedDescription);
+    }
+    return arrayCompetitions;
+}
+
++(SportCourtEntity *) querySportCourtById:(long) idServer {
+    AppDelegate *app = (AppDelegate*) [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = app.persistentContainer.viewContext;
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSEntityDescription *description = [NSEntityDescription entityForName:COURT_ENTITY inManagedObjectContext:context];
+    [request setEntity:description];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"idServer == %ld", idServer];
+    [request setPredicate:predicate];
+    NSError *error;
+    NSArray *courts = [context executeFetchRequest:request error:&error];
+    if(error){
+        NSLog(@"querySportCourtById error -->%@", error.localizedDescription);
+    }
+    return courts.count==0 ? nil: [courts objectAtIndex:0];
 }
 
 +(void) deleteClassification:(CompetitionEntity *)competitionEntity {
@@ -38,6 +79,9 @@
     }
     error = nil;
     [context save:&error];
+    if(error){
+        NSLog(@"deleteClassification error -->%@", error.localizedDescription);
+    }
 }
 
 +(void) deleteMatches:(CompetitionEntity *)competitionEntity {
@@ -50,6 +94,9 @@
     }
     error = nil;
     [context save:&error];
+    if(error){
+        NSLog(@"deleteMatches error -->%@", error.localizedDescription);
+    }
 }
 
 +(void) deleteAllEntities:(NSString *)nameEntity {
@@ -64,6 +111,9 @@
     }
     error = nil;
     [context save:&error];
+    if(error){
+        NSLog(@"deleteAllEntities error -->%@", error.localizedDescription);
+    }
 }
 
 +(void) insertCompetition:(NSDictionary *) dictionaryCompetition {
@@ -115,25 +165,16 @@
     MatchEntity *matchEntity =  [NSEntityDescription
                                  insertNewObjectForEntityForName:MATCH_ENTITY
                                  inManagedObjectContext:context];
-    SportCourtEntity *courtEntity =  [NSEntityDescription
-                                      insertNewObjectForEntityForName:COURT_ENTITY
-                                      inManagedObjectContext:context];
-    
-    NSDictionary* teamLocal = [dictionaryMatch objectForKey:@"teamLocalEntity"];
-    NSDictionary* teamVisitor = [dictionaryMatch objectForKey:@"teamVisitorEntity"];
-    NSDictionary* sportCenterCourt = [dictionaryMatch objectForKey:@"sportCenterCourt"];
-    NSDictionary* sportCenter = [sportCenterCourt objectForKey:@"sportCenter"];
-    
-    courtEntity.courtName = [sportCenterCourt objectForKey:@"nameWithCenter"];
-    courtEntity.centerName = [sportCenter objectForKey:@"name"];
-    courtEntity.centerAddress = [sportCenter objectForKey:@"address"];
-    
+    NSDictionary* dictionaryTeamLocal = [dictionaryMatch objectForKey:@"teamLocalEntity"];
+    NSDictionary* dictionaryTeamVisitor = [dictionaryMatch objectForKey:@"teamVisitorEntity"];
+    NSDictionary* dictionarySportCenterCourt = [dictionaryMatch objectForKey:@"sportCenterCourt"];
+    SportCourtEntity *courtEntity = [self insertOrUpdateCourtEntity:dictionarySportCenterCourt];
     matchEntity.lastUpdate = (int)[[dictionaryMatch objectForKey:@"lastUpdate"] integerValue];
     matchEntity.scoreLocal = (int)[[dictionaryMatch objectForKey:@"scoreLocal"] integerValue];
     matchEntity.scoreVisitor = (int)[[dictionaryMatch objectForKey:@"scoreVisitor"] integerValue];
     matchEntity.state = (int)[[dictionaryMatch objectForKey:@"state"] integerValue];
-    matchEntity.teamLocal = [teamLocal objectForKey:@"name"];
-    matchEntity.teamVisitor = [teamVisitor objectForKey:@"name"];
+    matchEntity.teamLocal = [dictionaryTeamLocal objectForKey:@"name"];
+    matchEntity.teamVisitor = [dictionaryTeamVisitor objectForKey:@"name"];
     matchEntity.week = (int)[[dictionaryMatch objectForKey:@"week"] integerValue];
     matchEntity.date = [[dictionaryMatch objectForKey:@"date"] doubleValue];
     matchEntity.idServer = [[dictionaryMatch objectForKey:@"id"] doubleValue];
@@ -145,5 +186,31 @@
     }
 }
 
++(SportCourtEntity *) insertOrUpdateCourtEntity:(NSDictionary *) dictionary {
+    NSManagedObjectContext *context = [self getContext];
+    //check if exist this sportCenter.
+    long idServer = [[dictionary objectForKey:@"id"] longValue];
+    SportCourtEntity *sportCenterEntity = [self querySportCourtById:idServer];
+    if (!sportCenterEntity) {
+        sportCenterEntity =  [NSEntityDescription
+                         insertNewObjectForEntityForName:COURT_ENTITY
+                         inManagedObjectContext:context];
+    }
+    NSDictionary* sportCenterDictionary = [dictionary objectForKey:@"sportCenter"];
+    sportCenterEntity.courtName = [dictionary objectForKey:@"nameWithCenter"];
+    sportCenterEntity.centerName = [sportCenterDictionary objectForKey:@"name"];
+    sportCenterEntity.centerAddress = [sportCenterDictionary objectForKey:@"address"];
+    sportCenterEntity.idServer = idServer;
+    NSError *error = nil;
+    if(![context save:&error]){
+        NSLog(@"Error on insertOrUpdateCourtEntity -->%@", error.localizedDescription);
+    }
+    return sportCenterEntity;
+}
+
++(NSManagedObjectContext *) getContext {
+    AppDelegate *app = (AppDelegate*) [[UIApplication sharedApplication] delegate];
+    return app.persistentContainer.viewContext;
+}
 
 @end

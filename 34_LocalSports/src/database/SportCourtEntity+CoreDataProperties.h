@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, copy) NSString *centerAddress;
 @property (nullable, nonatomic, copy) NSString *centerName;
 @property (nullable, nonatomic, copy) NSString *courtName;
-@property (nonatomic) int16_t idServer;
+@property (nonatomic) double idServer;
 @property (nullable, nonatomic, retain) NSSet<MatchEntity *> *matches;
 
 @end

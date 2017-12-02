@@ -2,6 +2,7 @@
 #import "AppDelegate.h"
 #import "CompetitionEntity+CoreDataProperties.h"
 #import "Utils.h"
+#import "UtilsDataBase.h"
 #import "CompetitionTabBarController.h"
 
 
@@ -15,20 +16,8 @@
     NSString *townSelected = [userDefaults objectForKey:PREF_TOWN_NAME];
     NSString *sportStr = [Utils enumSportToString:sportSelected];
     self.navigationItem.title = [NSString stringWithFormat:@"%@ - %@", townSelected, sportStr];
-
-    
-    AppDelegate *app = (AppDelegate*) [[UIApplication sharedApplication] delegate];
-    NSManagedObjectContext *context = app.persistentContainer.viewContext;
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    NSEntityDescription *description = [NSEntityDescription entityForName:COMPETITION_ENTITY inManagedObjectContext:context];
-
-    [request setEntity:description];
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"sport == %@", sportStr];
-    [request setPredicate:predicate];
-    NSError *error;
-    arrayCompetitions = [context executeFetchRequest:request error:&error];
+    arrayCompetitions = [UtilsDataBase queryCompetitionsBySport:sportStr];
     [self.tableView reloadData];
-
 }
 
 - (void)didReceiveMemoryWarning {

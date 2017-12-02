@@ -8,6 +8,7 @@
 
 +(NSArray *) queryMatches:(CompetitionEntity *) competitionEntity;
 +(NSArray *) queryClassification:(CompetitionEntity *) competitionEntity;
++(NSArray *) queryCompetitionsBySport:(NSString *) sportStr;
 +(void) deleteClassification:(CompetitionEntity *)competitionEntity;
 +(void) deleteMatches:(CompetitionEntity *)competitionEntity;
 +(void) deleteAllEntities:(NSString *)nameEntity;
