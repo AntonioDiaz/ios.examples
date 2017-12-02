@@ -20,18 +20,6 @@
     }
 }
 
-+ (void)deleteAllEntities:(NSString *)nameEntity withContext:(NSManagedObjectContext*)context {
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:nameEntity];
-    [fetchRequest setIncludesPropertyValues:NO];
-    NSError *error;
-    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
-    for (NSManagedObject *object in fetchedObjects) {
-        [context deleteObject:object];
-    }
-    error = nil;
-    [context save:&error];
-}
-
 +(void)showComingSoon {
     [self showAlert:@"comming soon"];
 }
@@ -72,16 +60,9 @@
     return jsonString;
 }
 
-+ (BOOL) connectedToInternet{
++ (BOOL) noTengoInterne {
     Reachability *networkReachability = [Reachability reachabilityForInternetConnection];
     NetworkStatus networkStatus = [networkReachability currentReachabilityStatus];
-    if (networkStatus == NotReachable) {
-        return false;
-    } else {
-        return true;
-    }
+    return networkStatus == NotReachable;
 }
-
-
-
 @end

@@ -2,6 +2,7 @@
 #import "SportsViewController.h"
 #import "CompetitionsTableViewController.h"
 #import "CompetitionEntity+CoreDataProperties.h"
+#import "UtilsDataBase.h"
 
 @implementation SportsViewController
 
@@ -20,7 +21,9 @@
     [self initSportButton:self.buttonVolleyball];
     [self initSportButton:self.buttonHockey];
     [self initSportButton:self.buttonFavorites];
-    [self loadCompetitions:idTownSelected];
+    if (![Utils noTengoInterne]) {
+        [self loadCompetitions:idTownSelected];
+    } 
 }
 
 - (void)didReceiveMemoryWarning {
@@ -44,7 +47,6 @@
 }
 
 -(void) loadCompetitions:(NSString *) idTown {
-    //todo: should clean database.
     NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
     NSURLSession *urlSession = [NSURLSession sessionWithConfiguration:config];
     NSString *strUrlCompetitions = [NSString stringWithFormat:URL_COMPETITIONS, idTown];
@@ -60,38 +62,18 @@
                 NSLog(@"competition size %lu", (unsigned long)jsonResults.count);
                 dispatch_async(dispatch_get_main_queue(), ^{
                     //first remove all competitions.
-                    [Utils deleteAllEntities:COMPETITION_ENTITY withContext:managedObjectContext];
+                    [UtilsDataBase deleteAllEntities:COMPETITION_ENTITY];
                    for (NSDictionary *competition in jsonResults) {
-                       [self insertCompetition:competition];
+                       [UtilsDataBase insertCompetition:competition];
                     }
                     [self enableSportButtons];
                 });
             } else {
-                NSLog(@"status: %ld", httpResponse.statusCode);
+                NSLog(@"status: %d", (int)httpResponse.statusCode);
             }
         }
     }];
     [task resume];
-}
-
-//todo move this method to database utils class
--(void) insertCompetition:(NSDictionary *) dictionaryCompetition {
-    CompetitionEntity *competitionEntity =  [NSEntityDescription
-                                             insertNewObjectForEntityForName:COMPETITION_ENTITY
-                                             inManagedObjectContext:managedObjectContext];
-    NSDictionary *dictionaryCategory = [dictionaryCompetition objectForKey:@"categoryEntity"];
-    NSDictionary *dictionarySport = [dictionaryCompetition objectForKey:@"sportEntity"];
-    competitionEntity.category = [dictionaryCategory objectForKey:@"name"];
-    competitionEntity.categoryOrder = (int)[[dictionaryCategory objectForKey:@"order"] integerValue];
-    competitionEntity.idCompetitionServer = [[dictionaryCompetition objectForKey:@"id"] doubleValue];
-    //competitionEntity.lastUpdateApp = [dictionaryCompetition objectForKey:@"lastPublished"];
-    //competitionEntity.lastUpdateServer = [dictionaryCompetition objectForKey:@"lastPublished"];
-    competitionEntity.name = [dictionaryCompetition objectForKey:@"name"];
-    competitionEntity.sport = [dictionarySport objectForKey:@"tag"];
-    NSError *error = nil;
-    if(![managedObjectContext save:&error]){
-        NSLog(@"Error on insert -->%@", error.localizedDescription);
-    }
 }
 
 #pragma mark - Navigation

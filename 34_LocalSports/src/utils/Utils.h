@@ -10,10 +10,12 @@
 #define APP_NAME @"LocalSports"
 #define PREF_TOWN_NAME @"PREF_TOWN_NAME"
 #define PREF_TOWN_ID @"PREF_TOWN_ID"
+
 #define COMPETITION_ENTITY @"CompetitionEntity"
 #define MATCH_ENTITY @"MatchEntity"
 #define CLASSIFICATION_ENTITY @"ClassificationEntity"
 #define COURT_ENTITY @"SportCourtEntity"
+
 #define SECONDS_IN_TWO_HOURS 2*60*60
 
 #define SEGUE_EVENT @"segue_event"
@@ -37,13 +39,12 @@ typedef NS_ENUM(NSInteger, EnumSports) {
 };
 
 +(NSString*) enumSportToString:(EnumSports)enumSport;
-+(void)deleteAllEntities:(NSString *)nameEntity withContext:(NSManagedObjectContext*)context;
 +(void)showComingSoon;
 +(void)showAlert:(NSString *) description;
 +(NSString *) formatDate:(NSDate *) date;
 +(NSString *) formatDateDoubleToStr:(double) dateDouble;
 +(NSDate *) formatDateDoubleToDate:(double) dateDouble;
 +(NSString *) dictionaryToString:(NSDictionary *) dictionary;
-+(BOOL) connectedToInternet;
++(BOOL) noTengoInterne;
 
 @end

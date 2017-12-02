@@ -3,6 +3,7 @@
 #import "ClassificationEntity+CoreDataClass.h"
 #import "AppDelegate.h"
 #import "Utils.h"
+#import "UtilsDataBase.h"
 
 @implementation ClassificationTableViewController
 
@@ -23,7 +24,6 @@
     return arrayClassification.count;
 }
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell_classification" forIndexPath:indexPath];
     ClassificationEntity *classificationEntity = [arrayClassification objectAtIndex:indexPath.row];
@@ -34,15 +34,7 @@
 
 #pragma mark - private methods
 -(void) reloadDataTable:(CompetitionEntity *) competition {
-    AppDelegate *app = (AppDelegate*) [[UIApplication sharedApplication] delegate];
-    NSManagedObjectContext *context = app.persistentContainer.viewContext;
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    NSEntityDescription *description = [NSEntityDescription entityForName:CLASSIFICATION_ENTITY inManagedObjectContext:context];
-    [request setEntity:description];
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"competition == %@", competition];
-    [request setPredicate:predicate];
-    NSError *error;
-    arrayClassification = [context executeFetchRequest:request error:&error];
+    arrayClassification = [UtilsDataBase queryClassification:competition];
     [self.tableView reloadData];
 }
 

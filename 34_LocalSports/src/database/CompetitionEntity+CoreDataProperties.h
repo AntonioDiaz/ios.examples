@@ -2,7 +2,7 @@
 //  CompetitionEntity+CoreDataProperties.h
 //  LocalSports
 //
-//  Created by cice on 1/12/17.
+//  Created by Antonio Díaz Arroyo on 2/12/17.
 //  Copyright © 2017 cice. All rights reserved.
 //
 //
@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, copy) NSString *category;
 @property (nonatomic) int32_t categoryOrder;
 @property (nonatomic) double idCompetitionServer;
-@property (nullable, nonatomic, copy) NSString *lastUpdateApp;
+@property (nullable, nonatomic, copy) NSDate *lastUpdateApp;
 @property (nullable, nonatomic, copy) NSString *lastUpdateServer;
 @property (nullable, nonatomic, copy) NSString *name;
 @property (nullable, nonatomic, copy) NSString *sport;

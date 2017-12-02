@@ -15,7 +15,7 @@
         [self performSegueWithIdentifier:@"segueSports" sender:self];
     } else {
         //check for internet conection.
-        if (![Utils connectedToInternet]) {
+        if ([Utils noTengoInterne]) {
             [Utils showAlert:@"Internet is required to run LocalSports."];
         } else {
             NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];

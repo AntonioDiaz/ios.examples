@@ -3,6 +3,7 @@
 #import "SportCourtEntity+CoreDataProperties.h"
 #import "MatchDetailTableViewCell.h"
 #import "Utils.h"
+#import "UtilsDataBase.h"
 #import "MatchAddEventViewController.h"
 #import "MatchMapViewController.h"
 #import "MatchSendIssueViewController.h"
@@ -161,15 +162,7 @@
 }
 
 -(void) reloadDataTable:(CompetitionEntity *) competition {
-    AppDelegate *app = (AppDelegate*) [[UIApplication sharedApplication] delegate];
-    NSManagedObjectContext *context = app.persistentContainer.viewContext;
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    NSEntityDescription *description = [NSEntityDescription entityForName:MATCH_ENTITY inManagedObjectContext:context];
-    [request setEntity:description];
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"competition == %@", competition];
-    [request setPredicate:predicate];
-    NSError *error;
-    arrayMatches = [context executeFetchRequest:request error:&error];
+    arrayMatches = [UtilsDataBase queryMatches:competition];
     if (arrayMatches.count > 0) {
         numOfWeeks = [self calculateNumOfWeeks];
         numMatchesEachWeek = (int)arrayMatches.count / numOfWeeks;

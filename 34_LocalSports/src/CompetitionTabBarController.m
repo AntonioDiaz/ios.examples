@@ -4,6 +4,7 @@
 #import "SportCourtEntity+CoreDataProperties.h"
 #import "AppDelegate.h"
 #import "Utils.h"
+#import "UtilsDataBase.h"
 #import "CalendarTableViewController.h"
 #import "ClassificationTableViewController.h"
 
@@ -26,7 +27,20 @@
     imageClassification = [self imageWithImage:imageClassification scaledToSize:CGSizeMake(30, 30)];
     [tabBarItemClassification setImage:imageClassification];
     NSString *idCompetitionServer = [NSString stringWithFormat: @"%f", self.competitionEntity.idCompetitionServer];
-    [self loadCompetitionDetails:idCompetitionServer];
+    if ([Utils noTengoInterne]) {
+        [self reloadTabsData];
+    } else {
+        [self loadCompetitionDetails:idCompetitionServer];
+    }
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+}
+
+#pragma mark - navigation
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
 }
 
 #pragma mark - private methods
@@ -38,6 +52,7 @@
     return newImage;
 }
 
+/** Load details (matches and classification) from server and update tables in DB. */
 -(void) loadCompetitionDetails:(NSString *) idCompetition {
     NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
     NSURLSession *urlSession = [NSURLSession sessionWithConfiguration:config];
@@ -53,87 +68,30 @@
                 NSDictionary *jsonResults = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&jsonError];
                 NSArray *arrayMatches = [jsonResults objectForKey:@"matches"];
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    [Utils deleteAllEntities:MATCH_ENTITY withContext:managedObjectContext];
-                    [Utils deleteAllEntities:COURT_ENTITY withContext:managedObjectContext];
+                    [UtilsDataBase deleteMatches:competitionEntity];
+                    [UtilsDataBase deleteClassification:competitionEntity];
+                    [UtilsDataBase deleteAllEntities:COURT_ENTITY];
                     for (NSDictionary *matchDictionary in arrayMatches) {
-                        [self insertMatch: matchDictionary];
+                        [UtilsDataBase insertMatch: matchDictionary withEntity:self.competitionEntity];
                     }
                     NSArray *arrayClassification = [jsonResults objectForKey:@"classification"];
-                    [Utils deleteAllEntities:CLASSIFICATION_ENTITY withContext:managedObjectContext];
                     for (NSDictionary *classification in arrayClassification) {
-                        [self insertClassification:(NSDictionary *) classification];
+                        [UtilsDataBase insertClassification: classification withEntity:self.competitionEntity];
                     }
-                    CalendarTableViewController *calendarTableViewController = self.viewControllers[0];
-                    [calendarTableViewController reloadDataTable:self.competitionEntity];
-                    ClassificationTableViewController *classificationTableViewController = self.viewControllers[1];
-                    [classificationTableViewController reloadDataTable:self.competitionEntity];
+                    [self reloadTabsData];
                 });
             } else {
-                NSLog(@"status: %ld", httpResponse.statusCode);
+                NSLog(@"status: %d", (int)httpResponse.statusCode);
             }
         }
     }];
     [task resume];
 }
 
--(void) insertClassification:(NSDictionary *) dictionaryClassification {
-    ClassificationEntity *classificationEntry =  [NSEntityDescription
-                                 insertNewObjectForEntityForName:CLASSIFICATION_ENTITY
-                                 inManagedObjectContext:managedObjectContext];
-    classificationEntry.competition = self.competitionEntity;
-    //classificationEntry.matchesDrawn = (long)[dictionaryClassification objectForKey:@"matchesDrawn"];
-    //classificationEntry.matchesLost = (long)[dictionaryClassification objectForKey:@"matchesLost"];
-    //classificationEntry.matchesPlayed = (long)[dictionaryClassification objectForKey:@"matchesPlayed"];
-    //classificationEntry.matchesWon = (long)[dictionaryClassification objectForKey:@"matchesWon"];
-    classificationEntry.points = (int)[[dictionaryClassification objectForKey:@"points"] integerValue];
-    classificationEntry.position = (int)[[dictionaryClassification objectForKey:@"position"] integerValue];
-    classificationEntry.team = [dictionaryClassification objectForKey:@"team"];
-    NSError *error = nil;
-    if(![managedObjectContext save:&error]){
-        NSLog(@"Error on insert -->%@", error.localizedDescription);
-    }
-}
-
-//todo move this method to database utils class
--(void) insertMatch:(NSDictionary *) dictionaryMatch {
-    MatchEntity *matchEntity =  [NSEntityDescription
-                                             insertNewObjectForEntityForName:MATCH_ENTITY
-                                             inManagedObjectContext:managedObjectContext];
-    SportCourtEntity *courtEntity =  [NSEntityDescription
-                                 insertNewObjectForEntityForName:COURT_ENTITY
-                                 inManagedObjectContext:managedObjectContext];
-    
-    NSDictionary* teamLocal = [dictionaryMatch objectForKey:@"teamLocalEntity"];
-    NSDictionary* teamVisitor = [dictionaryMatch objectForKey:@"teamVisitorEntity"];
-    NSDictionary* sportCenterCourt = [dictionaryMatch objectForKey:@"sportCenterCourt"];
-    NSDictionary* sportCenter = [sportCenterCourt objectForKey:@"sportCenter"];
-    
-    courtEntity.courtName = [sportCenterCourt objectForKey:@"nameWithCenter"];
-    courtEntity.centerName = [sportCenter objectForKey:@"name"];
-    courtEntity.centerAddress = [sportCenter objectForKey:@"address"];
-    
-    matchEntity.lastUpdate = (int)[[dictionaryMatch objectForKey:@"lastUpdate"] integerValue];
-    matchEntity.scoreLocal = (int)[[dictionaryMatch objectForKey:@"scoreLocal"] integerValue];
-    matchEntity.scoreVisitor = (int)[[dictionaryMatch objectForKey:@"scoreVisitor"] integerValue];
-    matchEntity.state = (int)[[dictionaryMatch objectForKey:@"state"] integerValue];
-    matchEntity.teamLocal = [teamLocal objectForKey:@"name"];
-    matchEntity.teamVisitor = [teamVisitor objectForKey:@"name"];
-    matchEntity.week = (int)[[dictionaryMatch objectForKey:@"week"] integerValue];
-    matchEntity.date = [[dictionaryMatch objectForKey:@"date"] doubleValue];
-    matchEntity.idServer = [[dictionaryMatch objectForKey:@"id"] doubleValue];
-    matchEntity.competition = self.competitionEntity;
-    matchEntity.court = courtEntity;
-    NSError *error = nil;
-    if(![managedObjectContext save:&error]){
-        NSLog(@"Error on insert -->%@", error.localizedDescription);
-    }
-}
-
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-      self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
+-(void) reloadTabsData {
+    CalendarTableViewController *calendarTableViewController = self.viewControllers[0];
+    [calendarTableViewController reloadDataTable:self.competitionEntity];
+    ClassificationTableViewController *classificationTableViewController = self.viewControllers[1];
+    [classificationTableViewController reloadDataTable:self.competitionEntity];
 }
 @end
