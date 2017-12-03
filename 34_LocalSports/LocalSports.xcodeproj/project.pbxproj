@@ -36,6 +36,8 @@
 		D1C2CB831FCDDEC600922D86 /* CompetitionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C2CB821FCDDEC600922D86 /* CompetitionsTableViewController.m */; };
 		D1C4D2141FD08B35009F3A35 /* leganes.gpx in Resources */ = {isa = PBXBuildFile; fileRef = D1C4D2131FD08B35009F3A35 /* leganes.gpx */; };
 		D1D3A62D1FD299AF003CA8E7 /* UtilsDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = D1D3A62C1FD299AF003CA8E7 /* UtilsDataBase.m */; };
+		D1D953501FD3EE170029A240 /* GoogleMobileAdsSdkiOS-7.26.0 in Resources */ = {isa = PBXBuildFile; fileRef = D1D9534F1FD3EE170029A240 /* GoogleMobileAdsSdkiOS-7.26.0 */; };
+		D1D953531FD3EE5F0029A240 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1D953521FD3EE5F0029A240 /* GoogleMobileAds.framework */; };
 		D1F1629D1FD31F1E00995436 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F1629C1FD31F1E00995436 /* SWRevealViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -95,6 +97,8 @@
 		D1C4D2131FD08B35009F3A35 /* leganes.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = leganes.gpx; sourceTree = "<group>"; };
 		D1D3A62B1FD299AF003CA8E7 /* UtilsDataBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UtilsDataBase.h; sourceTree = "<group>"; };
 		D1D3A62C1FD299AF003CA8E7 /* UtilsDataBase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UtilsDataBase.m; sourceTree = "<group>"; };
+		D1D9534F1FD3EE170029A240 /* GoogleMobileAdsSdkiOS-7.26.0 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "GoogleMobileAdsSdkiOS-7.26.0"; sourceTree = "<group>"; };
+		D1D953521FD3EE5F0029A240 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = "GoogleMobileAdsSdkiOS-7.26.0/GoogleMobileAds.framework"; sourceTree = "<group>"; };
 		D1F1629B1FD31F1E00995436 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		D1F1629C1FD31F1E00995436 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -104,6 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1D953531FD3EE5F0029A240 /* GoogleMobileAds.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,6 +163,8 @@
 				D14097461FC9D42B00EAE6DA /* images */,
 				094C1D541FC83A3F003685DD /* LocalSports */,
 				094C1D531FC83A3F003685DD /* Products */,
+				D1D9534F1FD3EE170029A240 /* GoogleMobileAdsSdkiOS-7.26.0 */,
+				D1D953511FD3EE5F0029A240 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -237,6 +244,14 @@
 			path = utils;
 			sourceTree = "<group>";
 		};
+		D1D953511FD3EE5F0029A240 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D1D953521FD3EE5F0029A240 /* GoogleMobileAds.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -297,6 +312,7 @@
 			files = (
 				D1C4D2141FD08B35009F3A35 /* leganes.gpx in Resources */,
 				D140974E1FC9E93500EAE6DA /* Assets.xcassets in Resources */,
+				D1D953501FD3EE170029A240 /* GoogleMobileAdsSdkiOS-7.26.0 in Resources */,
 				094C1D5D1FC83A3F003685DD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -462,6 +478,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6REAL49NXE;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/GoogleMobileAdsSdkiOS-7.26.0",
+				);
 				INFOPLIST_FILE = LocalSports/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -477,6 +497,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6REAL49NXE;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/GoogleMobileAdsSdkiOS-7.26.0",
+				);
 				INFOPLIST_FILE = LocalSports/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

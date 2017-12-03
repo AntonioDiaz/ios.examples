@@ -28,7 +28,8 @@
     [self initSportButton:self.buttonFavorites];
     if (![Utils noTengoInterne]) {
         [self loadCompetitions:idTownSelected];
-    } 
+    }
+    [self loadBanner];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,6 +37,36 @@
 }
 
 #pragma mark - private methods
+-(void)loadBanner{
+    self.bannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeBanner];
+    //self.bannerView.frame = CGRectMake(200, 520, , 100.0);
+    self.bannerView.adUnitID = @"ca-app-pub-3940256099942544/2934735716";
+    //cuando se clica en el banner, quien se encarga de navegar.
+    self.bannerView.rootViewController = self;
+    
+    //para controlar el flujo del banner, podemos ser los delegados.
+    self.bannerView.delegate = self;
+    
+    // lo enlazamos con la vista del controlador.
+    [self.viewHostingBanner addSubview:self.bannerView];
+    
+    //Cargamos el anuncio
+    [self.bannerView loadRequest:[GADRequest request]];
+    
+    NSLayoutConstraint *abajo = [NSLayoutConstraint
+                                 constraintWithItem:self.bannerView attribute:NSLayoutAttributeBottom
+                                 relatedBy:NSLayoutRelationEqual toItem:self.bottomLayoutGuide
+                                 attribute:NSLayoutAttributeTop multiplier:1 constant:0];
+    
+    NSLayoutConstraint *centrado = [NSLayoutConstraint
+                                    constraintWithItem:self.bannerView attribute:NSLayoutAttributeCenterX
+                                    relatedBy:NSLayoutRelationEqual toItem:self.view
+                                    attribute:NSLayoutAttributeCenterX multiplier:1 constant:0];
+    
+    //[self.bannerView addConstraint:abajo];
+    //[self.bannerView addConstraint:centrado];
+}
+
 -(void) showSideMenu:(id)sender {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     [userDefaults setValue:nil forKey:PREF_TOWN_NAME];
@@ -106,4 +137,35 @@
 - (IBAction)actionFavorites:(id)sender {
     [Utils showComingSoon];
 }
+
+#pragma mark -
+-(void)rewardBasedVideoAd:(GADRewardBasedVideoAd *)rewardBasedVideoAd didRewardUserWithReward:(GADAdReward *)reward {
+    NSString *rewardMessage =
+    [NSString stringWithFormat:@"Reward received with currency %@ , amount %lf",
+     reward.type,
+     [reward.amount doubleValue]];
+    NSLog(rewardMessage);
+}
+
+#pragma mark -
+//cuando se carga el anuncio
+-(void)adViewDidReceiveAd:(GADBannerView *)bannerView {
+    bannerView.alpha = 0;
+    [UIView animateWithDuration:3.0 animations:^{
+        bannerView.alpha = 1;
+    }];
+}
+
+//si falla la carga.
+-(void)adView:(GADBannerView*) bannerView didFailToReceiveAdWithError:(nonnull GADRequestError *)error {
+    NSLog(@"didFailToReceiveAdWithError");
+    NSLog(@"%@", error.description);
+}
+
+
+//si el usuario clica sobre el anuncio.
+-(void) adViewWillPresentScreen:(GADBannerView *)bannerView {
+    NSLog(@"adViewWillPresentScreen");
+}
+
 @end

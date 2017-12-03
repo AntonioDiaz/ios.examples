@@ -81,78 +81,95 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Z0z-rb-EK9">
-                                <rect key="frame" x="19" y="65.5" width="337.5" height="600"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="D3t-pj-yKc">
+                                <rect key="frame" x="19" y="84" width="337.5" height="603"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="7Qv-Wx-txL">
-                                        <rect key="frame" x="0.0" y="0.0" width="337.5" height="196"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Z0z-rb-EK9">
+                                        <rect key="frame" x="0.0" y="0.0" width="337.5" height="453"/>
                                         <subviews>
-                                            <button opaque="NO" tag="1" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PSt-Rk-fcD">
-                                                <rect key="frame" x="0.0" y="0.0" width="159" height="196"/>
-                                                <state key="normal" image="football"/>
-                                                <connections>
-                                                    <action selector="actionOpenSport:" destination="6Ed-xZ-v4P" eventType="touchUpInside" id="9Qt-0E-eDi"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" tag="2" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b6x-wO-44y">
-                                                <rect key="frame" x="179" y="0.0" width="158.5" height="196"/>
-                                                <state key="normal" image="basketball"/>
-                                                <connections>
-                                                    <action selector="actionOpenSport:" destination="6Ed-xZ-v4P" eventType="touchUpInside" id="eJe-Lr-l3Q"/>
-                                                </connections>
-                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="7Qv-Wx-txL">
+                                                <rect key="frame" x="0.0" y="0.0" width="337.5" height="137.5"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="1" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PSt-Rk-fcD">
+                                                        <rect key="frame" x="0.0" y="0.0" width="159" height="137.5"/>
+                                                        <state key="normal" image="football"/>
+                                                        <connections>
+                                                            <action selector="actionOpenSport:" destination="6Ed-xZ-v4P" eventType="touchUpInside" id="9Qt-0E-eDi"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="2" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b6x-wO-44y">
+                                                        <rect key="frame" x="179" y="0.0" width="158.5" height="137.5"/>
+                                                        <state key="normal" image="basketball"/>
+                                                        <connections>
+                                                            <action selector="actionOpenSport:" destination="6Ed-xZ-v4P" eventType="touchUpInside" id="eJe-Lr-l3Q"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="9th-Sr-Mph">
+                                                <rect key="frame" x="0.0" y="157.5" width="337.5" height="138"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="3" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v0J-zs-1DU">
+                                                        <rect key="frame" x="0.0" y="0.0" width="159" height="138"/>
+                                                        <state key="normal" image="volleyball"/>
+                                                        <connections>
+                                                            <action selector="actionOpenSport:" destination="6Ed-xZ-v4P" eventType="touchUpInside" id="L82-Vs-pnQ"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="4" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jak-Ju-Isb">
+                                                        <rect key="frame" x="179" y="0.0" width="158.5" height="138"/>
+                                                        <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                                        <state key="normal" title="Button" image="handball"/>
+                                                        <connections>
+                                                            <action selector="actionOpenSport:" destination="6Ed-xZ-v4P" eventType="touchUpInside" id="jMI-U4-e9c"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Zud-4d-mbF">
+                                                <rect key="frame" x="0.0" y="315.5" width="337.5" height="137.5"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="5" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n4f-bP-bC3">
+                                                        <rect key="frame" x="0.0" y="0.0" width="166" height="137.5"/>
+                                                        <state key="normal" image="hockey"/>
+                                                        <connections>
+                                                            <action selector="actionOpenSport:" destination="6Ed-xZ-v4P" eventType="touchUpInside" id="zdy-Hf-Vh0"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="6" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HtM-LR-eD3">
+                                                        <rect key="frame" x="172" y="0.0" width="165.5" height="137.5"/>
+                                                        <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                                        <size key="titleShadowOffset" width="0.0" height="50"/>
+                                                        <state key="normal" image="favorite"/>
+                                                        <connections>
+                                                            <action selector="actionFavorites:" destination="6Ed-xZ-v4P" eventType="touchUpInside" id="h4M-Dk-wSA"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="9th-Sr-Mph">
-                                        <rect key="frame" x="0.0" y="202" width="337.5" height="196"/>
-                                        <subviews>
-                                            <button opaque="NO" tag="3" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v0J-zs-1DU">
-                                                <rect key="frame" x="0.0" y="0.0" width="159" height="196"/>
-                                                <state key="normal" image="volleyball"/>
-                                                <connections>
-                                                    <action selector="actionOpenSport:" destination="6Ed-xZ-v4P" eventType="touchUpInside" id="L82-Vs-pnQ"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" tag="4" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jak-Ju-Isb">
-                                                <rect key="frame" x="179" y="0.0" width="158.5" height="196"/>
-                                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
-                                                <state key="normal" title="Button" image="handball"/>
-                                                <connections>
-                                                    <action selector="actionOpenSport:" destination="6Ed-xZ-v4P" eventType="touchUpInside" id="jMI-U4-e9c"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Zud-4d-mbF">
-                                        <rect key="frame" x="0.0" y="404" width="337.5" height="196"/>
-                                        <subviews>
-                                            <button opaque="NO" tag="5" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n4f-bP-bC3">
-                                                <rect key="frame" x="0.0" y="0.0" width="166" height="196"/>
-                                                <state key="normal" image="hockey"/>
-                                                <connections>
-                                                    <action selector="actionOpenSport:" destination="6Ed-xZ-v4P" eventType="touchUpInside" id="zdy-Hf-Vh0"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" tag="6" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HtM-LR-eD3">
-                                                <rect key="frame" x="172" y="0.0" width="165.5" height="196"/>
-                                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
-                                                <size key="titleShadowOffset" width="0.0" height="50"/>
-                                                <state key="normal" image="favorite"/>
-                                                <connections>
-                                                    <action selector="actionFavorites:" destination="6Ed-xZ-v4P" eventType="touchUpInside" id="h4M-Dk-wSA"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NMp-qy-aq7" userLabel="ViewHostingBanner">
+                                        <rect key="frame" x="17.5" y="503" width="302.5" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="J0B-rp-1D4"/>
+                                            <constraint firstAttribute="width" constant="302.5" id="ep7-Cd-zst"/>
+                                            <constraint firstAttribute="height" constant="100" id="rB3-V6-I8d"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="NMp-qy-aq7" firstAttribute="leading" secondItem="D3t-pj-yKc" secondAttribute="leading" constant="17.5" id="71D-sG-hj1"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Z0z-rb-EK9" firstAttribute="width" secondItem="fI8-Bz-2NE" secondAttribute="width" multiplier="0.9" id="4db-HU-fnY"/>
-                            <constraint firstItem="Z0z-rb-EK9" firstAttribute="height" secondItem="fI8-Bz-2NE" secondAttribute="height" multiplier="0.9" id="VfH-Wu-QGk"/>
-                            <constraint firstItem="Z0z-rb-EK9" firstAttribute="centerY" secondItem="k8I-L3-hrQ" secondAttribute="centerY" id="Xd2-gw-8e1"/>
-                            <constraint firstItem="Z0z-rb-EK9" firstAttribute="centerX" secondItem="k8I-L3-hrQ" secondAttribute="centerX" id="dSr-oa-lGi"/>
+                            <constraint firstItem="D3t-pj-yKc" firstAttribute="height" secondItem="k8I-L3-hrQ" secondAttribute="height" id="66G-fK-Ybz"/>
+                            <constraint firstItem="D3t-pj-yKc" firstAttribute="width" secondItem="k8I-L3-hrQ" secondAttribute="width" multiplier="0.9" id="7IU-hg-MCZ"/>
+                            <constraint firstItem="D3t-pj-yKc" firstAttribute="centerY" secondItem="k8I-L3-hrQ" secondAttribute="centerY" id="R2d-00-W1n"/>
+                            <constraint firstItem="D3t-pj-yKc" firstAttribute="centerX" secondItem="k8I-L3-hrQ" secondAttribute="centerX" id="aoz-Vq-D1y"/>
+                            <constraint firstItem="D3t-pj-yKc" firstAttribute="top" secondItem="k8I-L3-hrQ" secondAttribute="top" constant="20" id="mjO-yq-x2w"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="k8I-L3-hrQ"/>
                     </view>
@@ -164,12 +181,13 @@
                         <outlet property="buttonHandball" destination="jak-Ju-Isb" id="hPd-KM-E2Y"/>
                         <outlet property="buttonHockey" destination="n4f-bP-bC3" id="59l-l4-NfI"/>
                         <outlet property="buttonVolleyball" destination="v0J-zs-1DU" id="4Ih-Z3-WBU"/>
+                        <outlet property="viewHostingBanner" destination="NMp-qy-aq7" id="VQI-Wf-Mfd"/>
                         <segue destination="ARG-Fe-Y3e" kind="show" identifier="idShowCompetitions" id="Gy6-ZH-b30"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kav-yM-8hX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="330" y="-57"/>
+            <point key="canvasLocation" x="328.80000000000001" y="-57.121439280359823"/>
         </scene>
         <!--competitions - Table View Controller-->
         <scene sceneID="R19-KG-ypF">

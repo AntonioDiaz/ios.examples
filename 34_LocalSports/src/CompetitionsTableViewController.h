@@ -1,5 +1,6 @@
 #import <UIKit/UIKit.h>
 #import "Utils.h"
+@import GoogleMobileAds;
 
 @interface CompetitionsTableViewController : UITableViewController
 {
@@ -7,4 +8,5 @@
     NSArray *arrayCompetitions;
 }
 @property EnumSports sportSelected;
+@property(nonatomic, strong) GADInterstitial *interstitial;
 @end

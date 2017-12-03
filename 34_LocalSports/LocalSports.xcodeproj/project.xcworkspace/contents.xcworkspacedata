@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:LocalSports.xcodeproj">
+      location = "group:../GoogleMobileAdsSdkiOS-7.26.0/GoogleMobileAds.framework">
+   </FileRef>
+   <FileRef
+      location = "group:../GoogleMobileAdsSdkiOS-7.26.0">
+   </FileRef>
+   <FileRef
+      location = "self:">
    </FileRef>
 </Workspace>

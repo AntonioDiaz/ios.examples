@@ -18,6 +18,8 @@
     self.navigationItem.title = [NSString stringWithFormat:@"%@ - %@", townSelected, sportStr];
     arrayCompetitions = [UtilsDataBase queryCompetitionsBySport:sportStr];
     [self.tableView reloadData];
+    self.interstitial = [[GADInterstitial alloc] initWithAdUnitID:@"ca-app-pub-3940256099942544/4411468910"];
+    [self.interstitial loadRequest:[GADRequest request]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -66,6 +68,19 @@
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     CompetitionEntity *competitionEntity = [arrayCompetitions objectAtIndex:indexPath.row];
     competitionTabBarController.competitionEntity = competitionEntity;
+    
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSString *printScreenCountStr = [userDefaults objectForKey:COUNT_PRINTSCREEN_RESULTS];
+    int printScreenCount = 0;
+    if (printScreenCountStr!=nil) {
+        printScreenCount = [printScreenCountStr intValue];
+    }
+    printScreenCount++;
+    [userDefaults setObject:[NSString stringWithFormat:@"%d",printScreenCount] forKey:COUNT_PRINTSCREEN_RESULTS];
+    if (self.interstitial.isReady && (printScreenCount%2 == 0)) {
+        [self.interstitial presentFromRootViewController:self];
+    }
+
 }
 
 

@@ -14,6 +14,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //show interstitial
     self.navigationItem.title = [NSString stringWithFormat:@"%@", self.competitionEntity.name];
     AppDelegate *app = (AppDelegate*) [[UIApplication sharedApplication] delegate];
     managedObjectContext = app.persistentContainer.viewContext;
@@ -44,6 +45,7 @@
 }
 
 #pragma mark - private methods
+
 - (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize {
     UIGraphicsBeginImageContextWithOptions(newSize, NO, 0.0);
     [image drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];

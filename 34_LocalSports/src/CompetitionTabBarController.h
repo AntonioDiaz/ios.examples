@@ -1,6 +1,7 @@
 #import <UIKit/UIKit.h>
 #import "CompetitionEntity+CoreDataProperties.h"
 
+
 @interface CompetitionTabBarController : UITabBarController
 {
     CompetitionEntity *competitionEntity;
@@ -9,5 +10,6 @@
 
 
 @property CompetitionEntity *competitionEntity;
+
 
 @end

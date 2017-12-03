@@ -10,6 +10,7 @@
 #define APP_NAME @"LocalSports"
 #define PREF_TOWN_NAME @"PREF_TOWN_NAME"
 #define PREF_TOWN_ID @"PREF_TOWN_ID"
+#define COUNT_PRINTSCREEN_RESULTS @"COUNT_PRINTSCREEN_RESULTS"
 
 #define COMPETITION_ENTITY @"CompetitionEntity"
 #define MATCH_ENTITY @"MatchEntity"

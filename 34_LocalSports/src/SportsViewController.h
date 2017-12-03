@@ -1,7 +1,7 @@
 #import <UIKit/UIKit.h>
 #import "Utils.h"
 
-@interface SportsViewController : UIViewController
+@interface SportsViewController : UIViewController <GADBannerViewDelegate, GADRewardBasedVideoAdDelegate>
 {
     EnumSports sportSelected;
     NSManagedObjectContext *managedObjectContext;
@@ -23,5 +23,8 @@
 
 - (IBAction)actionOpenSport:(id)sender;
 - (IBAction)actionFavorites:(id)sender;
+
+@property(nonatomic, strong) GADBannerView *bannerView;
+@property (weak, nonatomic) IBOutlet UIView *viewHostingBanner;
 
 @end
