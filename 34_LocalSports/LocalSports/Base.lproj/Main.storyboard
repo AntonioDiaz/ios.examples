@@ -51,7 +51,7 @@
                                             <color key="backgroundColor" red="0.0" green="0.3803921569" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="6Ed-xZ-v4P" kind="show" identifier="segueSports" id="Xwe-E0-nJA"/>
+                                            <segue destination="6Ed-xZ-v4P" kind="show" identifier="segueSports" id="cIS-r1-h9m"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -71,7 +71,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-87.200000000000003" y="10.344827586206897"/>
+            <point key="canvasLocation" x="-516" y="-57"/>
         </scene>
         <!--Sports-->
         <scene sceneID="DeP-AD-meL">
@@ -156,6 +156,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="k8I-L3-hrQ"/>
                     </view>
+                    <navigationItem key="navigationItem" id="LjE-l5-9T8"/>
                     <connections>
                         <outlet property="buttonBasketball" destination="b6x-wO-44y" id="J5b-8a-clb"/>
                         <outlet property="buttonFavorites" destination="HtM-LR-eD3" id="tFW-Ek-ucn"/>
@@ -168,7 +169,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kav-yM-8hX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="632.79999999999995" y="9.4452773613193415"/>
+            <point key="canvasLocation" x="330" y="-57"/>
         </scene>
         <!--competitions - Table View Controller-->
         <scene sceneID="R19-KG-ypF">
@@ -219,7 +220,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q0h-Z7-5WS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1357.5999999999999" y="8.5457271364317844"/>
+            <point key="canvasLocation" x="1262" y="-57"/>
         </scene>
         <!--Calendar-->
         <scene sceneID="QT7-cK-fUS">
@@ -565,7 +566,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v7R-Xo-lJi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3196" y="104.7976011994003"/>
+            <point key="canvasLocation" x="3535.1999999999998" y="104.7976011994003"/>
         </scene>
         <!--classification-->
         <scene sceneID="c7E-YZ-QAS">
@@ -644,7 +645,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zNr-K5-Q6F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-935" y="380"/>
+            <point key="canvasLocation" x="-1281" y="415"/>
         </scene>
     </scenes>
     <resources>

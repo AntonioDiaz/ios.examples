@@ -37,7 +37,10 @@
 
 #pragma mark - private methods
 -(void) showSideMenu:(id)sender {
-    [Utils showComingSoon];
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setValue:nil forKey:PREF_TOWN_NAME];
+    [userDefaults setValue:nil forKey:PREF_TOWN_ID];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 -(void) enableSportButtons {
