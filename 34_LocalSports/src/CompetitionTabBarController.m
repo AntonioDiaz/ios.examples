@@ -41,7 +41,8 @@
 
 #pragma mark - navigation
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
+    NSString * strBack = NSLocalizedString(@"Back", nil);
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:strBack style:UIBarButtonItemStylePlain target:nil action:nil];
 }
 
 #pragma mark - private methods

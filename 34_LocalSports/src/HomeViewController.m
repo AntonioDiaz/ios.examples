@@ -8,7 +8,7 @@
     [super viewDidLoad];
     NSString *documentsDirectoryPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     NSLog(@"device directory: %@", documentsDirectoryPath);
-    self.navigationItem.title = [NSString stringWithFormat: @"%@ - Available Towns", APP_NAME];
+    self.navigationItem.title = [NSString stringWithFormat: NSLocalizedString(@"HOME_TITLE", nil), APP_NAME];
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -19,7 +19,7 @@
     } else {
         //check for internet conection.
         if ([Utils noTengoInterne]) {
-            [Utils showAlert:@"Internet is required to run LocalSports."];
+            [Utils showAlert:NSLocalizedString(@"HOME_INTERNET_REQUIRED", nil)];
         } else {
             NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
             NSURLSession *urlSession = [NSURLSession sessionWithConfiguration:config];

@@ -71,12 +71,12 @@
             [tableView insertRowsAtIndexPaths:mutableArrayCells withRowAnimation:UITableViewRowAnimationTop];
         }
     } else {
-        NSString *alertTitle = @"Actions with the match";
-        NSString *strActionShare = @"Share match details";
-        NSString *strActionAddEvent = @"Add calendar event";
-        NSString *strActionSendIssue = @"Send issue";
-        NSString *strActionOpenMap = @"View map";
-        NSString *strActionClose = @"Close";
+        NSString *alertTitle = NSLocalizedString(@"CALENDAR_ACTION_TITLE", nil);
+        NSString *strActionShare = NSLocalizedString(@"CALENDAR_ACTION_SHARE", nil);
+        NSString *strActionAddEvent = NSLocalizedString(@"CALENDAR_ACTION_EVENT", nil);
+        NSString *strActionSendIssue = NSLocalizedString(@"CALENDAR_ACTION_ISSUE", nil);
+        NSString *strActionOpenMap = NSLocalizedString(@"CALENDAR_ACTION_MAP", nil);;
+        NSString *strActionClose = NSLocalizedString(@"CALENDAR_ACTION_CLOSE", nil);
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:alertTitle message:nil preferredStyle:UIAlertControllerStyleActionSheet];
         UIAlertAction *actionShare = [UIAlertAction actionWithTitle:strActionShare style:UIAlertActionStyleDefault
          handler:^(UIAlertAction *action) {
@@ -112,8 +112,8 @@
 
 #pragma mark - Navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    //self.navigationItem.backBarButtonItem =
-    self.tabBarController.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
+    NSString * strBack = NSLocalizedString(@"Back", nil);
+    self.tabBarController.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:strBack style:UIBarButtonItemStylePlain target:nil action:nil];
     if ([[segue identifier] isEqualToString:SEGUE_EVENT]) {
         MatchAddEventViewController *matchAddEventViewController = (MatchAddEventViewController *) segue.destinationViewController;
         matchAddEventViewController.matchEntity = [self matchSelectedInList];
@@ -138,7 +138,8 @@
 
 - (void)actionShareMatch:(MatchEntity*) matchEntity {
     NSString *dateStr = [Utils formatDateDoubleToStr:matchEntity.date];
-    NSString *textToShare = [NSString stringWithFormat:@"Week %d: %@ vs %@, in %@ on %@", matchEntity.week, matchEntity.teamLocal, matchEntity.teamVisitor, matchEntity.court.centerName, dateStr];
+    NSString *strShareText = NSLocalizedString(@"CALENDAR_SHARE_TEXT", nil);
+    NSString *textToShare = [NSString stringWithFormat:strShareText, matchEntity.week, matchEntity.teamLocal, matchEntity.teamVisitor, matchEntity.court.centerName, dateStr];
     NSArray *contents = @[textToShare];
     UIActivityViewController *controller = [[UIActivityViewController alloc] initWithActivityItems:contents applicationActivities:nil];
     controller.modalPresentationStyle = UIModalPresentationPopover;

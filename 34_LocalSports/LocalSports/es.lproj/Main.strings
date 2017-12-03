@@ -1,0 +1,111 @@
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "031-fd-Pog"; */
+"031-fd-Pog.text" = "Titulo";
+
+/* Class = "UILabel"; text = "Address"; ObjectID = "0hC-yl-Rv7"; */
+"0hC-yl-Rv7.text" = "Dirección";
+
+/* Class = "UILabel"; text = "Date"; ObjectID = "13k-Xv-yQu"; */
+"13k-Xv-yQu.text" = "Fecha";
+
+/* Class = "UILabel"; text = "Atletico de madrid"; ObjectID = "2jV-zl-HXu"; */
+"2jV-zl-HXu.text" = "Atletico de madrid";
+
+/* Class = "UILabel"; text = "Issue description"; ObjectID = "3HG-5J-FRE"; */
+"3HG-5J-FRE.text" = "Descripción del error";
+
+/* Class = "UITextField"; text = "my place"; ObjectID = "3NA-tE-xKB"; */
+"3NA-tE-xKB.text" = "Aquí estoy";
+
+/* Class = "UILabel"; text = "Place"; ObjectID = "4QL-Y1-btW"; */
+"4QL-Y1-btW.text" = "Pabellón";
+
+/* Class = "UILabel"; text = "Pabellón Europa"; ObjectID = "53z-HV-RBI"; */
+"53z-HV-RBI.text" = "Pabellón Europa";
+
+/* Class = "UITextField"; text = "partido ...."; ObjectID = "5l2-Yd-NiI"; */
+"5l2-Yd-NiI.text" = "partido ....";
+
+/* Class = "UIViewController"; title = "Sports"; ObjectID = "6Ed-xZ-v4P"; */
+"6Ed-xZ-v4P.title" = "Deportes";
+
+/* Class = "UILabel"; text = "Sport center"; ObjectID = "85u-2h-9F4"; */
+"85u-2h-9F4.text" = "Centro deportivo";
+
+/* Class = "UIButton"; normalTitle = "Accept"; ObjectID = "8zl-AL-1RW"; */
+"8zl-AL-1RW.normalTitle" = "Aceptar";
+
+/* Class = "UILabel"; text = "Rayo de Ciempozuelos"; ObjectID = "Acy-gw-SaL"; */
+"Acy-gw-SaL.text" = "Rayo de Ciempozuelos";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "BoR-mJ-wMW"; */
+"BoR-mJ-wMW.text" = "Titulo";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "Cf5-vE-KW8"; */
+"Cf5-vE-KW8.text" = "Titulo";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "F1D-4a-x04"; */
+"F1D-4a-x04.text" = "Titulo";
+
+/* Class = "UILabel"; text = "Place"; ObjectID = "FBm-PA-dVc"; */
+"FBm-PA-dVc.text" = "Donde";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "H31-RS-iex"; */
+"H31-RS-iex.text" = "Titulo";
+
+/* Class = "UIButton"; normalTitle = "Accept"; ObjectID = "P5T-PH-LN0"; */
+"P5T-PH-LN0.normalTitle" = "Aceptar";
+
+/* Class = "UILabel"; text = "Available Towns"; ObjectID = "QZP-Fu-wu9"; */
+"QZP-Fu-wu9.text" = "Municipios disponibles";
+
+/* Class = "UILabel"; text = "Av. de Alemania, 2, 28916 Leganés, Madrid"; ObjectID = "QZR-nJ-YxG"; */
+"QZR-nJ-YxG.text" = "Av. de Alemania, 2, 28916 Leganés, Madrid";
+
+/* Class = "UITextField"; text = "my place"; ObjectID = "RSq-HI-2pg"; */
+"RSq-HI-2pg.text" = "my place";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "UPV-G0-cGf"; */
+"UPV-G0-cGf.text" = "Titulo";
+
+/* Class = "UILabel"; text = "Detail"; ObjectID = "UYc-TB-kdS"; */
+"UYc-TB-kdS.text" = "Detalles";
+
+/* Class = "UITextView"; text = "issue description"; ObjectID = "YRu-kY-sF8"; */
+"YRu-kY-sF8.text" = "issue description";
+
+/* Class = "UITabBarItem"; title = "calendar"; ObjectID = "ayz-0B-gbb"; */
+"ayz-0B-gbb.title" = "Calendario";
+
+/* Class = "UILabel"; text = "Date"; ObjectID = "dog-U5-4Co"; */
+"dog-U5-4Co.text" = "Fecha";
+
+/* Class = "UILabel"; text = "12 - 87"; ObjectID = "hwI-Pu-ioM"; */
+"hwI-Pu-ioM.text" = "12 - 87";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "jak-Ju-Isb"; */
+"jak-Ju-Isb.normalTitle" = "Botón";
+
+/* Class = "UITabBarItem"; title = "classification"; ObjectID = "jzo-Ty-fLL"; */
+"jzo-Ty-fLL.title" = "clasificación";
+
+/* Class = "UILabel"; text = "Pabellon de la paz"; ObjectID = "m7T-1c-hao"; */
+"m7T-1c-hao.text" = "Pabellon de la paz";
+
+/* Class = "UILabel"; text = "Subtitle"; ObjectID = "mTj-KG-b1d"; */
+"mTj-KG-b1d.text" = "Subtitulo";
+
+/* Class = "UITextField"; text = "my date"; ObjectID = "qIj-ec-GjN"; */
+"qIj-ec-GjN.text" = "Fecha";
+
+/* Class = "UITextField"; text = "my date"; ObjectID = "whB-Ky-8yf"; */
+"whB-Ky-8yf.text" = "Fecha";
+
+/* Class = "UITabBarController"; title = "titulo prueba"; ObjectID = "zXi-vt-UEp"; */
+"zXi-vt-UEp.title" = "titulo prueba";
+
+/* Class = "UITextField"; text = "partido ...."; ObjectID = "zaw-Pd-B6w"; */
+"zaw-Pd-B6w.text" = "partido ....";
+
+/* Class = "UILabel"; text = "12/12/2017 12:30"; ObjectID = "zwn-zi-P6z"; */
+"zwn-zi-P6z.text" = "12/12/2017 12:30";

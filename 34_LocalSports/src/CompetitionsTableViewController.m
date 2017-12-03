@@ -14,8 +14,8 @@
     [super viewDidLoad];
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSString *townSelected = [userDefaults objectForKey:PREF_TOWN_NAME];
-    NSString *sportStr = [Utils enumSportToString:sportSelected];
-    self.navigationItem.title = [NSString stringWithFormat:@"%@ - %@", townSelected, sportStr];
+    NSString *sportStr =  [Utils enumSportToString:sportSelected];
+    self.navigationItem.title = [NSString stringWithFormat:@"%@ - %@", townSelected, NSLocalizedString(sportStr, nil)];
     arrayCompetitions = [UtilsDataBase queryCompetitionsBySport:sportStr];
     [self.tableView reloadData];
     self.interstitial = [[GADInterstitial alloc] initWithAdUnitID:@"ca-app-pub-3940256099942544/4411468910"];
@@ -35,7 +35,7 @@
     if (arrayCompetitions.count == 0) {
         UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(20, 100, self.view.bounds.size.width - 40, 200)];
-        label.text = @"There is no competitions for this sport.";
+        label.text = NSLocalizedString(@"COMPETITIONS_EMPTY", nil);
         label.numberOfLines = 4;
         label.textAlignment = NSTextAlignmentCenter;
         label.font = [UIFont fontWithName:@"Verdana-Bold" size:22];

@@ -27,6 +27,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell_classification" forIndexPath:indexPath];
     ClassificationEntity *classificationEntity = [arrayClassification objectAtIndex:indexPath.row];
+    //TODO: add fields: matches played, won, lost....
     cell.textLabel.text = [NSString stringWithFormat:@"%d - %@", classificationEntity.position, classificationEntity.team];
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%d", classificationEntity.points];
     return cell;

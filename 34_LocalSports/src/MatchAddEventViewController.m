@@ -7,10 +7,11 @@
 @synthesize matchEntity;
 
 - (void)viewDidLoad {
+    //TODO: check if event is allready added to the calendar.
     [super viewDidLoad];
     eventStore = [[EKEventStore alloc]init];
-    self.navigationItem.title = @"Add match to calendar";
-    self.textFieldTitle.text = [NSString stringWithFormat:@"Week %d: %@ vs %@", matchEntity.week, matchEntity.teamLocal, matchEntity.teamVisitor];
+    self.navigationItem.title = NSLocalizedString(@"CALENDAR_EVENT_TITLE", nil);
+    self.textFieldTitle.text = [NSString stringWithFormat:NSLocalizedString(@"CALENDAR_EVENT_TEXT", nil), matchEntity.week, matchEntity.teamLocal, matchEntity.teamVisitor];
     self.textFieldDate.text = [Utils formatDateDoubleToStr:matchEntity.date];
     self.textFieldPlace.text = matchEntity.court.centerAddress;
 }
@@ -23,10 +24,10 @@
     [eventStore requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError * _Nullable error) {
         if (!granted) {
             //alertView must run on main thread.
-            [Utils showAlert:@"need access to calendar."];
+            [Utils showAlert:NSLocalizedString(@"CALENDAR_ACCESS", nil)];
         } else {
             EKEvent *event = [EKEvent eventWithEventStore:eventStore];
-            event.title = [NSString stringWithFormat:@"Week %d: %@ vs %@", matchEntity.week, matchEntity.teamLocal, matchEntity.teamVisitor];
+            event.title = [NSString stringWithFormat:NSLocalizedString(@"CALENDAR_EVENT_TEXT", nil), matchEntity.week, matchEntity.teamLocal, matchEntity.teamVisitor];
             event.calendar = eventStore.defaultCalendarForNewEvents;
             NSDate *initDate = [Utils formatDateDoubleToDate:matchEntity.date];
             event.startDate = initDate;
@@ -36,9 +37,9 @@
             [eventStore saveEvent:event span:EKSpanThisEvent error:&error];
             dispatch_async(dispatch_get_main_queue(), ^{
                 if (error) {
-                    [Utils showAlert:@"Error when adding calendar"];
+                    [Utils showAlert:NSLocalizedString(@"CALENDAR_ERROR", nil)];
                 } else {
-                    [Utils showAlert:@"Match added to calendar"];
+                    [Utils showAlert:NSLocalizedString(@"CALENDAR_SUCCESS", nil)];
                     [self.navigationController popViewControllerAnimated:YES];
                 }
             });

@@ -1,0 +1,34 @@
+/* 
+  Localizable.strings
+  LocalSports
+
+  Created by Antonio Díaz Arroyo on 3/12/17.
+  Copyright © 2017 cice. All rights reserved.
+*/
+"BACK" = "Back";
+"FUTBOL_11" = "Football 11";
+"BALONCESTO" = "Basketball";
+"VOLEIBOL" = "Volleyball";
+"BALONMANO" = "Handball";
+"UNIHOCKEY" = "Hockey";
+
+"HOME_TITLE" = "%@ - Available Towns";
+"HOME_INTERNET_REQUIRED" = "Internet is required to run LocalSports.";
+
+"COMPETITIONS_EMPTY" = "There is no competitions for this sport.";
+"CALENDAR_SHARE_TEXT" = "Jornada %d: %@ contra %@, cuando:%@ donde:%@";
+
+"CALENDAR_ACTION_TITLE" = "Actions with the match";
+"CALENDAR_ACTION_SHARE" = "Share match details";
+"CALENDAR_ACTION_EVENT" = "Add calendar event";
+"CALENDAR_ACTION_ISSUE" = "Send issue";
+"CALENDAR_ACTION_MAP" = "View map";
+"CALENDAR_ACTION_CLOSE" = "Close";
+
+"CALENDAR_EVENT_TITLE" = "Add match to calendar";
+"CALENDAR_EVENT_TEXT" = "Week %d: %@ vs %@";
+"CALENDAR_ACCESS" = "Access to calendar needed.";
+"CALENDAR_ERROR" = "Error when adding calendar";
+"CALENDAR_SUCCESS" = "Match added to calendar";
+
+

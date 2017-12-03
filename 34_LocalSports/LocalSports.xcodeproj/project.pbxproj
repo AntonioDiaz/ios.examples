@@ -23,6 +23,7 @@
 		D13FE3411FD1DC5800067C5B /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = D13FE33F1FD1DC5800067C5B /* Reachability.m */; };
 		D140974E1FC9E93500EAE6DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 094C1D611FC83A3F003685DD /* Assets.xcassets */; };
 		D14397071FD0788100AEF92B /* MatchMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D14397061FD0788100AEF92B /* MatchMapViewController.m */; };
+		D191D2CB1FD4608A00A40804 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D191D2C91FD4608A00A40804 /* Localizable.strings */; };
 		D1C2CB771FCDCEAB00922D86 /* ClassificationEntity+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C2CB651FCDCEAB00922D86 /* ClassificationEntity+CoreDataClass.m */; };
 		D1C2CB781FCDCEAB00922D86 /* ClassificationEntity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C2CB661FCDCEAB00922D86 /* ClassificationEntity+CoreDataProperties.m */; };
 		D1C2CB791FCDCEAB00922D86 /* CompetitionEntity+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C2CB691FCDCEAB00922D86 /* CompetitionEntity+CoreDataClass.m */; };
@@ -66,12 +67,15 @@
 		098179081FCED5CD0011F4FD /* CompetitionTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CompetitionTabBarController.m; sourceTree = "<group>"; };
 		D11829431FC8992600805590 /* SportsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SportsViewController.h; sourceTree = "<group>"; };
 		D11829441FC8992600805590 /* SportsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SportsViewController.m; sourceTree = "<group>"; };
+		D12E1F491FD461C800A86579 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = LocalSports/es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D12E74581FCF5AA30054BA52 /* MatchDetailTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MatchDetailTableViewCell.h; sourceTree = "<group>"; };
 		D12E74591FCF5AA30054BA52 /* MatchDetailTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MatchDetailTableViewCell.m; sourceTree = "<group>"; };
 		D13FE33F1FD1DC5800067C5B /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		D13FE3401FD1DC5800067C5B /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		D14397051FD0788100AEF92B /* MatchMapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MatchMapViewController.h; sourceTree = "<group>"; };
 		D14397061FD0788100AEF92B /* MatchMapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MatchMapViewController.m; sourceTree = "<group>"; };
+		D191D2C71FD45C8000A40804 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
+		D191D2CA1FD4608A00A40804 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = LocalSports/Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D1C2CB631FCDCEAB00922D86 /* ClassificationEntity+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ClassificationEntity+CoreDataProperties.h"; sourceTree = "<group>"; };
 		D1C2CB641FCDCEAB00922D86 /* ClassificationEntity+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ClassificationEntity+CoreDataClass.h"; sourceTree = "<group>"; };
 		D1C2CB651FCDCEAB00922D86 /* ClassificationEntity+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ClassificationEntity+CoreDataClass.m"; sourceTree = "<group>"; };
@@ -184,6 +188,7 @@
 				094C1D661FC83A3F003685DD /* Info.plist */,
 				094C1D671FC83A3F003685DD /* main.m */,
 				094C1D5E1FC83A3F003685DD /* LocalSports.xcdatamodeld */,
+				D191D2C91FD4608A00A40804 /* Localizable.strings */,
 			);
 			path = LocalSports;
 			sourceTree = "<group>";
@@ -294,6 +299,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = 094C1D491FC83A3F003685DD;
 			productRefGroup = 094C1D531FC83A3F003685DD /* Products */;
@@ -310,6 +316,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D191D2CB1FD4608A00A40804 /* Localizable.strings in Resources */,
 				D1C4D2141FD08B35009F3A35 /* leganes.gpx in Resources */,
 				D140974E1FC9E93500EAE6DA /* Assets.xcassets in Resources */,
 				D1D953501FD3EE170029A240 /* GoogleMobileAdsSdkiOS-7.26.0 in Resources */,
@@ -361,8 +368,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				094C1D5C1FC83A3F003685DD /* Base */,
+				D191D2C71FD45C8000A40804 /* es */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D191D2C91FD4608A00A40804 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D191D2CA1FD4608A00A40804 /* Base */,
+				D12E1F491FD461C800A86579 /* es */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -372,6 +389,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -427,6 +445,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

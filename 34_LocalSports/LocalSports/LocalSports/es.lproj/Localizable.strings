@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  LocalSports
+
+  Created by Antonio Díaz Arroyo on 3/12/17.
+  Copyright © 2017 cice. All rights reserved.
+*/
+
+"BACK" = "Volver";
+"HOME_TITLE" = "%@ - Municipios disponibles";
+"HOME_INTERNET_REQUIRED" = "Es necesario internet para que cargen los datos.";
