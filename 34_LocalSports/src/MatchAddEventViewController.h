@@ -8,9 +8,10 @@
     EKEventStore *eventStore;
 }
 @property MatchEntity *matchEntity;
-@property (weak, nonatomic) IBOutlet UITextField *textFieldTitle;
-@property (weak, nonatomic) IBOutlet UITextField *textFieldDate;
-@property (weak, nonatomic) IBOutlet UITextField *textFieldPlace;
+@property (weak, nonatomic) IBOutlet UILabel *labelTitle;
+@property (weak, nonatomic) IBOutlet UILabel *labelDate;
+@property (weak, nonatomic) IBOutlet UILabel *labelPlace;
+
 
 - (IBAction)actionAddEvent:(id)sender;
 

@@ -4,6 +4,7 @@
 #import "Utils.h"
 #import "UtilsDataBase.h"
 #import "CompetitionTabBarController.h"
+#import "CompetitionTableViewCell.h"
 
 
 @implementation CompetitionsTableViewController
@@ -52,10 +53,12 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell_competition" forIndexPath:indexPath];
+    CompetitionTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell_competition_new" forIndexPath:indexPath];
     CompetitionEntity *competitionEntity = [arrayCompetitions objectAtIndex:indexPath.row];
-    cell.textLabel.text = competitionEntity.name;
-    cell.detailTextLabel.text = competitionEntity.category;
+    cell.labelCompetitionName.text = competitionEntity.name;
+    cell.labelCategory.text = competitionEntity.category;
+    cell.labelCategory.layer.cornerRadius = 5;
+    cell.labelCategory.layer.masksToBounds = true;
     return cell;
 }
 

@@ -1,6 +1,7 @@
 #import "HomeViewController.h"
 #import "Utils.h"
 #import "SportsViewController.h"
+#import "TownsTableViewCell.h"
 
 @implementation HomeViewController
 
@@ -61,13 +62,14 @@
 }
 
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell_town"];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell_town"];
-    }
+    TownsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell_town_new"];
     NSString *name = [[arrayTowns objectAtIndex:indexPath.row] objectForKey:@"name"];
-    cell.textLabel.text = name;
+    cell.labelTownName.text = name;
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 80;
 }
 
 #pragma mark - segue methods
@@ -80,7 +82,6 @@
         NSString *townSelectedId = [dictionary objectForKey:@"id"];
         [userDefaults setValue:townSelectedString forKey:PREF_TOWN_NAME];
         [userDefaults setValue:townSelectedId forKey:PREF_TOWN_ID];
-        
     }
 }
 @end

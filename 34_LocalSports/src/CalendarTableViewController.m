@@ -7,6 +7,7 @@
 #import "MatchAddEventViewController.h"
 #import "MatchMapViewController.h"
 #import "MatchSendIssueViewController.h"
+#import "CalendarHeadingTableViewCell.h"
 
 @implementation CalendarTableViewController
 
@@ -34,9 +35,13 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0) {
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell_calendar" forIndexPath:indexPath];
-        cell.textLabel.text = [NSString stringWithFormat:NSLocalizedString(@"CALENDAR_WEEK", nil), (int)indexPath.section + 1];
+        //UITableViewCell
+        // *cell = [tableView dequeueReusableCellWithIdentifier:@"cell_calendar_heading" forIndexPath:indexPath];
+        CalendarHeadingTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell_calendar_heading" forIndexPath:indexPath];
+        cell.labelTitle.text = [NSString stringWithFormat:NSLocalizedString(@"CALENDAR_WEEK", nil), (int)indexPath.section + 1];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        cell.backgroundColor = UIColorFromRGB(0x0061a8);
+        cell.textLabel.backgroundColor = UIColorFromRGB(0x0061a8);
         return cell;
     } else {
         MatchDetailTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell_calendar_detail" forIndexPath:indexPath];
@@ -48,7 +53,16 @@
         cell.labelDate.text = dateStr;
         cell.labelCenter.text = matchEntity.court.centerName;
         cell.labelScore.text = [NSString stringWithFormat:@"%d - %d", matchEntity.scoreLocal, matchEntity.scoreVisitor];
+        cell.separatorInset = UIEdgeInsetsMake(0.0f, 0.0f, 0.0f, CGFLOAT_MAX);
         return cell;
+    }
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if(indexPath.row==0) {
+        return 60.0;
+    } else {
+        return 80.0;
     }
 }
 

@@ -11,9 +11,9 @@
     [super viewDidLoad];
     eventStore = [[EKEventStore alloc]init];
     self.navigationItem.title = NSLocalizedString(@"CALENDAR_EVENT_TITLE", nil);
-    self.textFieldTitle.text = [NSString stringWithFormat:NSLocalizedString(@"CALENDAR_EVENT_TEXT", nil), matchEntity.week, matchEntity.teamLocal, matchEntity.teamVisitor];
-    self.textFieldDate.text = [Utils formatDateDoubleToStr:matchEntity.date];
-    self.textFieldPlace.text = matchEntity.court.centerAddress;
+    self.labelTitle.text = [NSString stringWithFormat:NSLocalizedString(@"CALENDAR_EVENT_TEXT", nil), matchEntity.week, matchEntity.teamLocal, matchEntity.teamVisitor];
+    self.labelDate.text = [Utils formatDateDoubleToStr:matchEntity.date];
+    self.labelPlace.text = matchEntity.court.centerAddress;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -30,6 +30,7 @@
             event.title = [NSString stringWithFormat:NSLocalizedString(@"CALENDAR_EVENT_TEXT", nil), matchEntity.week, matchEntity.teamLocal, matchEntity.teamVisitor];
             event.calendar = eventStore.defaultCalendarForNewEvents;
             NSDate *initDate = [Utils formatDateDoubleToDate:matchEntity.date];
+            event.location = matchEntity.court.centerAddress;
             event.startDate = initDate;
             event.endDate = [initDate dateByAddingTimeInterval: SECONDS_IN_TWO_HOURS];
             //saving event.

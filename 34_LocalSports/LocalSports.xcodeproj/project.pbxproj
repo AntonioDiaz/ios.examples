@@ -39,6 +39,9 @@
 		D1D3A62D1FD299AF003CA8E7 /* UtilsDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = D1D3A62C1FD299AF003CA8E7 /* UtilsDataBase.m */; };
 		D1D953501FD3EE170029A240 /* GoogleMobileAdsSdkiOS-7.26.0 in Resources */ = {isa = PBXBuildFile; fileRef = D1D9534F1FD3EE170029A240 /* GoogleMobileAdsSdkiOS-7.26.0 */; };
 		D1D953531FD3EE5F0029A240 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1D953521FD3EE5F0029A240 /* GoogleMobileAds.framework */; };
+		D1DB7A4C1FD5A384008DF412 /* CalendarHeadingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D1DB7A4B1FD5A384008DF412 /* CalendarHeadingTableViewCell.m */; };
+		D1DB7A4F1FD5AB02008DF412 /* TownsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D1DB7A4E1FD5AB02008DF412 /* TownsTableViewCell.m */; };
+		D1DB7A521FD5BFD4008DF412 /* CompetitionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D1DB7A511FD5BFD4008DF412 /* CompetitionTableViewCell.m */; };
 		D1F1629D1FD31F1E00995436 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F1629C1FD31F1E00995436 /* SWRevealViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -103,6 +106,12 @@
 		D1D3A62C1FD299AF003CA8E7 /* UtilsDataBase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UtilsDataBase.m; sourceTree = "<group>"; };
 		D1D9534F1FD3EE170029A240 /* GoogleMobileAdsSdkiOS-7.26.0 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "GoogleMobileAdsSdkiOS-7.26.0"; sourceTree = "<group>"; };
 		D1D953521FD3EE5F0029A240 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = "GoogleMobileAdsSdkiOS-7.26.0/GoogleMobileAds.framework"; sourceTree = "<group>"; };
+		D1DB7A4A1FD5A384008DF412 /* CalendarHeadingTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CalendarHeadingTableViewCell.h; sourceTree = "<group>"; };
+		D1DB7A4B1FD5A384008DF412 /* CalendarHeadingTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalendarHeadingTableViewCell.m; sourceTree = "<group>"; };
+		D1DB7A4D1FD5AB02008DF412 /* TownsTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TownsTableViewCell.h; sourceTree = "<group>"; };
+		D1DB7A4E1FD5AB02008DF412 /* TownsTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TownsTableViewCell.m; sourceTree = "<group>"; };
+		D1DB7A501FD5BFD4008DF412 /* CompetitionTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CompetitionTableViewCell.h; sourceTree = "<group>"; };
+		D1DB7A511FD5BFD4008DF412 /* CompetitionTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CompetitionTableViewCell.m; sourceTree = "<group>"; };
 		D1F1629B1FD31F1E00995436 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		D1F1629C1FD31F1E00995436 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -155,6 +164,12 @@
 				D14397061FD0788100AEF92B /* MatchMapViewController.m */,
 				090123C01FD16E8B00973DD5 /* MatchSendIssueViewController.h */,
 				090123C11FD16E8B00973DD5 /* MatchSendIssueViewController.m */,
+				D1DB7A4A1FD5A384008DF412 /* CalendarHeadingTableViewCell.h */,
+				D1DB7A4B1FD5A384008DF412 /* CalendarHeadingTableViewCell.m */,
+				D1DB7A4D1FD5AB02008DF412 /* TownsTableViewCell.h */,
+				D1DB7A4E1FD5AB02008DF412 /* TownsTableViewCell.m */,
+				D1DB7A501FD5BFD4008DF412 /* CompetitionTableViewCell.h */,
+				D1DB7A511FD5BFD4008DF412 /* CompetitionTableViewCell.m */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -333,6 +348,7 @@
 			files = (
 				D13FE3411FD1DC5800067C5B /* Reachability.m in Sources */,
 				090123C21FD16E8B00973DD5 /* MatchSendIssueViewController.m in Sources */,
+				D1DB7A4C1FD5A384008DF412 /* CalendarHeadingTableViewCell.m in Sources */,
 				D1D3A62D1FD299AF003CA8E7 /* UtilsDataBase.m in Sources */,
 				D1C2CB7C1FCDCEAB00922D86 /* FavoriteEntity+CoreDataProperties.m in Sources */,
 				D1C2CB801FCDCEAB00922D86 /* SportCourtEntity+CoreDataProperties.m in Sources */,
@@ -342,6 +358,7 @@
 				094C1D601FC83A3F003685DD /* LocalSports.xcdatamodeld in Sources */,
 				D1C2CB791FCDCEAB00922D86 /* CompetitionEntity+CoreDataClass.m in Sources */,
 				098179031FCECFFB0011F4FD /* CalendarTableViewController.m in Sources */,
+				D1DB7A4F1FD5AB02008DF412 /* TownsTableViewCell.m in Sources */,
 				D1C2CB7D1FCDCEAB00922D86 /* MatchEntity+CoreDataClass.m in Sources */,
 				098179061FCED01F0011F4FD /* ClassificationTableViewController.m in Sources */,
 				D1C2CB781FCDCEAB00922D86 /* ClassificationEntity+CoreDataProperties.m in Sources */,
@@ -350,6 +367,7 @@
 				D1C2CB831FCDDEC600922D86 /* CompetitionsTableViewController.m in Sources */,
 				094C1D5A1FC83A3F003685DD /* HomeViewController.m in Sources */,
 				094C1D681FC83A3F003685DD /* main.m in Sources */,
+				D1DB7A521FD5BFD4008DF412 /* CompetitionTableViewCell.m in Sources */,
 				D12E745A1FCF5AA30054BA52 /* MatchDetailTableViewCell.m in Sources */,
 				095BA4831FD02486005C7214 /* MatchAddEventViewController.m in Sources */,
 				D1C2CB7B1FCDCEAB00922D86 /* FavoriteEntity+CoreDataClass.m in Sources */,
