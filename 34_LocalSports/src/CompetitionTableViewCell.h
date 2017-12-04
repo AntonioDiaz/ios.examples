@@ -11,5 +11,6 @@
 @interface CompetitionTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *labelCompetitionName;
 @property (weak, nonatomic) IBOutlet UILabel *labelCategory;
+@property (weak, nonatomic) IBOutlet UIView *viewCompetition;
 
 @end

@@ -65,6 +65,8 @@
     TownsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell_town_new"];
     NSString *name = [[arrayTowns objectAtIndex:indexPath.row] objectForKey:@"name"];
     cell.labelTownName.text = name;
+    cell.labelTownName.layer.cornerRadius = 5;
+    cell.labelTownName.layer.masksToBounds = true;
     return cell;
 }
 

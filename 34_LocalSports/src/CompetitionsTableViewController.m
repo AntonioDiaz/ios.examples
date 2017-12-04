@@ -59,6 +59,8 @@
     cell.labelCategory.text = competitionEntity.category;
     cell.labelCategory.layer.cornerRadius = 5;
     cell.labelCategory.layer.masksToBounds = true;
+    cell.viewCompetition.layer.cornerRadius = 5;
+    cell.viewCompetition.layer.masksToBounds = true;
     return cell;
 }
 
