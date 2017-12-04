@@ -16,8 +16,9 @@
 "HOME_INTERNET_REQUIRED" = "Internet is required to run LocalSports.";
 
 "COMPETITIONS_EMPTY" = "There is no competitions for this sport.";
-"CALENDAR_SHARE_TEXT" = "Jornada %d: %@ contra %@, cuando:%@ donde:%@";
+"CALENDAR_SHARE_TEXT" = "Weel %d: %@ vs %@, when:%@ where:%@";
 
+"CALENDAR_WEEK" = "Week %d";
 "CALENDAR_ACTION_TITLE" = "Actions with the match";
 "CALENDAR_ACTION_SHARE" = "Share match details";
 "CALENDAR_ACTION_EVENT" = "Add calendar event";
@@ -30,5 +31,15 @@
 "CALENDAR_ACCESS" = "Access to calendar needed.";
 "CALENDAR_ERROR" = "Error when adding calendar";
 "CALENDAR_SUCCESS" = "Match added to calendar";
+
+"ISSUE_TITLE" = "Send issue to server";
+"ISSUE_TEXT_TITLE" = "Week %d: %@ vs %@";
+"ISSUE_DESCRIPTION_REQUIRED" = "Issue description is required";
+"ISSUE_REGISTERED" = "Your issue has been register. We will review it as soon as possible.";
+"ISSUE_SEND_HTTP_ERROR" = "It is not possible to send the issue. HTTP error: %d";
+"ISSUE_SEND_ERROR" = "It is not possible to send the issue. Error: %@";
+
+"MAP_TITLE" = "Sport Center location";
+
 
 

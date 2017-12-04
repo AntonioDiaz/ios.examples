@@ -6,7 +6,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"SportCenter location";
+    self.navigationItem.title = NSLocalizedString(@"MAP_TITLE", nil);
     self.labelAddress.text = sportCenter.centerName;
     self.labelAddress.text = sportCenter.centerAddress;
     locationManager = [[CLLocationManager alloc] init];
@@ -54,8 +54,6 @@
     }];
 }
 
-
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
@@ -83,7 +81,7 @@
 #pragma mark - CLLocationManagerDelegate
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(nonnull NSArray<CLLocation *> *)locations {
     CLLocation *location = [locations objectAtIndex:0];
-    [self.mapView setCenterCoordinate:location.coordinate animated:true];
+    //[self.mapView setCenterCoordinate:location.coordinate animated:true];
 }
 
 
@@ -107,29 +105,6 @@
     UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return newImage;
-}
-
--(CLLocationCoordinate2D) getLocationFromAddressString: (NSString*) addressStr {
-    double latitude = 0, longitude = 0;
-    NSString *esc_addr =  [addressStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    NSString *req = [NSString stringWithFormat:@"http://maps.google.com/maps/api/geocode/json?sensor=false&address=%@", esc_addr];
-    NSString *result = [NSString stringWithContentsOfURL:[NSURL URLWithString:req] encoding:NSUTF8StringEncoding error:NULL];
-    if (result) {
-        NSScanner *scanner = [NSScanner scannerWithString:result];
-        if ([scanner scanUpToString:@"\"lat\" :" intoString:nil] && [scanner scanString:@"\"lat\" :" intoString:nil]) {
-            [scanner scanDouble:&latitude];
-            if ([scanner scanUpToString:@"\"lng\" :" intoString:nil] && [scanner scanString:@"\"lng\" :" intoString:nil]) {
-                [scanner scanDouble:&longitude];
-            }
-        }
-    }
-    CLLocationCoordinate2D center;
-    center.latitude=latitude;
-    center.longitude = longitude;
-    NSLog(@"View Controller get Location Logitute : %f",center.latitude);
-    NSLog(@"View Controller get Location Latitute : %f",center.longitude);
-    return center;
-    
 }
 
 @end

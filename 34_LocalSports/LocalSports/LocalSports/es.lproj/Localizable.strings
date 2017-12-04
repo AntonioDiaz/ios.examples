@@ -1,11 +1,45 @@
-/* 
-  Localizable.strings
-  LocalSports
-
-  Created by Antonio Díaz Arroyo on 3/12/17.
-  Copyright © 2017 cice. All rights reserved.
-*/
-
+/*
+ Localizable.strings
+ LocalSports
+ 
+ Created by Antonio Díaz Arroyo on 3/12/17.
+ Copyright © 2017 cice. All rights reserved.
+ */
 "BACK" = "Volver";
+"FUTBOL_11" = "Fubbol 11";
+"BALONCESTO" = "Baloncesto";
+"VOLEIBOL" = "Voleybol";
+"BALONMANO" = "Balonmano";
+"UNIHOCKEY" = "Hockey";
+
 "HOME_TITLE" = "%@ - Municipios disponibles";
-"HOME_INTERNET_REQUIRED" = "Es necesario internet para que cargen los datos.";
+"HOME_INTERNET_REQUIRED" = "Se necesita internet para que funcione la aplicación.";
+
+"COMPETITIONS_EMPTY" = "No hay competiciones activas para este deporte.";
+"CALENDAR_SHARE_TEXT" = "Jornada %d: %@ contra %@, cuando:%@ donde:%@";
+
+"CALENDAR_WEEK" = "Jornada %d";
+"CALENDAR_ACTION_TITLE" = "Acciones sobre el partido";
+"CALENDAR_ACTION_SHARE" = "Compartir detalles";
+"CALENDAR_ACTION_EVENT" = "Añadir evento al calendario";
+"CALENDAR_ACTION_ISSUE" = "Enviar error";
+"CALENDAR_ACTION_MAP" = "Ver mapa";
+"CALENDAR_ACTION_CLOSE" = "Cerrar";
+
+"CALENDAR_EVENT_TITLE" = "Añadir evento al calendario";
+"CALENDAR_EVENT_TEXT" = "Jornada %d: %@ contra %@";
+"CALENDAR_ACCESS" = "Se necesita acceder al calendario.";
+"CALENDAR_ERROR" = "Error al añadir el evento al calendario";
+"CALENDAR_SUCCESS" = "Partido añadido al calendario";
+
+"ISSUE_TITLE" = "Enviar error al servidor";
+"ISSUE_TEXT_TITLE" = "Jornada %d: %@ contra %@";
+"ISSUE_DESCRIPTION_REQUIRED" = "Es necesario indicar una descripción del error.";
+"ISSUE_REGISTERED" = "El error ha sido registrado. En cuanto nos sea posible lo revisaremos.";
+"ISSUE_SEND_HTTP_ERROR" = "No ha podido enviarse el error. HTTP error: %d";
+"ISSUE_SEND_ERROR" = "No ha sido posible enviar el error. Error: %@";
+
+"MAP_TITLE" = "Direción del centro deportivo";
+
+
+

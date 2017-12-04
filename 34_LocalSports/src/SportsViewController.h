@@ -1,7 +1,7 @@
 #import <UIKit/UIKit.h>
 #import "Utils.h"
 
-@interface SportsViewController : UIViewController <GADBannerViewDelegate, GADRewardBasedVideoAdDelegate>
+@interface SportsViewController : UIViewController <GADBannerViewDelegate>
 {
     EnumSports sportSelected;
     NSManagedObjectContext *managedObjectContext;

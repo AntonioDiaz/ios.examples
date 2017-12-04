@@ -35,7 +35,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0) {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell_calendar" forIndexPath:indexPath];
-        cell.textLabel.text = [NSString stringWithFormat:@"Week %d", (int)indexPath.section + 1];
+        cell.textLabel.text = [NSString stringWithFormat:NSLocalizedString(@"CALENDAR_WEEK", nil), (int)indexPath.section + 1];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         return cell;
     } else {
@@ -77,7 +77,10 @@
         NSString *strActionSendIssue = NSLocalizedString(@"CALENDAR_ACTION_ISSUE", nil);
         NSString *strActionOpenMap = NSLocalizedString(@"CALENDAR_ACTION_MAP", nil);;
         NSString *strActionClose = NSLocalizedString(@"CALENDAR_ACTION_CLOSE", nil);
-        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:alertTitle message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:alertTitle message:nil preferredStyle:UIAlertControllerStyleAlert];
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+            alertController = [UIAlertController alertControllerWithTitle:alertTitle message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+        }
         UIAlertAction *actionShare = [UIAlertAction actionWithTitle:strActionShare style:UIAlertActionStyleDefault
          handler:^(UIAlertAction *action) {
              [self actionShareMatch:[self matchSelectedInList]];
@@ -145,7 +148,7 @@
     controller.modalPresentationStyle = UIModalPresentationPopover;
     UIPopoverPresentationController *popController = [controller popoverPresentationController];
     popController.permittedArrowDirections = UIPopoverArrowDirectionAny;
-    popController.sourceView = self.navigationItem.titleView;
+    popController.sourceView = self.view;
     [self presentViewController:controller animated:YES completion:nil];
     controller.completionWithItemsHandler = ^(NSString *activityType,
                                               BOOL completed,

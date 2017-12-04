@@ -38,8 +38,8 @@
 
 #pragma mark - private methods
 -(void)loadBanner{
-    self.bannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeBanner];
-    //self.bannerView.frame = CGRectMake(200, 520, , 100.0);
+    self.bannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeLargeBanner];
+    //self.bannerView.frame = CGRectMake(0, 0, self.bannerView.frame.size.width , self.bannerView.frame.size.height);
     self.bannerView.adUnitID = @"ca-app-pub-3940256099942544/2934735716";
     //cuando se clica en el banner, quien se encarga de navegar.
     self.bannerView.rootViewController = self;
@@ -52,19 +52,22 @@
     
     //Cargamos el anuncio
     [self.bannerView loadRequest:[GADRequest request]];
-    
-    NSLayoutConstraint *abajo = [NSLayoutConstraint
-                                 constraintWithItem:self.bannerView attribute:NSLayoutAttributeBottom
-                                 relatedBy:NSLayoutRelationEqual toItem:self.bottomLayoutGuide
-                                 attribute:NSLayoutAttributeTop multiplier:1 constant:0];
-    
-    NSLayoutConstraint *centrado = [NSLayoutConstraint
-                                    constraintWithItem:self.bannerView attribute:NSLayoutAttributeCenterX
-                                    relatedBy:NSLayoutRelationEqual toItem:self.view
-                                    attribute:NSLayoutAttributeCenterX multiplier:1 constant:0];
-    
-    //[self.bannerView addConstraint:abajo];
-    //[self.bannerView addConstraint:centrado];
+    [self.view addConstraints:@[
+                                [NSLayoutConstraint constraintWithItem:self.bannerView
+                                                             attribute:NSLayoutAttributeBottom
+                                                             relatedBy:NSLayoutRelationEqual
+                                                                toItem:self.bottomLayoutGuide
+                                                             attribute:NSLayoutAttributeTop
+                                                            multiplier:1
+                                                              constant:0],
+                                [NSLayoutConstraint constraintWithItem:self.bannerView
+                                                             attribute:NSLayoutAttributeCenterX
+                                                             relatedBy:NSLayoutRelationEqual
+                                                                toItem:self.view
+                                                             attribute:NSLayoutAttributeCenterX
+                                                            multiplier:1
+                                                              constant:0]
+                                ]];
 }
 
 -(void) showSideMenu:(id)sender {
@@ -122,7 +125,7 @@
 #pragma mark - Navigation
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"BACK", nil) style:UIBarButtonItemStylePlain target:nil action:nil];
     CompetitionsTableViewController *viewController = (CompetitionsTableViewController *) segue.destinationViewController;
     viewController.sportSelected = sportSelected;
 }
@@ -139,6 +142,7 @@
 }
 
 #pragma mark -
+/*
 -(void)rewardBasedVideoAd:(GADRewardBasedVideoAd *)rewardBasedVideoAd didRewardUserWithReward:(GADAdReward *)reward {
     NSString *rewardMessage =
     [NSString stringWithFormat:@"Reward received with currency %@ , amount %lf",
@@ -146,6 +150,7 @@
      [reward.amount doubleValue]];
     NSLog(rewardMessage);
 }
+*/
 
 #pragma mark -
 //cuando se carga el anuncio

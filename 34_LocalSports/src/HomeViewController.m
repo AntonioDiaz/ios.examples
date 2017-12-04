@@ -15,8 +15,10 @@
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSString *townSelectedStr = [userDefaults objectForKey:PREF_TOWN_NAME];
     if (townSelectedStr.length > 0) {
+         self.navigationItem.title = @"";
         [self performSegueWithIdentifier:@"segueSports" sender:self];
     } else {
+        self.navigationItem.title = [NSString stringWithFormat: NSLocalizedString(@"HOME_TITLE", nil), APP_NAME];
         //check for internet conection.
         if ([Utils noTengoInterne]) {
             [Utils showAlert:NSLocalizedString(@"HOME_INTERNET_REQUIRED", nil)];

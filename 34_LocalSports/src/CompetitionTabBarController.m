@@ -41,7 +41,7 @@
 
 #pragma mark - navigation
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    NSString * strBack = NSLocalizedString(@"Back", nil);
+    NSString * strBack = NSLocalizedString(NSLocalizedString(@"BACK", nil), nil);
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:strBack style:UIBarButtonItemStylePlain target:nil action:nil];
 }
 
