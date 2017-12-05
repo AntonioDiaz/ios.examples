@@ -37,7 +37,7 @@ static const uint32_t categoriaLadrillo = 0x1 << 2; //0000000000.0000000000.0000
         pelota.physicsBody.linearDamping = 0.0;
         pelota.physicsBody.allowsRotation = false;
         //lanzamos la pelota
-        [pelota.physicsBody applyImpulse:CGVectorMake(20.0, 10.0)];
+        [pelota.physicsBody applyImpulse:CGVectorMake(20.0, 5.0)];
         //creamos las mascaras
         pelota.physicsBody.categoryBitMask = categoriaPelota;
         pelota.physicsBody.contactTestBitMask = categoriaLadrillo | categoriaBordeInferior;
