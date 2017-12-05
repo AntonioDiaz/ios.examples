@@ -38,7 +38,7 @@
 
 #pragma mark - private methods
 -(void)loadBanner{
-    self.bannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeLargeBanner];
+    self.bannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeSmartBannerPortrait];
     //self.bannerView.frame = CGRectMake(0, 0, self.bannerView.frame.size.width , self.bannerView.frame.size.height);
     self.bannerView.adUnitID = @"ca-app-pub-3940256099942544/2934735716";
     //cuando se clica en el banner, quien se encarga de navegar.
@@ -68,6 +68,57 @@
                                                             multiplier:1
                                                               constant:0]
                                 ]];
+}
+
+- (void)addBannerViewToView:(UIView *)bannerView {
+    bannerView.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.view addSubview:bannerView];
+    if (@available(ios 11.0, *)) {
+        // In iOS 11, we need to constrain the view to the safe area.
+        [self positionBannerViewFullWidthAtBottomOfSafeArea:bannerView];
+    } else {
+        // In lower iOS versions, safe area is not available so we use
+        // bottom layout guide and view edges.
+        [self positionBannerViewFullWidthAtBottomOfView:bannerView];
+    }
+}
+
+#pragma mark - view positioning
+
+- (void)positionBannerViewFullWidthAtBottomOfSafeArea:(UIView *_Nonnull)bannerView NS_AVAILABLE_IOS(11.0) {
+    // Position the banner. Stick it to the bottom of the Safe Area.
+    // Make it constrained to the edges of the safe area.
+    UILayoutGuide *guide = self.view.safeAreaLayoutGuide;
+    
+    [NSLayoutConstraint activateConstraints:@[
+                                              [guide.leftAnchor constraintEqualToAnchor:bannerView.leftAnchor],
+                                              [guide.rightAnchor constraintEqualToAnchor:bannerView.rightAnchor],
+                                              [guide.bottomAnchor constraintEqualToAnchor:bannerView.bottomAnchor]
+                                              ]];
+}
+
+- (void)positionBannerViewFullWidthAtBottomOfView:(UIView *_Nonnull)bannerView {
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:bannerView
+                                                          attribute:NSLayoutAttributeLeading
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeLeading
+                                                         multiplier:1
+                                                           constant:0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:bannerView
+                                                          attribute:NSLayoutAttributeTrailing
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeTrailing
+                                                         multiplier:1
+                                                           constant:0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:bannerView
+                                                          attribute:NSLayoutAttributeBottom
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.bottomLayoutGuide
+                                                          attribute:NSLayoutAttributeTop
+                                                         multiplier:1
+                                                           constant:0]];
 }
 
 -(void) showSideMenu:(id)sender {

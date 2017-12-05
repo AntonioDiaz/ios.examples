@@ -40,6 +40,6 @@
 "ISSUE_SEND_ERROR" = "No ha sido posible enviar el error. Error: %@";
 
 "MAP_TITLE" = "Direción del centro deportivo";
-
+"CLASSIFICATION_TEAM" = "     Equipo";
 
 

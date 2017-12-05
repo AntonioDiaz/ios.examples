@@ -40,6 +40,7 @@
 "ISSUE_SEND_ERROR" = "It is not possible to send the issue. Error: %@";
 
 "MAP_TITLE" = "Sport Center location";
+"CLASSIFICATION_TEAM" = "     Team";
 
 
 

@@ -21,15 +21,27 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return arrayClassification.count;
+    return arrayClassification.count + 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell_classification" forIndexPath:indexPath];
-    ClassificationEntity *classificationEntity = [arrayClassification objectAtIndex:indexPath.row];
     //TODO: add fields: matches played, won, lost....
-    cell.textLabel.text = [NSString stringWithFormat:@"%d - %@", classificationEntity.position, classificationEntity.team];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%d", classificationEntity.points];
+    if (indexPath.row == 0) {
+        cell.textLabel.text = NSLocalizedString(@"CLASSIFICATION_TEAM", nil);
+        cell.detailTextLabel.text = @"Pt";
+        cell.backgroundColor = UIColorFromRGB(0x0061a8);
+        cell.textLabel.textColor = [UIColor whiteColor];
+        cell.detailTextLabel.textColor = [UIColor whiteColor];
+        UIFont *currentFont = cell.textLabel.font;
+        UIFont *newFont = [UIFont fontWithName:[NSString stringWithFormat:@"%@-Bold",currentFont.fontName] size:currentFont.pointSize];
+        cell.textLabel.font = newFont;
+        cell.detailTextLabel.font = newFont;
+    } else {
+        ClassificationEntity *classificationEntity = [arrayClassification objectAtIndex:indexPath.row - 1];
+        cell.textLabel.text = [NSString stringWithFormat:@"%d - %@", classificationEntity.position, classificationEntity.team];
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%d", classificationEntity.points];
+    }
     return cell;
 }
 
